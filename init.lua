@@ -3,5 +3,9 @@ require("variables")
 require("settings")
 require("colorscheme")
 require("keybindings")
+
 require("nv-compe")
+require("nv-galaxyline")
+require("nv-colorizer")
+
 require("lsp")

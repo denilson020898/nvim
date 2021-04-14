@@ -1,6 +1,7 @@
 -- TERMINAL = vim.fn.expand('$TERMINAL')
 -- vim.cmd('let &titleold="'..TERMINAL..'"')
 -- vim.wo.colorcolumn = "99"
+-- vim.o.laststatus = 0
 vim.bo.expandtab = true
 vim.bo.shiftwidth = 4	
 vim.bo.smartindent = true
@@ -21,7 +22,6 @@ vim.o.ignorecase = true
 vim.o.inccommand = "split"
 vim.o.incsearch = true
 vim.o.iskeyword = vim.o.iskeyword .. ",-" .. ",_"
-vim.o.laststatus = 0
 vim.o.mouse = "a"
 vim.o.pumheight = 10
 vim.o.shortmess = vim.o.shortmess .. "c"
