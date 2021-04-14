@@ -10,7 +10,6 @@ end
 
 return require("packer").startup(function()
     -- Packer can manage itself
-    --use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
     use "glepnir/galaxyline.nvim"
     use "glepnir/lspsaga.nvim"
     use "hrsh7th/nvim-compe"
@@ -35,5 +34,7 @@ return require("packer").startup(function()
     use 'norcalli/nvim-colorizer.lua'
     use 'onsails/lspkind-nvim'
     use 'unblevable/quick-scope'
+    use { "npxbr/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } }
     use {"nvim-treesitter/nvim-treesitter", run=":TSUpdate"}
+
 end)
