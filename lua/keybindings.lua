@@ -36,6 +36,8 @@ vim.api.nvim_set_keymap("v", "<C-/>", ':call NERDComment(0, "toggle")<CR>gv', {n
 vim.api.nvim_set_keymap("n", "", ':call NERDComment(0, "toggle")<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap("v", "", ':call NERDComment(0, "toggle")<CR>gv', {noremap = true, silent = true})
 
+vim.api.nvim_set_keymap("n", "<Leader>t", ":Telescope<CR>", {noremap = true, silent = true})
+
 -- move line in visual mode
 -- vim.api.nvim_set_keymap("x", "K", ":move \"<-2<CR>gv-gv\"", { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap("x", "J", ":move \">+1<CR>gv-gv\"", { noremap = true, silent = true })

@@ -37,4 +37,5 @@ return require("packer").startup(function()
     use { "npxbr/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } }
     use {"nvim-treesitter/nvim-treesitter", run=":TSUpdate"}
     use "preservim/nerdcommenter"
+    use 'sbdchd/neoformat'
 end)
