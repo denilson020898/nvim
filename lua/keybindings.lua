@@ -28,15 +28,21 @@ vim.api.nvim_set_keymap("n", "<Tab>", ":bnext<CR>", { noremap = true, silent = t
 vim.api.nvim_set_keymap("n", "<S-Tab>", ":bprevious<CR>", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "<Leader><Space>", ":b#<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Leader>b", ":buffers<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>1", ":b#<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<Leader>b", ":buffers<CR>", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "<C-/>", ':call NERDComment(0, "toggle")<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap("v", "<C-/>", ':call NERDComment(0, "toggle")<CR>gv', {noremap = true, silent = true})
 -- windows terminal <C-/> is 
-vim.api.nvim_set_keymap("n", "", ':call NERDComment(0, "toggle")<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap("v", "", ':call NERDComment(0, "toggle")<CR>gv', {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "", ':call NERDComment(0, "toggle")<CR>', {noremap = true, silent = true}) vim.api.nvim_set_keymap("v", "", ':call NERDComment(0, "toggle")<CR>gv', {noremap = true, silent = true})
 
 vim.api.nvim_set_keymap("n", "<Leader>t", ":Telescope<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>f", ":Telescope find_files<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>g", ":Telescope live_grep<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>b", ":Telescope buffers<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>h", ":Telescope help_tags<CR>", {noremap = true, silent = true})
+
+vim.api.nvim_set_keymap("n", "<Leader>=", ":Neoformat<CR>", {noremap = true, silent = true})
 
 -- move line in visual mode
 -- vim.api.nvim_set_keymap("x", "K", ":move \"<-2<CR>gv-gv\"", { noremap = true, silent = true })
