@@ -27,6 +27,11 @@ vim.api.nvim_set_keymap("i", "kj", "<Esc>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Tab>", ":bnext<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<S-Tab>", ":bprevious<CR>", { noremap = true, silent = true })
 
+vim.api.nvim_set_keymap("n", "<C-/>", ':call NERDComment(0, "toggle")<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap("v", "<C-/>", ':call NERDComment(0, "toggle")<CR>gv', {noremap = true, silent = true})
+-- windows terminal <C-/> is 
+vim.api.nvim_set_keymap("n", "", ':call NERDComment(0, "toggle")<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap("v", "", ':call NERDComment(0, "toggle")<CR>gv', {noremap = true, silent = true})
 
 -- move line in visual mode
 -- vim.api.nvim_set_keymap("x", "K", ":move \"<-2<CR>gv-gv\"", { noremap = true, silent = true })

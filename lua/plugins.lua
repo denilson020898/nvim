@@ -18,7 +18,7 @@ return require("packer").startup(function()
     use "kyazdani42/nvim-tree.lua"
     use "kyazdani42/nvim-web-devicons"
     use "neovim/nvim-lspconfig"
-    use "noahares/nvim-commenter"
+    --use "noahares/nvim-commenter"
     use "nvim-lua/plenary.nvim"
     use "nvim-lua/popup.nvim"
     use "nvim-telescope/telescope-media-files.nvim"
@@ -36,5 +36,5 @@ return require("packer").startup(function()
     use 'unblevable/quick-scope'
     use { "npxbr/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } }
     use {"nvim-treesitter/nvim-treesitter", run=":TSUpdate"}
-
+    use "preservim/nerdcommenter"
 end)

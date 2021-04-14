@@ -1,6 +1,7 @@
 require("plugins")
-require("keybindings")
+require("variables")
 require("settings")
 require("colorscheme")
+require("keybindings")
 require("nv-compe")
 require("lsp")
