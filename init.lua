@@ -1,0 +1,6 @@
+require("plugins")
+require("keybindings")
+require("settings")
+require("colorscheme")
+require("nv-compe")
+require("lsp")
