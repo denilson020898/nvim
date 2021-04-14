@@ -27,6 +27,9 @@ vim.api.nvim_set_keymap("i", "kj", "<Esc>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Tab>", ":bnext<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<S-Tab>", ":bprevious<CR>", { noremap = true, silent = true })
 
+vim.api.nvim_set_keymap("n", "<Leader><Space>", ":b#<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>b", ":buffers<CR>", { noremap = true, silent = true })
+
 vim.api.nvim_set_keymap("n", "<C-/>", ':call NERDComment(0, "toggle")<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap("v", "<C-/>", ':call NERDComment(0, "toggle")<CR>gv', {noremap = true, silent = true})
 -- windows terminal <C-/> is 

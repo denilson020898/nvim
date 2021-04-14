@@ -33,7 +33,7 @@ vim.o.splitright = true
 vim.o.swapfile = false
 vim.o.t_Co = "256"
 vim.o.termguicolors = true
-vim.o.timeoutlen = 300
+vim.o.timeoutlen = 1000
 vim.o.title = true
 vim.o.titlestring="%<%F%=%l/%L - nvim"
 vim.o.updatetime = 100
