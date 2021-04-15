@@ -38,6 +38,7 @@ return require("packer").startup(function()
     use {"nvim-treesitter/nvim-treesitter", run=":TSUpdate"}
     use "preservim/nerdcommenter"
     use 'sbdchd/neoformat'
+    use 'akinsho/nvim-bufferline.lua'
     use "tpope/vim-fugitive"
 end
 )

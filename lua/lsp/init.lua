@@ -1,7 +1,7 @@
 -- require'lspconfig'.pyright.setup{}
 -- require'lspconfig'.flow.setup{}
 -- require'lspconfig'.pyls.setup{}
-require'lspconfig'.rust_analyzer.setup{}
+-- require'lspconfig'.rust_analyzer.setup{}
 
 -- local nvim_lsp = require('lspconfig')
 -- local on_attach = function(client, bufnr)
@@ -84,3 +84,8 @@ require'lspconfig'.rust_analyzer.setup{}
 -- }
 -- }
 -- })
+
+require'lspconfig'.flow.setup{}
+-- require'lspconfig'.pyls.setup{settings={pyls={plugins={pycodestyle={enabled=false}, pylint =  { enabled = false } } } } }
+require'lspconfig'.pyls.setup{settings={pyls={plugins={pycodestyle={enabled=false}}}}}
+require'lspconfig'.rust_analyzer.setup{}
