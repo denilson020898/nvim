@@ -1,1 +1,1 @@
-require 'nvim-treesitter.install'.compilers = { "clang", "gcc", "llvm"  }
+require 'nvim-treesitter.install'.compilers = {  "gcc", "clang", "cl"  }
