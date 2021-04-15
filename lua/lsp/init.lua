@@ -51,5 +51,6 @@ for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
 
-require'lspconfig'.pyright.setup{on_attach=on_attach, settings={pyls={plugins={pycodestyle={enabled=false}}}}}
+-- require'lspconfig'.pyright.setup{on_attach=on_attach, settings={pyls={plugins={pycodestyle={enabled=false}}}}}
+require'lspconfig'.pyright.setup{on_attach=on_attach}
 require'lspconfig'.flow.setup{on_attach=on_attach, autostart=true}

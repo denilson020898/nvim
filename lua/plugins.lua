@@ -39,10 +39,11 @@ return require("packer").startup(function()
     use "preservim/nerdcommenter"
     use 'sbdchd/neoformat'
     use 'akinsho/nvim-bufferline.lua'
-    use "tpope/vim-fugitive"
+    -- use "tpope/vim-fugitive"
     use "nvim-treesitter/playground"
     use "p00f/nvim-ts-rainbow"
-    use 'lewis6991/gitsigns.nvim'
+    -- use 'lewis6991/gitsigns.nvim'
     use "windwp/nvim-autopairs"
+    use "TimUntersberger/neogit"
 end
 )
