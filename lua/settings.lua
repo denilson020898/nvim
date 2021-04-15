@@ -8,8 +8,9 @@ vim.bo.shiftwidth = 4
 vim.bo.smartindent = true
 vim.bo.softtabstop = 4	
 vim.bo.tabstop = 4	
-vim.cmd("filetype indent plugin on");
+vim.cmd("filetype on");
 vim.cmd("filetype plugin on");
+vim.cmd("filetype indent on");
 vim.o.background = "dark"
 vim.o.backup = false
 vim.o.clipboard = "unnamedplus"
