@@ -1,7 +1,8 @@
 -- TERMINAL = vim.fn.expand('$TERMINAL')
 -- vim.cmd('let &titleold="'..TERMINAL..'"')
--- vim.wo.colorcolumn = "99"
 -- vim.o.laststatus = 0
+-- vim.wo.colorcolumn = "99"
+-- vim.wo.foldmethod = "manual"
 vim.bo.expandtab = true
 vim.bo.shiftwidth = 4	
 vim.bo.smartindent = true
