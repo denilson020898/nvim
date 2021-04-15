@@ -57,7 +57,6 @@ vim.api.nvim_set_keymap("n", "<Leader>b", "<cmd>lua require('telescope.builtin')
 vim.api.nvim_set_keymap("n", "<Leader>h", "<cmd>lua require('telescope.builtin').help_tags()<CR>", {noremap = true, silent = true})
 
 vim.api.nvim_set_keymap("n", "<Leader>p", "<cmd>lua require('nvim-plugins.telescope').search_dotfiles()<CR>", {noremap = true, silent = true})
-
 vim.api.nvim_set_keymap("n", "<Leader>=", ":Neoformat<CR>", {noremap = true, silent = true})
 
 -- move line in visual mode

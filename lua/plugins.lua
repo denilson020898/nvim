@@ -42,5 +42,7 @@ return require("packer").startup(function()
     use "tpope/vim-fugitive"
     use "nvim-treesitter/playground"
     use "p00f/nvim-ts-rainbow"
+    use 'lewis6991/gitsigns.nvim'
+    use "windwp/nvim-autopairs"
 end
 )
