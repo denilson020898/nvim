@@ -39,4 +39,5 @@ return require("packer").startup(function()
     use "preservim/nerdcommenter"
     use 'sbdchd/neoformat'
     use "tpope/vim-fugitive"
-end)
+end
+)

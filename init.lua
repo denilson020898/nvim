@@ -7,5 +7,6 @@ require("keybindings")
 require("nv-compe")
 require("nv-galaxyline")
 require("nv-colorizer")
+require("nv-plugins")
 
 require("lsp")

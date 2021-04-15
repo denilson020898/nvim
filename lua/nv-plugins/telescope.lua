@@ -1,3 +1,6 @@
+print("ASKDJALSDJ")
+
+local actions = require('telescope.actions')
 require('telescope').setup{
   defaults = {
     vimgrep_arguments = {
@@ -8,6 +11,16 @@ require('telescope').setup{
       '--line-number',
       '--column',
       '--smart-case'
+    },
+    mappings = {
+      i = {
+        ["<C-w>"] = actions.send_selected_to_qflist,
+        ["<C-q>"] = actions.send_to_qflist,
+      },
+      n = {
+        ["<C-w>"] = actions.send_selected_to_qflist,
+        ["<C-q>"] = actions.send_to_qflist,
+      },
     },
     prompt_position = "bottom",
     prompt_prefix = "> ",
@@ -47,3 +60,13 @@ require('telescope').setup{
     buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker
   }
 }
+
+local M = {}
+local config_path = vim.fn.stdpath("config")
+M.search_dotfiles = function()
+    require("telescope.builtin").find_files({
+        prompt_title = "< VimRC >",
+        cwd = config_path
+    })
+end
+return M
