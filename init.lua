@@ -4,6 +4,6 @@ require("settings")
 require("colorscheme")
 require("keybindings")
 
-require("nv-plugins")
+require("nvim-plugins")
 
 require("lsp")

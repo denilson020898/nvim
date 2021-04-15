@@ -40,5 +40,7 @@ return require("packer").startup(function()
     use 'sbdchd/neoformat'
     use 'akinsho/nvim-bufferline.lua'
     use "tpope/vim-fugitive"
+    use "nvim-treesitter/playground"
+    use "p00f/nvim-ts-rainbow"
 end
 )

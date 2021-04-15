@@ -1,6 +1,0 @@
-require("nv-plugins.telescope")
-require("nv-plugins.colorizer")
-require("nv-plugins.compe")
-require("nv-plugins.treesitter")
-require("nv-plugins.galaxyline")
-require("nv-plugins.bufferline")

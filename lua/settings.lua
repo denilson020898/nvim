@@ -4,10 +4,11 @@
 -- vim.wo.colorcolumn = "99"
 -- vim.wo.foldmethod = "manual"
 vim.bo.expandtab = true
+vim.o.smarttab = true
 vim.bo.shiftwidth = 4	
 vim.bo.smartindent = true
-vim.bo.softtabstop = 4	
-vim.bo.tabstop = 4	
+vim.bo.softtabstop = 0	
+vim.bo.tabstop = 8	
 vim.cmd("filetype on");
 vim.cmd("filetype plugin on");
 vim.cmd("filetype indent on");

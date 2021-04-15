@@ -24,8 +24,22 @@ vim.api.nvim_set_keymap("i", "jk", "<Esc>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "kj", "<Esc>", { noremap = true, silent = true })
 
 -- tab switch buffer
-vim.api.nvim_set_keymap("n", "<Tab>", ":bnext<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<S-Tab>", ":bprevious<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<Tab>", ":bnext<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<S-Tab>", ":bprevious<CR>", { noremap = true, silent = true })
+
+-- " These commands will navigate through buffers in order regardless of which mode you are using
+-- " e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering
+-- nnoremap <silent>[b :BufferLineCycleNext<CR>
+-- nnoremap <silent>b] :BufferLineCyclePrev<CR>
+
+-- " These commands will move the current buffer backwards or forwards in the bufferline
+vim.api.nvim_set_keymap("n", "<Tab>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
+
+-- " These commands will sort buffers by directory, language, or a custom criteria
+-- nnoremap <silent>be :BufferLineSortByExtension<CR>
+-- nnoremap <silent>bd :BufferLineSortByDirectory<CR>
+-- nnoremap <silent><mymap> :lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<CR>
 
 vim.api.nvim_set_keymap("n", "<Leader><Space>", ":b#<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>1", ":b#<CR>", { noremap = true, silent = true })
@@ -42,9 +56,8 @@ vim.api.nvim_set_keymap("n", "<Leader>g", "<cmd>lua require('telescope.builtin')
 vim.api.nvim_set_keymap("n", "<Leader>b", "<cmd>lua require('telescope.builtin').buffers()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>h", "<cmd>lua require('telescope.builtin').help_tags()<CR>", {noremap = true, silent = true})
 
-vim.api.nvim_set_keymap("n", "<Leader>p", "<cmd>lua require('nv-plugins.telescope').search_dotfiles()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>p", "<cmd>lua require('nvim-plugins.telescope').search_dotfiles()<CR>", {noremap = true, silent = true})
 
-require("nv-plugins.telescope")
 vim.api.nvim_set_keymap("n", "<Leader>=", ":Neoformat<CR>", {noremap = true, silent = true})
 
 -- move line in visual mode
