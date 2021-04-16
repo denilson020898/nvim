@@ -14,10 +14,14 @@ require('telescope').setup{
       i = {
         ["<C-w>"] = actions.send_selected_to_qflist,
         ["<C-q>"] = actions.send_to_qflist,
+        ["<C-t>"] = actions.select_vertical,
+        ["<C-o>"] = actions.select_tab,
       },
       n = {
         ["<C-w>"] = actions.send_selected_to_qflist,
         ["<C-q>"] = actions.send_to_qflist,
+        ["<C-t>"] = actions.select_vertical,
+        ["<C-o>"] = actions.select_tab,
       },
     },
     prompt_position = "bottom",

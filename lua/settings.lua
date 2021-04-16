@@ -3,15 +3,21 @@
 -- vim.o.laststatus = 0
 -- vim.wo.colorcolumn = "99"
 -- vim.wo.foldmethod = "manual"
-vim.bo.expandtab = true
-vim.o.smarttab = true
-vim.bo.shiftwidth = 4	
-vim.bo.smartindent = true
-vim.bo.softtabstop = 0	
-vim.bo.tabstop = 8	
 vim.cmd("filetype on");
 vim.cmd("filetype plugin on");
 vim.cmd("filetype indent on");
+
+vim.bo.expandtab = true
+vim.o.expandtab = true
+vim.o.smarttab = true
+vim.bo.smartindent = true
+vim.o.smartindent = true
+vim.o.tabstop = 4
+vim.bo.tabstop = 4
+vim.bo.shiftwidth = 4
+vim.o.shiftwidth = 4
+-- vim.o.softtabstop = 2
+
 vim.o.background = "dark"
 vim.o.backup = false
 vim.o.clipboard = "unnamedplus"

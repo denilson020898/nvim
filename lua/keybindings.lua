@@ -26,13 +26,6 @@ vim.api.nvim_set_keymap("i", "kj", "<Esc>", { noremap = true, silent = true })
 -- tab switch buffer
 -- vim.api.nvim_set_keymap("n", "<Tab>", ":bnext<CR>", { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap("n", "<S-Tab>", ":bprevious<CR>", { noremap = true, silent = true })
-
--- " These commands will navigate through buffers in order regardless of which mode you are using
--- " e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering
--- nnoremap <silent>[b :BufferLineCycleNext<CR>
--- nnoremap <silent>b] :BufferLineCyclePrev<CR>
-
--- " These commands will move the current buffer backwards or forwards in the bufferline
 vim.api.nvim_set_keymap("n", "<Tab>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
 
@@ -48,7 +41,8 @@ vim.api.nvim_set_keymap("n", "<Leader>1", ":b#<CR>", { noremap = true, silent = 
 vim.api.nvim_set_keymap("n", "<C-/>", ':call NERDComment(0, "toggle")<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap("v", "<C-/>", ':call NERDComment(0, "toggle")<CR>gv', {noremap = true, silent = true})
 -- windows terminal <C-/> is 
-vim.api.nvim_set_keymap("n", "", ':call NERDComment(0, "toggle")<CR>', {noremap = true, silent = true}) vim.api.nvim_set_keymap("v", "", ':call NERDComment(0, "toggle")<CR>gv', {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "", ':call NERDComment(0, "toggle")<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap("v", "", ':call NERDComment(0, "toggle")<CR>gv', {noremap = true, silent = true})
 
 vim.api.nvim_set_keymap("n", "<Leader>t", ":Telescope<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>f", "<cmd>lua require('telescope.builtin').find_files()<CR>", {noremap = true, silent = true})
@@ -59,11 +53,14 @@ vim.api.nvim_set_keymap("n", "<Leader>h", "<cmd>lua require('telescope.builtin')
 vim.api.nvim_set_keymap("n", "<Leader>p", "<cmd>lua require('nvim-plugins.telescope').search_dotfiles()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>=", ":Neoformat<CR>", {noremap = true, silent = true})
 
--- move line in visual mode
--- vim.api.nvim_set_keymap("x", "K", ":move \"<-2<CR>gv-gv\"", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("x", "J", ":move \">+1<CR>gv-gv\"", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>qq", ":copen<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>qw", ":cclose<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>n", ":cnext<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>p", ":cprev<CR>", {noremap = true, silent = true})
 
--- tab completion
--- vim.api.nvim_set_keymap("i", "<expr><Tab>", "pubvisible() ? \"\\<C-n>\" : \"\\<TAB>\"", { noremap = true, silent = true })
+-- move line in visual mode
+vim.api.nvim_set_keymap("x", "K", ":move \"<-2<CR>gv-gv\"", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("x", "J", ":move \">+1<CR>gv-gv\"", { noremap = true, silent = true })
+
 
 
