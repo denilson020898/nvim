@@ -10,18 +10,18 @@ end
 
 return require("packer").startup(function()
     -- Packer can manage itself
-    -- use "tpope/vim-fugitive"
-    use 'kevinhwang91/nvim-bqf'
-    -- use 'lewis6991/gitsigns.nvim'
     -- use "noahares/nvim-commenter"
+    -- use "preservim/nerdcommenter"
+    -- use "tpope/vim-fugitive"
+    -- use 'lewis6991/gitsigns.nvim'
     use "TimUntersberger/neogit"
-    use "glepnir/galaxyline.nvim"
+    use 'kyazdani42/nvim-web-devicons'
+    use { 'glepnir/galaxyline.nvim', branch = 'main' }
     use "glepnir/lspsaga.nvim"
     use "hrsh7th/nvim-compe"
     use "hrsh7th/vim-vsnip"
     use "jnurmine/Zenburn"
     use "kyazdani42/nvim-tree.lua"
-    use "kyazdani42/nvim-web-devicons"
     use "neovim/nvim-lspconfig"
     use "nvim-lua/plenary.nvim"
     use "nvim-lua/popup.nvim"
@@ -29,12 +29,12 @@ return require("packer").startup(function()
     use "nvim-telescope/telescope.nvim"
     use "nvim-treesitter/playground"
     use "p00f/nvim-ts-rainbow"
-    use "preservim/nerdcommenter"
     use "wbthomason/packer.nvim"
     use "windwp/nvim-autopairs"
     use 'airblade/vim-rooter'
     use 'akinsho/nvim-bufferline.lua'
     use 'kabouzeid/nvim-lspinstall'
+    use 'kevinhwang91/nvim-bqf'
     use 'kosayoda/nvim-lightbulb'
     use 'mfussenegger/nvim-dap'
     use 'mfussenegger/nvim-jdtls'
@@ -42,6 +42,7 @@ return require("packer").startup(function()
     use 'norcalli/nvim-colorizer.lua'
     use 'onsails/lspkind-nvim'
     use 'sbdchd/neoformat'
+    use 'b3nj5m1n/kommentary'
     use { "npxbr/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } }
     use { "nvim-treesitter/nvim-treesitter", run=":TSUpdate" }
 end
