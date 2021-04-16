@@ -42,7 +42,6 @@ return require("packer").startup(function()
     use 'norcalli/nvim-colorizer.lua'
     use 'onsails/lspkind-nvim'
     use 'sbdchd/neoformat'
-    use 'unblevable/quick-scope'
     use { "npxbr/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } }
     use { "nvim-treesitter/nvim-treesitter", run=":TSUpdate" }
 end
