@@ -1,2 +1,2 @@
-vim.cmd("colorscheme zenburn")
+vim.cmd("colorscheme gruvbox")
 

@@ -29,9 +29,9 @@ vim.api.nvim_set_keymap("i", "kj", "<Esc>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Tab>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
 
--- " These commands will sort buffers by directory, language, or a custom criteria
--- nnoremap <silent>be :BufferLineSortByExtension<CR>
--- nnoremap <silent>bd :BufferLineSortByDirectory<CR>
+vim.api.nvim_set_keymap("n", "<Leader>be", ":BufferLineSortByExtension<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>bd", ":BufferLineSortByDirectory<CR>", { noremap = true, silent = true })
+
 -- nnoremap <silent><mymap> :lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<CR>
 
 vim.api.nvim_set_keymap("n", "<Leader><Space>", ":b#<CR>", { noremap = true, silent = true })
@@ -55,8 +55,8 @@ vim.api.nvim_set_keymap("n", "<Leader>=", ":Neoformat<CR>", {noremap = true, sil
 
 vim.api.nvim_set_keymap("n", "<Leader>qq", ":copen<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>qw", ":cclose<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Leader>n", ":cnext<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Leader>p", ":cprev<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>qn", ":cnext<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>qp", ":cprev<CR>", {noremap = true, silent = true})
 
 -- move line in visual mode
 vim.api.nvim_set_keymap("x", "K", ":move \"<-2<CR>gv-gv\"", { noremap = true, silent = true })
