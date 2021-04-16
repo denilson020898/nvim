@@ -15,8 +15,6 @@ return require("packer").startup(function()
     -- use "tpope/vim-fugitive"
     -- use 'lewis6991/gitsigns.nvim'
     use "TimUntersberger/neogit"
-    use 'kyazdani42/nvim-web-devicons'
-    use { 'glepnir/galaxyline.nvim', branch = 'main' }
     use "glepnir/lspsaga.nvim"
     use "hrsh7th/nvim-compe"
     use "hrsh7th/vim-vsnip"
@@ -33,17 +31,19 @@ return require("packer").startup(function()
     use "windwp/nvim-autopairs"
     use 'airblade/vim-rooter'
     use 'akinsho/nvim-bufferline.lua'
+    use 'b3nj5m1n/kommentary'
     use 'kabouzeid/nvim-lspinstall'
     use 'kevinhwang91/nvim-bqf'
     use 'kosayoda/nvim-lightbulb'
+    use 'kyazdani42/nvim-web-devicons'
     use 'mfussenegger/nvim-dap'
     use 'mfussenegger/nvim-jdtls'
     use 'nanotee/nvim-lua-guide'
     use 'norcalli/nvim-colorizer.lua'
     use 'onsails/lspkind-nvim'
     use 'sbdchd/neoformat'
-    use 'b3nj5m1n/kommentary'
     use { "npxbr/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } }
     use { "nvim-treesitter/nvim-treesitter", run=":TSUpdate" }
+    use 'hoob3rt/lualine.nvim'
 end
 )
