@@ -37,6 +37,7 @@ local on_attach = function(client, bufnr)
         hi LspReferenceRead cterm=bold ctermbg=red guibg=DarkRed
         hi LspReferenceText cterm=bold ctermbg=red guibg=DarkRed
         hi LspReferenceWrite cterm=bold ctermbg=red guibg=DarkRed
+
         augroup lsp_document_highlight
         autocmd! * <buffer>
         autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
