@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 
 vim.api.nvim_set_keymap("n", "<Leader>h", ":set hlsearch!<CR>", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap("n", "<Leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-e>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "<A-h>", "<C-w>h", { silent = true })
 vim.api.nvim_set_keymap("n", "<A-j>", "<C-w>j", { silent = true })
@@ -28,10 +28,10 @@ vim.api.nvim_set_keymap("n", "<Leader>1", ":b#<CR>", { noremap = true, silent = 
 
 vim.api.nvim_set_keymap("n", "<Leader>t", ":Telescope<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>tp", "<cmd>lua require('nvim-plugins.telescope').search_dotfiles()<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Leader>f", "<cmd>lua require('telescope.builtin').find_files()<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Leader>g", "<cmd>lua require('telescope.builtin').live_grep()<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Leader>b", "<cmd>lua require('telescope.builtin').buffers()<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Leader>h", "<cmd>lua require('telescope.builtin').help_tags()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>tf", "<cmd>lua require('telescope.builtin').find_files()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>tg", "<cmd>lua require('telescope.builtin').live_grep()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>tb", "<cmd>lua require('telescope.builtin').buffers()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>th", "<cmd>lua require('telescope.builtin').help_tags()<CR>", {noremap = true, silent = true})
 
 vim.api.nvim_set_keymap("n", "<Leader>=", ":Neoformat<CR>", {noremap = true, silent = true})
 
