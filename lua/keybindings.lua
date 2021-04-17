@@ -37,6 +37,7 @@ vim.api.nvim_set_keymap("n", "<Leader>=", ":Neoformat<CR>", {noremap = true, sil
 
 vim.api.nvim_set_keymap("n", "<Leader>qq", ":copen<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>qw", ":cclose<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>qc", ":cexpr []<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>qn", ":cnext<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>qp", ":cprev<CR>", {noremap = true, silent = true})
 

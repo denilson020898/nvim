@@ -53,7 +53,8 @@ end
 -- end
 
 -- require'lspconfig'.pyright.setup{on_attach=on_attach, settings={pyls={plugins={pycodestyle={enabled=false}}}}}
-require('lspconfig').pyright.setup{on_attach=on_attach}
+-- require('lspconfig').pyright.setup{on_attach=on_attach}
+require('lspconfig').pyls.setup{on_attach=on_attach}
 require('lspconfig').rust_analyzer.setup{on_attach=on_attach}
 require('lspconfig').flow.setup{on_attach=on_attach, autostart=true}
 

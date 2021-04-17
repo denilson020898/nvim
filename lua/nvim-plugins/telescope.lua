@@ -3,8 +3,8 @@ require('telescope').setup{
   defaults = {
     vimgrep_arguments = {
       'rg',
-      '--color=never',
-      '--no-heading',
+      -- '--color=never',
+      -- '--no-heading',
       '--with-filename',
       '--line-number',
       '--column',
@@ -13,13 +13,13 @@ require('telescope').setup{
     mappings = {
       i = {
         ["<C-w>"] = actions.send_selected_to_qflist,
-        ["<C-q>"] = actions.send_to_qflist,
+        ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
         ["<C-t>"] = actions.select_vertical,
         ["<C-o>"] = actions.select_tab,
       },
       n = {
         ["<C-w>"] = actions.send_selected_to_qflist,
-        ["<C-q>"] = actions.send_to_qflist,
+        ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
         ["<C-t>"] = actions.select_vertical,
         ["<C-o>"] = actions.select_tab,
       },

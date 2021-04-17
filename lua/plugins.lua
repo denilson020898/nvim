@@ -10,9 +10,6 @@ end
 
 return require("packer").startup(function()
     -- Packer can manage itself
-    -- use "noahares/nvim-commenter"
-    -- use "preservim/nerdcommenter"
-    -- use "tpope/vim-fugitive"
     -- use 'lewis6991/gitsigns.nvim'
     use "TimUntersberger/neogit"
     use "glepnir/lspsaga.nvim"
@@ -33,7 +30,6 @@ return require("packer").startup(function()
     use 'akinsho/nvim-bufferline.lua'
     use 'b3nj5m1n/kommentary'
     use 'kabouzeid/nvim-lspinstall'
-    use 'kevinhwang91/nvim-bqf'
     use 'kosayoda/nvim-lightbulb'
     use 'kyazdani42/nvim-web-devicons'
     use 'mfussenegger/nvim-dap'
