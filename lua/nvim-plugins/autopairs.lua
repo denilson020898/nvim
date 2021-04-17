@@ -1,5 +1,7 @@
 require('nvim-autopairs').setup({
   disable_filetype = { "TelescopePrompt" , "vim" },
+  ignored_next_char = "[%w%.%'%\"]", -- will ignore alphanumeric and `.` symbol
+
 })
 
 local npairs = require('nvim-autopairs')
