@@ -60,10 +60,11 @@ require('lspconfig').flow.setup{on_attach=on_attach, autostart=true}
 -- https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)
 local sumneko_root_path = vim.fn.stdpath("config") .. "/ls/lua-language-server"
 local platform = ""
-if vim.fn.has("win32") then
+if vim.fn.has("win64") == 1 then
     platform = "Windows"
 else
     platform = "Linux"
+-- add mac if used
 end
 local sumneko_binary = sumneko_root_path .. "/bin/".. platform .. "/lua-language-server"
 require('lspconfig').sumneko_lua.setup {
