@@ -8,7 +8,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
     execute "packadd packer.nvim"
 end
 
-return require("packer").startup(function(use)
+return require("packer").startup(function()
     -- Packer can manage itself
     use "TimUntersberger/neogit"
     use "glepnir/lspsaga.nvim"
