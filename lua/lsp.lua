@@ -37,9 +37,9 @@ local on_attach = function(client, bufnr)
     -- Set autocommands conditional on server_capabilities
     if client.resolved_capabilities.document_highlight then
         vim.api.nvim_exec([[
-        hi LspReferenceRead cterm=bold ctermbg=red guibg=DarkRed
-        hi LspReferenceText cterm=bold ctermbg=red guibg=DarkRed
-        hi LspReferenceWrite cterm=bold ctermbg=red guibg=DarkRed
+        hi LspReferenceRead cterm=bold ctermbg=red guibg=#464646
+        hi LspReferenceText cterm=bold ctermbg=red guibg=#464646
+        hi LspReferenceWrite cterm=bold ctermbg=red guibg=#464646
 
         augroup lsp_document_highlight
         autocmd! * <buffer>
@@ -59,7 +59,7 @@ end
 -- require('lspconfig').pyright.setup{on_attach=on_attach}
 require('lspconfig').pyls.setup{on_attach=on_attach}
 require('lspconfig').rust_analyzer.setup{on_attach=on_attach}
-require('lspconfig').flow.setup{on_attach=on_attach, autostart=true}
+require('lspconfig').tsserver.setup{on_attach=on_attach, autostart=true}
 
 -- https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)
 local sumneko_root_path = vim.fn.stdpath("config") .. "/ls/lua-language-server"
