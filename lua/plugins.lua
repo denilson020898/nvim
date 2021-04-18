@@ -10,7 +10,6 @@ end
 
 return require("packer").startup(function()
     -- Packer can manage itself
-    use 'lewis6991/gitsigns.nvim'
     use "TimUntersberger/neogit"
     use "glepnir/lspsaga.nvim"
     use "hrsh7th/nvim-compe"
@@ -18,7 +17,6 @@ return require("packer").startup(function()
     use "jnurmine/Zenburn"
     use "kyazdani42/nvim-tree.lua"
     use "neovim/nvim-lspconfig"
-    use "nvim-lua/plenary.nvim"
     use "nvim-lua/popup.nvim"
     use "nvim-telescope/telescope-media-files.nvim"
     use "nvim-telescope/telescope.nvim"
@@ -41,5 +39,10 @@ return require("packer").startup(function()
     use { "npxbr/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } }
     use { "nvim-treesitter/nvim-treesitter", run=":TSUpdate" }
     use 'hoob3rt/lualine.nvim'
+    use {
+        'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
+        config = function() require('gitsigns').setup() end
+    }
+
 end
 )
