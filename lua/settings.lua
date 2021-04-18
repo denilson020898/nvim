@@ -12,7 +12,7 @@ vim.o.cmdheight = 2
 vim.o.conceallevel = 0
 vim.o.expandtab = true
 vim.o.fileencoding = "utf-8"
-vim.o.guifont ="LiterationMono Nerd Font:h12"
+vim.o.guifont ="Hack Nerd Font:h12"
 vim.o.hlsearch = false
 vim.o.ignorecase = true
 vim.o.inccommand = "split"
@@ -33,7 +33,7 @@ vim.o.swapfile = false
 vim.o.t_Co = "256"
 vim.o.tabstop = 4
 vim.o.termguicolors = true
-vim.o.timeoutlen = 1000
+vim.o.timeoutlen = 420
 vim.o.title = true
 vim.o.titlestring="%<%F%=%l/%L - nvim"
 vim.o.updatetime = 100

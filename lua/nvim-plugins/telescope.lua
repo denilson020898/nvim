@@ -16,6 +16,7 @@ require('telescope').setup{
         ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
         ["<C-t>"] = actions.select_vertical,
         ["<C-o>"] = actions.select_tab,
+        ["<CR>"] = actions.select_default + actions.center
       },
       n = {
         ["<C-w>"] = actions.send_selected_to_qflist,

@@ -10,7 +10,7 @@ end
 
 return require("packer").startup(function()
     -- Packer can manage itself
-    -- use 'lewis6991/gitsigns.nvim'
+    use 'lewis6991/gitsigns.nvim'
     use "TimUntersberger/neogit"
     use "glepnir/lspsaga.nvim"
     use "hrsh7th/nvim-compe"
