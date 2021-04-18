@@ -8,7 +8,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
     execute "packadd packer.nvim"
 end
 
-return require("packer").startup(function()
+return require("packer").startup(function(use)
     -- Packer can manage itself
     use "TimUntersberger/neogit"
     use "glepnir/lspsaga.nvim"
@@ -43,6 +43,6 @@ return require("packer").startup(function()
         'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
         config = function() require('gitsigns').setup() end
     }
-
+    use "kevinhwang91/nvim-bqf"
 end
 )
