@@ -55,9 +55,9 @@ end
 -- nvim_lsp[lsp].setup { on_attach = on_attach }
 -- end
 
--- require'lspconfig'.pyright.setup{on_attach=on_attach, settings={pyls={plugins={pycodestyle={enabled=false}}}}}
 -- require('lspconfig').pyright.setup{on_attach=on_attach}
-require('lspconfig').pyls.setup{on_attach=on_attach}
+-- require('lspconfig').pyls.setup{on_attach=on_attach}
+require'lspconfig'.pyls.setup{on_attach=on_attach, settings={pyls={plugins={pycodestyle={enabled=false}}}}}
 require('lspconfig').tsserver.setup{on_attach=on_attach, autostart=true}
 
 -- https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)

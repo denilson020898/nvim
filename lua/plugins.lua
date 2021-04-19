@@ -45,5 +45,6 @@ return require("packer").startup(function()
     }
     use "kevinhwang91/nvim-bqf"
     use "nvim-lua/lsp_extensions.nvim"
+    use "nanotech/jellybeans.vim"
 end
 )
