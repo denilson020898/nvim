@@ -44,5 +44,6 @@ return require("packer").startup(function()
         config = function() require('gitsigns').setup() end
     }
     use "kevinhwang91/nvim-bqf"
+    use "nvim-lua/lsp_extensions.nvim"
 end
 )

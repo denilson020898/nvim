@@ -2,6 +2,7 @@ vim.bo.expandtab = true
 vim.bo.shiftwidth = 4
 vim.bo.smartindent = true
 vim.bo.tabstop = 4
+vim.cmd("syntax enable");
 vim.cmd("filetype indent on");
 vim.cmd("filetype on");
 vim.cmd("filetype plugin on");

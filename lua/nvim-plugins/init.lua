@@ -11,3 +11,4 @@ require("nvim-plugins.kommentary")
 require("nvim-plugins.lualine")
 require("nvim-plugins.lightbulb")
 require("nvim-plugins.gitsigns")
+

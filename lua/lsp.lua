@@ -58,7 +58,6 @@ end
 -- require'lspconfig'.pyright.setup{on_attach=on_attach, settings={pyls={plugins={pycodestyle={enabled=false}}}}}
 -- require('lspconfig').pyright.setup{on_attach=on_attach}
 require('lspconfig').pyls.setup{on_attach=on_attach}
-require('lspconfig').rust_analyzer.setup{on_attach=on_attach}
 require('lspconfig').tsserver.setup{on_attach=on_attach, autostart=true}
 
 -- https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)
@@ -93,5 +92,14 @@ require('lspconfig').sumneko_lua.setup {
             }
         }
     }
+}
+
+require('lspconfig').rust_analyzer.setup{on_attach=on_attach}
+require'lsp_extensions'.inlay_hints{
+	highlight = "Comment",
+	prefix = " > ",
+	aligned = false,
+	only_current_line = false,
+	enabled = { "ChainingHint" }
 }
 
