@@ -47,5 +47,6 @@ return require("packer").startup(function()
     use "neovim/nvim-lspconfig"
     use "nvim-lua/lsp_extensions.nvim"
     use "nvim-lua/completion-nvim"
+    use "RRethy/nvim-base16" 
 end
 )
