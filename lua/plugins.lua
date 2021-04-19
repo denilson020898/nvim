@@ -16,7 +16,6 @@ return require("packer").startup(function()
     use "hrsh7th/vim-vsnip"
     use "jnurmine/Zenburn"
     use "kyazdani42/nvim-tree.lua"
-    use "neovim/nvim-lspconfig"
     use "nvim-lua/popup.nvim"
     use "nvim-telescope/telescope-media-files.nvim"
     use "nvim-telescope/telescope.nvim"
@@ -44,7 +43,9 @@ return require("packer").startup(function()
         config = function() require('gitsigns').setup() end
     }
     use "kevinhwang91/nvim-bqf"
-    use "nvim-lua/lsp_extensions.nvim"
     use "nanotech/jellybeans.vim"
+    use "neovim/nvim-lspconfig"
+    use "nvim-lua/lsp_extensions.nvim"
+    use "nvim-lua/completion-nvim"
 end
 )
