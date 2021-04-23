@@ -35,7 +35,6 @@ return require("packer").startup(function()
     use 'norcalli/nvim-colorizer.lua'
     use 'onsails/lspkind-nvim'
     use 'sbdchd/neoformat'
-    use { "npxbr/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } }
     use { "nvim-treesitter/nvim-treesitter", run=":TSUpdate" }
     use 'hoob3rt/lualine.nvim'
     use {
@@ -46,7 +45,6 @@ return require("packer").startup(function()
     use "nanotech/jellybeans.vim"
     use "neovim/nvim-lspconfig"
     use "nvim-lua/lsp_extensions.nvim"
-    use "nvim-lua/completion-nvim"
-    use "RRethy/nvim-base16" 
+    use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
 end
 )
