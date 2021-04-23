@@ -6,7 +6,7 @@ vim.api.nvim_set_keymap("n", "<Leader>/", ":set hlsearch!<CR>", { noremap = true
 vim.api.nvim_set_keymap("n", "<C-f>", ":NvimTreeFindFile<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-e>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap("n", "<C-a>", "ggVG", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>a", "ggVG", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "<A-h>", "<C-w>h", { silent = true })
 vim.api.nvim_set_keymap("n", "<A-j>", "<C-w>j", { silent = true })

@@ -8,6 +8,8 @@ require("nvim-plugins.autopairs")
 require("nvim-plugins.neogit")
 require("nvim-plugins.kommentary")
 require("nvim-plugins.lualine")
+require("nvim-plugins.toggleterm")
+-- require("nvim-plugins.revj")
 -- require("nvim-plugins.lightbulb")
 -- require("nvim-plugins.gitsigns")
 

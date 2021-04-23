@@ -28,6 +28,8 @@ return require("packer").startup(function()
     use 'norcalli/nvim-colorizer.lua'
     use "p00f/nvim-ts-rainbow"
     use 'akinsho/nvim-bufferline.lua'
+    use "yamatsum/nvim-cursorline"
+    use "akinsho/nvim-toggleterm.lua"
 
     -- color
     use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
@@ -47,6 +49,8 @@ return require("packer").startup(function()
     use "nvim-treesitter/playground"
     use "windwp/nvim-autopairs"
     use 'airblade/vim-rooter'
+    use "windwp/nvim-ts-autotag"
+
 
     -- lsp
     use "neovim/nvim-lspconfig"
