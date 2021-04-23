@@ -19,6 +19,7 @@ return require("packer").startup(function()
     use 'kyazdani42/nvim-web-devicons'
     use "nvim-lua/popup.nvim"
     use 'nvim-lua/plenary.nvim'
+    -- use 'nvim-lua/completion-nvim'
     -- use {
     --     'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
     --     config = function() require('gitsigns').setup() end
