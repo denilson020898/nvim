@@ -13,17 +13,19 @@ return require("packer").startup(function()
     use "wbthomason/packer.nvim"
 
     -- ui
-    -- use 'kosayoda/nvim-lightbulb'
+    use 'kosayoda/nvim-lightbulb'
     use 'hoob3rt/lualine.nvim'
     use "kyazdani42/nvim-tree.lua"
     use 'kyazdani42/nvim-web-devicons'
     use "nvim-lua/popup.nvim"
     use 'nvim-lua/plenary.nvim'
     -- use 'nvim-lua/completion-nvim'
-    -- use {
-    --     'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
-    --     config = function() require('gitsigns').setup() end
-    -- }
+    use {
+        'lewis6991/gitsigns.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim'
+        }
+    }
     use "kevinhwang91/nvim-bqf"
     use 'norcalli/nvim-colorizer.lua'
     use "p00f/nvim-ts-rainbow"

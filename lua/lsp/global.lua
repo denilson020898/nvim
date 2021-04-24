@@ -50,64 +50,6 @@ O.on_attach = function(client, bufnr)
         ]], false)
     end
 
-    vim.api.nvim_exec([[
-    autocmd CursorMoved,InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost * lua require'lsp_extensions'.inlay_hints{ prefix = '', highlight = "Comment", enabled = {"TypeHint", "ChainingHint", "ParameterHint"} }
-    autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
-    ]], false)
-
-    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-        vim.lsp.diagnostic.on_publish_diagnostics, {
-            virtual_text = true,
-            signs = true,
-            update_in_insert = true,
-        }
-    )
 end
 
 return O
--- require'lspconfig'.pyls.setup{on_attach=on_attach, settings={pyls={plugins={pycodestyle={enabled=false}}}}}
--- require('lspconfig').tsserver.setup{on_attach=on_attach, autostart=true}
-
--- -- https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)
--- local sumneko_root_path = vim.fn.stdpath("config") .. "/ls/lua-language-server"
--- local platform = ""
--- if vim.fn.has("win64") == 1 then
---     platform = "Windows"
--- else
---     platform = "Linux"
--- -- add mac if used
--- end
--- local sumneko_binary = sumneko_root_path .. "/bin/".. platform .. "/lua-language-server"
--- require('lspconfig').sumneko_lua.setup {
---     cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
---     on_attach = on_attach,
---     settings = {
---         Lua = {
---             runtime = {
---                 -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
---                 version = 'LuaJIT',
---                 -- Setup your lua path
---                 path = vim.split(package.path, ';')
---             },
---             diagnostics = {
---                 -- Get the language server to recognize the `vim` global
---                 globals = {'vim'}
---             },
---             workspace = {
---                 -- Make the server aware of Neovim runtime files
---                 library = {[vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true},
---                 maxPreload = 10000
---             }
---         }
---     }
--- }
-
--- -- require('lspconfig').rust_analyzer.setup{on_attach=on_attach}
--- require'lsp_extensions'.inlay_hints{
--- 	highlight = "Comment",
--- 	prefix = " > ",
--- 	aligned = false,
--- 	only_current_line = false,
--- 	enabled = { "ChainingHint" }
--- }
-

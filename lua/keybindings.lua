@@ -57,3 +57,7 @@ vim.api.nvim_set_keymap("n", "<C-/>", "<Plug>kommentary_line_default", {})
 vim.api.nvim_set_keymap("n", "", "<Plug>kommentary_line_default", {})
 vim.api.nvim_set_keymap("v", "<C-/>", "<Plug>kommentary_visual_default", {})
 vim.api.nvim_set_keymap("v", "", "<Plug>kommentary_visual_default", {})
+
+vim.api.nvim_set_keymap("n", "<Leader>T", ":vs<bar>:b#<CR>", {})
+vim.api.nvim_set_keymap("n", "<Leader>w", ":wa<CR>", {})
+vim.api.nvim_set_keymap("n", "<Leader>c", ":bd<CR>", {})

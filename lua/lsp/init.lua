@@ -2,4 +2,5 @@
 require('lsp.rust_analyzer')
 require('lsp.pyright')
 require('lsp.flow')
+require('lsp.sumneko')
 
