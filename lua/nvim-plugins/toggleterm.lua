@@ -7,8 +7,8 @@ require"toggleterm".setup{
   shading_factor = 2, -- the degree by which to darken to terminal colour, default: 1 for dark backgrounds, 3 for light
   start_in_insert = true,
   persist_size = true,
-  -- direction = 'float', to make it a float window, probabro not worth it
-  direction = 'window',
+  direction = 'float', -- to make it a float window, probabro not worth it
+  -- direction = 'window',
   shell = vim.o.shell, -- change the default shell 
   -- This field is only relevant if direction is set to 'float'
   float_opts = {
@@ -17,8 +17,8 @@ require"toggleterm".setup{
   --   -- the 'curved' border is a custom border type
   --   -- not natively supported but implemented in this plugin.
     border = 'single',
-    width = 177,
-    height = 42,
+    width = 182,
+    height = 46,
     winblend = 3,
     highlights = {
       border = "Normal",
