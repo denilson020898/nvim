@@ -38,11 +38,12 @@ return require("packer").startup(function()
     use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
     use "jnurmine/Zenburn"
     use "nanotech/jellybeans.vim"
+    use 'tjdevries/colorbuddy.nvim'
+    use 'marko-cerovac/material.nvim'
 
     -- helpers
     use 'nanotee/nvim-lua-guide'
     use "hrsh7th/nvim-compe"
-    use 'sbdchd/neoformat'
     use 'b3nj5m1n/kommentary'
     use "hrsh7th/vim-vsnip"
     use "TimUntersberger/neogit"
