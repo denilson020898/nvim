@@ -10,5 +10,5 @@ require("nvim-plugins.kommentary")
 require("nvim-plugins.galaxyline")
 require("nvim-plugins.gitsigns")
 require("nvim-plugins.lightbulb")
-require("nvim-plugins.fterm")
+require("nvim-plugins.toggleterm")
 
