@@ -31,7 +31,8 @@ return require("packer").startup(function()
     use "p00f/nvim-ts-rainbow"
     use 'akinsho/nvim-bufferline.lua'
     use "yamatsum/nvim-cursorline"
-    use "akinsho/nvim-toggleterm.lua"
+    -- use "akinsho/nvim-toggleterm.lua"
+    use "numtostr/FTerm.nvim"
 
     -- color
     use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
