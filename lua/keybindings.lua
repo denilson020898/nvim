@@ -25,9 +25,6 @@ vim.api.nvim_set_keymap("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { noremap = 
 vim.api.nvim_set_keymap("n", "<Leader>be", ":BufferLineSortByExtension<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>bd", ":BufferLineSortByDirectory<CR>", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap("n", "<Leader>sh", ":split<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Leader>sv", ":vsplit<CR>", { noremap = true, silent = true })
-
 vim.api.nvim_set_keymap("n", "<Leader><Space>", ":b#<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>1", ":b#<CR>", { noremap = true, silent = true })
 
@@ -40,11 +37,11 @@ vim.api.nvim_set_keymap("n", "<Leader>th", "<cmd>lua require('telescope.builtin'
 
 vim.api.nvim_set_keymap("n", "<Leader>=", ":Neoformat<CR>", {noremap = true, silent = true})
 
-vim.api.nvim_set_keymap("n", "<Leader>qq", ":copen<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Leader>qw", ":cclose<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Leader>qc", ":cexpr []<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Leader>qn", ":cnext<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Leader>qp", ":cprev<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<A-q>", ":copen<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<A-w>", ":cclose<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<A-c>", ":cexpr []<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<A-n>", ":cnext<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<A-p>", ":cprev<CR>", {noremap = true, silent = true})
 
 vim.api.nvim_set_keymap("n", "<Leader>gg", ":Neogit<CR>", {noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>gb", ":Gitsigns toggle_current_line_blame<CR>", {noremap = true, silent = true})
@@ -58,6 +55,8 @@ vim.api.nvim_set_keymap("n", "", "<Plug>kommentary_line_default", {})
 vim.api.nvim_set_keymap("v", "<C-/>", "<Plug>kommentary_visual_default", {})
 vim.api.nvim_set_keymap("v", "", "<Plug>kommentary_visual_default", {})
 
-vim.api.nvim_set_keymap("n", "<Leader>T", ":vs<bar>:b#<CR>", {})
-vim.api.nvim_set_keymap("n", "<Leader>w", ":wa<CR>", {})
-vim.api.nvim_set_keymap("n", "<Leader>c", ":bd<CR>", {})
+vim.api.nvim_set_keymap("n", "<Leader>sh", ":split<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>sv", ":vsplit<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>T", ":vs<bar>:b#<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>w", ":wa<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>q", ":bd<CR>", {noremap = true, silent = true})
