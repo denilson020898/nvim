@@ -14,9 +14,16 @@ return require("packer").startup(function()
 
     -- ui
     use 'kosayoda/nvim-lightbulb'
-    use 'hoob3rt/lualine.nvim'
+    -- use 'kyazdani42/nvim-web-devicons'
+    use {
+        'glepnir/galaxyline.nvim',
+        branch = 'main',
+        -- your statusline
+        -- config = function() require'my_statusline' end,
+        -- some optional icons
+        requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    }
     use "kyazdani42/nvim-tree.lua"
-    use 'kyazdani42/nvim-web-devicons'
     use "nvim-lua/popup.nvim"
     -- use 'nvim-lua/plenary.nvim'
     -- use 'nvim-lua/completion-nvim'
