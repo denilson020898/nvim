@@ -14,19 +14,13 @@ return require("packer").startup(function()
 
     -- ui
     use 'kosayoda/nvim-lightbulb'
-    -- use 'kyazdani42/nvim-web-devicons'
     use {
         'glepnir/galaxyline.nvim',
         branch = 'main',
-        -- your statusline
-        -- config = function() require'my_statusline' end,
-        -- some optional icons
         requires = {'kyazdani42/nvim-web-devicons', opt = true}
     }
     use "kyazdani42/nvim-tree.lua"
     use "nvim-lua/popup.nvim"
-    -- use 'nvim-lua/plenary.nvim'
-    -- use 'nvim-lua/completion-nvim'
     use {
         'lewis6991/gitsigns.nvim',
         requires = {
@@ -37,9 +31,7 @@ return require("packer").startup(function()
     use 'norcalli/nvim-colorizer.lua'
     use "p00f/nvim-ts-rainbow"
     use 'akinsho/nvim-bufferline.lua'
-    use "yamatsum/nvim-cursorline"
     use "akinsho/nvim-toggleterm.lua"
-    -- use "numtostr/FTerm.nvim"
 
     -- color
     use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
@@ -62,13 +54,10 @@ return require("packer").startup(function()
     use 'airblade/vim-rooter'
     use "windwp/nvim-ts-autotag"
 
-
     -- lsp
     use "neovim/nvim-lspconfig"
     use 'kabouzeid/nvim-lspinstall'
     use "nvim-lua/lsp_extensions.nvim"
-    -- use "glepnir/lspsaga.nvim"
-    -- use 'onsails/lspkind-nvim'
 
     -- debug
     -- use 'mfussenegger/nvim-dap'

@@ -37,10 +37,10 @@ vim.o.swapfile = false
 vim.o.t_Co = "256"
 vim.o.tabstop = 4
 vim.o.termguicolors = true
-vim.o.timeoutlen = 420
+vim.o.timeoutlen = 500
 vim.o.title = true
 vim.o.titlestring="%<%F%=%l/%L - nvim"
-vim.o.updatetime = 100
+vim.o.updatetime = 500
 vim.o.writebackup = false
 vim.wo.cursorline = true
 vim.wo.number = true

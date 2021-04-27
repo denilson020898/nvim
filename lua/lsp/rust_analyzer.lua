@@ -28,6 +28,6 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
 )
 
 vim.api.nvim_exec([[
-autocmd CursorMoved,InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost * lua require'lsp_extensions'.inlay_hints{aligned = true, prefix = ' -- ', highlight = "Comment", enabled = {"TypeHint", "ChainingHint", "ParameterHint"} }
+autocmd CursorMoved,InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost * lua require'lsp_extensions'.inlay_hints{aligned = false, prefix = ' -- ', highlight = "Comment", enabled = {"TypeHint", "ChainingHint", "ParameterHint"} }
 autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
 ]], false)
