@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 
 vim.api.nvim_set_keymap("n", "<Leader>/", ":set hlsearch!<CR>", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap("n", "<C-f>", ":NvimTreeFindFile<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>e", ":NvimTreeFindFile<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-e>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "<Leader>a", "ggVG", { noremap = true, silent = true })
