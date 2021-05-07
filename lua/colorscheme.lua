@@ -1,4 +1,4 @@
-vim.g.material_style = "deep ocean"
+vim.g.material_style = "darker"
 vim.g.material_italic_comments = 1
 vim.g.material_italic_keywords = 1
 vim.g.material_italic_functions = 1
