@@ -1,7 +1,8 @@
--- require('lsp.global')
+-- require('lsp.tsserver')
+
 require('lsp.rust_analyzer')
 require('lsp.pyright')
 require('lsp.sumneko')
--- require('lsp.tsserver')
 require('lsp.flow')
+require('lsp.clangd')
 

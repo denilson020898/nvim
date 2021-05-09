@@ -4,7 +4,7 @@ local on_attach = require("lsp.global").on_attach
 nvim_lsp.rust_analyzer.setup({ 
     -- not ready yet in windows for using automatic lspinstall
     -- cmd = { vim.fn.stdpath("data").."/lspinstall/rust/rust-analyzer" },
-    on_attach=on_attach 
+    -- on_attach=on_attach 
 })
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
