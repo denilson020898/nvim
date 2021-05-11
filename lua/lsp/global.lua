@@ -1,5 +1,5 @@
-local O = {}
-
+local O = {} 
+ 
 O.on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -25,7 +25,6 @@ O.on_attach = function(client, bufnr)
     buf_set_keymap('n', '<Leader>l', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
 
     buf_set_keymap('n', '<Leader>.', ':lua vim.lsp.buf.code_action()<CR>', opts)
-    buf_set_keymap('i', '<Leader>.', ':lua vim.lsp.buf.code_action()<CR>', opts)
 
     -- Set some keybinds conditional on server capabilities
     if client.resolved_capabilities.document_formatting then
