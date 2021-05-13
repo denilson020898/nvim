@@ -57,7 +57,7 @@ return require("packer").startup(function()
     use "hrsh7th/vim-vsnip"
     use "glepnir/indent-guides.nvim"
 
-    -- use 'windwp/nvim-spectre'
+    use 'windwp/nvim-spectre'
 
     -- lsp
     use "neovim/nvim-lspconfig"

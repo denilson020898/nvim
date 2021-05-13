@@ -11,4 +11,5 @@ require("nvim-plugins.gitsigns")
 require("nvim-plugins.lightbulb")
 require("nvim-plugins.toggleterm")
 require("nvim-plugins.indentguides")
+require("nvim-plugins.spectre")
 
