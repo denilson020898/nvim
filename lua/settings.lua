@@ -2,6 +2,17 @@ vim.cmd("syntax enable");
 vim.cmd("filetype on");
 vim.cmd("filetype indent on");
 vim.cmd("filetype plugin on");
+
+vim.cmd("autocmd Filetype cpp setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
+vim.cmd("autocmd Filetype c setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
+vim.cmd("autocmd Filetype lua setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4")
+vim.bo.expandtab = true
+vim.bo.shiftwidth = 4
+vim.bo.softtabstop = 4
+vim.bo.tabstop = 4
+
+vim.o.smartindent = true
+vim.o.showtabline = 2
 vim.o.hidden = true
 vim.o.confirm = true
 vim.o.background = "dark"
@@ -9,7 +20,6 @@ vim.o.backup = false
 vim.o.clipboard = "unnamedplus"
 vim.o.cmdheight = 2
 vim.o.conceallevel = 0
-vim.o.expandtab = true
 vim.o.fileencoding = "utf-8"
 vim.o.guifont ="LiterationMono Nerd Font:h12"
 vim.o.hlsearch = false
@@ -24,8 +34,6 @@ vim.o.shortmess = vim.o.shortmess .. "c"
 vim.o.completeopt = "menuone,noselect"
 vim.o.showmode = false
 vim.o.smartcase = true
-vim.o.smartindent = true
-vim.o.smarttab = true
 vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.swapfile = false
@@ -45,14 +53,4 @@ vim.wo.wrap = false
 vim.wo.foldmethod = "indent"
 vim.wo.foldenable = false
 vim.wo.foldlevel = 99
-
-vim.o.expandtab = true
-vim.o.shiftwidth = 4
-vim.o.softtabstop = 4
-vim.o.tabstop = 4
-vim.o.smartindent = true
-vim.o.showtabline = 2
-vim.cmd("autocmd Filetype cpp setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
-vim.cmd("autocmd Filetype c setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
-vim.cmd("autocmd Filetype lua setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4")
 
