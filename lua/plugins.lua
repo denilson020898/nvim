@@ -44,7 +44,6 @@ return require("packer").startup(function()
     use 'nanotee/nvim-lua-guide'
     use "hrsh7th/nvim-compe"
     use 'b3nj5m1n/kommentary'
-    use "hrsh7th/vim-vsnip"
     use "TimUntersberger/neogit"
     use "nvim-telescope/telescope.nvim"
     use "nvim-telescope/telescope-media-files.nvim"
@@ -54,10 +53,18 @@ return require("packer").startup(function()
     use 'airblade/vim-rooter'
     use "windwp/nvim-ts-autotag"
 
+    use "rafamadriz/friendly-snippets"
+    use "hrsh7th/vim-vsnip"
+    use "glepnir/indent-guides.nvim"
+
+    -- use 'windwp/nvim-spectre'
+
     -- lsp
     use "neovim/nvim-lspconfig"
     use 'kabouzeid/nvim-lspinstall'
     use "nvim-lua/lsp_extensions.nvim"
+    use 'folke/lsp-colors.nvim'
+    use "ray-x/lsp_signature.nvim"
 
     -- debug
     -- use 'mfussenegger/nvim-dap'
