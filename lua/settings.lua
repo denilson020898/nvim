@@ -45,12 +45,12 @@ vim.wo.foldmethod = "indent"
 vim.wo.foldenable = false
 vim.wo.foldlevel = 99
 
-vim.bo.expandtab = true
-vim.bo.shiftwidth = 4
-vim.bo.softtabstop = 4
-vim.bo.tabstop = 4
+vim.o.expandtab = true
+vim.o.shiftwidth = 4
+vim.o.softtabstop = 4
+vim.o.tabstop = 4
+vim.o.smartindent = true
 vim.o.showtabline = 2
-vim.bo.smartindent = true
 vim.cmd("autocmd Filetype cpp setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
 vim.cmd("autocmd Filetype c setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
 
