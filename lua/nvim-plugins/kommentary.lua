@@ -1,6 +1,6 @@
 require('kommentary.config').use_extended_mappings()
 
-local languages = {"rust", "javascript", "lua", "python3"}
+local languages = {"rust", "javascript", "lua", "python3", "html"}
 
 for i, lang in ipairs(languages) do
     require('kommentary.config').configure_language(lang, {
