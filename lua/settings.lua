@@ -40,6 +40,7 @@ vim.o.swapfile = false
 vim.o.t_Co = "256"
 vim.o.termguicolors = true
 vim.o.title = true
+vim.wo.colorcolumn = "98"
 -- vim.o.titlestring="%<%F%=%l/%L - nvim"
 vim.o.timeoutlen = 500
 vim.o.updatetime = 100
