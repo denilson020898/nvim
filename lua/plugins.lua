@@ -58,6 +58,7 @@ return require("packer").startup(function()
     use "glepnir/indent-guides.nvim"
 
     use 'windwp/nvim-spectre'
+    use 'gennaro-tedesco/nvim-jqx'
 
     -- lsp
     use "neovim/nvim-lspconfig"
