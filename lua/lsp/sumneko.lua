@@ -1,4 +1,5 @@
 local on_attach = require("lsp.global").on_attach
+local capabilities = require("lsp.global").capabilities
 -- https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)
 local sumneko_root_path = vim.fn.stdpath("config") .. "/ls/lua-language-server"
 local platform = ""
@@ -12,6 +13,7 @@ local sumneko_binary = sumneko_root_path .. "/bin/".. platform .. "/lua-language
 require('lspconfig').sumneko_lua.setup {
     cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
     on_attach = on_attach,
+    capabilities=capabilities,
     settings = {
         Lua = {
             runtime = {
