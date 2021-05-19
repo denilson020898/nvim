@@ -15,9 +15,8 @@ return require("packer").startup(function()
     -- ui
     use 'kosayoda/nvim-lightbulb'
     use {
-        'glepnir/galaxyline.nvim',
-        branch = 'main',
-        requires = {'kyazdani42/nvim-web-devicons', opt = true}
+      'hoob3rt/lualine.nvim',
+      requires = {'kyazdani42/nvim-web-devicons', opt = true}
     }
     use "kyazdani42/nvim-tree.lua"
     use "nvim-lua/popup.nvim"
@@ -29,7 +28,6 @@ return require("packer").startup(function()
     }
     use "kevinhwang91/nvim-bqf"
     use 'norcalli/nvim-colorizer.lua'
-    use "p00f/nvim-ts-rainbow"
     use 'akinsho/nvim-bufferline.lua'
     use "akinsho/nvim-toggleterm.lua"
 
