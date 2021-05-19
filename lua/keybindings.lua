@@ -57,8 +57,10 @@ vim.api.nvim_set_keymap("n", "", "<Plug>kommentary_line_default", {})
 vim.api.nvim_set_keymap("v", "<C-/>", "<Plug>kommentary_visual_default", {})
 vim.api.nvim_set_keymap("v", "", "<Plug>kommentary_visual_default", {})
 
+vim.api.nvim_set_keymap("n", "<Leader>S", ":SymbolsOutline<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>sh", ":split<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>sv", ":vsplit<CR>", { noremap = true, silent = true })
+
 vim.api.nvim_set_keymap("n", "<Leader>T", ":vs<bar>:b#<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>w", ":wa<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>q", ":bd<CR>", {noremap = true, silent = true})

@@ -52,6 +52,8 @@ return require("packer").startup(function()
     use "windwp/nvim-autopairs"
     use 'airblade/vim-rooter'
     use "windwp/nvim-ts-autotag"
+    use "haringsrob/nvim_context_vt"
+    use 'simrat39/symbols-outline.nvim'
 
     use "rafamadriz/friendly-snippets"
     use "hrsh7th/vim-vsnip"
