@@ -1,10 +1,10 @@
 require('kommentary.config').use_extended_mappings()
 
-local languages = {"rust", "javascript", "lua", "python3", "html"}
+require('kommentary.config').configure_language("wast", {
+    single_line_comment_string = ";;",
+    multi_line_comment_strings = {"(;", ";)"},
+})
 
-for i, lang in ipairs(languages) do
-    require('kommentary.config').configure_language(lang, {
-        prefer_single_line_comments = true,
-    })
-end
-
+require('kommentary.config').configure_language("default", {
+    prefer_single_line_comments = true,
+})
