@@ -43,6 +43,7 @@ return require("packer").startup(function()
     use "hrsh7th/nvim-compe"
     use 'b3nj5m1n/kommentary'
     use "TimUntersberger/neogit"
+    use 'sindrets/diffview.nvim'
     use "nvim-telescope/telescope.nvim"
     use "nvim-telescope/telescope-media-files.nvim"
     use { "nvim-treesitter/nvim-treesitter", run=":TSUpdate" }
