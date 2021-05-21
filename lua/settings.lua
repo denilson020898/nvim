@@ -30,7 +30,7 @@ vim.o.inccommand = "split"
 vim.o.incsearch = true
 vim.o.iskeyword = vim.o.iskeyword .. ",-" .. ",_"
 vim.o.mouse = "a"
-vim.o.pumheight = 10
+vim.o.pumheight = 15
 vim.o.shortmess = vim.o.shortmess .. "c"
 -- vim.o.completeopt = "menuone,noselect,noinsert"
 vim.o.completeopt = "menuone,noselect"
@@ -49,7 +49,7 @@ vim.o.updatetime = 100
 vim.o.writebackup = false
 vim.wo.cursorline = true
 vim.wo.number = true
-vim.wo.scrolloff = 15
+vim.wo.scrolloff = 10 
 vim.wo.signcolumn = "yes"
 vim.wo.wrap = false
 
