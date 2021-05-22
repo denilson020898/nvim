@@ -28,7 +28,8 @@ return require("packer").startup(function()
     }
     use "kevinhwang91/nvim-bqf"
     use 'norcalli/nvim-colorizer.lua'
-    use 'akinsho/nvim-bufferline.lua'
+    -- use 'akinsho/nvim-bufferline.lua'
+    use 'romgrk/barbar.nvim'
     use "akinsho/nvim-toggleterm.lua"
 
     -- color
