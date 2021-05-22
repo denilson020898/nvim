@@ -21,5 +21,5 @@ vim.g.symbols_outline = {
     lsp_blacklist = {},
 }
 
+vim.g.neovide_fullscreen = true
 -- vim.g.neovide_transparency=1.0
--- vim.g.neovide_fullscreen = true

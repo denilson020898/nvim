@@ -38,6 +38,7 @@ return require("packer").startup(function()
     use "nanotech/jellybeans.vim"
     use 'marko-cerovac/material.nvim'
     use 'tjdevries/colorbuddy.nvim'
+    use "RRethy/nvim-base16"
 
     -- helpers
     use 'nanotee/nvim-lua-guide'
