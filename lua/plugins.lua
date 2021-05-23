@@ -28,17 +28,13 @@ return require("packer").startup(function()
     }
     use "kevinhwang91/nvim-bqf"
     use 'norcalli/nvim-colorizer.lua'
-    -- use 'akinsho/nvim-bufferline.lua'
     use 'romgrk/barbar.nvim'
     use "akinsho/nvim-toggleterm.lua"
 
     -- color
-    use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
-    use "jnurmine/Zenburn"
-    use "nanotech/jellybeans.vim"
-    use 'marko-cerovac/material.nvim'
     use 'tjdevries/colorbuddy.nvim'
-    use "RRethy/nvim-base16"
+    use 'marko-cerovac/material.nvim'
+    use 'sainnhe/sonokai'
 
     -- helpers
     use 'nanotee/nvim-lua-guide'
@@ -69,6 +65,7 @@ return require("packer").startup(function()
     use "nvim-lua/lsp_extensions.nvim"
     use 'folke/lsp-colors.nvim'
     use "ray-x/lsp_signature.nvim"
+    use 'simrat39/rust-tools.nvim'
 
     -- debug
     -- use 'mfussenegger/nvim-dap'
