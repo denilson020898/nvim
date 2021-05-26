@@ -23,3 +23,5 @@ vim.g.symbols_outline = {
 
 vim.g.neovide_fullscreen = true
 -- vim.g.neovide_transparency=1.0
+
+vim.g.auto_session_pre_save_cmds = "NvimTreeClose"
