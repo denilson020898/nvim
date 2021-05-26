@@ -1,3 +1,6 @@
 require('lualine').setup{
-    options = {theme = 'molokai'},
+    options = {
+        -- theme = 'molokai'
+        theme = 'gruvbox-flat'
+    },
 }

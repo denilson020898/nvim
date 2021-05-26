@@ -8,5 +8,10 @@
 -- vim.o.background = "dark" -- or "light" for light mode
 -- vim.cmd([[colorscheme gruvbox]])
 
-vim.g.sonokai_style = 'default'
-vim.cmd([[colorscheme sonokai]])
+-- vim.g.sonokai_style = 'default'
+-- vim.cmd([[colorscheme sonokai]])
+
+vim.g.gruvbox_flat_style = "dark"
+vim.g.gruvbox_sidebars = { "qf", "vista_kind", "terminal", "packer" }
+vim.g.gruvbox_italic_functions = true
+vim.cmd[[colorscheme gruvbox-flat]]

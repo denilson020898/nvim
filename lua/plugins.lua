@@ -35,6 +35,7 @@ return require("packer").startup(function()
     use 'tjdevries/colorbuddy.nvim'
     use 'marko-cerovac/material.nvim'
     use 'sainnhe/sonokai'
+    use 'eddyekofo94/gruvbox-flat.nvim'
 
     -- helpers
     use 'nanotee/nvim-lua-guide'
