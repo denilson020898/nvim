@@ -56,6 +56,12 @@ return require("packer").startup(function()
     use "hrsh7th/vim-vsnip"
     use "glepnir/indent-guides.nvim"
 
+    use 'rmagatti/auto-session'
+    use {
+      'rmagatti/session-lens',
+      requires = {'rmagatti/auto-session', 'nvim-telescope/telescope.nvim'},
+    }
+
     use 'windwp/nvim-spectre'
     use 'gennaro-tedesco/nvim-jqx'
 
