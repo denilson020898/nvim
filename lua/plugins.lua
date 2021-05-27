@@ -30,6 +30,10 @@ return require("packer").startup(function()
     use 'norcalli/nvim-colorizer.lua'
     use 'romgrk/barbar.nvim'
     use "akinsho/nvim-toggleterm.lua"
+    use {
+      'yamatsum/nvim-nonicons',
+      requires = {'kyazdani42/nvim-web-devicons'}
+    }
 
     -- color
     use 'tjdevries/colorbuddy.nvim'
