@@ -1,5 +1,5 @@
 require('session-lens').setup {
-  -- shorten_path = true,
-  -- theme_conf = { border = true },
-  -- previewer = false
+    shorten_path = false,
+    -- theme_conf = { border = true },
+    -- previewer = false
 }
