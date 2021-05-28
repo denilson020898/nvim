@@ -67,10 +67,23 @@ require('telescope').setup{
 
 local M = {}
 local config_path = vim.fn.stdpath("config")
+
 M.search_dotfiles = function()
     require("telescope.builtin").find_files({
         prompt_title = "< VimRC >",
         cwd = config_path
     })
 end
+
+M.search_with_extension = function()
+    require("telescope.builtin").live_grep({
+        find_command = {
+            "rg",
+            "--files",
+            "--type",
+            vim.fn.input "> Ext > ",
+        },
+    })
+end
+
 return M
