@@ -26,3 +26,4 @@ vim.g.neovide_fullscreen = true
 
 vim.g.auto_session_pre_save_cmds = { "NvimTreeClose" }
 
+vim.g.gitblame_enabled = 0
