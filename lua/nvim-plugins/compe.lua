@@ -67,7 +67,7 @@ vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 
 vim.api.nvim_set_keymap("i", "<C-Space>", "compe#complete()", {expr = true, noremap=true, silent=true})
-vim.api.nvim_set_keymap("i", "<CR>", "compe#confirm('<CR>')", {expr = true, noremap=true, silent=true})
+vim.api.nvim_set_keymap("i", ".", "compe#confirm('.')", {expr = true, noremap=true, silent=true})
 vim.api.nvim_set_keymap("i", "<C-e>", "compe#close('<C-e>')", {expr = true, noremap=true, silent=true})
 vim.api.nvim_set_keymap("i", "<C-d>", "compe#scroll({ 'delta': +4 })", {expr = true, noremap=true, silent=true})
 vim.api.nvim_set_keymap("i", "<C-u>", "compe#scroll({ 'delta': -4 })", {expr = true, noremap=true, silent=true})
@@ -81,11 +81,11 @@ vim.api.nvim_set_keymap("i", "<C-u>", "compe#scroll({ 'delta': -4 })", {expr = t
 -- ]], false)
 
 -- " Expand
-vim.cmd("imap <expr> <C-l>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'")
-vim.cmd("smap <expr> <C-l>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'")
+-- vim.cmd("imap <expr> <C-l>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'")
+-- vim.cmd("smap <expr> <C-l>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'")
 -- " Expand or jump
-vim.cmd("imap <expr> <C-j>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'")
-vim.cmd("smap <expr> <C-j>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'")
+-- vim.cmd("imap <expr> <C-j>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'")
+-- vim.cmd("smap <expr> <C-j>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'")
 
 -- " Jump forward or backward
 -- vim.api.nvim_exec([[
