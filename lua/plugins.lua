@@ -20,12 +20,8 @@ return require("packer").startup(function()
     }
     use "kyazdani42/nvim-tree.lua"
     use "nvim-lua/popup.nvim"
-    use {
-        'lewis6991/gitsigns.nvim',
-        requires = {
-            'nvim-lua/plenary.nvim'
-        }
-    }
+    use 'nvim-lua/plenary.nvim'
+    use 'f-person/git-blame.nvim'
     use "kevinhwang91/nvim-bqf"
     use 'norcalli/nvim-colorizer.lua'
     use 'romgrk/barbar.nvim'
