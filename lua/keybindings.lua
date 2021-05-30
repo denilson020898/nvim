@@ -79,13 +79,24 @@ vim.api.nvim_set_keymap("n", "", "<Plug>kommentary_line_default", {})
 vim.api.nvim_set_keymap("v", "<C-/>", "<Plug>kommentary_visual_default", {})
 vim.api.nvim_set_keymap("v", "", "<Plug>kommentary_visual_default", {})
 
-vim.api.nvim_set_keymap("n", "<Leader>S", ":SymbolsOutline<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>O", ":SymbolsOutline<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>sh", ":split<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>sv", ":vsplit<CR>", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "<Leader>T", ":vs<bar>:b#<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>w", ":wa<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>q", ":bd<CR>", {noremap = true, silent = true})
+
+
+vim.api.nvim_set_keymap("n", "<Leader>S", ":lua require('spectre').open()<CR>", { noremap = true, silent = true })
+-- nnoremap <leader>S :lua require('spectre').open()<CR>
+
+-- "search current word
+
+vim.api.nvim_set_keymap("n", "<Leader>sw", "viw:lua require('spectre').open_visual()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<Leader>s", ":lua require('spectre').open_visual()<CR>", { noremap = true, silent = true })
+-- "  search in current file
+-- nnoremap <leader>sp viw:lua require('spectre').open_file_search()<cr>
 
 -- vim.api.nvim_set_keymap('n', '<Leader>\\', '<CMD>lua require("FTerm").toggle()<CR>', {noremap = true, silent = true})
 -- vim.api.nvim_set_keymap('t', '<Leader>\\', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', {noremap = true, silent = true})
