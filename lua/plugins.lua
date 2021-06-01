@@ -75,6 +75,11 @@ return require("packer").startup(function()
     use "nvim-lua/lsp_extensions.nvim"
     use 'folke/lsp-colors.nvim'
     use "ray-x/lsp_signature.nvim"
+    use {
+      "folke/trouble.nvim",
+      requires = "kyazdani42/nvim-web-devicons",
+    }
+
     use 'simrat39/rust-tools.nvim'
 
     -- debug

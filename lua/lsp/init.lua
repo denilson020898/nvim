@@ -1,5 +1,3 @@
-require('lsp.signature')
-
 require('lsp.rust_analyzer')
 require('lsp.pyright')
 require('lsp.sumneko')
