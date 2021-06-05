@@ -8,7 +8,7 @@ neogit.setup {
         -- { CLOSED, OPENED }
         section = { ">", "v" },
         item = { ">", "v" },
-        hunk = { "", "" },
+        hunk = { "-", "|" },
     },
     integrations = {
         -- Neogit only provides inline diffs. If you want a more traditional way to look at diffs you can use `sindrets/diffview.nvim`.
@@ -26,13 +26,13 @@ neogit.setup {
         diffview = true
     },
     -- override/add mappings
-    mappings = {
-        -- modify status buffer mappings
-        status = {
-            -- Adds a mapping with "B" as key that does the "BranchPopup" command
-            ["B"] = "BranchPopup",
-            -- Removes the default mapping of "s"
-            ["s"] = "",
-        }
-    }
+    -- mappings = {
+    --     -- modify status buffer mappings
+    --     status = {
+    --         -- Adds a mapping with "B" as key that does the "BranchPopup" command
+    --         ["B"] = "BranchPopup",
+    --         -- Removes the default mapping of "s"
+    --         ["s"] = "",
+    --     }
+    -- }
 }
