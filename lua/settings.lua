@@ -39,8 +39,8 @@ vim.o.smartcase = true
 vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.swapfile = false
-vim.o.t_Co = "256"
-vim.o.termguicolors = true
+-- vim.o.t_Co = "256"
+-- vim.o.termguicolors = true
 vim.o.title = true
 vim.wo.colorcolumn = "98"
 -- vim.o.titlestring="%<%F%=%l/%L - nvim"
