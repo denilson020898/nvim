@@ -27,3 +27,12 @@ vim.g.symbols_outline = {
 vim.g.auto_session_pre_save_cmds = { "NvimTreeClose" }
 
 vim.g.gitblame_enabled = 0
+
+vim.cmd([[
+if exists('g:fvim_loaded')
+    FVimCursorSmoothMove v:true
+    FVimCursorSmoothBlink v:true
+    FVimCustomTitleBar v:true
+    nnoremap <A-CR> :FVimToggleFullScreen<CR>
+endif
+]])
