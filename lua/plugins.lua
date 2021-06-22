@@ -82,6 +82,11 @@ return require("packer").startup(function()
 
     use 'simrat39/rust-tools.nvim'
 
+    use {
+        'NTBBloodbath/rest.nvim',
+        requires = { 'nvim-lua/plenary.nvim' }
+    }
+
     -- debug
     -- use 'mfussenegger/nvim-dap'
     -- use 'mfussenegger/nvim-jdtls'
