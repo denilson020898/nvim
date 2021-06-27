@@ -91,7 +91,7 @@ vim.api.nvim_set_keymap("n", "<Leader>q", ":bd<CR>", {noremap = true, silent = t
 vim.api.nvim_set_keymap("n", "<Leader>S", ":lua require('spectre').open()<CR>", { noremap = true, silent = true })
 -- nnoremap <leader>S :lua require('spectre').open()<CR>
 
-vim.api.nvim_set_keymap("n", "<Leader>R", "<Plug>RestNvim", {})
+vim.api.nvim_set_keymap("n", "<F12>", "<Plug>RestNvim", {})
 
 -- "search current word
 
