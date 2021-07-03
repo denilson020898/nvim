@@ -38,7 +38,6 @@ return require("packer").startup(function()
     use 'eddyekofo94/gruvbox-flat.nvim'
 
     -- helpers
-    use 'nanotee/nvim-lua-guide'
     use "hrsh7th/nvim-compe"
     use 'b3nj5m1n/kommentary'
     use "TimUntersberger/neogit"
@@ -46,9 +45,8 @@ return require("packer").startup(function()
     use "nvim-telescope/telescope.nvim"
     use "nvim-telescope/telescope-media-files.nvim"
     use { "nvim-treesitter/nvim-treesitter", run=":TSUpdate" }
-    use "nvim-treesitter/playground"
     use "windwp/nvim-autopairs"
-    use 'airblade/vim-rooter'
+    use "airblade/vim-rooter"
     use "windwp/nvim-ts-autotag"
     use "haringsrob/nvim_context_vt"
     use 'simrat39/symbols-outline.nvim'
@@ -90,6 +88,16 @@ return require("packer").startup(function()
     -- debug
     -- use 'mfussenegger/nvim-dap'
     -- use 'mfussenegger/nvim-jdtls'
+
+    use {
+        'phaazon/hop.nvim',
+        as = 'hop',
+        config = function()
+            -- you can configure Hop the way you like here; see :h hop-config
+            -- require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+            require'hop'.setup {}
+        end
+    }
 
 end
 )
