@@ -43,7 +43,6 @@ return require("packer").startup(function()
     use "TimUntersberger/neogit"
     use 'sindrets/diffview.nvim'
     use "nvim-telescope/telescope.nvim"
-    use "nvim-telescope/telescope-media-files.nvim"
     use { "nvim-treesitter/nvim-treesitter", run=":TSUpdate" }
     use "windwp/nvim-autopairs"
     use "airblade/vim-rooter"
@@ -62,6 +61,14 @@ return require("packer").startup(function()
       -- config = function()
       --   require('session-lens').setup({--[[your custom config--]]})
       -- end
+    }
+    use {
+        "nvim-telescope/telescope-media-files.nvim",
+        requires = {
+            {'nvim-telescope/telescope.nvim'},
+            {'nvim-lua/popup.nvim'},
+            {'nvim-lua/plenary.nvim'},
+        }
     }
 
     use 'windwp/nvim-spectre'

@@ -81,4 +81,6 @@ M.search_with_extension = function()
     })
 end
 
+require('telescope').load_extension('media_files')
+
 return M
