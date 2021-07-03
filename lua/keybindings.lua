@@ -109,3 +109,10 @@ vim.api.nvim_set_keymap("n", "<leader>xd", "<cmd>Trouble lsp_document_diagnostic
 vim.api.nvim_set_keymap("n", "<leader>xl", "<cmd>Trouble loclist<cr>", {silent = true, noremap = true})
 vim.api.nvim_set_keymap("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", {silent = true, noremap = true})
 vim.api.nvim_set_keymap("n", "gR", "<cmd>Trouble lsp_references<cr>", {silent = true, noremap = true})
+
+vim.api.nvim_set_keymap("n", "<leader>hw", "<cmd>HopWord<cr>", {silent = true, noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>hs", "<cmd>HopLineStart<cr>", {silent = true, noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>hl", "<cmd>HopLine<cr>", {silent = true, noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>hp", "<cmd>HopPattern<cr>", {silent = true, noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>hc", "<cmd>HopChar2<cr>", {silent = true, noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>hC", "<cmd>HopChar1<cr>", {silent = true, noremap = true})
