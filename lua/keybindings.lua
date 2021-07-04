@@ -28,7 +28,7 @@ vim.api.nvim_set_keymap("i", "kj", "<Esc>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Tab>", ":BufferNext<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<S-Tab>", ":BufferPrevious<CR>", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap("n", "<Leader>1", ":BufferGoto 1<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>1", ":BufferGoto 1<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>2", ":BufferGoto 2<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>3", ":BufferGoto 3<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>4", ":BufferGoto 4<CR>", { noremap = true, silent = true })
@@ -92,9 +92,9 @@ vim.api.nvim_set_keymap("n", "<Leader>S", ":lua require('spectre').open()<CR>", 
 -- nnoremap <leader>S :lua require('spectre').open()<CR>
 
 vim.api.nvim_set_keymap("n", "<F12>", "<Plug>RestNvim", {})
+vim.api.nvim_set_keymap("n", "<F10>", ":RooterToggle<cr>", {})
 
 -- "search current word
-
 vim.api.nvim_set_keymap("n", "<Leader>sw", "viw:lua require('spectre').open_visual()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "<Leader>s", ":lua require('spectre').open_visual()<CR>", { noremap = true, silent = true })
 -- "  search in current file
