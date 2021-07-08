@@ -52,7 +52,7 @@ return require("packer").startup(function()
 
     use "rafamadriz/friendly-snippets"
     use "hrsh7th/vim-vsnip"
-    use "glepnir/indent-guides.nvim"
+    use "lukas-reineke/indent-blankline.nvim"
 
     use 'rmagatti/auto-session'
     use {
