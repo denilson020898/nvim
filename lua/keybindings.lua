@@ -90,15 +90,15 @@ vim.api.nvim_set_keymap("n", "<Leader>q", ":bd<CR>", {noremap = true, silent = t
 
 vim.api.nvim_set_keymap("n", "<Leader>S", ":lua require('spectre').open()<CR>", { noremap = true, silent = true })
 -- nnoremap <leader>S :lua require('spectre').open()<CR>
-
-vim.api.nvim_set_keymap("n", "<F12>", "<Plug>RestNvim", {})
-vim.api.nvim_set_keymap("n", "<F10>", ":RooterToggle<cr>", {})
-
 -- "search current word
 vim.api.nvim_set_keymap("n", "<Leader>sw", "viw:lua require('spectre').open_visual()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "<Leader>s", ":lua require('spectre').open_visual()<CR>", { noremap = true, silent = true })
 -- "  search in current file
+vim.api.nvim_set_keymap("n", "<Leader>sp", "viw:lua require('spectre').open_file_search()<CR>", { noremap = true, silent = true })
 -- nnoremap <leader>sp viw:lua require('spectre').open_file_search()<cr>
+
+vim.api.nvim_set_keymap("n", "<F12>", "<Plug>RestNvim", {})
+vim.api.nvim_set_keymap("n", "<F10>", ":RooterToggle<cr>", {})
 
 -- vim.api.nvim_set_keymap('n', '<Leader>\\', '<CMD>lua require("FTerm").toggle()<CR>', {noremap = true, silent = true})
 -- vim.api.nvim_set_keymap('t', '<Leader>\\', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', {noremap = true, silent = true})
