@@ -12,16 +12,18 @@ require('telescope').setup{
     },
     mappings = {
       i = {
-        ["<C-w>"] = actions.send_selected_to_qflist,
+        -- ["<C-w>"] = actions.send_selected_to_qflist,
         ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
-        ["<C-t>"] = actions.select_vertical,
+        ["2"] = actions.select_vertical,
+        ["1"] = actions.select_horizontal,
         ["<C-o>"] = actions.select_tab,
         ["<CR>"] = actions.select_default + actions.center
       },
       n = {
-        ["<C-w>"] = actions.send_selected_to_qflist,
+        -- ["<C-w>"] = actions.send_selected_to_qflist,
         ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
-        ["<C-t>"] = actions.select_vertical,
+        ["2"] = actions.select_vertical,
+        ["1"] = actions.select_horizontal,
         ["<C-o>"] = actions.select_tab,
         ["<CR>"] = actions.select_default + actions.center
       },
