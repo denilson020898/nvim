@@ -105,6 +105,7 @@ vim.api.nvim_set_keymap("n", "<Leader>sp", "viw:lua require('spectre').open_file
 
 vim.api.nvim_set_keymap("n", "<F12>", "<Plug>RestNvim", {})
 vim.api.nvim_set_keymap("n", "<F10>", ":RooterToggle<cr>", {})
+vim.api.nvim_set_keymap("n", "<F9>", ":lua require'colorscheme'.toggle_theme()<cr>", {})
 
 -- vim.api.nvim_set_keymap('n', '<Leader>\\', '<CMD>lua require("FTerm").toggle()<CR>', {noremap = true, silent = true})
 -- vim.api.nvim_set_keymap('t', '<Leader>\\', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', {noremap = true, silent = true})

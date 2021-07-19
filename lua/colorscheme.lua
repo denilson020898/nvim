@@ -8,10 +8,25 @@
 -- vim.o.background = "dark" -- or "light" for light mode
 -- vim.cmd([[colorscheme gruvbox]])
 
--- vim.g.sonokai_style = 'default'
+vim.g.sonokai_style = 'default'
 -- vim.cmd([[colorscheme sonokai]])
 
 vim.g.gruvbox_flat_style = "dark"
 vim.g.gruvbox_sidebars = { "qf", "vista_kind", "terminal", "packer" }
 vim.g.gruvbox_italic_functions = true
-vim.cmd[[colorscheme gruvbox-flat]]
+
+T = {}
+
+T.applied_theme = "gruvbox-flat"
+vim.cmd("colorscheme "..T.applied_theme)
+
+T.toggle_theme = function() 
+    if T.applied_theme == "gruvbox-flat" then
+        T.applied_theme = "sonokai"
+    else
+        T.applied_theme = "gruvbox-flat"
+    end
+    vim.cmd("colorscheme "..T.applied_theme)
+end
+
+return T
