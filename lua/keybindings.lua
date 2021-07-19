@@ -58,6 +58,11 @@ vim.api.nvim_set_keymap("n", "<Leader>b", "<cmd>lua require('telescope.builtin')
 vim.api.nvim_set_keymap("n", "<Leader>th", "<cmd>lua require('telescope.builtin').help_tags()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>ts", ":SearchSession<CR>", {noremap = true, silent = true})
 
+vim.api.nvim_set_keymap("n", "<Leader>rr", ":RustRunnables<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>rc", ":RustOpenCargo<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>rp", ":RustParentModule<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>rt", ":RustToggleInlayHints<CR>", {noremap = true, silent = true})
+
 vim.api.nvim_set_keymap("n", "<A-q>", ":copen<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<A-w>", ":cclose<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<A-c>", ":cexpr []<CR>", {noremap = true, silent = true})
@@ -117,3 +122,5 @@ vim.api.nvim_set_keymap("n", "<leader>hl", "<cmd>HopLine<cr>", {silent = true, n
 vim.api.nvim_set_keymap("n", "<leader>hp", "<cmd>HopPattern<cr>", {silent = true, noremap = true})
 vim.api.nvim_set_keymap("n", "<leader>hc", "<cmd>HopChar2<cr>", {silent = true, noremap = true})
 vim.api.nvim_set_keymap("n", "<leader>hC", "<cmd>HopChar1<cr>", {silent = true, noremap = true})
+
+
