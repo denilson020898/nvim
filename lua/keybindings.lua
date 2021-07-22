@@ -6,8 +6,6 @@ vim.api.nvim_set_keymap("n", "<Leader>/", ":set hlsearch!<CR>", { noremap = true
 vim.api.nvim_set_keymap("n", "<Leader>e", ":NvimTreeFindFile<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-e>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap("n", "<Leader>a", "ggVG", { noremap = true, silent = true })
-
 vim.api.nvim_set_keymap("n", "<A-h>", "<C-w>h", { silent = true })
 vim.api.nvim_set_keymap("n", "<A-j>", "<C-w>j", { silent = true })
 vim.api.nvim_set_keymap("n", "<A-k>", "<C-w>k", { silent = true })
@@ -16,9 +14,9 @@ vim.api.nvim_set_keymap("n", "<A-l>", "<C-w>l", { silent = true })
 vim.api.nvim_set_keymap("v", "<", "<gv", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", ">", ">gv", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "jk", "<Esc>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "kj", "<Esc>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("i", "jk", "<Esc>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("i", "kj", "<Esc>", { noremap = true, silent = true })
 
 -- vim.api.nvim_set_keymap("n", "<Tab>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
@@ -63,11 +61,10 @@ vim.api.nvim_set_keymap("n", "<Leader>rc", ":RustOpenCargo<CR>", {noremap = true
 vim.api.nvim_set_keymap("n", "<Leader>rp", ":RustParentModule<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>rt", ":RustToggleInlayHints<CR>", {noremap = true, silent = true})
 
-vim.api.nvim_set_keymap("n", "<A-q>", ":copen<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<A-w>", ":cclose<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<A-c>", ":cexpr []<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<A-n>", ":cnext<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<A-p>", ":cprev<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>ff", ":lua require'nvim-plugins.nvimbqf'.toggle_quickfix()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>fc", ":cexpr []<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>fn", ":cnext<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>fp", ":cprev<CR>", {noremap = true, silent = true})
 
 vim.api.nvim_set_keymap("n", "<Leader>gg", ":Neogit<CR>", {noremap = true, silent = true })
 -- vim.api.nvim_set_keymap("n", "<Leader>gs", ":Gitsigns toggle_signs<CR>", {noremap = true, silent = true})
@@ -86,10 +83,7 @@ vim.api.nvim_set_keymap("v", "<C-/>", "<Plug>kommentary_visual_default", {})
 vim.api.nvim_set_keymap("v", "", "<Plug>kommentary_visual_default", {})
 
 vim.api.nvim_set_keymap("n", "<Leader>O", ":SymbolsOutline<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Leader>sh", ":split<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Leader>sv", ":vsplit<CR>", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap("n", "<Leader>T", ":vs<bar>:b#<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>w", ":wa<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>q", ":bd<CR>", {noremap = true, silent = true})
 
