@@ -47,8 +47,8 @@ vim.api.nvim_set_keymap("n", "<Leader>bL", ":BufferCloseBuffersRight<CR>", { nor
 vim.api.nvim_set_keymap("n", "<Leader><Space>", ":b#<CR>", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "<Leader>t", ":Telescope<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Leader>tp", "<cmd>lua require('nvim-plugins.telescope').search_dotfiles()<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Leader>tx", "<cmd>lua require('nvim-plugins.telescope').search_with_extension()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>tp", "<cmd>lua require('plugins.telescope').search_dotfiles()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>tx", "<cmd>lua require('plugins.telescope').search_with_extension()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>te", ":Telescope file_browser<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>tf", "<cmd>lua require('telescope.builtin').find_files()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>tg", "<cmd>lua require('telescope.builtin').live_grep()<CR>", {noremap = true, silent = true})
@@ -61,7 +61,7 @@ vim.api.nvim_set_keymap("n", "<Leader>rc", ":RustOpenCargo<CR>", {noremap = true
 vim.api.nvim_set_keymap("n", "<Leader>rp", ":RustParentModule<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>rt", ":RustToggleInlayHints<CR>", {noremap = true, silent = true})
 
-vim.api.nvim_set_keymap("n", "<Leader>ff", ":lua require'nvim-plugins.nvimbqf'.toggle_quickfix()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>ff", ":lua require'plugins.nvimbqf'.toggle_quickfix()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>fc", ":cexpr []<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>fn", ":cnext<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>fp", ":cprev<CR>", {noremap = true, silent = true})
