@@ -90,10 +90,11 @@ vim.api.nvim_set_keymap("n", "<Leader>rc", ":RustOpenCargo<CR>", {noremap = true
 vim.api.nvim_set_keymap("n", "<Leader>rp", ":RustParentModule<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>rt", ":RustToggleInlayHints<CR>", {noremap = true, silent = true})
 
-vim.api.nvim_set_keymap("n", "<Leader>ff", ":lua require'myplugins.nvimbqf'.toggle_quickfix()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>ff", ":lua require'myplugins.nvimbqf'.toggle_quickfix()<cr>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>f?", ":lua require'myplugins.nvimbqf'.print_bqf_config()<cr>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>fc", ":cexpr []<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Leader>fn", ":cnext<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Leader>fp", ":cprev<CR>", {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap("n", "<Leader>fn", ":cnext<CR>", {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap("n", "<Leader>fp", ":cprev<CR>", {noremap = true, silent = true})
 
 vim.api.nvim_set_keymap("n", "<Leader>gg", ":Neogit<CR>", {noremap = true, silent = true })
 -- vim.api.nvim_set_keymap("n", "<Leader>gs", ":Gitsigns toggle_signs<CR>", {noremap = true, silent = true})

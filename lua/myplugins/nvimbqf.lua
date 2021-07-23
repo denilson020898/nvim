@@ -1,11 +1,7 @@
 require('bqf').setup({
     func_map = {
-        stoggleup = '',
-        stoggledown = '',
-        stogglevm = '',
-        stogglebuf = '',
-        split = '1',
-        vsplit = '2'
+        split = '<A-s>',
+        vsplit = '<A-v>',
     }
 })
 
@@ -21,6 +17,10 @@ T.toggle_quickfix = function()
         T.is_qf_opened = false
         vim.cmd("cclose")
     end
+end
+
+T.print_bqf_config = function()
+    vim.cmd("lua print(vim.inspect(require('bqf.config')))")
 end
 
 return T
