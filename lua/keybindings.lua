@@ -38,6 +38,10 @@ vim.api.nvim_set_keymap("n", "<A-t>", "<C-w>t", { silent = true })
 vim.api.nvim_set_keymap("n", "<A-b>", "<C-w>b", { silent = true })
 vim.api.nvim_set_keymap("n", "<A-x>", "<C-w>x", { silent = true })
 
+vim.api.nvim_set_keymap("n", "<A-S>", "<C-w>^<C-w>k<C-w>J", { silent = true })
+vim.api.nvim_set_keymap("n", "<A-V>", "<C-w>^<C-w>k<C-w>L", { silent = true })
+
+
 vim.api.nvim_set_keymap("v", "<", "<gv", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", ">", ">gv", { noremap = true, silent = true })
 
@@ -131,6 +135,7 @@ vim.api.nvim_set_keymap("n", "<F12>", "<Plug>RestNvim", {})
 vim.api.nvim_set_keymap("n", "<F10>", ":RooterToggle<cr>", {})
 vim.api.nvim_set_keymap("n", "<F9>", ":lua require'colorscheme'.toggle_theme()<cr>", {})
 vim.api.nvim_set_keymap("n", "<F8>", ":IndentBlanklineToggle<cr>", {})
+vim.api.nvim_set_keymap("n", "<F5>", ":checktime<cr>", {})
 
 -- vim.api.nvim_set_keymap('n', '<Leader>\\', '<CMD>lua require("FTerm").toggle()<CR>', {noremap = true, silent = true})
 -- vim.api.nvim_set_keymap('t', '<Leader>\\', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', {noremap = true, silent = true})
