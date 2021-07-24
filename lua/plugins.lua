@@ -8,6 +8,16 @@ if fn.empty(fn.glob(install_path)) > 0 then
     execute "packadd packer.nvim"
 end
 
+require("packer").init({
+    max_jobs = 16,
+    git = {
+        clone_timeout = 300, -- 5 mins
+    },
+    profile = {
+        enable = true,
+    },
+})
+
 return require("packer").startup(function()
     -- Packer can manage itself
     use "wbthomason/packer.nvim"
@@ -26,14 +36,8 @@ return require("packer").startup(function()
     use 'norcalli/nvim-colorizer.lua'
     use 'romgrk/barbar.nvim'
     use "akinsho/nvim-toggleterm.lua"
-    -- use {
-    --   'yamatsum/nvim-nonicons',
-    --   requires = {'kyazdani42/nvim-web-devicons'}
-    -- }
 
     -- color
-    use 'tjdevries/colorbuddy.nvim'
-    use 'marko-cerovac/material.nvim'
     use 'sainnhe/sonokai'
     use 'eddyekofo94/gruvbox-flat.nvim'
 
@@ -47,8 +51,9 @@ return require("packer").startup(function()
     use "windwp/nvim-autopairs"
     use "airblade/vim-rooter"
     use "windwp/nvim-ts-autotag"
-    use "haringsrob/nvim_context_vt"
     use 'simrat39/symbols-outline.nvim'
+    -- use "haringsrob/nvim_context_vt"
+    -- use 'abecodes/tabout.nvim'
 
     use "rafamadriz/friendly-snippets"
     use "hrsh7th/vim-vsnip"

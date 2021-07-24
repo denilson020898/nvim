@@ -47,15 +47,6 @@ vim.api.nvim_set_keymap("v", ">", ">gv", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "<Leader>a", "ggVG", { noremap = true, silent = true })
 
--- vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("i", "jk", "<Esc>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("i", "kj", "<Esc>", { noremap = true, silent = true })
-
--- vim.api.nvim_set_keymap("n", "<Tab>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("n", "<Leader>be", ":BufferLineSortByExtension<CR>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("n", "<Leader>bd", ":BufferLineSortByDirectory<CR>", { noremap = true, silent = true })
---
 vim.api.nvim_set_keymap("n", "<Tab>", ":BufferNext<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<S-Tab>", ":BufferPrevious<CR>", { noremap = true, silent = true })
 
@@ -97,8 +88,6 @@ vim.api.nvim_set_keymap("n", "<Leader>rt", ":RustToggleInlayHints<CR>", {noremap
 vim.api.nvim_set_keymap("n", "<Leader>ff", ":lua require'myplugins.nvimbqf'.toggle_quickfix()<cr>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>f?", ":lua require'myplugins.nvimbqf'.print_bqf_config()<cr>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>fc", ":cexpr []<CR>", {noremap = true, silent = true})
--- vim.api.nvim_set_keymap("n", "<Leader>fn", ":cnext<CR>", {noremap = true, silent = true})
--- vim.api.nvim_set_keymap("n", "<Leader>fp", ":cprev<CR>", {noremap = true, silent = true})
 
 vim.api.nvim_set_keymap("n", "<Leader>gg", ":Neogit<CR>", {noremap = true, silent = true })
 -- vim.api.nvim_set_keymap("n", "<Leader>gs", ":Gitsigns toggle_signs<CR>", {noremap = true, silent = true})

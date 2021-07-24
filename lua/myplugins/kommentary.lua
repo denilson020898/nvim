@@ -5,10 +5,6 @@ require('kommentary.config').configure_language("wast", {
     multi_line_comment_strings = {"(;", ";)"},
 })
 
--- require('kommentary.config').configure_language("default", {
---     prefer_single_line_comments = true,
--- })
-
 local languages = {"rust", "javascript", "lua", "python3", "html", "wast"}
 
 for i, lang in ipairs(languages) do

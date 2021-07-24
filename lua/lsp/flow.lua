@@ -1,4 +1,3 @@
-
 local nvim_lsp = require('lspconfig')
 local on_attach = require("lsp.global").on_attach
 local capabilities = require("lsp.global").capabilities
