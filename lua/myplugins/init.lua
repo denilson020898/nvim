@@ -15,4 +15,5 @@ require('myplugins.nvimtree')
 require('myplugins.trouble')
 require('myplugins.nvimbqf')
 require('myplugins.tabout')
+require('myplugins.lsprooter')
 

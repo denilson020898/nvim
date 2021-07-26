@@ -105,11 +105,10 @@ vim.api.nvim_set_keymap("n", "", "<Plug>kommentary_line_default", {})
 vim.api.nvim_set_keymap("v", "<C-/>", "<Plug>kommentary_visual_default", {})
 vim.api.nvim_set_keymap("v", "", "<Plug>kommentary_visual_default", {})
 
-vim.api.nvim_set_keymap("n", "<Leader>O", ":SymbolsOutline<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>O", ":AerialToggle<cr>", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "<Leader>w", ":wa<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>q", ":bd<CR>", {noremap = true, silent = true})
-
 
 -- vim.api.nvim_set_keymap("n", "<Leader>S", ":lua require('spectre').open()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>S", ":lua require('spectre').open()<cr><cmd>vert resize 80<cr>", { noremap = true, silent = true })
@@ -123,7 +122,7 @@ vim.api.nvim_set_keymap("n", "<Leader>sp", "viw:lua require('spectre').open_file
 
 vim.api.nvim_set_keymap("n", "<F36>", ":PackerSync<cr>", {})
 vim.api.nvim_set_keymap("n", "<F12>", "<Plug>RestNvim", {})
-vim.api.nvim_set_keymap("n", "<F10>", ":RooterToggle<cr>", {})
+-- vim.api.nvim_set_keymap("n", "<F10>", ":RooterToggle<cr>", {})
 vim.api.nvim_set_keymap("n", "<F9>", ":lua require'colorscheme'.toggle_theme()<cr>", {})
 vim.api.nvim_set_keymap("n", "<F8>", ":IndentBlanklineToggle<cr>", {})
 vim.api.nvim_set_keymap("n", "<F5>", ":checktime<cr>", {})

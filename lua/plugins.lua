@@ -49,9 +49,9 @@ return require("packer").startup(function()
     use "nvim-telescope/telescope.nvim"
     use { "nvim-treesitter/nvim-treesitter", run=":TSUpdate" }
     use "windwp/nvim-autopairs"
-    use "airblade/vim-rooter"
+    use "ahmedkhalf/lsp-rooter.nvim"
     use "windwp/nvim-ts-autotag"
-    use 'simrat39/symbols-outline.nvim'
+    use 'stevearc/aerial.nvim'
     use "haringsrob/nvim_context_vt"
     use 'abecodes/tabout.nvim'
 
