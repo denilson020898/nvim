@@ -12,6 +12,8 @@ vim.g.auto_session_pre_save_cmds = { "NvimTreeClose", "cclose", "AerialClose" }
 
 vim.g.gitblame_enabled = 0
 
+vim.g.indent_blankline_enabled = false
+
 vim.cmd([[
 if exists('g:fvim_loaded')
     "FVimCursorSmoothMove v:true

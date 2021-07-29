@@ -110,15 +110,15 @@ vim.api.nvim_set_keymap("n", "<Leader>O", ":AerialToggle<cr>", { noremap = true,
 vim.api.nvim_set_keymap("n", "<Leader>w", ":wa<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>q", ":bd<CR>", {noremap = true, silent = true})
 
--- vim.api.nvim_set_keymap("n", "<Leader>S", ":lua require('spectre').open()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Leader>S", ":lua require('spectre').open()<cr><cmd>vert resize 80<cr>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<Leader>S", ":lua require('spectre').open()<CR>", {    qnoremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>S", ":lua require('spectre').open()<cr><cmd>vert resize 60<cr>", { noremap = true, silent = true })
 -- "search current word
 -- vim.api.nvim_set_keymap("n", "<Leader>sw", "viw:lua require('spectre').open_visual()<CR>", { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap("v", "<Leader>s", ":lua require('spectre').open_visual()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Leader>sw", "viw:lua require('spectre').open_visual()<cr><cmd>vert resize 80<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "<Leader>s", ":lua require('spectre').open_visual()<cr><cmd>vert resize 80<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>sw", "viw:lua require('spectre').open_visual()<cr><cmd>vert resize 60<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<Leader>s", ":lua require('spectre').open_visual()<cr><cmd>vert resize 60<cr>", { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap("n", "<Leader>sp", "viw:lua require('spectre').open_file_search()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Leader>sp", "viw:lua require('spectre').open_file_search()<cr><cmd>vert resize 80<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>sp", "viw:lua require('spectre').open_file_search()<cr><cmd>vert resize 60<cr>", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "<F36>", ":PackerSync<cr>", {})
 vim.api.nvim_set_keymap("n", "<F12>", "<Plug>RestNvim", {})
