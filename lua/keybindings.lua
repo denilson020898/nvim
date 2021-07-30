@@ -6,6 +6,22 @@ vim.api.nvim_set_keymap("n", "<Leader>/", ":set hlsearch!<CR>", { noremap = true
 vim.api.nvim_set_keymap("n", "<Leader>e", ":NvimTreeFindFile<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-e>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 
+vim.api.nvim_set_keymap("n", "Y", "y$", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "n", "nzzzv", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "N", "Nzzzv", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "J", "mzJ`z", { noremap = true, silent = true })
+
+vim.cmd("noremap <expr> k (v:count > 5 ? \"m'\" . v:count : \"\") . 'k'")
+vim.cmd("noremap <expr> j (v:count > 5 ? \"m'\" . v:count : \"\") . 'j'")
+
+vim.api.nvim_set_keymap("i", ".", ".<c-g>u", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", ",", ",<c-g>u", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", ")", ")<c-g>u", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "}", "}<c-g>u", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "]", "]<c-g>u", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", ":", ":<c-g>u", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", ">", "><c-g>u", { noremap = true, silent = true })
+
 vim.api.nvim_set_keymap("n", "<A-h>", "<C-w>h", { silent = true })
 vim.api.nvim_set_keymap("n", "<A-j>", "<C-w>j", { silent = true })
 vim.api.nvim_set_keymap("n", "<A-k>", "<C-w>k", { silent = true })

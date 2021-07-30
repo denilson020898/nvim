@@ -25,8 +25,8 @@ return require("packer").startup(function()
     -- ui
     use 'kosayoda/nvim-lightbulb'
     use {
-      'hoob3rt/lualine.nvim',
-      requires = {'kyazdani42/nvim-web-devicons', opt = true}
+        'hoob3rt/lualine.nvim',
+        requires = {'kyazdani42/nvim-web-devicons', opt = true}
     }
     use "kyazdani42/nvim-tree.lua"
     use "nvim-lua/popup.nvim"
@@ -61,8 +61,8 @@ return require("packer").startup(function()
 
     use 'rmagatti/auto-session'
     use {
-      'rmagatti/session-lens',
-      requires = {'rmagatti/auto-session', 'nvim-telescope/telescope.nvim'},
+        'rmagatti/session-lens',
+        requires = {'rmagatti/auto-session', 'nvim-telescope/telescope.nvim'},
     }
     use {
         "nvim-telescope/telescope-media-files.nvim",
@@ -83,8 +83,8 @@ return require("packer").startup(function()
     use 'folke/lsp-colors.nvim'
     use "ray-x/lsp_signature.nvim"
     use {
-      "folke/trouble.nvim",
-      requires = "kyazdani42/nvim-web-devicons",
+        "folke/trouble.nvim",
+        requires = "kyazdani42/nvim-web-devicons",
     }
 
     use 'simrat39/rust-tools.nvim'
