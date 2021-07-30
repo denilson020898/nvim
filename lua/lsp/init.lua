@@ -4,4 +4,5 @@ require('lsp.pyright')
 -- require('lsp.flow')
 require('lsp.tsserver')
 require('lsp.clangd')
+require('lsp.html')
 
