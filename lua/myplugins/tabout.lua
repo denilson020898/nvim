@@ -1,6 +1,6 @@
 require('tabout').setup({
     -- tabkey = "<Tab>", -- key to trigger tabout
-    tabkey = "<C-u>", -- key to trigger tabout
+    tabkey = "<C-r>", -- key to trigger tabout
     act_as_tab = true, -- shift content if tab out is not possible
     completion = true, -- if the tabkey is used in a completion pum
     tabouts = {
@@ -16,5 +16,5 @@ require('tabout').setup({
     exclude = {} -- tabout will ignore these filetypes
 })
 
-vim.api.nvim_set_keymap("i", "<C-r>", "<cmd>Tabout<cr>", {})
+-- vim.api.nvim_set_keymap("i", "<C-r>", "<cmd>Tabout<cr>", {})
 
