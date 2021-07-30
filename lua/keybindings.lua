@@ -23,6 +23,13 @@ vim.api.nvim_set_keymap("i", "'", "'<c-g>u", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", ":", ":<c-g>u", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "<", "<<c-g>u", { noremap = true, silent = true })
 
+vim.api.nvim_set_keymap("i", "<A-h>", "<C-o>h", { silent = true })
+vim.api.nvim_set_keymap("i", "<A-j>", "<C-o>j", { silent = true })
+vim.api.nvim_set_keymap("i", "<A-k>", "<C-o>k", { silent = true })
+vim.api.nvim_set_keymap("i", "<A-l>", "<C-o>l", { silent = true })
+vim.api.nvim_set_keymap("i", "<A-a>", "<C-o>a", { silent = true })
+vim.api.nvim_set_keymap("i", "<A-$>", "<C-o>$", { silent = true })
+
 vim.api.nvim_set_keymap("n", "<A-h>", "<C-w>h", { silent = true })
 vim.api.nvim_set_keymap("n", "<A-j>", "<C-w>j", { silent = true })
 vim.api.nvim_set_keymap("n", "<A-k>", "<C-w>k", { silent = true })
@@ -101,6 +108,7 @@ vim.api.nvim_set_keymap("n", "<Leader>rr", ":RustRunnables<CR>", {noremap = true
 vim.api.nvim_set_keymap("n", "<Leader>rc", ":RustOpenCargo<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>rp", ":RustParentModule<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>rt", ":RustToggleInlayHints<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>rg", ":CargoReload<CR>", {noremap = true, silent = true})
 
 vim.api.nvim_set_keymap("n", "<Leader>ff", ":lua require'myplugins.nvimbqf'.toggle_quickfix()<cr>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>f?", ":lua require'myplugins.nvimbqf'.print_bqf_config()<cr>", {noremap = true, silent = true})
