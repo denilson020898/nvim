@@ -146,6 +146,7 @@ vim.api.nvim_set_keymap("v", "<Leader>s", ":lua require('spectre').open_visual()
 vim.api.nvim_set_keymap("n", "<Leader>sp", "viw:lua require('spectre').open_file_search()<cr><cmd>vert resize 60<cr>", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "<F36>", ":PackerSync<cr>", {})
+vim.api.nvim_set_keymap("n", "<C-F12>", ":PackerSync<cr>", {})
 vim.api.nvim_set_keymap("n", "<F12>", "<Plug>RestNvim", {})
 -- vim.api.nvim_set_keymap("n", "<F10>", ":RooterToggle<cr>", {})
 vim.api.nvim_set_keymap("n", "<F9>", ":lua require'colorscheme'.toggle_theme()<cr>", {})
