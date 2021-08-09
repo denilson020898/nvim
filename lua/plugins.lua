@@ -34,8 +34,9 @@ return require("packer").startup(function()
     use 'f-person/git-blame.nvim'
     use "kevinhwang91/nvim-bqf"
     use 'norcalli/nvim-colorizer.lua'
-    use 'romgrk/barbar.nvim'
+    -- use 'romgrk/barbar.nvim'
     use "akinsho/nvim-toggleterm.lua"
+    use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
 
     -- color
     use 'sainnhe/sonokai'
@@ -75,6 +76,7 @@ return require("packer").startup(function()
 
     use 'windwp/nvim-spectre'
     use 'gennaro-tedesco/nvim-jqx'
+    use 'kazhala/close-buffers.nvim'
 
     -- lsp
     use "neovim/nvim-lspconfig"

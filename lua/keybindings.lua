@@ -71,26 +71,15 @@ vim.api.nvim_set_keymap("v", ">", ">gv", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "<Leader>a", "ggVG", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap("n", "<Tab>", ":BufferNext<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<S-Tab>", ":BufferPrevious<CR>", { noremap = true, silent = true })
-
-vim.api.nvim_set_keymap("n", "<Leader>1", ":BufferGoto 1<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Leader>2", ":BufferGoto 2<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Leader>3", ":BufferGoto 3<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Leader>4", ":BufferGoto 4<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Leader>5", ":BufferGoto 5<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Leader>6", ":BufferGoto 6<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Leader>7", ":BufferGoto 7<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Leader>8", ":BufferGoto 8<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Leader>9", ":BufferGoto 9<CR>", { noremap = true, silent = true })
-
-vim.api.nvim_set_keymap("n", "<Leader>bd", ":BufferOrderByDirectory<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Leader>bl", ":BufferOrderByLanguage<CR>", { noremap = true, silent = true })
-
-vim.api.nvim_set_keymap("n", "<Leader>bW", ":BufferWipeout<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Leader>bA", ":BufferCloseAllButCurrent<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Leader>bH", ":BufferCloseBuffersLeft<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Leader>bL", ":BufferCloseBuffersRight<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Tab>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>bw", "<cmd>lua require('close_buffers').wipe({type = 'all', force = true})<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>bo", "<cmd>lua require('close_buffers').wipe({type = 'other'})<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>bh", "<cmd>lua require('close_buffers').delete({type = 'hidden', force = true})<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>bn", "<cmd>lua require('close_buffers').delete({type = 'nameless'})<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>q",  "<cmd>lua require('close_buffers').delete({type = 'this'})<cr>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<Leader>q", ":bd<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>w", ":wa<CR>", {noremap = true, silent = true})
 
 vim.api.nvim_set_keymap("n", "<Leader><Space>", ":b#<CR>", { noremap = true, silent = true })
 
@@ -130,13 +119,10 @@ vim.api.nvim_set_keymap("n", "", "<Plug>kommentary_line_default", {})
 vim.api.nvim_set_keymap("v", "<C-/>", "<Plug>kommentary_visual_default", {})
 vim.api.nvim_set_keymap("v", "", "<Plug>kommentary_visual_default", {})
 
-vim.api.nvim_set_keymap("n", "<Leader>O", ":AerialToggle<cr>", { noremap = true, silent = true })
-
-vim.api.nvim_set_keymap("n", "<Leader>w", ":wa<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Leader>q", ":bd<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>o", ":AerialToggle<cr>", { noremap = true, silent = true })
 
 -- vim.api.nvim_set_keymap("n", "<Leader>S", ":lua require('spectre').open()<CR>", {    qnoremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Leader>S", ":lua require('spectre').open()<cr><cmd>vert resize 60<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>s", ":lua require('spectre').open()<cr><cmd>vert resize 60<cr>", { noremap = true, silent = true })
 -- "search current word
 -- vim.api.nvim_set_keymap("n", "<Leader>sw", "viw:lua require('spectre').open_visual()<CR>", { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap("v", "<Leader>s", ":lua require('spectre').open_visual()<CR>", { noremap = true, silent = true })
