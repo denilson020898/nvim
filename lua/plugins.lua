@@ -96,6 +96,8 @@ return require("packer").startup(function()
         requires = { 'nvim-lua/plenary.nvim' }
     }
 
+    use "Pocco81/HighStr.nvim"
+
     -- debug
     -- use 'mfussenegger/nvim-dap'
     -- use 'mfussenegger/nvim-jdtls'
