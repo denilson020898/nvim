@@ -30,7 +30,7 @@ vim.o.inccommand = "split"
 vim.o.incsearch = true
 vim.o.iskeyword = vim.o.iskeyword .. ",-" .. ",_"
 vim.o.mouse = "a"
-vim.o.pumheight = 15
+vim.o.pumheight = 30 
 vim.o.shortmess = vim.o.shortmess .. "c"
 -- vim.o.completeopt = "menuone,noselect,noinsert"
 vim.o.completeopt = "menuone,noselect"
@@ -42,7 +42,7 @@ vim.o.swapfile = false
 -- vim.o.t_Co = "256"
 -- vim.o.termguicolors = true
 vim.o.title = true
-vim.wo.colorcolumn = "98"
+vim.wo.colorcolumn = "100"
 -- vim.o.titlestring="%<%F%=%l/%L - nvim"
 vim.o.timeoutlen = 500
 vim.o.updatetime = 100

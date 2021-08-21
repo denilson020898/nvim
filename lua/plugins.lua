@@ -55,6 +55,7 @@ return require("packer").startup(function()
     use 'stevearc/aerial.nvim'
     use "haringsrob/nvim_context_vt"
     use 'abecodes/tabout.nvim'
+    use 'beauwilliams/focus.nvim'
 
     use "rafamadriz/friendly-snippets"
     use "hrsh7th/vim-vsnip"
