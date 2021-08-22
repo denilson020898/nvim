@@ -23,7 +23,6 @@ return require("packer").startup(function()
     use "wbthomason/packer.nvim"
 
     -- ui
-    use 'kosayoda/nvim-lightbulb'
     use {
         'hoob3rt/lualine.nvim',
         requires = {'kyazdani42/nvim-web-devicons', opt = true}
