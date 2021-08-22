@@ -1,4 +1,3 @@
--- Showing defaults
 require'nvim-lightbulb'.update_lightbulb {
     sign = {
         enabled = true,
@@ -8,7 +7,7 @@ require'nvim-lightbulb'.update_lightbulb {
     float = {
         enabled = false,
         -- Text to show in the popup float
-        -- text = "💡",
+        text = "💡",
         -- Available keys for window options:
         -- - height     of floating window
         -- - width      of floating window
@@ -28,9 +27,15 @@ require'nvim-lightbulb'.update_lightbulb {
     virtual_text = {
         enabled = false,
         -- Text to show at virtual text
-        -- text = "💡",
+        text = "💡",
+    },
+    status_text = {
+        enabled = false,
+        -- Text to provide when code actions are available
+        text = "💡",
+        -- Text to provide when no actions are available
+        text_unavailable = ""
     }
 }
--- vim.fn.sign_define('LightBulbSign', { text = "🤦", texthl = "🤦", linehl="🤦", numhl="🤦" })
 
 vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]

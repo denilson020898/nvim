@@ -1,4 +1,4 @@
-local execute = vim.api.nvim_command
+local eecute = vim.api.nvim_command
 local fn = vim.fn
 
 local install_path = fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
@@ -29,7 +29,6 @@ return require("packer").startup(function()
         requires = {'kyazdani42/nvim-web-devicons', opt = true}
     }
     use "kyazdani42/nvim-tree.lua"
-    use "nvim-lua/popup.nvim"
     use 'nvim-lua/plenary.nvim'
     use 'f-person/git-blame.nvim'
     use "kevinhwang91/nvim-bqf"
@@ -81,9 +80,6 @@ return require("packer").startup(function()
 
     -- lsp
     use "neovim/nvim-lspconfig"
-    use 'kabouzeid/nvim-lspinstall'
-    use "nvim-lua/lsp_extensions.nvim"
-    use 'folke/lsp-colors.nvim'
     use "ray-x/lsp_signature.nvim"
     use {
         "folke/trouble.nvim",
@@ -98,10 +94,6 @@ return require("packer").startup(function()
     }
 
     use "Pocco81/HighStr.nvim"
-
-    -- debug
-    -- use 'mfussenegger/nvim-dap'
-    -- use 'mfussenegger/nvim-jdtls'
 
     use {
         'phaazon/hop.nvim',
