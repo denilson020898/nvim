@@ -5,4 +5,5 @@ require('lsp.pylsp')
 require('lsp.tsserver')
 require('lsp.clangd')
 require('lsp.html')
+require('lsp.jsonls')
 

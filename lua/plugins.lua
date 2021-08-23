@@ -27,6 +27,10 @@ return require("packer").startup(function()
         'hoob3rt/lualine.nvim',
         requires = {'kyazdani42/nvim-web-devicons', opt = true}
     }
+    use {
+        "SmiteshP/nvim-gps",
+        requires = "nvim-treesitter/nvim-treesitter"
+    }
     use "kyazdani42/nvim-tree.lua"
     use 'nvim-lua/plenary.nvim'
     use 'f-person/git-blame.nvim'
