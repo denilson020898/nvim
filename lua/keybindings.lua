@@ -154,6 +154,7 @@ vim.api.nvim_set_keymap( "v", "\\7", ":<c-u>HSHighlight 7<CR>", { noremap = true
 vim.api.nvim_set_keymap( "v", "\\8", ":<c-u>HSHighlight 8<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap( "v", "\\9", ":<c-u>HSHighlight 9<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap( "v", "\\\\", ":<c-u>HSRmHighlight<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap( "n", "\\|", ":HSRmHighlight rm_all<CR>", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "<leader>xx", "<cmd>Trouble<cr>", {silent = true, noremap = true})
 vim.api.nvim_set_keymap("n", "<leader>xw", "<cmd>Trouble lsp_workspace_diagnostics<cr>", {silent = true, noremap = true})
