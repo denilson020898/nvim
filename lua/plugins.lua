@@ -45,7 +45,17 @@ return require("packer").startup(function()
     use 'eddyekofo94/gruvbox-flat.nvim'
 
     -- helpers
-    use "hrsh7th/nvim-compe"
+    -- use "hrsh7th/nvim-compe"
+    use {
+        "hrsh7th/nvim-cmp",
+        requires = {
+            "hrsh7th/vim-vsnip",
+            "hrsh7th/cmp-buffer",
+            "ray-x/cmp-treesitter",
+            "hrsh7th/cmp-vsnip",
+            "hrsh7th/cmp-path",
+        }
+    }
     use 'b3nj5m1n/kommentary'
     use "TimUntersberger/neogit"
     use 'sindrets/diffview.nvim'
@@ -60,7 +70,6 @@ return require("packer").startup(function()
     use 'beauwilliams/focus.nvim'
 
     use "rafamadriz/friendly-snippets"
-    use "hrsh7th/vim-vsnip"
     use "lukas-reineke/indent-blankline.nvim"
 
     use 'rmagatti/auto-session'
