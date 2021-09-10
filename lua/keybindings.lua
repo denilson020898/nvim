@@ -90,6 +90,7 @@ vim.api.nvim_set_keymap("n", "<Leader>te", ":Telescope file_browser<CR>", {norem
 vim.api.nvim_set_keymap("n", "<Leader>tf", "<cmd>lua require('telescope.builtin').find_files()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>tg", "<cmd>lua require('telescope.builtin').live_grep()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>b", "<cmd>lua require('telescope.builtin').buffers()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Leader>u", "<cmd>lua require('telescope.builtin').buffers()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>th", "<cmd>lua require('telescope.builtin').help_tags()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Leader>ts", ":SearchSession<CR>", {noremap = true, silent = true})
 
