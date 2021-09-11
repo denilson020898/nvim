@@ -51,11 +51,20 @@ return require("packer").startup(function()
         requires = {
             "hrsh7th/vim-vsnip",
             "hrsh7th/cmp-buffer",
-            "ray-x/cmp-treesitter",
-            "hrsh7th/cmp-vsnip",
             "hrsh7th/cmp-path",
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-calc",
+            "hrsh7th/cmp-vsnip",
+            "ray-x/cmp-treesitter",
         }
     }
+    use {
+        'Saecki/crates.nvim', 
+        requires = { 
+            'nvim-lua/plenary.nvim' 
+        }
+    }
+
     use 'b3nj5m1n/kommentary'
     use "TimUntersberger/neogit"
     use 'sindrets/diffview.nvim'
@@ -67,7 +76,7 @@ return require("packer").startup(function()
     use 'stevearc/aerial.nvim'
     use "haringsrob/nvim_context_vt"
     use 'abecodes/tabout.nvim'
-    use 'beauwilliams/focus.nvim'
+    -- use 'beauwilliams/focus.nvim'
 
     use "rafamadriz/friendly-snippets"
     use "lukas-reineke/indent-blankline.nvim"
