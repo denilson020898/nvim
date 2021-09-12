@@ -1,4 +1,5 @@
-require('lsp.rust_analyzer')
+-- require('lsp.rust_analyzer')
+require('lsp.rust_tools')
 require('lsp.pylsp')
 -- require('lsp.sumneko')
 -- require('lsp.flow')
