@@ -1,5 +1,5 @@
 local O = {} 
- 
+
 O.on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -31,10 +31,10 @@ O.on_attach = function(client, bufnr)
 
     -- Set some keybinds conditional on server capabilities
     if client.resolved_capabilities.document_formatting then
-        buf_set_keymap("n", "<Leader>=", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+        buf_set_keymap("n", "<Leader>z", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
     end
     if client.resolved_capabilities.document_range_formatting then
-        buf_set_keymap("v", "<Leader>=", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
+        buf_set_keymap("v", "<Leader>z", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
     end
 
     -- Set autocommands conditional on server_capabilities
@@ -58,11 +58,11 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.resolveSupport = {
-  properties = {
-    'documentation',
-    'detail',
-    'additionalTextEdits',
-  }
+    properties = {
+        'documentation',
+        'detail',
+        'additionalTextEdits',
+    }
 }
 O.capabilities = capabilities
 

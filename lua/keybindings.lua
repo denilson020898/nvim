@@ -1,6 +1,6 @@
 vim.api.nvim_set_keymap("n", "<Space>", "<NOP>", { noremap = true })
 vim.g.mapleader = " "
-    
+
 vim.api.nvim_set_keymap("i", "jk", "<esc>", {})
 vim.api.nvim_set_keymap("i", "jj", "<esc>", {})
 vim.api.nvim_set_keymap("i", "kk", "<esc>", {})

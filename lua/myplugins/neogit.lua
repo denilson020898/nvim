@@ -36,3 +36,4 @@ neogit.setup {
     --     }
     -- }
 }
+

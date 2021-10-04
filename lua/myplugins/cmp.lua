@@ -17,7 +17,7 @@ cmp.setup {
     -- preselect = ...,
     -- ...
     documentation = {
-      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+        border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
     },
     -- sorting = {
     --     priority_weight = 2.,

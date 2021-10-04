@@ -107,7 +107,12 @@ return require("packer").startup(function()
     use 'kazhala/close-buffers.nvim'
 
     -- lsp
-    use "neovim/nvim-lspconfig"
+
+    use {
+        "neovim/nvim-lspconfig",
+        'williamboman/nvim-lsp-installer',
+    }
+
     use "ray-x/lsp_signature.nvim"
     use {
         "folke/trouble.nvim",

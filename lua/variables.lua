@@ -18,5 +18,5 @@ if exists('g:fvim_loaded')
     "FVimCursorSmoothBlink v:true
     FVimCustomTitleBar v:true
     nnoremap <A-CR> :FVimToggleFullScreen<CR>
-endif
-]])
+    endif
+    ]])

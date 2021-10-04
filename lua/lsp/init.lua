@@ -1,10 +1,3 @@
--- require('lsp.rust_analyzer')
+require('lsp.lsp_installer')
 require('lsp.rust_tools')
-require('lsp.pylsp')
--- require('lsp.sumneko')
--- require('lsp.flow')
-require('lsp.tsserver')
-require('lsp.clangd')
-require('lsp.html')
-require('lsp.jsonls')
 
