@@ -84,7 +84,7 @@ vim.api.nvim_set_keymap("n", "<Leader>bo", "<cmd>lua require('close_buffers').wi
 vim.api.nvim_set_keymap("n", "<Leader>bh", "<cmd>lua require('close_buffers').delete({type = 'hidden', force = true})<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>bn", "<cmd>lua require('close_buffers').delete({type = 'nameless'})<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>q",  "<cmd>lua require('close_buffers').delete({type = 'this'})<cr>", { noremap = true })
--- vim.api.nvim_set_keymap("n", "<Leader>q", ":bd<CR>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<Leader>d", ":bd<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>w", ":wa<CR>", {noremap = true})
 
 vim.api.nvim_set_keymap("n", "<Leader><Space>", ":b#<CR>", { noremap = true })
