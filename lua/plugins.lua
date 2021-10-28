@@ -45,7 +45,6 @@ return require("packer").startup(function()
     use 'eddyekofo94/gruvbox-flat.nvim'
 
     -- helpers
-    -- use "hrsh7th/nvim-compe"
     use {
         "hrsh7th/nvim-cmp",
         requires = {
