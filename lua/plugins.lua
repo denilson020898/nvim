@@ -68,7 +68,7 @@ return require("packer").startup(function()
         }
     }
 
-    use 'b3nj5m1n/kommentary'
+    -- use 'b3nj5m1n/kommentary'
     use "TimUntersberger/neogit"
     use 'sindrets/diffview.nvim'
     use "nvim-telescope/telescope.nvim"
@@ -109,7 +109,8 @@ return require("packer").startup(function()
     use 'windwp/nvim-spectre'
     use 'gennaro-tedesco/nvim-jqx'
     use 'kazhala/close-buffers.nvim'
-
+    use "tversteeg/registers.nvim"
+    use 'chentau/marks.nvim'
     -- lsp
 
     use {
@@ -139,6 +140,13 @@ return require("packer").startup(function()
             -- you can configure Hop the way you like here; see :h hop-config
             -- require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
             require'hop'.setup {}
+        end
+    }
+
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
         end
     }
 

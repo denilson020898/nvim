@@ -120,12 +120,6 @@ vim.api.nvim_set_keymap("n", "<Leader>gb", ":GitBlameToggle<CR>", {noremap = tru
 vim.api.nvim_set_keymap('x', 'K', ':move \'<-2<CR>gv-gv', {noremap = true})
 vim.api.nvim_set_keymap('x', 'J', ':move \'>+1<CR>gv-gv', {noremap = true})
 
--- windows terminal <C-/> is 
-vim.api.nvim_set_keymap("n", "<C-/>", "<Plug>kommentary_line_default", {})
-vim.api.nvim_set_keymap("n", "", "<Plug>kommentary_line_default", {})
-vim.api.nvim_set_keymap("v", "<C-/>", "<Plug>kommentary_visual_default", {})
-vim.api.nvim_set_keymap("v", "", "<Plug>kommentary_visual_default", {})
-
 vim.api.nvim_set_keymap("n", "<Leader>o", ":AerialToggle<cr>", { noremap = true })
 
 -- vim.api.nvim_set_keymap("n", "<Leader>S", ":lua require('spectre').open()<CR>", {    qnoremap = true })
