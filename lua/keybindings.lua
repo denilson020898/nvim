@@ -179,6 +179,8 @@ vim.api.nvim_set_keymap("n", "<leader>hC", "<cmd>HopChar1<cr>", {noremap = true}
 
 vim.api.nvim_set_keymap("n", "<leader>hC", "<cmd>HopChar1<cr>", {noremap = true})
 
+vim.api.nvim_set_keymap("n", "<leader>c", "<cmd>TSContextToggle<cr>", {noremap = true})
+
 vim.api.nvim_exec([[
 nnoremap <silent> <leader>vt :lua require('crates').toggle()<cr>
 nnoremap <silent> <leader>vr :lua require('crates').reload()<cr>

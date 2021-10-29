@@ -19,4 +19,5 @@ require('myplugins.closebuffers')
 require('myplugins.bufferline')
 require('myplugins.indentblankline')
 require('myplugins.highstr')
+require('myplugins.treesittercontext')
 

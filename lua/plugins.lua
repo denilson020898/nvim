@@ -22,6 +22,8 @@ return require("packer").startup(function()
     -- Packer can manage itself
     use "wbthomason/packer.nvim"
 
+    use {'stevearc/gkeep.nvim', run = ':UpdateRemotePlugins'}
+
     -- ui
     use {
         'hoob3rt/lualine.nvim',
@@ -36,7 +38,6 @@ return require("packer").startup(function()
     use 'f-person/git-blame.nvim'
     use "kevinhwang91/nvim-bqf"
     use 'norcalli/nvim-colorizer.lua'
-    -- use 'romgrk/barbar.nvim'
     use "akinsho/nvim-toggleterm.lua"
     use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
 
@@ -76,7 +77,8 @@ return require("packer").startup(function()
     use "ahmedkhalf/lsp-rooter.nvim"
     use "windwp/nvim-ts-autotag"
     use 'stevearc/aerial.nvim'
-    use "haringsrob/nvim_context_vt"
+    -- use "haringsrob/nvim_context_vt"
+    use 'romgrk/nvim-treesitter-context'
     use 'abecodes/tabout.nvim'
     use { "beauwilliams/focus.nvim", config = function() require("focus").setup() end }
     -- Or lazy load with `module` option. See further down for info on how to lazy load when using FocusSplit commands
