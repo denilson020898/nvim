@@ -40,6 +40,16 @@ vim.api.nvim_set_keymap("n", "<A-j>", "<C-w>j", {})
 vim.api.nvim_set_keymap("n", "<A-k>", "<C-w>k", {})
 vim.api.nvim_set_keymap("n", "<A-l>", "<C-w>l", {})
 
+vim.api.nvim_set_keymap("n", "˙", "<C-w>h", {})
+vim.api.nvim_set_keymap("n", "∆", "<C-w>j", {})
+vim.api.nvim_set_keymap("n", "˚", "<C-w>k", {})
+vim.api.nvim_set_keymap("n", "¬", "<C-w>l", {})
+
+vim.api.nvim_set_keymap("n", "<leader>h", "<C-w>h", {})
+vim.api.nvim_set_keymap("n", "<leader>j", "<C-w>j", {})
+vim.api.nvim_set_keymap("n", "<leader>k", "<C-w>k", {})
+vim.api.nvim_set_keymap("n", "<leader>l", "<C-w>l", {})
+
 vim.api.nvim_set_keymap("n", "<A-H>", "<C-w>H", {})
 vim.api.nvim_set_keymap("n", "<A-J>", "<C-w>J", {})
 vim.api.nvim_set_keymap("n", "<A-K>", "<C-w>K", {})
@@ -164,14 +174,13 @@ vim.api.nvim_set_keymap("n", "<leader>xl", "<cmd>Trouble loclist<cr>", {noremap 
 vim.api.nvim_set_keymap("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", {noremap = true})
 vim.api.nvim_set_keymap("n", "gR", "<cmd>Trouble lsp_references<cr>", {noremap = true})
 
-vim.api.nvim_set_keymap("n", "<leader>hw", "<cmd>HopWord<cr>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<leader>hs", "<cmd>HopLineStart<cr>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<leader>hl", "<cmd>HopLine<cr>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<leader>hp", "<cmd>HopPattern<cr>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<leader>hc", "<cmd>HopChar2<cr>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<leader>hC", "<cmd>HopChar1<cr>", {noremap = true})
-
-vim.api.nvim_set_keymap("n", "<leader>hC", "<cmd>HopChar1<cr>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>pw", "<cmd>HopWord<cr>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>ps", "<cmd>HopLineStart<cr>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>pl", "<cmd>HopLine<cr>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>pp", "<cmd>HopPattern<cr>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>pc", "<cmd>HopChar2<cr>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>pC", "<cmd>HopChar1<cr>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>pC", "<cmd>HopChar1<cr>", {noremap = true})
 
 vim.api.nvim_set_keymap("n", "<leader>c", "<cmd>TSContextToggle<cr>", {noremap = true})
 
