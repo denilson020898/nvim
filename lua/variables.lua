@@ -13,7 +13,7 @@ vim.g.auto_session_pre_save_cmds = { "NvimTreeClose", "cclose", "AerialClose" }
 vim.g.gitblame_enabled = 0
 
 -- Available options: <author>, <committer>, <date>, <committer-date>, <summary>, <sha>
-vim.g.gitblame_message_template = '<sha> • <summary> • <date> • <author>'
+vim.g.gitblame_message_template = '<summary> • <author> • <date> • <sha>'
 
 vim.cmd([[
 if exists('g:fvim_loaded')
