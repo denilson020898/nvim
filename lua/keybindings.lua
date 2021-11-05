@@ -9,7 +9,8 @@ vim.api.nvim_set_keymap("i", "kj", "<esc>", {})
 vim.api.nvim_set_keymap("n", "<Leader>/", ":set hlsearch!<CR>", { noremap = true })
 
 vim.api.nvim_set_keymap("n", "<leader>ee", ":NvimTreeFindFile<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>er", ":NvimTreeToggle<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>ee", ":NvimTreeToggle<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-e>", ":NvimTreeToggle<CR>", { noremap = true })
 
 vim.api.nvim_set_keymap("n", "Y", "y$", { noremap = true })
 vim.api.nvim_set_keymap("n", "n", "nzzzv", { noremap = true })
