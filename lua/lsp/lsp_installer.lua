@@ -1,7 +1,25 @@
 local lsp_installer = require("nvim-lsp-installer")
+local lsp_installer_servers = require("nvim-lsp-installer/servers")
 
 local on_attach = require("lsp.global").on_attach
 local capabilities = require("lsp.global").capabilities
+
+local server_available, requested_server = lsp_installer_servers.get_server("rust_analyzer")
+
+local extension_path = '/Users/denilson/.vscode/extensions/vadimcn.vscode-lldb-1.6.9/'
+local codelldb_path = extension_path .. 'adapter/codelldb'
+local liblldb_path = extension_path .. 'lldb/lib/liblldb.so'
+
+if server_available then
+    require("rust-tools").setup({
+        -- dap = {
+        --     adapter = require("rust-tools.dap").get_codelldb_adapter(
+        --         codelldb_path, liblldb_path
+        --     ),
+        -- },
+        server = { cmd = requested_server._default_options.cmd },
+    })
+end
 
 lsp_installer.on_server_ready(function(server)
     local opts = {
@@ -23,7 +41,6 @@ lsp_installer.on_server_ready(function(server)
         }
     end
 
-
     if server.name == "pylsp" then
         opts.settings = {
             pylsp = {
@@ -42,8 +59,11 @@ lsp_installer.on_server_ready(function(server)
         }
     end
 
+    if server.name == "rust_analyzer" then
+        return
+    end
+
     -- This setup() function is exactly the same as lspconfig's setup function (:help lspconfig-quickstart)
     server:setup(opts)
-    vim.cmd [[ do User LspAttachBuffers ]]
 end)
 

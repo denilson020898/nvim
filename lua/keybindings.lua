@@ -8,7 +8,7 @@ vim.api.nvim_set_keymap("i", "kj", "<esc>", {})
 
 vim.api.nvim_set_keymap("n", "<Leader>/", ":set hlsearch!<CR>", { noremap = true })
 
-vim.api.nvim_set_keymap("n", "<leader>ee", ":NvimTreeFindFile<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>er", ":NvimTreeFindFile<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>ee", ":NvimTreeToggle<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-e>", ":NvimTreeToggle<CR>", { noremap = true })
 
@@ -79,6 +79,8 @@ vim.api.nvim_set_keymap("n", "<A-x>", "<C-w>x", {})
 
 vim.api.nvim_set_keymap("n", "<A-S>", "<C-w>^<C-w>k<C-w>J", {})
 vim.api.nvim_set_keymap("n", "<A-V>", "<C-w>^<C-w>k<C-w>L", {})
+vim.api.nvim_set_keymap("n", "<M-S>", "<C-w>^<C-w>k<C-w>J", {})
+vim.api.nvim_set_keymap("n", "<M-V>", "<C-w>^<C-w>k<C-w>L", {})
 
 vim.api.nvim_set_keymap("n", "<A-d>", ":FocusMaxOrEqual<cr>", {})
 vim.api.nvim_set_keymap("n", "<A-t>", ":FocusToggle<cr>", {})
