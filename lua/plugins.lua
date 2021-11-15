@@ -62,10 +62,12 @@ return require("packer").startup(function()
         }
     }
     use {
-        'Saecki/crates.nvim', 
-        requires = { 
-            'nvim-lua/plenary.nvim' 
-        }
+        'Saecki/crates.nvim',
+        event = { "BufRead Cargo.toml" },
+        requires = { { 'nvim-lua/plenary.nvim' } },
+        config = function()
+            require('crates').setup()
+        end,
     }
 
     -- use 'b3nj5m1n/kommentary'
@@ -119,6 +121,10 @@ return require("packer").startup(function()
     }
 
     use "ray-x/lsp_signature.nvim"
+    use {
+      'weilbith/nvim-code-action-menu',
+      cmd = 'CodeActionMenu',
+    }
     use {
         "folke/trouble.nvim",
         requires = "kyazdani42/nvim-web-devicons",
