@@ -119,7 +119,7 @@ return require("packer").startup(function()
         "neovim/nvim-lspconfig",
         'williamboman/nvim-lsp-installer',
     }
-
+    use "nvim-lua/lsp_extensions.nvim"
     use "ray-x/lsp_signature.nvim"
     use {
       'weilbith/nvim-code-action-menu',

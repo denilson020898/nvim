@@ -37,6 +37,19 @@ O.on_attach = function(client, bufnr)
         buf_set_keymap("v", "<Leader>z", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
     end
 
+    local filetype = vim.api.nvim_buf_get_option(0, 'filetype')
+
+    if filetype == 'rust' then
+        -- vim.cmd [[autocmd BufWritePre <buffer> :lua require('lsp.helpers').format_rust()]]
+        vim.cmd [[autocmd CursorMoved,InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost <buffer> :lua require'lsp_extensions'.inlay_hints{ prefix = '» ', highlight = "Whitespace", enabled = {"ChainingHint", "TypeHint", "ParameterHint"} } ]]
+    end
+    -- if filetype == 'go' then
+    --     vim.cmd [[autocmd BufWritePre <buffer> :lua require('lsp.helpers').goimports(2000)]]
+    --
+    --     -- gopls requires a require to list workspace arguments.
+    --     vim.cmd [[autocmd BufEnter,BufNewFile,BufRead <buffer> map <buffer> <leader>fs <cmd>lua require('telescope.builtin').lsp_workspace_symbols { query = vim.fn.input("Query: ") }<cr>]]
+    -- end
+
     -- Set autocommands conditional on server_capabilities
     if client.resolved_capabilities.document_highlight then
         vim.api.nvim_exec([[
