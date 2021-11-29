@@ -41,11 +41,6 @@ vim.api.nvim_set_keymap("n", "<A-j>", "<C-w>j", {})
 vim.api.nvim_set_keymap("n", "<A-k>", "<C-w>k", {})
 vim.api.nvim_set_keymap("n", "<A-l>", "<C-w>l", {})
 
-vim.api.nvim_set_keymap("n", "˙", "<C-w>h", {})
-vim.api.nvim_set_keymap("n", "∆", "<C-w>j", {})
-vim.api.nvim_set_keymap("n", "˚", "<C-w>k", {})
-vim.api.nvim_set_keymap("n", "¬", "<C-w>l", {})
-
 vim.api.nvim_set_keymap("n", "<leader>h", "<C-w>h", {})
 vim.api.nvim_set_keymap("n", "<leader>j", "<C-w>j", {})
 vim.api.nvim_set_keymap("n", "<leader>k", "<C-w>k", {})
@@ -80,8 +75,8 @@ vim.api.nvim_set_keymap("n", "<A-x>", "<C-w>x", {})
 vim.api.nvim_set_keymap("n", "<leader>V", "<C-w>^<C-w>k<C-w>J", {})
 vim.api.nvim_set_keymap("n", "<leader>H", "<C-w>^<C-w>k<C-w>L", {})
 
--- vim.api.nvim_set_keymap("n", "<leader>,,", "<cmd>FocusMaxOrEqual<cr>", {})
--- vim.api.nvim_set_keymap("n", "<leader>,.", "<cmd>FocusToggle<cr>", {})
+vim.api.nvim_set_keymap("n", "<leader>,,", "<cmd>FocusMaxOrEqual<cr>", {})
+vim.api.nvim_set_keymap("n", "<leader>,.", "<cmd>FocusToggle<cr>", {})
 
 vim.api.nvim_set_keymap("v", "<", "<gv", { noremap = true })
 vim.api.nvim_set_keymap("v", ">", ">gv", { noremap = true })
