@@ -61,7 +61,7 @@ cmp.setup({
         { name = 'buffer' },
         { name = 'treesitter' },
         { name = 'calc' },
-        { name = 'rg' },
+        -- { name = 'rg' },
     })
 })
 
@@ -81,11 +81,11 @@ cmp.setup.cmdline(':', {
     })
 })
 
--- cmp.setup.cmdline(':', {
---   sources = {
---     { name = 'cmdline_history' },
---   },
--- })
+cmp.setup.cmdline(':', {
+  sources = {
+    { name = 'cmdline_history' },
+  },
+})
 
 -- -- Setup lspconfig.
 -- local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())

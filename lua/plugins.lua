@@ -82,7 +82,7 @@ return require("packer").startup(function()
     -- use "haringsrob/nvim_context_vt"
     use 'romgrk/nvim-treesitter-context'
     use 'abecodes/tabout.nvim'
-    use { "beauwilliams/focus.nvim", config = function() require("focus").setup() end }
+    -- use { "beauwilliams/focus.nvim", config = function() require("focus").setup() end }
     -- Or lazy load with `module` option. See further down for info on how to lazy load when using FocusSplit commands
     -- Or lazy load this plugin by creating an arbitrary command using the cmd option in packer.nvim
     -- use { 'beauwilliams/focus.nvim', cmd = { "FocusSplitNicely", "FocusSplitCycle" }, module = "focus",
@@ -136,8 +136,6 @@ return require("packer").startup(function()
         'NTBBloodbath/rest.nvim',
         requires = { 'nvim-lua/plenary.nvim' }
     }
-
-    use "Pocco81/HighStr.nvim"
 
     use {
         'phaazon/hop.nvim',
