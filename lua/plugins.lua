@@ -131,6 +131,7 @@ return require("packer").startup(function()
     }
 
     use 'simrat39/rust-tools.nvim'
+    use 'mfussenegger/nvim-dap'
 
     use {
         'NTBBloodbath/rest.nvim',

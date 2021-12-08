@@ -111,6 +111,9 @@ vim.api.nvim_set_keymap("n", "<Leader>rc", ":RustOpenCargo<CR>", {noremap = true
 vim.api.nvim_set_keymap("n", "<Leader>rp", ":RustParentModule<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>rt", ":RustToggleInlayHints<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>rg", ":CargoReload<CR>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<Leader>r.", ":RustHoverAction<CR>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<Leader>re", ":RustExpandMacro<CR>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<Leader>rd", ":RustDebuggables<CR>", {noremap = true})
 
 vim.api.nvim_set_keymap("n", "<Leader>ff", ":lua require'myplugins.nvimbqf'.toggle_quickfix()<cr>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>f?", ":lua require'myplugins.nvimbqf'.print_bqf_config()<cr>", {noremap = true})

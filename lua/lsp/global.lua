@@ -39,10 +39,10 @@ O.on_attach = function(client, bufnr)
 
     local filetype = vim.api.nvim_buf_get_option(0, 'filetype')
 
-    if filetype == 'rust' then
-        -- vim.cmd [[autocmd BufWritePre <buffer> :lua require('lsp.helpers').format_rust()]]
-        vim.cmd [[autocmd CursorMoved,InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost <buffer> :lua require'lsp_extensions'.inlay_hints{ prefix = '» ', highlight = "Whitespace", enabled = {"ChainingHint", "TypeHint", "ParameterHint"} } ]]
-    end
+    -- if filetype == 'rust' then
+    --     -- vim.cmd [[autocmd BufWritePre <buffer> :lua require('lsp.helpers').format_rust()]]
+    --     vim.cmd [[autocmd CursorMoved,InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost <buffer> :lua require'lsp_extensions'.inlay_hints{ prefix = '» ', highlight = "Whitespace", enabled = {"ChainingHint", "TypeHint", "ParameterHint"} } ]]
+    -- end
     -- if filetype == 'go' then
     --     vim.cmd [[autocmd BufWritePre <buffer> :lua require('lsp.helpers').goimports(2000)]]
     --
