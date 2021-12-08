@@ -1,7 +1,7 @@
 require("keybindings")
 require("plugins")
-require("variables")
 require("settings")
 require("colorscheme")
 require("myplugins")
+require("variables")
 require("lsp")
