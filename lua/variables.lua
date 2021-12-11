@@ -8,7 +8,15 @@ vim.g.nvim_tree_width_allow_resize = 1
 -- vim.g.neovide_fullscreen = true
 -- vim.g.neovide_transparency=1.0
 
-vim.g.auto_session_pre_save_cmds = { "NvimTreeClose", "cclose", "AerialClose" }
+vim.g.auto_session_post_restore_cmds = { 
+    "bd spectre",
+}
+vim.g.auto_session_pre_save_cmds = { 
+    "NvimTreeClose", 
+    "cclose", 
+    "AerialClose", 
+    "GkeepClose",
+}
 
 vim.g.gitblame_enabled = 0
 

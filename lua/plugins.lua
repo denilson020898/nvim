@@ -62,10 +62,12 @@ return require("packer").startup(function()
         }
     }
     use {
-        'Saecki/crates.nvim', 
-        requires = { 
-            'nvim-lua/plenary.nvim' 
-        }
+        'Saecki/crates.nvim',
+        event = { "BufRead Cargo.toml" },
+        requires = { { 'nvim-lua/plenary.nvim' } },
+        config = function()
+            require('crates').setup()
+        end,
     }
 
     -- use 'b3nj5m1n/kommentary'
@@ -117,21 +119,24 @@ return require("packer").startup(function()
         "neovim/nvim-lspconfig",
         'williamboman/nvim-lsp-installer',
     }
-
+    use "nvim-lua/lsp_extensions.nvim"
     use "ray-x/lsp_signature.nvim"
+    use {
+      'weilbith/nvim-code-action-menu',
+      cmd = 'CodeActionMenu',
+    }
     use {
         "folke/trouble.nvim",
         requires = "kyazdani42/nvim-web-devicons",
     }
 
     use 'simrat39/rust-tools.nvim'
+    use 'mfussenegger/nvim-dap'
 
     use {
         'NTBBloodbath/rest.nvim',
         requires = { 'nvim-lua/plenary.nvim' }
     }
-
-    use "Pocco81/HighStr.nvim"
 
     use {
         'phaazon/hop.nvim',

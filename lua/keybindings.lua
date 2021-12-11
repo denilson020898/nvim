@@ -1,14 +1,14 @@
 vim.api.nvim_set_keymap("n", "<Space>", "<NOP>", { noremap = true })
 vim.g.mapleader = " "
 
-vim.api.nvim_set_keymap("i", "jk", "<esc>", {})
-vim.api.nvim_set_keymap("i", "jj", "<esc>", {})
-vim.api.nvim_set_keymap("i", "kk", "<esc>", {})
-vim.api.nvim_set_keymap("i", "kj", "<esc>", {})
+-- vim.api.nvim_set_keymap("i", "jk", "<esc>", {})
+-- vim.api.nvim_set_keymap("i", "jj", "<esc>", {})
+-- vim.api.nvim_set_keymap("i", "kk", "<esc>", {})
+-- vim.api.nvim_set_keymap("i", "kj", "<esc>", {})
 
 vim.api.nvim_set_keymap("n", "<Leader>/", ":set hlsearch!<CR>", { noremap = true })
 
-vim.api.nvim_set_keymap("n", "<leader>ee", ":NvimTreeFindFile<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>er", ":NvimTreeFindFile<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>ee", ":NvimTreeToggle<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-e>", ":NvimTreeToggle<CR>", { noremap = true })
 
@@ -41,11 +41,6 @@ vim.api.nvim_set_keymap("n", "<A-j>", "<C-w>j", {})
 vim.api.nvim_set_keymap("n", "<A-k>", "<C-w>k", {})
 vim.api.nvim_set_keymap("n", "<A-l>", "<C-w>l", {})
 
-vim.api.nvim_set_keymap("n", "˙", "<C-w>h", {})
-vim.api.nvim_set_keymap("n", "∆", "<C-w>j", {})
-vim.api.nvim_set_keymap("n", "˚", "<C-w>k", {})
-vim.api.nvim_set_keymap("n", "¬", "<C-w>l", {})
-
 vim.api.nvim_set_keymap("n", "<leader>h", "<C-w>h", {})
 vim.api.nvim_set_keymap("n", "<leader>j", "<C-w>j", {})
 vim.api.nvim_set_keymap("n", "<leader>k", "<C-w>k", {})
@@ -77,11 +72,11 @@ vim.api.nvim_set_keymap("n", "<A-p>", "<C-w>p", {})
 vim.api.nvim_set_keymap("n", "<A-b>", "<C-w>b", {})
 vim.api.nvim_set_keymap("n", "<A-x>", "<C-w>x", {})
 
-vim.api.nvim_set_keymap("n", "<A-S>", "<C-w>^<C-w>k<C-w>J", {})
-vim.api.nvim_set_keymap("n", "<A-V>", "<C-w>^<C-w>k<C-w>L", {})
+vim.api.nvim_set_keymap("n", "<leader>V", "<C-w>^<C-w>k<C-w>J", {})
+vim.api.nvim_set_keymap("n", "<leader>H", "<C-w>^<C-w>k<C-w>L", {})
 
-vim.api.nvim_set_keymap("n", "<A-d>", ":FocusMaxOrEqual<cr>", {})
-vim.api.nvim_set_keymap("n", "<A-t>", ":FocusToggle<cr>", {})
+vim.api.nvim_set_keymap("n", "<leader>,,", "<cmd>FocusMaxOrEqual<cr>", {})
+vim.api.nvim_set_keymap("n", "<leader>,.", "<cmd>FocusToggle<cr>", {})
 
 vim.api.nvim_set_keymap("v", "<", "<gv", { noremap = true })
 vim.api.nvim_set_keymap("v", ">", ">gv", { noremap = true })
@@ -116,12 +111,16 @@ vim.api.nvim_set_keymap("n", "<Leader>rc", ":RustOpenCargo<CR>", {noremap = true
 vim.api.nvim_set_keymap("n", "<Leader>rp", ":RustParentModule<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>rt", ":RustToggleInlayHints<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>rg", ":CargoReload<CR>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<Leader>r.", ":RustHoverAction<CR>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<Leader>re", ":RustExpandMacro<CR>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<Leader>rd", ":RustDebuggables<CR>", {noremap = true})
 
 vim.api.nvim_set_keymap("n", "<Leader>ff", ":lua require'myplugins.nvimbqf'.toggle_quickfix()<cr>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>f?", ":lua require'myplugins.nvimbqf'.print_bqf_config()<cr>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>fc", ":cexpr []<CR>", {noremap = true})
 
 vim.api.nvim_set_keymap("n", "<Leader>gg", ":Neogit<CR>", {noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>G", ":DiffviewClose<CR>", {noremap = true })
 -- vim.api.nvim_set_keymap("n", "<Leader>gs", ":Gitsigns toggle_signs<CR>", {noremap = true})
 -- vim.api.nvim_set_keymap("n", "<Leader>gn", ":Gitsigns toggle_numhl<CR>", {noremap = true})
 -- vim.api.nvim_set_keymap("n", "<Leader>gl", ":Gitsigns toggle_linehl<CR>", {noremap = true})
@@ -155,19 +154,6 @@ vim.api.nvim_set_keymap("n", "<F9>", ":lua require'colorscheme'.toggle_theme()<c
 vim.api.nvim_set_keymap("n", "<F8>", ":IndentBlanklineToggle<cr>", {})
 vim.api.nvim_set_keymap("n", "<F5>", ":checktime<cr>", {})
 
-vim.api.nvim_set_keymap( "v", "\\0", ":<c-u>HSHighlight 0<CR>", { noremap = true })
-vim.api.nvim_set_keymap( "v", "\\1", ":<c-u>HSHighlight 1<CR>", { noremap = true })
-vim.api.nvim_set_keymap( "v", "\\2", ":<c-u>HSHighlight 2<CR>", { noremap = true })
-vim.api.nvim_set_keymap( "v", "\\3", ":<c-u>HSHighlight 3<CR>", { noremap = true })
-vim.api.nvim_set_keymap( "v", "\\4", ":<c-u>HSHighlight 4<CR>", { noremap = true })
-vim.api.nvim_set_keymap( "v", "\\5", ":<c-u>HSHighlight 5<CR>", { noremap = true })
-vim.api.nvim_set_keymap( "v", "\\6", ":<c-u>HSHighlight 6<CR>", { noremap = true })
-vim.api.nvim_set_keymap( "v", "\\7", ":<c-u>HSHighlight 7<CR>", { noremap = true })
-vim.api.nvim_set_keymap( "v", "\\8", ":<c-u>HSHighlight 8<CR>", { noremap = true })
-vim.api.nvim_set_keymap( "v", "\\9", ":<c-u>HSHighlight 9<CR>", { noremap = true })
-vim.api.nvim_set_keymap( "v", "\\\\", ":<c-u>HSRmHighlight<CR>", { noremap = true })
-vim.api.nvim_set_keymap( "n", "\\|", ":HSRmHighlight rm_all<CR>", { noremap = true })
-
 vim.api.nvim_set_keymap("n", "<leader>xx", "<cmd>Trouble<cr>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<leader>xw", "<cmd>Trouble lsp_workspace_diagnostics<cr>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<leader>xd", "<cmd>Trouble lsp_document_diagnostics<cr>", {noremap = true})
@@ -184,6 +170,10 @@ vim.api.nvim_set_keymap("n", "<leader>pC", "<cmd>HopChar1<cr>", {noremap = true}
 vim.api.nvim_set_keymap("n", "<leader>pC", "<cmd>HopChar1<cr>", {noremap = true})
 
 vim.api.nvim_set_keymap("n", "<leader>c", "<cmd>TSContextToggle<cr>", {noremap = true})
+
+vim.api.nvim_set_keymap("n", "<leader>nt", "<cmd>Telescope gkeep<cr>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>nn", "<cmd>GkeepToggle<cr>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>ns", "<cmd>GkeepSync<cr>", {noremap = true})
 
 vim.api.nvim_exec([[
 nnoremap <silent> <leader>vt :lua require('crates').toggle()<cr>
