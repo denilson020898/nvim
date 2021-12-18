@@ -6,6 +6,11 @@ vim.g.mapleader = " "
 -- vim.api.nvim_set_keymap("i", "kk", "<esc>", {})
 -- vim.api.nvim_set_keymap("i", "kj", "<esc>", {})
 
+-- nnoremap q: <nop>
+-- nnoremap Q <nop>
+vim.api.nvim_set_keymap("n", "q:", "<nop>", { noremap = true })
+-- vim.api.nvim_set_keymap("n", "Q", "<nop>", { noremap = true })
+
 vim.api.nvim_set_keymap("n", "<Leader>/", ":set hlsearch!<CR>", { noremap = true })
 
 vim.api.nvim_set_keymap("n", "<leader>er", ":NvimTreeFindFile<CR>", { noremap = true })
