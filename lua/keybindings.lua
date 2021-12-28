@@ -174,19 +174,19 @@ vim.api.nvim_set_keymap("n", "<leader>pc", "<cmd>HopChar2<cr>", {noremap = true}
 vim.api.nvim_set_keymap("n", "<leader>pC", "<cmd>HopChar1<cr>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<leader>pC", "<cmd>HopChar1<cr>", {noremap = true})
 
-vim.api.nvim_set_keymap("n", "<leader>c", "<cmd>TSContextToggle<cr>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>C", "<cmd>TSContextToggle<cr>", {noremap = true})
 
-vim.api.nvim_set_keymap("n", "<leader>nt", "<cmd>Telescope gkeep<cr>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<leader>nn", "<cmd>GkeepToggle<cr>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<leader>ns", "<cmd>GkeepSync<cr>", {noremap = true})
+-- vim.api.nvim_set_keymap("n", "<leader>nt", "<cmd>Telescope gkeep<cr>", {noremap = true})
+-- vim.api.nvim_set_keymap("n", "<leader>nn", "<cmd>GkeepToggle<cr>", {noremap = true})
+-- vim.api.nvim_set_keymap("n", "<leader>ns", "<cmd>GkeepSync<cr>", {noremap = true})
 
 vim.api.nvim_exec([[
-nnoremap <silent> <leader>vt :lua require('crates').toggle()<cr>
-nnoremap <silent> <leader>vr :lua require('crates').reload()<cr>
-nnoremap <silent> <leader>vu :lua require('crates').update_crate()<cr>
-vnoremap <silent> <leader>vu :lua require('crates').update_crates()<cr>
-nnoremap <silent> <leader>va :lua require('crates').update_all_crates()<cr>
-nnoremap <silent> <leader>vU :lua require('crates').upgrade_crate()<cr>
-vnoremap <silent> <leader>vU :lua require('crates').upgrade_crates()<cr>
-nnoremap <silent> <leader>vA :lua require('crates').upgrade_all_crates()<cr>
+nnoremap <silent> <leader>ct :lua require('crates').toggle()<cr>
+nnoremap <silent> <leader>cr :lua require('crates').reload()<cr>
+nnoremap <silent> <leader>cu :lua require('crates').update_crate()<cr>
+vnoremap <silent> <leader>cu :lua require('crates').update_crates()<cr>
+nnoremap <silent> <leader>ca :lua require('crates').update_all_crates()<cr>
+nnoremap <silent> <leader>cU :lua require('crates').upgrade_crate()<cr>
+vnoremap <silent> <leader>cU :lua require('crates').upgrade_crates()<cr>
+nnoremap <silent> <leader>cA :lua require('crates').upgrade_all_crates()<cr>
 ]], false)

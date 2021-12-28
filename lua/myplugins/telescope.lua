@@ -84,6 +84,6 @@ M.search_with_extension = function()
 end
 
 -- require('telescope').load_extension('media_files')
-require('telescope').load_extension('gkeep')
+-- require('telescope').load_extension('gkeep')
 
 return M

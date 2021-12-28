@@ -15,7 +15,6 @@ vim.g.auto_session_pre_save_cmds = {
     "NvimTreeClose", 
     "cclose", 
     "AerialClose", 
-    "GkeepClose",
 }
 
 vim.g.gitblame_enabled = 0

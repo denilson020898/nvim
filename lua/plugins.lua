@@ -22,7 +22,7 @@ return require("packer").startup(function()
     -- Packer can manage itself
     use "wbthomason/packer.nvim"
 
-    use {'stevearc/gkeep.nvim', run = ':UpdateRemotePlugins'}
+    -- use {'stevearc/gkeep.nvim', run = ':UpdateRemotePlugins'}
 
     -- ui
     use {
