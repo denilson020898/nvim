@@ -79,8 +79,10 @@ return require("packer").startup(function()
     use "ahmedkhalf/lsp-rooter.nvim"
     use "windwp/nvim-ts-autotag"
     use 'stevearc/aerial.nvim'
-    -- use "haringsrob/nvim_context_vt"
-    use 'romgrk/nvim-treesitter-context'
+
+    use "haringsrob/nvim_context_vt"
+    -- use 'romgrk/nvim-treesitter-context'
+
     use 'abecodes/tabout.nvim'
     use { "beauwilliams/focus.nvim", config = function() require("focus").setup() end }
     -- Or lazy load with `module` option. See further down for info on how to lazy load when using FocusSplit commands

@@ -17,6 +17,6 @@ require('myplugins.lsprooter')
 require('myplugins.closebuffers')
 require('myplugins.bufferline')
 require('myplugins.indentblankline')
-require('myplugins.treesittercontext')
+-- require('myplugins.treesittercontext')
 require('myplugins.marks')
 
