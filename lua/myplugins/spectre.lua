@@ -1,6 +1,6 @@
 require('spectre').setup({
     is_insert_mode = false,
-    live_update = false,
+    live_update = true,
     mapping = {
         ['send_to_qf'] = {
             map = "<C-q>",
