@@ -139,9 +139,7 @@ vim.api.nvim_set_keymap("n", "<Leader>o", ":AerialToggle<cr>", { noremap = true 
 
 -- vim.api.nvim_set_keymap("n", "<Leader>S", ":lua require('spectre').open()<CR>", {    qnoremap = true })
 -- vim.api.nvim_set_keymap("n", "<Leader>s", ":lua require('spectre').open()<cr><cmd>vert resize 60<cr>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>S", ":lua require('spectre').open()<cr>", { noremap = true })
--- write your custom open function
-vim.api.nvim_set_keymap("n", "<Leader>s", ":lua require('spectre').open({ path='*py *xml' })<cr>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>s", ":lua require('spectre').open()<cr>", { noremap = true })
 -- "search current word
 -- vim.api.nvim_set_keymap("n", "<Leader>sw", "viw:lua require('spectre').open_visual()<CR>", { noremap = true })
 -- vim.api.nvim_set_keymap("v", "<Leader>s", ":lua require('spectre').open_visual()<CR>", { noremap = true })
