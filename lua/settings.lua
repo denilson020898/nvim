@@ -58,7 +58,7 @@ vim.wo.scrolloff = 10
 vim.wo.signcolumn = "yes"
 vim.wo.wrap = false
 
-vim.wo.foldmethod = "indent"
+vim.wo.foldmethod = "syntax"
 vim.wo.foldenable = false
 vim.wo.foldlevel = 99
 
