@@ -30,7 +30,7 @@ vim.o.inccommand = "split"
 vim.o.incsearch = true
 vim.o.iskeyword = vim.o.iskeyword .. ",-" .. ",_"
 vim.o.mouse = "a"
-vim.o.pumheight = 30 
+vim.o.pumheight = 30
 vim.o.shortmess = vim.o.shortmess .. "c"
 -- " Set completeopt to have a better completion experience
 -- " :help completeopt
@@ -54,11 +54,11 @@ vim.o.updatetime = 100
 vim.o.writebackup = false
 vim.wo.cursorline = true
 vim.wo.number = true
-vim.wo.scrolloff = 10 
+vim.wo.scrolloff = 10
 vim.wo.signcolumn = "yes"
 vim.wo.wrap = false
 
-vim.wo.foldmethod = "syntax"
+vim.wo.foldmethod = "indent"
 vim.wo.foldenable = false
 vim.wo.foldlevel = 99
 
