@@ -111,7 +111,6 @@ return require("packer").startup(function()
     }
 
     use 'windwp/nvim-spectre'
-    use 'gennaro-tedesco/nvim-jqx'
     use 'kazhala/close-buffers.nvim'
     use "tversteeg/registers.nvim"
     use 'chentau/marks.nvim'
@@ -156,18 +155,6 @@ return require("packer").startup(function()
             require('Comment').setup()
         end
     }
-
-    use({
-      'sQVe/sort.nvim',
-
-      -- Optional setup for overriding defaults.
-      config = function()
-        require("sort").setup({
-          -- Input configuration here.
-          -- Refer to the configuration section below for options.
-        })
-      end
-    })
 
     use{ 'anuvyklack/pretty-fold.nvim',
     config = function()

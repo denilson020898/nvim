@@ -149,7 +149,12 @@ vim.api.nvim_set_keymap("n", "<Leader>sw", "viw:lua require('spectre').open_visu
 vim.api.nvim_set_keymap("v", "<Leader>s", ":lua require('spectre').open_visual()<cr>", { noremap = true })
 -- vim.api.nvim_set_keymap("n", "<Leader>sp", "viw:lua require('spectre').open_file_search()<CR>", { noremap = true })
 -- vim.api.nvim_set_keymap("n", "<Leader>sp", "viw:lua require('spectre').open_file_search()<cr><cmd>vert resize 60<cr>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>sp", "viw:lua require('spectre').open_file_search()<cr>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>sc", "viw:lua require('spectre').open_file_search()<cr>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>sp", ":lua require('spectre').open({path='*py'})<cr>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>sx", ":lua require('spectre').open({path='*xml'})<cr>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>sj", ":lua require('spectre').open({path='*js'})<cr>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>sb", ":lua require('spectre').open({path='*py *xml'})<cr>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>sa", ":lua require('spectre').open({path='*py *xml *js'})<cr>", { noremap = true })
 
 vim.api.nvim_set_keymap("n", "<F36>", ":PackerSync<cr>", {})
 vim.api.nvim_set_keymap("n", "<C-F12>", ":PackerSync<cr>", {})
