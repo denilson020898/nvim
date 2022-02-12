@@ -44,6 +44,10 @@ return require("packer").startup(function()
     -- color
     use 'sainnhe/sonokai'
     use 'eddyekofo94/gruvbox-flat.nvim'
+    use 'tjdevries/colorbuddy.vim'
+    use 'tjdevries/gruvbuddy.nvim'
+    use { 'rktjmp/lush.nvim'}
+    use { 'metalelf0/jellybeans-nvim' }
 
     -- helpers
     use {
@@ -80,8 +84,8 @@ return require("packer").startup(function()
     use "windwp/nvim-ts-autotag"
     use 'stevearc/aerial.nvim'
 
-    use "haringsrob/nvim_context_vt"
-    -- use 'romgrk/nvim-treesitter-context'
+    -- use "haringsrob/nvim_context_vt"
+    use 'romgrk/nvim-treesitter-context'
 
     use 'abecodes/tabout.nvim'
     use { "beauwilliams/focus.nvim", config = function() require("focus").setup() end }
