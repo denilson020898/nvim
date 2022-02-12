@@ -1,6 +1,5 @@
 vim.g.NERDSpaceDelims = 1
 
-vim.g.nvim_tree_ignore = { '.git', 'node_modules', '.cache' }
 vim.g.nvim_tree_git_hl = 1
 vim.g.nvim_tree_width = 35
 vim.g.nvim_tree_width_allow_resize = 1

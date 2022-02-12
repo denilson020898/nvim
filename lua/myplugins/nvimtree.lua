@@ -1,4 +1,6 @@
-require'nvim-tree'.setup {}
+require'nvim-tree'.setup {
+    ignore_ft_on_setup = { '.git', 'node_modules', '.cache' },
+}
 
 -- vim.g.nvim_tree_disable_default_keybindings = 1
 -- local tree_cb = require'nvim-tree.config'.nvim_tree_callback
