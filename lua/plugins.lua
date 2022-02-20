@@ -137,6 +137,10 @@ return require("packer").startup(function()
 
     use 'simrat39/rust-tools.nvim'
     use 'mfussenegger/nvim-dap'
+    use 'mfussenegger/nvim-dap-python'
+    use {'nvim-telescope/telescope-dap.nvim'}
+    use {'theHamsta/nvim-dap-virtual-text'}
+    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 
     use {
         'NTBBloodbath/rest.nvim',

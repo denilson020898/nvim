@@ -186,12 +186,12 @@ vim.api.nvim_set_keymap("n", "<leader>C", "<cmd>TSContextToggle<cr>", {noremap =
 -- vim.api.nvim_set_keymap("n", "<leader>ns", "<cmd>GkeepSync<cr>", {noremap = true})
 
 vim.api.nvim_exec([[
-nnoremap <silent> <leader>ct :lua require('crates').toggle()<cr>
-nnoremap <silent> <leader>cr :lua require('crates').reload()<cr>
-nnoremap <silent> <leader>cu :lua require('crates').update_crate()<cr>
-vnoremap <silent> <leader>cu :lua require('crates').update_crates()<cr>
-nnoremap <silent> <leader>ca :lua require('crates').update_all_crates()<cr>
-nnoremap <silent> <leader>cU :lua require('crates').upgrade_crate()<cr>
-vnoremap <silent> <leader>cU :lua require('crates').upgrade_crates()<cr>
-nnoremap <silent> <leader>cA :lua require('crates').upgrade_all_crates()<cr>
+nnoremap <silent> <leader>mt :lua require('crates').toggle()<cr>
+nnoremap <silent> <leader>mr :lua require('crates').reload()<cr>
+nnoremap <silent> <leader>mu :lua require('crates').update_crate()<cr>
+vnoremap <silent> <leader>mu :lua require('crates').update_crates()<cr>
+nnoremap <silent> <leader>ma :lua require('crates').update_all_crates()<cr>
+nnoremap <silent> <leader>mU :lua require('crates').upgrade_crate()<cr>
+vnoremap <silent> <leader>mU :lua require('crates').upgrade_crates()<cr>
+nnoremap <silent> <leader>mA :lua require('crates').upgrade_all_crates()<cr>
 ]], false)
