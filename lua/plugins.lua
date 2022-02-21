@@ -141,6 +141,7 @@ return require("packer").startup(function()
     use {'nvim-telescope/telescope-dap.nvim'}
     use {'theHamsta/nvim-dap-virtual-text'}
     use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+    use {'Pocco81/DAPInstall.nvim'}
 
     use {
         'NTBBloodbath/rest.nvim',

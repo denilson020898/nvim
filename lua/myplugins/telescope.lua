@@ -34,13 +34,15 @@ require('telescope').setup{
         initial_mode = "insert",
         selection_strategy = "reset",
         sorting_strategy = "descending",
-        layout_strategy = "horizontal",
+        layout_strategy = "vertical",
         layout_config = {
             horizontal = {
-                mirror = false,
+                -- mirror = false,
+                width = 0.95
             },
             vertical = {
-                mirror = false,
+                -- mirror = false,
+                width = 0.95
             },
         },
         file_sorter =  require'telescope.sorters'.get_fuzzy_file,
@@ -84,6 +86,7 @@ M.search_with_extension = function()
 end
 
 require('telescope').load_extension('media_files')
+require('telescope').load_extension('dap')
 -- require('telescope').load_extension('gkeep')
 
 return M
