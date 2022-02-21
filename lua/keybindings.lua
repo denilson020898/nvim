@@ -101,6 +101,7 @@ vim.api.nvim_set_keymap("n", "<Leader>w", ":wa<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader><Space>", ":b#<CR>", { noremap = true })
 
 vim.api.nvim_set_keymap("n", "<Leader>t", ":Telescope<CR>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<Leader>tr", ":Telescope resume<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>tp", "<cmd>lua require('myplugins.telescope').search_dotfiles()<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>tx", "<cmd>lua require('myplugins.telescope').search_with_extension()<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>te", ":Telescope file_browser<CR>", {noremap = true})
@@ -125,7 +126,8 @@ vim.api.nvim_set_keymap("n", "<Leader>f?", ":lua require'myplugins.nvimbqf'.prin
 vim.api.nvim_set_keymap("n", "<Leader>fc", ":cexpr []<CR>", {noremap = true})
 
 vim.api.nvim_set_keymap("n", "<Leader>gg", ":Neogit<CR>", {noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>G", ":DiffviewClose<CR>", {noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>go", ":DiffviewClose<CR>", {noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>gc", ":DiffviewClose<CR>", {noremap = true })
 -- vim.api.nvim_set_keymap("n", "<Leader>gs", ":Gitsigns toggle_signs<CR>", {noremap = true})
 -- vim.api.nvim_set_keymap("n", "<Leader>gn", ":Gitsigns toggle_numhl<CR>", {noremap = true})
 -- vim.api.nvim_set_keymap("n", "<Leader>gl", ":Gitsigns toggle_linehl<CR>", {noremap = true})
@@ -135,7 +137,6 @@ vim.api.nvim_set_keymap("n", "<Leader>gb", ":GitBlameToggle<CR>", {noremap = tru
 vim.api.nvim_set_keymap('x', 'K', ':move \'<-2<CR>gv-gv', {noremap = true})
 vim.api.nvim_set_keymap('x', 'J', ':move \'>+1<CR>gv-gv', {noremap = true})
 
-vim.api.nvim_set_keymap("n", "<Leader>o", ":AerialToggle<cr>", { noremap = true })
 
 -- vim.api.nvim_set_keymap("n", "<Leader>S", ":lua require('spectre').open()<CR>", {    qnoremap = true })
 -- vim.api.nvim_set_keymap("n", "<Leader>s", ":lua require('spectre').open()<cr><cmd>vert resize 60<cr>", { noremap = true })
@@ -160,9 +161,11 @@ vim.api.nvim_set_keymap("n", "<F36>", ":PackerSync<cr>", {})
 vim.api.nvim_set_keymap("n", "<C-F12>", ":PackerSync<cr>", {})
 vim.api.nvim_set_keymap("n", "<F12>", "<Plug>RestNvim", {})
 -- vim.api.nvim_set_keymap("n", "<F10>", ":RooterToggle<cr>", {})
-vim.api.nvim_set_keymap("n", "<F9>", ":lua require'colorscheme'.toggle_theme()<cr>", {})
-vim.api.nvim_set_keymap("n", "<F8>", ":IndentBlanklineToggle<cr>", {})
+vim.api.nvim_set_keymap("n", "<F6>", ":lua require'colorscheme'.toggle_theme()<cr>", {})
 vim.api.nvim_set_keymap("n", "<F5>", ":checktime<cr>", {})
+vim.api.nvim_set_keymap("n", "<F4>", ":AerialToggle<cr>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<F3>", ":IndentBlanklineToggle<cr>", {})
+vim.api.nvim_set_keymap("n", "<F2>", "<cmd>TSContextToggle<cr>", {noremap = true})
 
 vim.api.nvim_set_keymap("n", "<leader>xx", "<cmd>Trouble<cr>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<leader>xw", "<cmd>Trouble lsp_workspace_diagnostics<cr>", {noremap = true})
@@ -178,12 +181,6 @@ vim.api.nvim_set_keymap("n", "<leader>pp", "<cmd>HopPattern<cr>", {noremap = tru
 vim.api.nvim_set_keymap("n", "<leader>pc", "<cmd>HopChar2<cr>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<leader>pC", "<cmd>HopChar1<cr>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<leader>pC", "<cmd>HopChar1<cr>", {noremap = true})
-
-vim.api.nvim_set_keymap("n", "<leader>C", "<cmd>TSContextToggle<cr>", {noremap = true})
-
--- vim.api.nvim_set_keymap("n", "<leader>nt", "<cmd>Telescope gkeep<cr>", {noremap = true})
--- vim.api.nvim_set_keymap("n", "<leader>nn", "<cmd>GkeepToggle<cr>", {noremap = true})
--- vim.api.nvim_set_keymap("n", "<leader>ns", "<cmd>GkeepSync<cr>", {noremap = true})
 
 vim.api.nvim_exec([[
 nnoremap <silent> <leader>mt :lua require('crates').toggle()<cr>
