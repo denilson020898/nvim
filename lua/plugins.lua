@@ -22,8 +22,6 @@ return require("packer").startup(function()
     -- Packer can manage itself
     use "wbthomason/packer.nvim"
 
-    -- use {'stevearc/gkeep.nvim', run = ':UpdateRemotePlugins'}
-
     -- ui
     use {
         'hoob3rt/lualine.nvim',
@@ -38,7 +36,6 @@ return require("packer").startup(function()
     use 'f-person/git-blame.nvim'
     use "kevinhwang91/nvim-bqf"
     use 'norcalli/nvim-colorizer.lua'
-    use "akinsho/nvim-toggleterm.lua"
     use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
 
     -- color
@@ -74,28 +71,21 @@ return require("packer").startup(function()
         end,
     }
 
-    -- use 'b3nj5m1n/kommentary'
     use "TimUntersberger/neogit"
     use 'sindrets/diffview.nvim'
     use "nvim-telescope/telescope.nvim"
     use { "nvim-treesitter/nvim-treesitter", run=":TSUpdate" }
     use "windwp/nvim-autopairs"
-    use "ahmedkhalf/lsp-rooter.nvim"
     use "windwp/nvim-ts-autotag"
+    use "ahmedkhalf/lsp-rooter.nvim"
     use 'stevearc/aerial.nvim'
 
-    -- use "haringsrob/nvim_context_vt"
+    -- use {'nvim-telescope/telescope-ui-select.nvim' }
+    -- use 'hood/popui.nvim'
+
     use 'romgrk/nvim-treesitter-context'
 
-    use 'abecodes/tabout.nvim'
     use { "beauwilliams/focus.nvim", config = function() require("focus").setup() end }
-    -- Or lazy load with `module` option. See further down for info on how to lazy load when using FocusSplit commands
-    -- Or lazy load this plugin by creating an arbitrary command using the cmd option in packer.nvim
-    -- use { 'beauwilliams/focus.nvim', cmd = { "FocusSplitNicely", "FocusSplitCycle" }, module = "focus",
-    --     config = function()
-    --         require("focus").setup({hybridnumber = true})
-    --     end
-    -- }
 
     use "rafamadriz/friendly-snippets"
     use "lukas-reineke/indent-blankline.nvim"
@@ -104,14 +94,6 @@ return require("packer").startup(function()
     use {
         'rmagatti/session-lens',
         requires = {'rmagatti/auto-session', 'nvim-telescope/telescope.nvim'},
-    }
-    use {
-        "nvim-telescope/telescope-media-files.nvim",
-        requires = {
-            {'nvim-telescope/telescope.nvim'},
-            {'nvim-lua/popup.nvim'},
-            {'nvim-lua/plenary.nvim'},
-        }
     }
 
     use 'windwp/nvim-spectre'

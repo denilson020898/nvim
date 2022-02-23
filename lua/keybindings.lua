@@ -9,12 +9,16 @@ vim.api.nvim_set_keymap("n", "<Leader>/", ":set hlsearch!<CR>", { noremap = true
 
 vim.api.nvim_set_keymap("n", "<leader>er", ":NvimTreeFindFile<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>ee", ":NvimTreeToggle<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<C-e>", ":NvimTreeToggle<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>n", ":NvimTreeToggle<CR>", { noremap = true })
 
 vim.api.nvim_set_keymap("n", "Y", "y$", { noremap = true })
 vim.api.nvim_set_keymap("n", "n", "nzzzv", { noremap = true })
 vim.api.nvim_set_keymap("n", "N", "Nzzzv", { noremap = true })
 vim.api.nvim_set_keymap("n", "J", "mzJ`z", { noremap = true })
+
+vim.api.nvim_set_keymap("n", "<C-j>", "20zh", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-k>", "20zl", { noremap = true })
 
 vim.cmd("noremap <expr> k (v:count > 5 ? \"m'\" . v:count : \"\") . 'k'")
 vim.cmd("noremap <expr> j (v:count > 5 ? \"m'\" . v:count : \"\") . 'j'")
@@ -148,11 +152,13 @@ vim.api.nvim_set_keymap("n", "<F4>", ":AerialToggle<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<F3>", ":IndentBlanklineToggle<cr>", {})
 vim.api.nvim_set_keymap("n", "<F2>", "<cmd>TSContextToggle<cr>", {noremap = true})
 
-vim.api.nvim_set_keymap("n", "<leader>Tx", "<cmd>Trouble<cr>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<leader>Tw", "<cmd>Trouble lsp_workspace_diagnostics<cr>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<leader>Td", "<cmd>Trouble lsp_document_diagnostics<cr>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<leader>Tl", "<cmd>Trouble loclist<cr>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<leader>Tq", "<cmd>Trouble quickfix<cr>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>,", "<cmd>CodeActionMenu<cr>", {noremap = true})
+
+vim.api.nvim_set_keymap("n", "<leader>xx", "<cmd>Trouble<cr>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>xw", "<cmd>Trouble workspace_diagnostics<cr>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>xd", "<cmd>Trouble document_diagnostics<cr>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>xl", "<cmd>Trouble loclist<cr>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", {noremap = true})
 vim.api.nvim_set_keymap("n", "gR", "<cmd>Trouble lsp_references<cr>", {noremap = true})
 
 vim.api.nvim_set_keymap("n", "<leader>pw", "<cmd>HopWord<cr>", {noremap = true})

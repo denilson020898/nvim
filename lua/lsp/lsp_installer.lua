@@ -28,6 +28,8 @@ lsp_installer.on_server_ready(function(server)
             server = vim.tbl_deep_extend("force", server:get_default_options(), opts),
         }
         server:attach_buffers()
+        -- Only if standalone support is needed
+        require("rust-tools").start_standalone_if_required()
     else
         -- (optional) Customize the options passed to the server
         -- if server.name == "tsserver" then
