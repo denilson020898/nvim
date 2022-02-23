@@ -9,6 +9,7 @@ vim.g.nvim_tree_width_allow_resize = 1
 
 vim.g.auto_session_post_restore_cmds = {
     "bd *spectre*",
+    "resize 100"
 }
 vim.g.auto_session_pre_save_cmds = {
     "NvimTreeClose",

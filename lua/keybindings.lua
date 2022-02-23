@@ -5,6 +5,12 @@ vim.g.mapleader = " "
 -- nnoremap Q <nop>
 vim.api.nvim_set_keymap("n", "q:", "<nop>", { noremap = true })
 
+vim.api.nvim_set_keymap("n", "<Leader>0", ":resize 100<CR>", { noremap = true })
+
+vim.api.nvim_set_keymap("n", "<Leader>1", ":TestNearest<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>`", ":TestLast<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>2", ":TestSuite<CR>", { noremap = true })
+
 vim.api.nvim_set_keymap("n", "<Leader>/", ":set hlsearch!<CR>", { noremap = true })
 
 vim.api.nvim_set_keymap("n", "<leader>er", ":NvimTreeFindFile<CR>", { noremap = true })
@@ -132,10 +138,11 @@ vim.api.nvim_set_keymap("n", "<Leader>gb", ":GitBlameToggle<CR>", {noremap = tru
 vim.api.nvim_set_keymap('x', 'K', ':move \'<-2<CR>gv-gv', {noremap = true})
 vim.api.nvim_set_keymap('x', 'J', ':move \'>+1<CR>gv-gv', {noremap = true})
 
-vim.api.nvim_set_keymap("n", "<Leader>s", ":lua require('spectre').open()<cr>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>sw", "viw:lua require('spectre').open_visual()<cr>", { noremap = true })
-vim.api.nvim_set_keymap("v", "<Leader>s", ":lua require('spectre').open_visual()<cr>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>sc", "viw:lua require('spectre').open_file_search()<cr>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>s", "<cmd>lua require('spectre').open()<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>sw", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", { noremap = true })
+vim.api.nvim_set_keymap("v", "<leader>s", "<cmd>lua require('spectre').open_visual()<CR>",{ noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>sc", "viw:lua require('spectre').open_file_search()<cr>",{ noremap = true })
+
 vim.api.nvim_set_keymap("n", "<Leader>sp", ":lua require('spectre').open({path='*py'})<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>sx", ":lua require('spectre').open({path='*xml'})<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>sj", ":lua require('spectre').open({path='*js'})<cr>", { noremap = true })

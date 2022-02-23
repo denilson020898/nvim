@@ -80,8 +80,15 @@ return require("packer").startup(function()
     use "ahmedkhalf/lsp-rooter.nvim"
     use 'stevearc/aerial.nvim'
 
-    -- use {'nvim-telescope/telescope-ui-select.nvim' }
+    use {'nvim-telescope/telescope-ui-select.nvim' }
     -- use 'hood/popui.nvim'
+
+    use {
+      "klen/nvim-test",
+      config = function()
+        require('nvim-test').setup()
+      end
+    }
 
     use 'romgrk/nvim-treesitter-context'
 
