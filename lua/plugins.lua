@@ -85,9 +85,6 @@ return require("packer").startup(function()
 
     use {
       "klen/nvim-test",
-      config = function()
-        require('nvim-test').setup()
-      end
     }
 
     use 'romgrk/nvim-treesitter-context'
