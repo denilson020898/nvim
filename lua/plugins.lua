@@ -87,7 +87,7 @@ return require("packer").startup(function()
       "klen/nvim-test",
     }
 
-    use 'romgrk/nvim-treesitter-context'
+    -- use 'romgrk/nvim-treesitter-context'
 
     use { "beauwilliams/focus.nvim", config = function() require("focus").setup() end }
 

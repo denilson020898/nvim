@@ -157,7 +157,7 @@ vim.api.nvim_set_keymap("n", "<F6>", ":lua require'colorscheme'.toggle_theme()<c
 vim.api.nvim_set_keymap("n", "<F5>", ":checktime<cr>", {})
 vim.api.nvim_set_keymap("n", "<F4>", ":AerialToggle<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<F3>", ":IndentBlanklineToggle<cr>", {})
-vim.api.nvim_set_keymap("n", "<F2>", "<cmd>TSContextToggle<cr>", {noremap = true})
+-- vim.api.nvim_set_keymap("n", "<F2>", ":luafile %<cr>", {noremap = true})
 
 vim.api.nvim_set_keymap("n", "<leader>,", "<cmd>CodeActionMenu<cr>", {noremap = true})
 
