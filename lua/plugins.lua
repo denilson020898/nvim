@@ -116,10 +116,15 @@ return require("packer").startup(function()
       'weilbith/nvim-code-action-menu',
       cmd = 'CodeActionMenu',
     }
-    use {
-        "folke/trouble.nvim",
-        requires = "kyazdani42/nvim-web-devicons",
-    }
+
+    -- unix specific here
+    if vim.loop.os_uname().sysname ~= 'Windows_NT' then
+        use {
+            "folke/trouble.nvim",
+            requires = "kyazdani42/nvim-web-devicons",
+        }
+    else -- does not work on windows
+    end
 
     use 'simrat39/rust-tools.nvim'
     use 'mfussenegger/nvim-dap'

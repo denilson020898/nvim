@@ -19,7 +19,7 @@ lsp_installer.on_server_ready(function(server)
     }
 
     -- rust-tools does not support windows at this moment
-    if server.name == "rust_analyzer" and vim.loop.os_uname().sysname == 'Darwin' then
+    if server.name == "rust_analyzer" and vim.loop.os_uname().sysname ~= 'Windows_NT' then
         -- Initialize the LSP via rust-tools instead
         require("rust-tools").setup {
             -- The "server" property provided in rust-tools setup function are the

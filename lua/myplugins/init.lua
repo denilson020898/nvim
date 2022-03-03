@@ -18,7 +18,7 @@ require('myplugins.marks')
 require('myplugins.nvimtest')
 
 -- unix specific here
-if vim.loop.os_uname().sysname == 'Darwin' then
+if vim.loop.os_uname().sysname ~= 'Windows_NT' then
     require('myplugins.trouble')
 else -- does not work on windows
 end
