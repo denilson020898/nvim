@@ -31,23 +31,23 @@ require'nvim-treesitter.configs'.setup {
         ["ic"] = "@class.inner",
         ["ib"] = "@block.inner",
         ["ab"] = "@block.outer",
-        -- @call.inner",
-        -- @call.outer",
+        ["ia"] = "@call.inner",
+        ["aa"] = "@call.outer",
         -- @class.inner",
         -- @class.outer",
         ["ak"] = "@comment.outer",
         ["ii"] = "@conditional.inner",
         ["ai"] = "@conditional.outer",
-        -- @frame.inner
-        -- @frame.outer
+        -- ["ir"] = "@frame.inner",
+        -- ["ar"] = "@frame.outer",
         -- @function.inner
         -- @function.outer
         ["il"] = "@loop.inner",
         ["al"] = "@loop.outer",
         ["im"] = "@parameter.inner",
         ["am"] = "@parameter.outer",
-        -- @scopename.inner
-        -- @statement.outer
+        -- ["ae"] = "@scopename.inner",
+        -- ["ae"] = "@statement.outer"
       },
     },
     swap = {
