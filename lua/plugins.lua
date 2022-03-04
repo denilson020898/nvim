@@ -31,6 +31,7 @@ return require("packer").startup(function()
         "SmiteshP/nvim-gps",
         requires = "nvim-treesitter/nvim-treesitter"
     }
+
     use "kyazdani42/nvim-tree.lua"
     use 'nvim-lua/plenary.nvim'
     use 'f-person/git-blame.nvim'
@@ -75,6 +76,9 @@ return require("packer").startup(function()
     use 'sindrets/diffview.nvim'
     use "nvim-telescope/telescope.nvim"
     use { "nvim-treesitter/nvim-treesitter", run=":TSUpdate" }
+    use 'nvim-treesitter/nvim-treesitter-textobjects'
+    use 'RRethy/nvim-treesitter-textsubjects'
+
     use "windwp/nvim-autopairs"
     use "windwp/nvim-ts-autotag"
     use "ahmedkhalf/lsp-rooter.nvim"
