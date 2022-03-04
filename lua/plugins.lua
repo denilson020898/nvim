@@ -117,6 +117,8 @@ return require("packer").startup(function()
       cmd = 'CodeActionMenu',
     }
 
+    use 'gaborvecsei/memento.nvim'
+
     -- unix specific here
     if vim.loop.os_uname().sysname ~= 'Windows_NT' then
         use {

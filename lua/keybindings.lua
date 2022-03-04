@@ -113,7 +113,7 @@ vim.api.nvim_set_keymap("n", "<Leader>te", ":Telescope file_browser<CR>", {norem
 vim.api.nvim_set_keymap("n", "<Leader>tf", "<cmd>lua require('telescope.builtin').find_files()<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>tg", "<cmd>lua require('telescope.builtin').live_grep()<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>b", "<cmd>lua require('telescope.builtin').buffers()<CR>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<Leader>u", "<cmd>lua require('telescope.builtin').buffers()<CR>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<Leader>y", "<cmd>lua require('telescope.builtin').buffers()<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>th", "<cmd>lua require('telescope.builtin').help_tags()<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>ts", ":SearchSession<CR>", {noremap = true})
 
@@ -181,6 +181,9 @@ vim.api.nvim_set_keymap('n', '<leader>csv', '<cmd>lua require"dap".step_over()<C
 vim.api.nvim_set_keymap('n', '<leader>csi', '<cmd>lua require"dap".step_into()<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<leader>cso', '<cmd>lua require"dap".step_out()<CR>', {noremap = true})
 
+vim.api.nvim_set_keymap('n', '<leader>u', '<cmd>lua require("memento").toggle()<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>U', '<cmd>lua require("memento").clear_history()<CR>', {noremap = true})
+
 vim.api.nvim_set_keymap('n', '<F12>', '<cmd>lua require"dap".continue()<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<F10>', '<cmd>lua require"dap".step_over()<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<F11>', '<cmd>lua require"dap".step_into()<CR>', {noremap = true})
@@ -215,12 +218,12 @@ vim.api.nvim_set_keymap('n', '<leader>cf',
           '<cmd>lua require"telescope".extensions.dap.frames{noremap = true}<CR>', {noremap = true})
 
 vim.api.nvim_exec([[
-nnoremap <silent> <leader>mt :lua require('crates').toggle()<cr>
-nnoremap <silent> <leader>mr :lua require('crates').reload()<cr>
-nnoremap <silent> <leader>mu :lua require('crates').update_crate()<cr>
-vnoremap <silent> <leader>mu :lua require('crates').update_crates()<cr>
-nnoremap <silent> <leader>ma :lua require('crates').update_all_crates()<cr>
-nnoremap <silent> <leader>mU :lua require('crates').upgrade_crate()<cr>
-vnoremap <silent> <leader>mU :lua require('crates').upgrade_crates()<cr>
-nnoremap <silent> <leader>mA :lua require('crates').upgrade_all_crates()<cr>
+nnoremap <silent> <leader>Ct :lua require('crates').toggle()<cr>
+nnoremap <silent> <leader>Cr :lua require('crates').reload()<cr>
+nnoremap <silent> <leader>Cu :lua require('crates').update_crate()<cr>
+vnoremap <silent> <leader>Cu :lua require('crates').update_crates()<cr>
+nnoremap <silent> <leader>Ca :lua require('crates').update_all_crates()<cr>
+nnoremap <silent> <leader>CU :lua require('crates').upgrade_crate()<cr>
+vnoremap <silent> <leader>CU :lua require('crates').upgrade_crates()<cr>
+nnoremap <silent> <leader>CA :lua require('crates').upgrade_all_crates()<cr>
 ]], false)
