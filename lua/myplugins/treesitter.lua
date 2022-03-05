@@ -1,12 +1,7 @@
 require'nvim-treesitter.configs'.setup {
   autotag = {
     enable = true,
-  }
-}
-
-require 'nvim-treesitter.install'.compilers = {  "gcc", "clang", "cl"  }
-
-require'nvim-treesitter.configs'.setup {
+  },
     textsubjects = {
         enable = true,
         prev_selection = ',', -- (Optional) keymap to select the previous selection
@@ -89,4 +84,6 @@ require'nvim-treesitter.configs'.setup {
     -- },
 }
 }
+
+require 'nvim-treesitter.install'.compilers = {  "gcc", "clang", "cl"  }
 
