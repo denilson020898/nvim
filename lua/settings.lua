@@ -9,6 +9,19 @@ vim.cmd("autocmd Filetype wast setlocal expandtab tabstop=2 shiftwidth=2 softtab
 vim.cmd("autocmd Filetype wat setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
 vim.cmd("autocmd Filetype lua setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4")
 vim.cmd("autocmd Filetype javascript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
+
+-- vim.cmd(":set autoread | au CursorHold * checktime | call feedkeys('lh')")
+vim.cmd(":set autoread | au CursorHold * checktime")
+-- Explanation:
+-- - autoread: reads the file when changed from the outside (but it doesnt work on its own, 
+-- there is no internal timer or something like that. It will only read the file when vim 
+-- does an action, like a command in ex :!
+-- - CursorHold * checktime: when the cursor isn't moved by the user for the time specified in 
+-- 'updatetime' (which is 4000 miliseconds by default) checktime is executed, which checks for 
+-- changes from outside the file
+-- - call feedkeys("lh"): the cursor is moved once, right and back left. and then nothing happens 
+-- (... which means, that CursorHold is triggered, which means we have a loop)
+
 vim.o.expandtab = true
 vim.o.shiftwidth = 4
 vim.o.softtabstop = 4
