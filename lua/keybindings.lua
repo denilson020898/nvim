@@ -152,12 +152,10 @@ vim.api.nvim_set_keymap("n", "<Leader>sa", ":lua require('spectre').open({path='
 vim.api.nvim_set_keymap("n", "<F36>", ":PackerSync<cr>", {})
 vim.api.nvim_set_keymap("n", "<C-F12>", ":PackerSync<cr>", {})
 vim.api.nvim_set_keymap("n", "<F24>", "<Plug>RestNvim", {})
--- vim.api.nvim_set_keymap("n", "<F10>", ":RooterToggle<cr>", {})
 vim.api.nvim_set_keymap("n", "<F6>", ":lua require'colorscheme'.toggle_theme()<cr>", {})
 vim.api.nvim_set_keymap("n", "<F5>", ":checktime<cr>", {})
 vim.api.nvim_set_keymap("n", "<F4>", ":AerialToggle<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<F3>", ":IndentBlanklineToggle<cr>", {})
--- vim.api.nvim_set_keymap("n", "<F2>", ":luafile %<cr>", {noremap = true})
 
 vim.api.nvim_set_keymap("n", "<leader>,", "<cmd>CodeActionMenu<cr>", {noremap = true})
 
@@ -205,7 +203,6 @@ vim.api.nvim_set_keymap('n', '<leader>csbm',
 vim.api.nvim_set_keymap('n', '<leader>cro', '<cmd>lua require"dap".repl.open()<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<leader>crl', '<cmd>lua require"dap".repl.run_last()<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<leader>cui', '<cmd>lua require"dapui".toggle()<CR>', {noremap = true})
--- telescope-dap
 vim.api.nvim_set_keymap('n', '<leader>ccc',
           '<cmd>lua require"telescope".extensions.dap.commands{noremap = true}<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<leader>cco',

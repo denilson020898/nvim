@@ -22,7 +22,6 @@ return require("packer").startup(function()
     -- Packer can manage itself
     use "wbthomason/packer.nvim"
 
-    -- ui
     use {
         'hoob3rt/lualine.nvim',
         requires = {'kyazdani42/nvim-web-devicons', opt = true}
@@ -39,7 +38,6 @@ return require("packer").startup(function()
     use 'norcalli/nvim-colorizer.lua'
     use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
 
-    -- color
     use 'sainnhe/sonokai'
     use 'eddyekofo94/gruvbox-flat.nvim'
     use 'tjdevries/colorbuddy.vim'
@@ -47,7 +45,6 @@ return require("packer").startup(function()
     use { 'rktjmp/lush.nvim'}
     use { 'metalelf0/jellybeans-nvim' }
 
-    -- helpers
     use {
         "hrsh7th/nvim-cmp",
         requires = {
@@ -85,13 +82,10 @@ return require("packer").startup(function()
     use 'stevearc/aerial.nvim'
 
     use {'nvim-telescope/telescope-ui-select.nvim' }
-    -- use 'hood/popui.nvim'
 
     use {
       "klen/nvim-test",
     }
-
-    -- use 'romgrk/nvim-treesitter-context'
 
     use { "beauwilliams/focus.nvim", config = function() require("focus").setup() end }
 
@@ -108,7 +102,6 @@ return require("packer").startup(function()
     use 'kazhala/close-buffers.nvim'
     use "tversteeg/registers.nvim"
     use 'chentau/marks.nvim'
-    -- lsp
 
     use {
         "neovim/nvim-lspconfig",
@@ -122,15 +115,6 @@ return require("packer").startup(function()
     }
 
     use 'gaborvecsei/memento.nvim'
-
-    -- unix specific here
-    if vim.loop.os_uname().sysname ~= 'Windows_NT' then
-        use {
-            "folke/trouble.nvim",
-            requires = "kyazdani42/nvim-web-devicons",
-        }
-    else -- does not work on windows
-    end
 
     use 'simrat39/rust-tools.nvim'
     use 'mfussenegger/nvim-dap'
@@ -162,12 +146,21 @@ return require("packer").startup(function()
         end
     }
 
-    use{ 'anuvyklack/pretty-fold.nvim',
+    use { 'anuvyklack/pretty-fold.nvim',
     config = function()
         require('pretty-fold').setup{}
         require('pretty-fold.preview').setup()
     end
-}
+    }
+
+    -- unix specific here
+    if vim.loop.os_uname().sysname ~= 'Windows_NT' then
+        use {
+            "folke/trouble.nvim",
+            requires = "kyazdani42/nvim-web-devicons",
+        }
+    else
+    end
 
 end
 )
