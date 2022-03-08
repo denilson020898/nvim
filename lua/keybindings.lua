@@ -154,7 +154,7 @@ vim.api.nvim_set_keymap("n", "<C-F12>", ":PackerSync<cr>", {})
 vim.api.nvim_set_keymap("n", "<F24>", "<Plug>RestNvim", {})
 vim.api.nvim_set_keymap("n", "<F6>", ":lua require'colorscheme'.toggle_theme()<cr>", {})
 vim.api.nvim_set_keymap("n", "<F5>", ":checktime<cr>", {})
-vim.api.nvim_set_keymap("n", "<F4>", ":AerialToggle<cr>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<F4>", ":AerialToggle!<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<F3>", ":IndentBlanklineToggle<cr>", {})
 
 vim.api.nvim_set_keymap("n", "<leader>,", "<cmd>CodeActionMenu<cr>", {noremap = true})

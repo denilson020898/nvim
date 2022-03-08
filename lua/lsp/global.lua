@@ -5,7 +5,7 @@ O.on_attach = function(client, bufnr)
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
     require "lsp_signature".on_attach()
-    require('aerial').on_attach(client)
+    require("aerial").on_attach(client, bufnr)
 
     buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
