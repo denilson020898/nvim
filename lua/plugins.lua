@@ -130,6 +130,14 @@ return require("packer").startup(function()
     }
 
     use {
+        'jghauser/fold-cycle.nvim',
+        config = function()
+            require('fold-cycle').setup()
+        end
+    }
+
+
+    use {
         'phaazon/hop.nvim',
         as = 'hop',
         config = function()
@@ -152,6 +160,12 @@ return require("packer").startup(function()
         require('pretty-fold.preview').setup()
     end
     }
+
+    use { 'bennypowers/nvim-regexplainer',
+      requires = {
+        'nvim-lua/plenary.nvim',
+        'MunifTanjim/nui.nvim',
+      } }
 
     -- unix specific here
     if vim.loop.os_uname().sysname ~= 'Windows_NT' then

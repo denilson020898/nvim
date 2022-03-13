@@ -10,7 +10,7 @@ require("aerial").setup({
         "Method",
         "Struct",
         "Field",
-        "Variable"
+        -- "Variable"
     },
 })
 
