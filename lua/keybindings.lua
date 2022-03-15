@@ -11,11 +11,11 @@ vim.api.nvim_set_keymap("n", "<Leader>1", ":TestNearest<CR>", { noremap = true }
 vim.api.nvim_set_keymap("n", "<Leader>2", ":TestFile<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>3", ":TestSuite<CR>", { noremap = true })
 
-vim.api.nvim_set_keymap('n', 'zx', [[<cmd>lua require('fold-cycle').open()<cr>]], {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', 'zc', [[<cmd>lua require('fold-cycle').close()<cr>]], {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', 'zX', [[<cmd>lua require('fold-cycle').open_all()<cr>]], {noremap = false, silent = true})
-vim.api.nvim_set_keymap('n', 'zC', [[<cmd>lua require('fold-cycle').close_all()<cr>]], {noremap = false, silent = true})
-vim.api.nvim_set_keymap('n', 'zv', [[<cmd>lua require('fold-cycle').toggle_all()<cr>]], {noremap = false, silent = true})
+vim.api.nvim_set_keymap('n', 'zx', [[<cmd>lua require('fold-cycle').open()<cr>]], {noremap = true})
+vim.api.nvim_set_keymap('n', 'zc', [[<cmd>lua require('fold-cycle').close()<cr>]], {noremap = true})
+vim.api.nvim_set_keymap('n', 'zX', [[<cmd>lua require('fold-cycle').open_all()<cr>]], {noremap = false})
+vim.api.nvim_set_keymap('n', 'zC', [[<cmd>lua require('fold-cycle').close_all()<cr>]], {noremap = false})
+vim.api.nvim_set_keymap('n', 'zv', [[<cmd>lua require('fold-cycle').toggle_all()<cr>]], {noremap = false})
 
 vim.api.nvim_set_keymap("n", "<Leader>/", ":set hlsearch!<CR>", { noremap = true })
 
