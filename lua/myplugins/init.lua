@@ -18,6 +18,7 @@ require('myplugins.marks')
 require('myplugins.nvimtest')
 require('myplugins.aerial')
 require('myplugins.regexplainer')
+require('myplugins.hlargs')
 
 -- unix specific here
 if vim.loop.os_uname().sysname ~= 'Windows_NT' then

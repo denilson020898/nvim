@@ -60,6 +60,12 @@ return require("packer").startup(function()
             "dmitmel/cmp-cmdline-history"
         }
     }
+
+    use {
+      'm-demare/hlargs.nvim',
+      requires = { 'nvim-treesitter/nvim-treesitter' }
+    }
+
     use {
         'Saecki/crates.nvim',
         event = { "BufRead Cargo.toml" },
