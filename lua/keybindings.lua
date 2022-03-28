@@ -132,8 +132,11 @@ vim.api.nvim_set_keymap("n", "<Leader>r.", ":RustHoverAction<CR>", {noremap = tr
 vim.api.nvim_set_keymap("n", "<Leader>re", ":RustExpandMacro<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>rd", ":RustDebuggables<CR>", {noremap = true})
 
-vim.api.nvim_set_keymap("n", "<Leader>ff", ":lua require'myplugins.nvimbqf'.toggle_quickfix()<cr>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<Leader>f?", ":lua require'myplugins.nvimbqf'.print_bqf_config()<cr>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<Leader>ff", "<CMD>QFToggle!<CR>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<Leader>fk", ":Keep<CR>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<Leader>fr", ":Reject<CR>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<Leader>fn", "<CMD>QFNext<CR>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<Leader>fp", "<CMD>QFPrev<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>fc", ":cexpr []<CR>", {noremap = true})
 
 vim.api.nvim_set_keymap("n", "<Leader>gg", ":Neogit<CR>", {noremap = true })

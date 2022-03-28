@@ -34,7 +34,8 @@ return require("packer").startup(function()
     use "kyazdani42/nvim-tree.lua"
     use 'nvim-lua/plenary.nvim'
     use 'f-person/git-blame.nvim'
-    use "kevinhwang91/nvim-bqf"
+    -- use "kevinhwang91/nvim-bqf"
+    use 'stevearc/qf_helper.nvim'
     use 'norcalli/nvim-colorizer.lua'
     use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
 
