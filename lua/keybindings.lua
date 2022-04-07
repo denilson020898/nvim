@@ -161,7 +161,7 @@ vim.api.nvim_set_keymap("n", "<Leader>sa", ":lua require('spectre').open({path='
 
 vim.api.nvim_set_keymap("n", "<F36>", ":PackerSync<cr>", {})
 vim.api.nvim_set_keymap("n", "<C-F12>", ":PackerSync<cr>", {})
-vim.api.nvim_set_keymap("n", "<F24>", "<Plug>RestNvim", {})
+vim.api.nvim_set_keymap("n", "<F13>", "<Plug>RestNvim", {})
 vim.api.nvim_set_keymap("n", "<F6>", ":lua require'colorscheme'.toggle_theme()<cr>", {})
 vim.api.nvim_set_keymap("n", "<F5>", ":checktime<cr>", {})
 vim.api.nvim_set_keymap("n", "<F4>", ":AerialToggle!<cr>", { noremap = true })
@@ -192,11 +192,19 @@ vim.api.nvim_set_keymap('n', '<leader>cso', '<cmd>lua require"dap".step_out()<CR
 vim.api.nvim_set_keymap('n', '<leader>u', '<cmd>lua require("memento").toggle()<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<leader>U', '<cmd>lua require("memento").clear_history()<CR>', {noremap = true})
 
-vim.api.nvim_set_keymap('n', '<F12>', '<cmd>lua require"dap".continue()<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<F24>', '<cmd>lua require"dap".continue()<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<F10>', '<cmd>lua require"dap".step_over()<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<F11>', '<cmd>lua require"dap".step_into()<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<F23>', '<cmd>lua require"dap".step_out()<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<F9>', '<cmd>lua require"dap".toggle_breakpoint()<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<F8>', '<cmd>lua require"dap.ui.widgets".hover()<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<F21>', '<cmd>lua require"dapui".toggle()<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<F20>',
+          "<cmd>lua local widgets=require'dap.ui.widgets';widgets.centered_float(widgets.scopes)<CR>", {noremap = true})
+vim.api.nvim_set_keymap('n', '<F22>',
+          '<cmd>lua require"telescope".extensions.dap.list_breakpoints{noremap = true}<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<F12><F11>', '<cmd>lua require"dap".repl.toggle()<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<F12><F12>', '<cmd>lua require"dap".repl.run_last()<CR>', {noremap = true})
 
 vim.api.nvim_set_keymap('n', '<leader>ctb', '<cmd>lua require"dap".toggle_breakpoint()<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<leader>csc', '<cmd>lua require"dap.ui.variables".scopes()<CR>', {noremap = true})
