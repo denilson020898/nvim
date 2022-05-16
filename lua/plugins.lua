@@ -108,7 +108,7 @@ return require("packer").startup(function()
     use 'windwp/nvim-spectre'
     use 'kazhala/close-buffers.nvim'
     use "tversteeg/registers.nvim"
-    use 'chentau/marks.nvim'
+    use 'chentoast/marks.nvim'
 
     use {
         "neovim/nvim-lspconfig",
