@@ -15,41 +15,49 @@ cmp.setup({
             -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
         end,
     },
-    mapping = {
-        ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-        ['<C-u>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-        ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-        ['<C-y>'] = cmp.config.disable, -- If you want to remove the default `<C-y>` mapping, You can specify `cmp.config.disable` value.
-        ['<C-e>'] = cmp.mapping({
-            i = cmp.mapping.abort(),
-            c = cmp.mapping.close(),
-        }),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
-        ['<C-f>'] = cmp.mapping.confirm({ select = true }),
+    -- mapping = {
+    --     ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+    --     ['<C-u>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+    --     ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+    --     ['<C-y>'] = cmp.config.disable, -- If you want to remove the default `<C-y>` mapping, You can specify `cmp.config.disable` value.
+    --     ['<C-e>'] = cmp.mapping({
+    --         i = cmp.mapping.abort(),
+    --         c = cmp.mapping.close(),
+    --     }),
+    --     ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    --     ['<C-f>'] = cmp.mapping.confirm({ select = true }),
+    --
+    --     ['<Tab>'] = function(fallback)
+    --         if vim.fn.pumvisible() == 1 then
+    --             vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<C-n>', true, true, true), 'n', true)
+    --         elseif check_back_space() then
+    --             vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Tab>', true, true, true), 'n', true)
+    --         elseif vim.fn['vsnip#available']() == 1 then
+    --             vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Plug>(vsnip-expand-or-jump)', true, true, true), '', true)
+    --         else
+    --             fallback()
+    --         end
+    --     end,
+    --     ['<S-Tab>'] = function(fallback)
+    --         if vim.fn.pumvisible() == 1 then
+    --             vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<C-p>', true, true, true), 'p', true)
+    --         elseif check_back_space() then
+    --             vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<S-Tab>', true, true, true), 'p', true)
+    --         elseif vim.fn['vsnip#available']() == 1 then
+    --             vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Plug>(vsnip-jump-prev)', true, true, true), '', true)
+    --         else
+    --             fallback()
+    --         end
+    --     end,
+    -- },
+    mapping = cmp.mapping.preset.insert({
+      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+      ['<C-f>'] = cmp.mapping.scroll_docs(4),
+      ['<C-Space>'] = cmp.mapping.complete(),
+      ['<C-e>'] = cmp.mapping.abort(),
+      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    }),
 
-        ['<Tab>'] = function(fallback)
-            if vim.fn.pumvisible() == 1 then
-                vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<C-n>', true, true, true), 'n', true)
-            elseif check_back_space() then
-                vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Tab>', true, true, true), 'n', true)
-            elseif vim.fn['vsnip#available']() == 1 then
-                vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Plug>(vsnip-expand-or-jump)', true, true, true), '', true)
-            else
-                fallback()
-            end
-        end,
-        ['<S-Tab>'] = function(fallback)
-            if vim.fn.pumvisible() == 1 then
-                vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<C-p>', true, true, true), 'p', true)
-            elseif check_back_space() then
-                vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<S-Tab>', true, true, true), 'p', true)
-            elseif vim.fn['vsnip#available']() == 1 then
-                vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Plug>(vsnip-jump-prev)', true, true, true), '', true)
-            else
-                fallback()
-            end
-        end,
-    },
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'vsnip' }, -- For vsnip users.
