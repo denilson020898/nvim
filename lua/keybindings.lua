@@ -102,6 +102,8 @@ vim.api.nvim_set_keymap("n", "<Leader>a", "ggVG", { noremap = true })
 
 vim.api.nvim_set_keymap("n", "<Tab>", ":BufferLineCycleNext<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>o", ":BufferLinePick<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>O", ":BufferLinePickClose<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>bw", "<cmd>lua require('close_buffers').wipe({type = 'all', force = true})<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>bo", "<cmd>lua require('close_buffers').wipe({type = 'other'})<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>bh", "<cmd>lua require('close_buffers').delete({type = 'hidden', force = true})<cr>", { noremap = true })
