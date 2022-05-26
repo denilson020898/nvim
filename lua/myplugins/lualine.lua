@@ -17,12 +17,18 @@ require("nvim-gps").setup({
 separator = ' > ',
 })
 
+local function getfoldmethod()
+  return vim.wo.foldmethod
+end
+
 local gps = require("nvim-gps")
 require('lualine').setup{
     sections = {
         lualine_c = {
             { gps.get_location, condition = gps.is_available },
-        }
+        },
+        lualine_a = {'mode', getfoldmethod},
+        -- lualine_x = {'encoding', 'fileformat', 'filetype', getfoldmethod},
     },
     -- options = {
     --     -- theme = 'molokai'

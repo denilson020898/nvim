@@ -23,8 +23,8 @@ return require("packer").startup(function()
     use "wbthomason/packer.nvim"
 
     use {
-        'hoob3rt/lualine.nvim',
-        requires = {'kyazdani42/nvim-web-devicons', opt = true}
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
     use {
         "SmiteshP/nvim-gps",

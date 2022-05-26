@@ -165,11 +165,14 @@ vim.api.nvim_set_keymap("n", "<Leader>sa", ":lua require('spectre').open({path='
 
 vim.api.nvim_set_keymap("n", "<F36>", ":PackerSync<cr>", {})
 vim.api.nvim_set_keymap("n", "<C-F12>", ":PackerSync<cr>", {})
-vim.api.nvim_set_keymap("n", "<F13>", "<Plug>RestNvim", {})
+-- vim.api.nvim_set_keymap("n", "<F13>", "<Plug>RestNvim", {})
 vim.api.nvim_set_keymap("n", "<F6>", ":lua require'colorscheme'.toggle_theme()<cr>", {})
 vim.api.nvim_set_keymap("n", "<F5>", ":checktime<cr>", {})
 vim.api.nvim_set_keymap("n", "<F4>", ":AerialToggle!<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<F3>", ":IndentBlanklineToggle<cr>", {})
+
+
+vim.api.nvim_set_keymap("n", "<F13>", ":lua require'settings'.switch_foldmethod()<cr>", {silent=true})
 
 vim.api.nvim_set_keymap("n", "<leader>,", "<cmd>CodeActionMenu<cr>", {noremap = true})
 
