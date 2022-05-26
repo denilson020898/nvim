@@ -161,11 +161,12 @@ return require("packer").startup(function()
         end
     }
 
-    use { 'anuvyklack/pretty-fold.nvim',
-    config = function()
-        require('pretty-fold').setup{}
-        require('pretty-fold.preview').setup()
-    end
+    use{ 'anuvyklack/pretty-fold.nvim',
+       requires = 'anuvyklack/nvim-keymap-amend', -- only for preview
+       config = function()
+          require('pretty-fold').setup()
+          require('pretty-fold.preview').setup()
+       end
     }
 
     use { 'bennypowers/nvim-regexplainer',

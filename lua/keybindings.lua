@@ -29,6 +29,8 @@ vim.api.nvim_set_keymap("n", "n", "nzzzv", { noremap = true })
 vim.api.nvim_set_keymap("n", "N", "Nzzzv", { noremap = true })
 vim.api.nvim_set_keymap("n", "J", "mzJ`z", { noremap = true })
 
+vim.api.nvim_set_keymap("n", "zh", "20zh", { noremap = true })
+vim.api.nvim_set_keymap("n", "zl", "20zl", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-j>", "20zh", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-k>", "20zl", { noremap = true })
 
