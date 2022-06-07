@@ -48,10 +48,10 @@ require'nvim-treesitter.configs'.setup {
     swap = {
           enable = true,
           swap_next = {
-            ["<leader>m"] = "@parameter.inner",
+            ["<space>m"] = "@parameter.inner",
           },
           swap_previous = {
-            ["<leader>M"] = "@parameter.inner",
+            ["<space>M"] = "@parameter.inner",
           },
         },
     move = {
@@ -78,8 +78,8 @@ require'nvim-treesitter.configs'.setup {
     --   enable = true,
     --   border = 'none',
     --   peek_definition_code = {
-    --     ["<leader>of"] = "@function.outer",
-    --     ["<leader>oF"] = "@class.outer",
+    --     ["<space>of"] = "@function.outer",
+    --     ["<space>oF"] = "@class.outer",
     --   },
     -- },
 }
