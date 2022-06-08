@@ -48,13 +48,15 @@ vim.o.iskeyword = vim.o.iskeyword .. ",-" .. ",_"
 vim.o.mouse = "a"
 vim.o.pumheight = 30
 vim.o.shortmess = vim.o.shortmess .. "c"
+vim.o.laststatus = 3
 -- " Set completeopt to have a better completion experience
 -- " :help completeopt
 -- " menuone: popup even when there's only one match
 -- " noinsert: Do not insert text until a selection is made
 -- " noselect: Do not select, force user to select one from the menu
 -- set completeopt=menuone,noinsert,noselect
-vim.o.completeopt = "menuone,noselect,noinsert"
+-- vim.o.completeopt = "menuone,noselect,noinsert"
+vim.opt.completeopt = {"menuone", "noselect", "noinsert"}
 vim.o.showmode = false
 vim.o.smartcase = true
 vim.o.splitbelow = true
