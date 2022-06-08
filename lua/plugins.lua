@@ -18,29 +18,14 @@ require("packer").init({
     },
 })
 
-return require("packer").startup(function()
+return require("packer").startup(function(use)
     -- Packer can manage itself
     use "wbthomason/packer.nvim"
 
-    use {
-      'nvim-lualine/lualine.nvim',
-      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-    }
-    use {
-        "SmiteshP/nvim-gps",
-        requires = "nvim-treesitter/nvim-treesitter"
-    }
-
-    use "kyazdani42/nvim-tree.lua"
+    -- LIBS
     use 'nvim-lua/plenary.nvim'
-    use 'f-person/git-blame.nvim'
-    use 'stevearc/qf_helper.nvim'
-    use 'norcalli/nvim-colorizer.lua'
-    use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
 
-    use 'sainnhe/sonokai'
-    use 'eddyekofo94/gruvbox-flat.nvim'
-
+    -- CMP
     use {
         "hrsh7th/nvim-cmp",
         requires = {
@@ -57,6 +42,46 @@ return require("packer").startup(function()
         }
     }
 
+    -- TELESCOPE
+    use "nvim-telescope/telescope.nvim"
+    use {'nvim-telescope/telescope-ui-select.nvim' }
+    -- TREESITTER
+
+    -- LSP
+    use {
+        "neovim/nvim-lspconfig",
+        'williamboman/nvim-lsp-installer',
+    }
+    use "ray-x/lsp_signature.nvim"
+    use 'simrat39/rust-tools.nvim'
+
+    -- DAP
+    use 'mfussenegger/nvim-dap'
+    use 'mfussenegger/nvim-dap-python'
+    use {'nvim-telescope/telescope-dap.nvim'}
+    use {'theHamsta/nvim-dap-virtual-text'}
+    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+    use {'Pocco81/DAPInstall.nvim'}
+
+    -- CORE EXTENSION
+    use "kyazdani42/nvim-tree.lua"
+    use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
+    use {
+        "SmiteshP/nvim-gps",
+        requires = "nvim-treesitter/nvim-treesitter"
+    }
+    use 'f-person/git-blame.nvim'
+    use 'stevearc/qf_helper.nvim'
+    use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
+
+    -- COLORSCHEME
+    use 'norcalli/nvim-colorizer.lua'
+    use 'sainnhe/sonokai'
+    use 'eddyekofo94/gruvbox-flat.nvim'
+
     use {
       'm-demare/hlargs.nvim',
       requires = { 'nvim-treesitter/nvim-treesitter' }
@@ -70,70 +95,41 @@ return require("packer").startup(function()
             require('crates').setup()
         end,
     }
-
     use "TimUntersberger/neogit"
     use 'sindrets/diffview.nvim'
-    use "nvim-telescope/telescope.nvim"
     use { "nvim-treesitter/nvim-treesitter", run=":TSUpdate" }
     use 'nvim-treesitter/nvim-treesitter-textobjects'
     use 'RRethy/nvim-treesitter-textsubjects'
-
     use "windwp/nvim-autopairs"
     use "windwp/nvim-ts-autotag"
     use "ahmedkhalf/lsp-rooter.nvim"
     use 'stevearc/aerial.nvim'
-
-    use {'nvim-telescope/telescope-ui-select.nvim' }
-
     use {
       "klen/nvim-test",
     }
-
     use { "beauwilliams/focus.nvim", config = function() require("focus").setup() end }
-
     use "rafamadriz/friendly-snippets"
     use "lukas-reineke/indent-blankline.nvim"
-
     use 'rmagatti/auto-session'
     use {
         'rmagatti/session-lens',
         requires = {'rmagatti/auto-session', 'nvim-telescope/telescope.nvim'},
     }
-
     use 'windwp/nvim-spectre'
     use 'kazhala/close-buffers.nvim'
     use "tversteeg/registers.nvim"
     use 'chentoast/marks.nvim'
-
-    use {
-        "neovim/nvim-lspconfig",
-        'williamboman/nvim-lsp-installer',
-    }
-    use "ray-x/lsp_signature.nvim"
-
     use 'gaborvecsei/memento.nvim'
-
-    use 'simrat39/rust-tools.nvim'
-    use 'mfussenegger/nvim-dap'
-    use 'mfussenegger/nvim-dap-python'
-    use {'nvim-telescope/telescope-dap.nvim'}
-    use {'theHamsta/nvim-dap-virtual-text'}
-    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
-    use {'Pocco81/DAPInstall.nvim'}
-
     use {
         'NTBBloodbath/rest.nvim',
         requires = { 'nvim-lua/plenary.nvim' }
     }
-
     use {
         'jghauser/fold-cycle.nvim',
         config = function()
             require('fold-cycle').setup()
         end
     }
-
-
     use {
         'phaazon/hop.nvim',
         as = 'hop',
@@ -143,14 +139,12 @@ return require("packer").startup(function()
             require'hop'.setup {}
         end
     }
-
     use {
         'numToStr/Comment.nvim',
         config = function()
             require('Comment').setup()
         end
     }
-
     use{ 'anuvyklack/pretty-fold.nvim',
        requires = 'anuvyklack/nvim-keymap-amend', -- only for preview
        config = function()
