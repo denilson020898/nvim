@@ -13,4 +13,3 @@ require("aerial").setup({
         -- "Variable"
     },
 })
-
