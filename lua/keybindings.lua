@@ -145,10 +145,7 @@ vim.api.nvim_set_keymap("n", "<F5>", ":checktime<cr>", {})
 vim.api.nvim_set_keymap("n", "<F4>", ":AerialToggle!<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<F3>", ":IndentBlanklineToggle<cr>", {})
 
-
 vim.api.nvim_set_keymap("n", "<F13>", ":lua require'settings'.switch_foldmethod()<cr>", {silent=true})
-
-vim.api.nvim_set_keymap("n", "<space>,", "<cmd>CodeActionMenu<cr>", {noremap = true})
 
 vim.api.nvim_set_keymap("n", "<space>xx", "<cmd>Trouble<cr>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<space>xw", "<cmd>Trouble workspace_diagnostics<cr>", {noremap = true})
