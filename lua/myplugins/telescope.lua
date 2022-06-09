@@ -34,17 +34,17 @@ require('telescope').setup{
         initial_mode = "insert",
         selection_strategy = "reset",
         sorting_strategy = "descending",
-        layout_strategy = "vertical",
+        -- layout_strategy = "vertical",
         layout_config = {
             horizontal = {
                 -- mirror = false,
-                width = 0.95,
-                width = 0.95,
+                width = 0.99,
+                width = 0.99,
             },
             vertical = {
                 -- mirror = false,
-                width = 0.95,
-                height = 0.95,
+                width = 0.99,
+                height = 0.99,
             },
         },
         file_sorter =  require'telescope.sorters'.get_fuzzy_file,
@@ -88,7 +88,7 @@ M.search_with_extension = function()
 end
 
 require('telescope').load_extension('dap')
-
 require("telescope").load_extension("ui-select")
+require("telescope").load_extension("live_grep_args")
 
 return M

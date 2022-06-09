@@ -45,8 +45,14 @@ return require("packer").startup(function(use)
     }
 
     -- TELESCOPE
-    use "nvim-telescope/telescope.nvim"
+    use {
+        "nvim-telescope/telescope.nvim",
+        requires = {
+            { "nvim-telescope/telescope-live-grep-args.nvim" }
+        }
+    }
     use { 'nvim-telescope/telescope-ui-select.nvim' }
+
     -- TREESITTER
 
     -- LSP
