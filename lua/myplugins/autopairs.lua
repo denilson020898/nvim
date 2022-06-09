@@ -1,18 +1,18 @@
 require('nvim-autopairs').setup({
-    disable_filetype = { "TelescopePrompt", "vim" },
-    enable_check_bracket_line = false,
-    ignored_next_char = "[%w%.%@]", -- will ignore alphanumeric and `.` symbol
-    fast_wrap = {
-        map = '<C-b>',
-        chars = { '{', '[', '(', '"', "'" },
-        pattern = string.gsub([[ [%'%"%)%>%]%)%}%,] ]], '%s+', ''),
-        offset = -1, -- Offset from pattern match
-        end_key = '$',
-        keys = 'qwertyuiopzxcvbnmasdfghjkl',
-        check_comma = true,
-        highlight = 'Search',
-        highlight_grey = 'Comment'
-    },
+  disable_filetype = { "TelescopePrompt", "vim" },
+  enable_check_bracket_line = false,
+  ignored_next_char = "[%w%.%@]", -- will ignore alphanumeric and `.` symbol
+  fast_wrap = {
+    map = '<C-b>',
+    chars = { '{', '[', '(', '"', "'" },
+    pattern = string.gsub([[ [%'%"%)%>%]%)%}%,] ]], '%s+', ''),
+    offset = -1, -- Offset from pattern match
+    end_key = '$',
+    keys = 'qwertyuiopzxcvbnmasdfghjkl',
+    check_comma = true,
+    highlight = 'Search',
+    highlight_grey = 'Comment'
+  },
 })
 
 -- If you want insert `(` after select function or method item

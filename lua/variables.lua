@@ -1,11 +1,11 @@
 vim.g.auto_session_post_restore_cmds = {
-    "bd *spectre*",
-    "resize 100"
+  "bd *spectre*",
+  "resize 100"
 }
 vim.g.auto_session_pre_save_cmds = {
-    "NvimTreeClose",
-    "cclose",
-    "AerialClose",
+  "NvimTreeClose",
+  "cclose",
+  "AerialClose",
 }
 
 vim.g.gitblame_enabled = 0

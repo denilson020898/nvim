@@ -8,12 +8,12 @@ local on_attach = require("lsp.global").on_attach
 local capabilities = require("lsp.global").capabilities
 
 local opts = {
-    on_attach=on_attach,
-    capabilities=capabilities,
-    dap = {
-        adapter = require('rust-tools.dap').get_codelldb_adapter(
-            codelldb_path, liblldb_path)
-    }
+  on_attach = on_attach,
+  capabilities = capabilities,
+  dap = {
+    adapter = require('rust-tools.dap').get_codelldb_adapter(
+      codelldb_path, liblldb_path)
+  }
 }
 
 -- Normal setup

@@ -9,7 +9,7 @@ vim.cmd("autocmd Filetype cpp setlocal expandtab tabstop=2 shiftwidth=2 softtabs
 vim.cmd("autocmd Filetype c setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
 vim.cmd("autocmd Filetype wast setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
 vim.cmd("autocmd Filetype wat setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
-vim.cmd("autocmd Filetype lua setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4")
+vim.cmd("autocmd Filetype lua setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
 vim.cmd("autocmd Filetype javascript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
 
 -- vim.cmd("set autoread | au CursorHold * checktime | call feedkeys('lh')")
@@ -66,8 +66,8 @@ vim.o.termguicolors = true
 vim.o.title = true
 vim.wo.colorcolumn = "100"
 -- vim.o.titlestring="%<%F%=%l/%L - nvim"
-vim.o.timeoutlen = 500
-vim.o.updatetime = 100
+vim.o.timeoutlen = 1000
+vim.o.updatetime = 200
 vim.o.writebackup = false
 vim.wo.cursorline = true
 vim.wo.number = true
@@ -78,11 +78,11 @@ vim.wo.wrap = false
 T.foldmethod_pointer = 4
 T.foldmethods = { "manual", "indent", "syntax", "expr", "marker", "diff" }
 T.switch_foldmethod = function()
-    T.foldmethod_pointer = T.foldmethod_pointer + 1
-    if T.foldmethod_pointer > #T.foldmethods then
-        T.foldmethod_pointer = 1
-    end
-    vim.cmd("set foldmethod=" .. T.foldmethods[T.foldmethod_pointer])
+  T.foldmethod_pointer = T.foldmethod_pointer + 1
+  if T.foldmethod_pointer > #T.foldmethods then
+    T.foldmethod_pointer = 1
+  end
+  vim.cmd("set foldmethod=" .. T.foldmethods[T.foldmethod_pointer])
 end
 
 vim.wo.foldmethod = T.foldmethods[T.foldmethod_pointer]

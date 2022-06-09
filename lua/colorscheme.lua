@@ -10,12 +10,12 @@ T.applied_theme = "gruvbox-flat"
 vim.cmd("colorscheme " .. T.applied_theme)
 
 T.toggle_theme = function()
-    if T.applied_theme == "gruvbox-flat" then
-        T.applied_theme = "sonokai"
-    else
-        T.applied_theme = "gruvbox-flat"
-    end
-    vim.cmd("colorscheme " .. T.applied_theme)
+  if T.applied_theme == "gruvbox-flat" then
+    T.applied_theme = "sonokai"
+  else
+    T.applied_theme = "gruvbox-flat"
+  end
+  vim.cmd("colorscheme " .. T.applied_theme)
 end
 
 -- require('colorbuddy').colorscheme('gruvbuddy')

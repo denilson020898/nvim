@@ -1,6 +1,6 @@
 local check_back_space = function()
-    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-    return col == 0 or vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') ~= nil
+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  return col == 0 or vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') ~= nil
 end
 
 require("luasnip.loaders.from_vscode").lazy_load()
@@ -10,110 +10,100 @@ local has_words_before = function()
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
+
 local luasnip = require("luasnip")
 local cmp = require("cmp")
+local lspkind = require('lspkind')
 
 cmp.setup({
-    snippet = {
-        expand = function(args)
-            -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-            require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-            -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-            -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
-        end,
+  snippet = {
+    expand = function(args)
+      -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+      require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+      -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+      -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
+    end,
+  },
+
+  formatting = {
+    fields = {
+      cmp.ItemField.Kind,
+      cmp.ItemField.Abbr,
+      cmp.ItemField.Menu,
     },
-    -- mapping = {
-    --     ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-    --     ['<C-u>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-    --     ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-    --     ['<C-y>'] = cmp.config.disable, -- If you want to remove the default `<C-y>` mapping, You can specify `cmp.config.disable` value.
-    --     ['<C-e>'] = cmp.mapping({
-    --         i = cmp.mapping.abort(),
-    --         c = cmp.mapping.close(),
-    --     }),
-    --     ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    --     ['<C-f>'] = cmp.mapping.confirm({ select = true }),
-    --
-    --     ['<Tab>'] = function(fallback)
-    --         if vim.fn.pumvisible() == 1 then
-    --             vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<C-n>', true, true, true), 'n', true)
-    --         elseif check_back_space() then
-    --             vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Tab>', true, true, true), 'n', true)
-    --         elseif vim.fn['vsnip#available']() == 1 then
-    --             vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Plug>(vsnip-expand-or-jump)', true, true, true), '', true)
-    --         else
-    --             fallback()
-    --         end
-    --     end,
-    --     ['<S-Tab>'] = function(fallback)
-    --         if vim.fn.pumvisible() == 1 then
-    --             vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<C-p>', true, true, true), 'p', true)
-    --         elseif check_back_space() then
-    --             vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<S-Tab>', true, true, true), 'p', true)
-    --         elseif vim.fn['vsnip#available']() == 1 then
-    --             vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Plug>(vsnip-jump-prev)', true, true, true), '', true)
-    --         else
-    --             fallback()
-    --         end
-    --     end,
-    -- },
-    mapping = cmp.mapping.preset.insert({
-        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping.complete(),
-        ['<C-e>'] = cmp.mapping.abort(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-        ["<Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_next_item()
-            elseif luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
-            elseif has_words_before() then
-                cmp.complete()
-            else
-                fallback()
-            end
-        end, { "i", "s" }),
-        ["<S-Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-                luasnip.jump(-1)
-            else
-                fallback()
-            end
-        end, { "i", "s" }),
-    }),
-    sources = cmp.config.sources({
-        { name = 'nvim_lsp'},
-        -- { name = 'vsnip' }, -- For vsnip users.
-        -- { name = 'ultisnips' }, -- For ultisnips users.
-        -- { name = 'snippy' }, -- For snippy users.
-        { name = 'buffer' },
-        { name = 'luasnip', keyword_length = 3}, -- For luasnip users.
-        { name = 'treesitter' },
-        { name = 'calc' },
-        { name = 'crates' },
-        -- { name = 'rg' },
-    }
-    )
+    format = lspkind.cmp_format({
+      mode = 'symbol_text', -- show only symbol annotations
+      maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+
+      -- The function below will be called before any actual modifications from lspkind
+      -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+      -- before = function (entry, vim_item)
+      --   ...
+      --   return vim_item
+      -- end
+    })
+  },
+  experimental = {
+    native_menu = false,
+    ghost_text = true,
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.abort(),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    ["<Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      elseif has_words_before() then
+        cmp.complete()
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
+    ["<S-Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
+  }),
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    -- { name = 'vsnip' }, -- For vsnip users.
+    -- { name = 'ultisnips' }, -- For ultisnips users.
+    -- { name = 'snippy' }, -- For snippy users.
+    { name = 'luasnip', keyword_length = 3 }, -- For luasnip users.
+    { name = 'buffer', keyword_length = 3 },
+    { name = 'treesitter' },
+    { name = 'calc' },
+    { name = 'crates' },
+    -- { name = 'rg' },
+  }
+  )
 })
 
 -- Use buffer source for `/`.
 cmp.setup.cmdline('/', {
-    sources = {
-        { name = 'buffer' }
-    },
+  sources = {
+    { name = 'buffer' }
+  },
 })
 
 -- Use cmdline & path source for ':'.
 cmp.setup.cmdline(':', {
-    sources = cmp.config.sources({
-        { name = 'path' }
-    }, {
-        { name = 'cmdline' },
-        { name = 'cmdline_history' },
-    })
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+    { name = 'cmdline' },
+    { name = 'cmdline_history' },
+  })
 })
 
 -- cmp.setup.cmdline(':', {
@@ -127,4 +117,3 @@ cmp.setup.cmdline(':', {
 -- require('lspconfig')[%YOUR_LSP_SERVER%].setup {
 --     capabilities = capabilities
 -- }
-

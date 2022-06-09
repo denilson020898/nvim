@@ -1,16 +1,16 @@
-require'nvim-treesitter.configs'.setup {
+require 'nvim-treesitter.configs'.setup {
   autotag = {
     enable = true,
   },
-    textsubjects = {
-        enable = true,
-        prev_selection = '\'', -- (Optional) keymap to select the previous selection
-        keymaps = {
-            [';'] = 'textsubjects-smart',
-            ['a;'] = 'textsubjects-container-outer',
-            ['i;'] = 'textsubjects-container-inner',
-        },
+  textsubjects = {
+    enable = true,
+    prev_selection = '\'', -- (Optional) keymap to select the previous selection
+    keymaps = {
+      [';'] = 'textsubjects-smart',
+      ['a;'] = 'textsubjects-container-outer',
+      ['i;'] = 'textsubjects-container-inner',
     },
+  },
   textobjects = {
     select = {
       enable = true,
@@ -46,34 +46,34 @@ require'nvim-treesitter.configs'.setup {
       },
     },
     swap = {
-          enable = true,
-          swap_next = {
-            ["<space>m"] = "@parameter.inner",
-          },
-          swap_previous = {
-            ["<space>M"] = "@parameter.inner",
-          },
-        },
+      enable = true,
+      swap_next = {
+        ["<space>m"] = "@parameter.inner",
+      },
+      swap_previous = {
+        ["<space>M"] = "@parameter.inner",
+      },
+    },
     move = {
-          enable = true,
-          set_jumps = true, -- whether to set jumps in the jumplist
-          goto_next_start = {
-            ["]m"] = "@function.outer",
-            ["]]"] = "@class.outer",
-          },
-          goto_next_end = {
-            ["]M"] = "@function.outer",
-            ["]["] = "@class.outer",
-          },
-          goto_previous_start = {
-            ["[m"] = "@function.outer",
-            ["[["] = "@class.outer",
-          },
-          goto_previous_end = {
-            ["[M"] = "@function.outer",
-            ["[]"] = "@class.outer",
-          },
-        },
+      enable = true,
+      set_jumps = true, -- whether to set jumps in the jumplist
+      goto_next_start = {
+        ["]m"] = "@function.outer",
+        ["]]"] = "@class.outer",
+      },
+      goto_next_end = {
+        ["]M"] = "@function.outer",
+        ["]["] = "@class.outer",
+      },
+      goto_previous_start = {
+        ["[m"] = "@function.outer",
+        ["[["] = "@class.outer",
+      },
+      goto_previous_end = {
+        ["[M"] = "@function.outer",
+        ["[]"] = "@class.outer",
+      },
+    },
     -- lsp_interop = {
     --   enable = true,
     --   border = 'none',
@@ -82,8 +82,7 @@ require'nvim-treesitter.configs'.setup {
     --     ["<space>oF"] = "@class.outer",
     --   },
     -- },
-}
+  }
 }
 
-require 'nvim-treesitter.install'.compilers = {  "gcc", "clang", "cl"  }
-
+require 'nvim-treesitter.install'.compilers = { "gcc", "clang", "cl" }
