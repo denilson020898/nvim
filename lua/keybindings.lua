@@ -14,7 +14,6 @@ vim.keymap.set("i", "'", "'<c-g>u", { noremap = true })
 vim.keymap.set("i", ":", ":<c-g>u", { noremap = true })
 vim.keymap.set("i", "<", "<<c-g>u", { noremap = true })
 
-
 -- CORE KEYBINDINGS
 -- nnoremap q: <nop>
 -- nnoremap Q <nop>
@@ -97,8 +96,9 @@ vim.keymap.set("n", "<space>gc", "<cmd>DiffviewClose<cr>", { noremap = true })
 vim.keymap.set("n", "<space>gb", "<cmd>GitBlameToggle<cr>", { noremap = true })
 vim.keymap.set('x', 'K', ':move \'<-2<cr>gv-gv', { noremap = true })
 vim.keymap.set('x', 'J', ':move \'>+1<cr>gv-gv', { noremap = true })
-vim.keymap.set("n", "<space>s", "<cmd>lua require('spectre').open()<cr>", { noremap = true })
-vim.keymap.set("n", "<space>sw", "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", { noremap = true })
+vim.keymap.set("n", "<space>s", require('spectre').open, { noremap = true })
+vim.keymap.set("n", "-s", require('myplugins.spectre').search_resume, { noremap = true })
+vim.keymap.set("n", "<space>sw", function() require('spectre').open_visual({select_word=true}) end, { noremap = true })
 vim.keymap.set("v", "<space>s", "<cmd>lua require('spectre').open_visual()<cr>", { noremap = true })
 vim.keymap.set("n", "<space>sc", "viw:lua require('spectre').open_file_search()<cr>", { noremap = true })
 vim.keymap.set("n", "<space>sp", "<cmd>lua require('spectre').open({path='*py'})<cr>", { noremap = true })

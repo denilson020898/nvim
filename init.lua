@@ -1,3 +1,4 @@
+require("global")
 require("keybindings")
 require("plugins")
 require("settings")
