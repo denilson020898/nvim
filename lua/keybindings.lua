@@ -109,7 +109,7 @@ vim.keymap.set("n", "<space>sa", "<cmd>lua require('spectre').open({path='*py *x
 vim.keymap.set("n", "<F36>", "<cmd>PackerSync<cr>", { noremap = true })
 vim.keymap.set("n", "<C-F12>", "<cmd>PackerSync<cr>", { noremap = true })
 vim.keymap.set("n", "<F6>", "<cmd>lua require'colorscheme'.toggle_theme()<cr>", { noremap = true })
-vim.keymap.set("n", "<F5>", "<cmd>checktime<cr>", { noremap = true })
+vim.keymap.set("n", "<F17>", "<cmd>checktime<cr>", { noremap = true })
 vim.keymap.set("n", "<F4>", "<cmd>AerialToggle!<cr>", { noremap = true })
 vim.keymap.set("n", "<F3>", "<cmd>IndentBlanklineToggle<cr>", { noremap = true })
 vim.keymap.set("n", "<F13>", "<cmd>lua require'settings'.switch_foldmethod()<cr>", { noremap = true })
@@ -154,46 +154,53 @@ vim.keymap.set("n", "=1", "<cmd>TestNearest<cr>", { noremap = true })
 vim.keymap.set("n", "=2", "<cmd>TestFile<cr>", { noremap = true })
 vim.keymap.set("n", "=3", "<cmd>TestSuite<cr>", { noremap = true })
 
-vim.keymap.set('n', '<space>cct', '<cmd>lua require"dap".continue()<cr>', { noremap = true })
-vim.keymap.set('n', '<space>csv', '<cmd>lua require"dap".step_over()<cr>', { noremap = true })
-vim.keymap.set('n', '<space>csi', '<cmd>lua require"dap".step_into()<cr>', { noremap = true })
-vim.keymap.set('n', '<space>cso', '<cmd>lua require"dap".step_out()<cr>', { noremap = true })
-vim.keymap.set('n', '<F24>', '<cmd>lua require"dap".continue()<cr>', { noremap = true })
+vim.keymap.set('n', '<F5>', '<cmd>lua require"dap".continue()<cr>', { noremap = true })
+vim.keymap.set('n', '=c', '<cmd>lua require"dap".continue()<cr>', { noremap = true })
 vim.keymap.set('n', '<F10>', '<cmd>lua require"dap".step_over()<cr>', { noremap = true })
+vim.keymap.set('n', '=n', '<cmd>lua require"dap".step_over()<cr>', { noremap = true })
+vim.keymap.set('n', '=s', '<cmd>lua require"dap".step_into()<cr>', { noremap = true })
 vim.keymap.set('n', '<F11>', '<cmd>lua require"dap".step_into()<cr>', { noremap = true })
+vim.keymap.set('n', '=f', '<cmd>lua require"dap".step_out()<cr>', { noremap = true })
 vim.keymap.set('n', '<F23>', '<cmd>lua require"dap".step_out()<cr>', { noremap = true })
+vim.keymap.set('n', '=b', '<cmd>lua require"dap".toggle_breakpoint()<cr>', { noremap = true })
 vim.keymap.set('n', '<F9>', '<cmd>lua require"dap".toggle_breakpoint()<cr>', { noremap = true })
-vim.keymap.set('n', '<F8>', '<cmd>lua require"dap.ui.widgets".hover()<cr>', { noremap = true })
-vim.keymap.set('n', '<F21>', '<cmd>lua require"dapui".toggle()<cr>', { noremap = true })
-vim.keymap.set('n', '<F20>',
-  "<cmd>lua local widgets=require'dap.ui.widgets';widgets.centered_float(widgets.scopes)<cr>", { noremap = true })
-vim.keymap.set('n', '<F22>',
-  '<cmd>lua require"telescope".extensions.dap.list_breakpoints{noremap = true}<cr>', { noremap = true })
-vim.keymap.set('n', '<F12><F11>', '<cmd>lua require"dap".repl.toggle()<cr>', { noremap = true })
-vim.keymap.set('n', '<F12><F12>', '<cmd>lua require"dap".repl.run_last()<cr>', { noremap = true })
+vim.keymap.set('n', '==', '<cmd>lua require"dapui".toggle()<cr>', { noremap = true })
+vim.keymap.set('n', '<F6>', '<Cmd>lua require"dap".run_last()<CR>', { noremap = true })
 
-vim.keymap.set('n', '<space>ctb', '<cmd>lua require"dap".toggle_breakpoint()<cr>', { noremap = true })
-vim.keymap.set('n', '<space>csc', '<cmd>lua require"dap.ui.variables".scopes()<cr>', { noremap = true })
-vim.keymap.set('n', '<space>chh', '<cmd>lua require"dap.ui.variables".hover()<cr>', { noremap = true })
-vim.keymap.set('v', '<space>chv',
-  '<cmd>lua require"dap.ui.variables".visual_hover()<cr>', { noremap = true })
-vim.keymap.set('n', '<space>cuh', '<cmd>lua require"dap.ui.widgets".hover()<cr>', { noremap = true })
-vim.keymap.set('n', '<space>cuf',
-  "<cmd>lua local widgets=require'dap.ui.widgets';widgets.centered_float(widgets.scopes)<cr>", { noremap = true })
-vim.keymap.set('n', '<space>csbr',
-  '<cmd>lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<cr>', { noremap = true })
-vim.keymap.set('n', '<space>csbm',
-  '<cmd>lua require"dap".set_breakpoint(nil, nil, vim.fn.input("Log point message: "))<cr>', { noremap = true })
-vim.keymap.set('n', '<space>cro', '<cmd>lua require"dap".repl.open()<cr>', { noremap = true })
-vim.keymap.set('n', '<space>crl', '<cmd>lua require"dap".repl.run_last()<cr>', { noremap = true })
-vim.keymap.set('n', '<space>cui', '<cmd>lua require"dapui".toggle()<cr>', { noremap = true })
-vim.keymap.set('n', '<space>ccc',
-  '<cmd>lua require"telescope".extensions.dap.commands{noremap = true}<cr>', { noremap = true })
-vim.keymap.set('n', '<space>cco',
-  '<cmd>lua require"telescope".extensions.dap.configurations{noremap = true}<cr>', { noremap = true })
-vim.keymap.set('n', '<space>clb',
-  '<cmd>lua require"telescope".extensions.dap.list_breakpoints{noremap = true}<cr>', { noremap = true })
-vim.keymap.set('n', '<space>cv',
-  '<cmd>lua require"telescope".extensions.dap.variables{noremap = true}<cr>', { noremap = true })
-vim.keymap.set('n', '<space>cf',
-  '<cmd>lua require"telescope".extensions.dap.frames{noremap = true}<cr>', { noremap = true })
+    -- nnoremap <silent> <Leader>dl <Cmd>lua require'dap'.run_last()<CR>
+
+-- vim.keymap.set('n', '<F9>', '<cmd>lua require"dap".toggle_breakpoint()<cr>', { noremap = true })
+-- vim.keymap.set('n', '<F8>', '<cmd>lua require"dap.ui.widgets".hover()<cr>', { noremap = true })
+-- vim.keymap.set('n', '<F21>', '<cmd>lua require"dapui".toggle()<cr>', { noremap = true })
+-- vim.keymap.set('n', '<F20>',
+--   "<cmd>lua local widgets=require'dap.ui.widgets';widgets.centered_float(widgets.scopes)<cr>", { noremap = true })
+-- vim.keymap.set('n', '<F22>',
+--   '<cmd>lua require"telescope".extensions.dap.list_breakpoints{noremap = true}<cr>', { noremap = true })
+-- vim.keymap.set('n', '<F12><F11>', '<cmd>lua require"dap".repl.toggle()<cr>', { noremap = true })
+-- vim.keymap.set('n', '<F12><F12>', '<cmd>lua require"dap".repl.run_last()<cr>', { noremap = true })
+--
+-- vim.keymap.set('n', '<space>ctb', '<cmd>lua require"dap".toggle_breakpoint()<cr>', { noremap = true })
+-- vim.keymap.set('n', '<space>csc', '<cmd>lua require"dap.ui.variables".scopes()<cr>', { noremap = true })
+-- vim.keymap.set('n', '<space>chh', '<cmd>lua require"dap.ui.variables".hover()<cr>', { noremap = true })
+-- vim.keymap.set('v', '<space>chv',
+--   '<cmd>lua require"dap.ui.variables".visual_hover()<cr>', { noremap = true })
+-- vim.keymap.set('n', '<space>cuh', '<cmd>lua require"dap.ui.widgets".hover()<cr>', { noremap = true })
+-- vim.keymap.set('n', '<space>cuf',
+--   "<cmd>lua local widgets=require'dap.ui.widgets';widgets.centered_float(widgets.scopes)<cr>", { noremap = true })
+-- vim.keymap.set('n', '<space>csbr',
+--   '<cmd>lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<cr>', { noremap = true })
+-- vim.keymap.set('n', '<space>csbm',
+--   '<cmd>lua require"dap".set_breakpoint(nil, nil, vim.fn.input("Log point message: "))<cr>', { noremap = true })
+-- vim.keymap.set('n', '<space>cro', '<cmd>lua require"dap".repl.open()<cr>', { noremap = true })
+-- vim.keymap.set('n', '<space>crl', '<cmd>lua require"dap".repl.run_last()<cr>', { noremap = true })
+-- vim.keymap.set('n', '<space>cui', '<cmd>lua require"dapui".toggle()<cr>', { noremap = true })
+-- vim.keymap.set('n', '<space>ccc',
+--   '<cmd>lua require"telescope".extensions.dap.commands{noremap = true}<cr>', { noremap = true })
+-- vim.keymap.set('n', '<space>cco',
+--   '<cmd>lua require"telescope".extensions.dap.configurations{noremap = true}<cr>', { noremap = true })
+-- vim.keymap.set('n', '<space>clb',
+--   '<cmd>lua require"telescope".extensions.dap.list_breakpoints{noremap = true}<cr>', { noremap = true })
+-- vim.keymap.set('n', '<space>cv',
+--   '<cmd>lua require"telescope".extensions.dap.variables{noremap = true}<cr>', { noremap = true })
+-- vim.keymap.set('n', '<space>cf',
+--   '<cmd>lua require"telescope".extensions.dap.frames{noremap = true}<cr>', { noremap = true })

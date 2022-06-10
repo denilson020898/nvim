@@ -1,6 +1,6 @@
+require("plugins")
 require("global")
 require("keybindings")
-require("plugins")
 require("settings")
 require("colorscheme")
 require("myplugins")

@@ -48,7 +48,7 @@ vim.o.iskeyword = vim.o.iskeyword .. ",-" .. ",_"
 vim.o.mouse = "a"
 vim.o.pumheight = 30
 vim.o.shortmess = vim.o.shortmess .. "c"
-vim.o.laststatus = 3
+-- vim.o.laststatus = 3
 -- " Set completeopt to have a better completion experience
 -- " :help completeopt
 -- " menuone: popup even when there's only one match
