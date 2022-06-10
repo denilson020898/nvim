@@ -63,6 +63,11 @@ return require("packer").startup(function(use)
   use "ray-x/lsp_signature.nvim"
   use 'simrat39/rust-tools.nvim'
   use 'onsails/lspkind.nvim'
+  use { 'j-hui/fidget.nvim',
+    config = function()
+      require "fidget".setup {}
+    end
+  }
 
   -- DAP
   use 'mfussenegger/nvim-dap'
@@ -90,6 +95,8 @@ return require("packer").startup(function(use)
   use 'norcalli/nvim-colorizer.lua'
   use 'sainnhe/sonokai'
   use 'eddyekofo94/gruvbox-flat.nvim'
+  use { 'rktjmp/lush.nvim' }
+  use { 'metalelf0/jellybeans-nvim' }
 
   use {
     'm-demare/hlargs.nvim',

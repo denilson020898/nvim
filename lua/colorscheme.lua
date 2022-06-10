@@ -7,6 +7,7 @@ vim.g.gruvbox_italic_functions = true
 
 T.applied_theme = "gruvbox-flat"
 -- T.applied_theme = "sonokai"
+-- T.applied_theme = "jellybeans-nvim"
 vim.cmd("colorscheme " .. T.applied_theme)
 
 T.toggle_theme = function()

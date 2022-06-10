@@ -2,7 +2,6 @@
 -- space , - , =
 vim.g.mapleader = ","
 
-
 -- OTHERS
 vim.cmd("noremap <expr> k (v:count > 5 ? \"m'\" . v:count : \"\") . 'k'")
 vim.cmd("noremap <expr> j (v:count > 5 ? \"m'\" . v:count : \"\") . 'j'")
@@ -43,8 +42,8 @@ vim.keymap.set("n", "Y", "y$", { noremap = true })
 vim.keymap.set("n", "n", "nzzzv", { noremap = true })
 vim.keymap.set("n", "N", "Nzzzv", { noremap = true })
 vim.keymap.set("n", "J", "mzJ`z", { noremap = true })
-vim.keymap.set("n", "zh", "25zh", { noremap = true })
-vim.keymap.set("n", "zl", "25zl", { noremap = true })
+vim.keymap.set("n", "zh", "35zh", { noremap = true })
+vim.keymap.set("n", "zl", "35zl", { noremap = true })
 vim.keymap.set("v", "<", "<gv", { noremap = true })
 vim.keymap.set("v", ">", ">gv", { noremap = true })
 vim.keymap.set("n", "<space>a", "ggVG", { noremap = true })

@@ -79,8 +79,8 @@ cmp.setup({
     -- { name = 'vsnip' }, -- For vsnip users.
     -- { name = 'ultisnips' }, -- For ultisnips users.
     -- { name = 'snippy' }, -- For snippy users.
-    { name = 'luasnip', keyword_length = 3 }, -- For luasnip users.
-    { name = 'buffer', keyword_length = 3 },
+    { name = 'luasnip' }, -- For luasnip users.
+    { name = 'buffer' },
     { name = 'treesitter' },
     { name = 'calc' },
     { name = 'crates' },
