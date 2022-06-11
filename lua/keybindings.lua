@@ -166,8 +166,8 @@ vim.keymap.set('n', '=b', '<cmd>lua require"dap".toggle_breakpoint()<cr>', { nor
 vim.keymap.set('n', '<F9>', '<cmd>lua require"dap".toggle_breakpoint()<cr>', { noremap = true })
 vim.keymap.set('n', '==', '<cmd>lua require"dapui".toggle()<cr>', { noremap = true })
 vim.keymap.set('n', '<F6>', '<Cmd>lua require"dap".run_last()<CR>', { noremap = true })
-
-    -- nnoremap <silent> <Leader>dl <Cmd>lua require'dap'.run_last()<CR>
+vim.keymap.set('n', '=k', '<Cmd>lua require("dapui").eval()<CR>', { noremap = true })
+vim.keymap.set('v', '=k', '<Cmd>lua require("dapui").eval()<CR>', { noremap = true })
 
 -- vim.keymap.set('n', '<F9>', '<cmd>lua require"dap".toggle_breakpoint()<cr>', { noremap = true })
 -- vim.keymap.set('n', '<F8>', '<cmd>lua require"dap.ui.widgets".hover()<cr>', { noremap = true })

@@ -56,9 +56,9 @@ return require("packer").startup(function(use)
   -- TREESITTER
 
   -- LSP
+  use 'williamboman/nvim-lsp-installer'
   use {
     "neovim/nvim-lspconfig",
-    'williamboman/nvim-lsp-installer',
   }
   use "ray-x/lsp_signature.nvim"
   use 'simrat39/rust-tools.nvim'
