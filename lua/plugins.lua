@@ -41,6 +41,7 @@ return require("packer").startup(function(use)
       "dmitmel/cmp-cmdline-history",
       'L3MON4D3/LuaSnip',
       'saadparwaiz1/cmp_luasnip',
+      'rcarriga/cmp-dap',
     }
   }
 

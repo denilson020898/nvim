@@ -17,10 +17,10 @@ local lspkind = require('lspkind')
 
 cmp.setup({
   -- nvim-cmp by defaults disables autocomplete for prompt buffers
-  -- enabled = function()
-  --   return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt"
-  --       or require("cmp_dap").is_dap_buffer()
-  -- end,
+  enabled = function()
+    return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt"
+        or require("cmp_dap").is_dap_buffer()
+  end,
   snippet = {
     expand = function(args)
       -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
@@ -105,7 +105,7 @@ cmp.setup({
     { name = 'treesitter' },
     { name = 'calc' },
     { name = 'crates' },
-    -- { name = 'dap' }
+    { name = 'dap' },
     -- { name = 'rg' },
   }
   )
