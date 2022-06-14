@@ -178,7 +178,8 @@ vim.keymap.set('n', '=tf', require'telescope'.extensions.dap.frames, { noremap =
 vim.keymap.set('n', '=R', require"dap".run_to_cursor, { noremap = true })
 vim.keymap.set('n', '=i', '<cmd>lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<cr>' , { noremap = true })
 vim.keymap.set('n', '=I', '<cmd>lua require"dap".set_breakpoint(nil, nil, vim.fn.input("Log point message: "))<cr>', { noremap = true })
-vim.keymap.set('n', '=T', '<cmd>lua require"dap".terminate()<cr>', { noremap = true })
+-- vim.keymap.set('n', '=T', '<cmd>lua require"dap".terminate()<cr>', { noremap = true })
+vim.keymap.set('n', '=T', '<cmd>lua require"dap".disconnect()<cr>', { noremap = true })
 
 -- vim.keymap.set('n', '<space>csc', '<cmd>lua require"dap.ui.variables".scopes()<cr>', { noremap = true })
 -- vim.keymap.set('n', '<space>chh', '<cmd>lua require"dap.ui.variables".hover()<cr>', { noremap = true })

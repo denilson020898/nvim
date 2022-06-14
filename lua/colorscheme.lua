@@ -21,5 +21,6 @@ end
 
 -- require('colorbuddy').colorscheme('gruvbuddy')
 -- vim.cmd("colorscheme jellybeans-nvim")
+-- require("zenburn").setup()
 
 return T

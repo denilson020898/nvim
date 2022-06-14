@@ -98,6 +98,7 @@ return require("packer").startup(function(use)
   use 'eddyekofo94/gruvbox-flat.nvim'
   use { 'rktjmp/lush.nvim' }
   use { 'metalelf0/jellybeans-nvim' }
+  use { "phha/zenburn.nvim" }
 
   use {
     'm-demare/hlargs.nvim',
