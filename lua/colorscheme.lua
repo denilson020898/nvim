@@ -12,7 +12,7 @@ vim.cmd("colorscheme " .. T.applied_theme)
 
 T.toggle_theme = function()
   if T.applied_theme == "gruvbox-flat" then
-    T.applied_theme = "sonokai"
+    T.applied_theme = "jellybeans-nvim"
   else
     T.applied_theme = "gruvbox-flat"
   end

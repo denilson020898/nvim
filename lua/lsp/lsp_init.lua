@@ -36,6 +36,11 @@ lspconfig.sqlls.setup({
   capabilities = capabilities,
 })
 
+lspconfig.tsserver.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
 lspconfig.jsonls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
@@ -59,7 +64,8 @@ lspconfig.pylsp.setup({
         pycodestyle = { enabled = false },
         jedi_completion = { fuzzy = true },
         pyls_isort = { enabled = true },
-        pylsp_mypy = { enabled = true }
+        pylsp_mypy = { enabled = true },
+        autopep8 = { enabled = true }
       }
     }
   },
