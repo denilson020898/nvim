@@ -30,7 +30,8 @@ require("dapui").setup({
     position = "left", -- Can be "left", "right", "top", "bottom"
   },
   tray = {
-    elements = { "repl", "console" },
+    -- elements = { "repl", "console" },
+    elements = { "repl" },
     size = 10,
     position = "bottom", -- Can be "left", "right", "top", "bottom"
   },
@@ -47,6 +48,7 @@ require("dapui").setup({
     max_type_length = nil, -- Can be integer or nil.
   }
 })
+
 local dap, dapui = require("dap"), require("dapui")
 dap.listeners.after.event_initialized["dapui_config"] = function()
   dapui.open()
