@@ -99,6 +99,7 @@ return require("packer").startup(function(use)
   use { 'rktjmp/lush.nvim' }
   use { 'metalelf0/jellybeans-nvim' }
   use { "phha/zenburn.nvim" }
+  use 'kaiuri/nvim-mariana'
 
   use {
     'm-demare/hlargs.nvim',
