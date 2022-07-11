@@ -53,12 +53,12 @@ return require("packer").startup(function(use)
     }
   }
   use { 'nvim-telescope/telescope-ui-select.nvim' }
-  use {'jvgrootveld/telescope-zoxide'}
+  use { 'jvgrootveld/telescope-zoxide' }
   use {
     "AckslD/nvim-neoclip.lua",
     requires = {
       -- you'll need at least one of these
-      {'nvim-telescope/telescope.nvim'},
+      { 'nvim-telescope/telescope.nvim' },
       -- {'ibhagwan/fzf-lua'},
     },
     config = function()
@@ -90,6 +90,14 @@ return require("packer").startup(function(use)
   use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
   use { 'Pocco81/DAPInstall.nvim' }
 
+  use {
+    'Weissle/persistent-breakpoints.nvim',
+    requires = 'mfussenegger/nvim-dap',
+    config = function ()
+      require('persistent-breakpoints').setup{}
+    end
+  }
+
   -- CORE EXTENSION
   use "kyazdani42/nvim-tree.lua"
   use {
@@ -111,7 +119,6 @@ return require("packer").startup(function(use)
   use { 'rktjmp/lush.nvim' }
   use { 'metalelf0/jellybeans-nvim' }
   use { "phha/zenburn.nvim" }
-  use 'kaiuri/nvim-mariana'
 
   use {
     'm-demare/hlargs.nvim',
@@ -170,6 +177,7 @@ return require("packer").startup(function(use)
       require 'hop'.setup {}
     end
   }
+
   use {
     'numToStr/Comment.nvim',
     config = function()

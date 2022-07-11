@@ -109,7 +109,7 @@ vim.keymap.set("n", "<space>H", "<C-w>^<C-w>k<C-w>L", { noremap = true })
 
 -- vim.keymap.set("n", "<space>gg", "<cmd>Neogit<cr>", { noremap = true })
 vim.keymap.set("n", "<space>gg", function()
-  require('neogit').open({ kind = 'split' })
+  require('neogit').open()
 end, { noremap = true })
 
 vim.keymap.set("n", "<space>gh", "<cmd>DiffviewFileHistory %<cr>", { noremap = true })
@@ -148,7 +148,8 @@ vim.keymap.set("n", "=rc", "<cmd>RustOpenCargo<cr>", { noremap = true })
 vim.keymap.set("n", "=rp", "<cmd>RustParentModule<cr>", { noremap = true })
 vim.keymap.set("n", "=rt", "<cmd>RustToggleInlayHints<cr>", { noremap = true })
 vim.keymap.set("n", "=rg", "<cmd>CargoReload<cr>", { noremap = true })
-vim.keymap.set("n", "=r.", "<cmd>RustHoverAction<cr>", { noremap = true })
+-- vim.keymap.set("n", "=r.", "<cmd>RustHoverAction<cr>", { noremap = true })
+vim.keymap.set("n", "<S-F1>", "<cmd>RustHoverAction<cr>", { noremap = true })
 vim.keymap.set("n", "=re", "<cmd>RustExpandMacro<cr>", { noremap = true })
 vim.keymap.set("n", "=rd", "<cmd>RustDebuggables<cr>", { noremap = true })
 
@@ -178,14 +179,18 @@ vim.keymap.set('n', '<S-F5>', '<Cmd>lua require"dap".run_last()<CR>', { noremap 
 vim.keymap.set('n', '<F1>', '<cmd>lua require"dap".step_over()<cr>', { noremap = true })
 vim.keymap.set('n', '<F2>', '<cmd>lua require"dap".step_into()<cr>', { noremap = true })
 vim.keymap.set('n', '<F3>', '<cmd>lua require"dap".step_out()<cr>', { noremap = true })
-vim.keymap.set('n', '<F9>', '<cmd>lua require"dap".toggle_breakpoint()<cr>', { noremap = true })
 vim.keymap.set('n', '<F11>', '<cmd>lua require"dapui".toggle()<cr>', { noremap = true })
 vim.keymap.set('n', '<F4>', '<Cmd>lua require("dapui").eval()<CR>', { noremap = true })
 vim.keymap.set('v', '<F4>', '<Cmd>lua require("dapui").eval()<CR>', { noremap = true })
-vim.keymap.set('n', '<S-F9>', '<cmd>lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<cr>',
-  { noremap = true })
+-- vim.keymap.set('n', '<F9>', '<cmd>lua require"dap".toggle_breakpoint()<cr>', { noremap = true })
+-- vim.keymap.set('n', '<S-F9>', '<cmd>lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<cr>',
+  -- { noremap = true })
 vim.keymap.set('n', '<S-F10>', '<cmd>lua require"dap".set_breakpoint(nil, nil, vim.fn.input("Log point message: "))<cr>',
   { noremap = true })
+
+vim.keymap.set("n", "<F9>", "<cmd>lua require('dap').toggle_breakpoint(); require('persistent-breakpoints.api').store_breakpoints(false)<cr>", { noremap = true })
+vim.keymap.set("n", "<F8>", "<cmd>lua require('dap').set_breakpoint(vim.fn.input '[Condition] > '); require('persistent-breakpoints.api').store_breakpoints(false)<cr>", { noremap = true })
+vim.keymap.set("n", "<S-F9>", "<cmd>lua require('dap').clear_breakpoints(); require('persistent-breakpoints.api').store_breakpoints(true)<cr>", { noremap = true })
 
 vim.keymap.set('n', '<A-c>', '<cmd>lua require"dap".continue()<cr>', { noremap = true })
 vim.keymap.set('n', '<A-n>', '<cmd>lua require"dap".step_over()<cr>', { noremap = true })
@@ -217,3 +222,5 @@ vim.keymap.set('n', '<A-t>', '<cmd>lua require"dap".disconnect()<cr>', { noremap
 -- vim.keymap.set('n', '<space>chh', '<cmd>lua require"dap.ui.variables".hover()<cr>', { noremap = true })
 --   '<cmd>lua require"dap.ui.variables".visual_hover()<cr>', { noremap = true })
 -- vim.keymap.set('n', '<space>cuh', '<cmd>lua require"dap.ui.widgets".hover()<cr>', { noremap = true })
+
+
