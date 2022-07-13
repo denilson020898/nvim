@@ -132,6 +132,7 @@ vim.keymap.set("n", "<space>sb", "<cmd>lua require('spectre').open({path='*py *x
 vim.keymap.set({ "n", "v" }, "<space>sa", "<cmd>lua require('spectre').open({path='*py *xml *js'})<cr>",
   { noremap = true })
 vim.keymap.set({ "n", "v" }, "<space>pw", "<cmd>HopWord<cr>", { noremap = true })
+vim.keymap.set({ "n", "v" }, "<leader>.", "<cmd>HopWord<cr>", { noremap = true })
 vim.keymap.set({ "n", "v" }, "<space>ps", "<cmd>HopLineStart<cr>", { noremap = true })
 vim.keymap.set({ "n", "v" }, "<space>pl", "<cmd>HopLine<cr>", { noremap = true })
 vim.keymap.set({ "n", "v" }, "<space>pp", "<cmd>HopPattern<cr>", { noremap = true })
