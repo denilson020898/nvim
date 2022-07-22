@@ -68,4 +68,4 @@ end
 -- nvim-dap-virtual-text. Show virtual text for current frame
 vim.g.dap_virtual_text = true
 
-vim.api.nvim_create_autocmd({"BufReadPost"},{ callback = require('persistent-breakpoints.api').load_breakpoints })
+-- vim.api.nvim_create_autocmd({"BufReadPost"},{ callback = require('persistent-breakpoints.api').load_breakpoints })

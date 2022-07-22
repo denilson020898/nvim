@@ -90,13 +90,13 @@ return require("packer").startup(function(use)
   use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
   use { 'Pocco81/DAPInstall.nvim' }
 
-  use {
-    'Weissle/persistent-breakpoints.nvim',
-    requires = 'mfussenegger/nvim-dap',
-    config = function ()
-      require('persistent-breakpoints').setup{}
-    end
-  }
+  -- use {
+  --   'Weissle/persistent-breakpoints.nvim',
+  --   requires = 'mfussenegger/nvim-dap',
+  --   config = function ()
+  --     require('persistent-breakpoints').setup({})
+  --   end
+  -- }
 
   -- CORE EXTENSION
   use "kyazdani42/nvim-tree.lua"
