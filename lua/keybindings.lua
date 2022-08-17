@@ -15,9 +15,7 @@ vim.keymap.set("i", ":", ":<c-g>u", { noremap = true })
 vim.keymap.set("i", "<", "<<c-g>u", { noremap = true })
 vim.keymap.set("i", "<c-c>", "<esc>", { noremap = true })
 vim.keymap.set("i", "jk", "<esc>", { noremap = true })
-vim.keymap.set("i", "kk", "<esc>", { noremap = true })
 vim.keymap.set("i", "jj", "<esc>", { noremap = true })
-vim.keymap.set("i", "kj", "<esc>", { noremap = true })
 vim.keymap.set("t", "<esc>", "<C-\\><C-n>", { noremap = true })
 
 -- CORE KEYBINDINGS
