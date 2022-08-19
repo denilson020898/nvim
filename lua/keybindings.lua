@@ -85,7 +85,7 @@ vim.keymap.set("n", "<space>fc", "<cmd>cexpr []<cr>", { noremap = true })
 
 -- FN KEY
 vim.keymap.set("n", "<F10>", "<cmd>AerialToggle!<cr>", { noremap = true })
-vim.keymap.set("n", "<F6>", "<cmd>resize 100<cr>", { noremap = true })
+-- vim.keymap.set("n", "<F6>", "<cmd>resize 100<cr>", { noremap = true })
 vim.keymap.set("n", "<S-F6>", "<cmd>lua require'colorscheme'.toggle_theme()<cr>", { noremap = true })
 vim.keymap.set("n", "<F7>", "<cmd>FocusToggle<cr>", { noremap = true })
 vim.keymap.set("n", "<S-F7>", "<cmd>FocusMaxOrEqual<cr>", { noremap = true })
@@ -130,7 +130,7 @@ vim.keymap.set("n", "<space>sb", "<cmd>lua require('spectre').open({path='*py *x
 vim.keymap.set({ "n", "v" }, "<space>sa", "<cmd>lua require('spectre').open({path='*py *xml *js'})<cr>",
   { noremap = true })
 vim.keymap.set({ "n", "v" }, "<space>pw", "<cmd>HopWord<cr>", { noremap = true })
-vim.keymap.set({ "n", "v" }, "<leader>.", "<cmd>HopWord<cr>", { noremap = true })
+vim.keymap.set({ "n", "v" }, "<leader>.", "<cmd>HopAnywhere<cr>", { noremap = true })
 vim.keymap.set({ "n", "v" }, "<leader>m", "<cmd>HopWord<cr>", { noremap = true })
 vim.keymap.set({ "n", "v" }, "<space>ps", "<cmd>HopLineStart<cr>", { noremap = true })
 vim.keymap.set({ "n", "v" }, "<space>pl", "<cmd>HopLine<cr>", { noremap = true })
@@ -192,6 +192,9 @@ vim.keymap.set('n', '<S-F10>', '<cmd>lua require"dap".set_breakpoint(nil, nil, v
 vim.keymap.set("n", "<F9>", "<cmd>lua require('dap').toggle_breakpoint(); require('persistent-breakpoints.api').store_breakpoints(false)<cr>", { noremap = true })
 vim.keymap.set("n", "<F8>", "<cmd>lua require('dap').set_breakpoint(vim.fn.input '[Condition] > '); require('persistent-breakpoints.api').store_breakpoints(false)<cr>", { noremap = true })
 vim.keymap.set("n", "<S-F9>", "<cmd>lua require('dap').clear_breakpoints(); require('persistent-breakpoints.api').store_breakpoints(true)<cr>", { noremap = true })
+
+vim.keymap.set("n", "<F6>", require "dap".run_to_cursor, { noremap = true })
+-- vim.keymap.set('n', '<A-r>', require "dap".run_to_cursor, { noremap = true })
 
 vim.keymap.set('n', '<A-c>', '<cmd>lua require"dap".continue()<cr>', { noremap = true })
 vim.keymap.set('n', '<A-n>', '<cmd>lua require"dap".step_over()<cr>', { noremap = true })
