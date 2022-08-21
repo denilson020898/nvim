@@ -47,4 +47,5 @@ vim.neovide_profiler=false
 -- let g:neovide_cursor_vfx_particle_speed=10.0
 -- let g:neovide_cursor_vfx_particle_phase=1.5
 -- let g:neovide_cursor_vfx_particle_curl=1.0
-
+-- let g:neovide_input_macos_alt_is_meta=v:false
+vim.g.neovide_input_macos_alt_is_meta=true

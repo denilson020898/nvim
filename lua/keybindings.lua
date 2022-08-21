@@ -156,7 +156,7 @@ vim.keymap.set("n", "=rd", "<cmd>RustDebuggables<cr>", { noremap = true })
 vim.keymap.set("n", "=ii", "<cmd>LspInfo<cr>", { noremap = true })
 -- vim.keymap.set("n", "=io", "<cmd>LspInstallInfo<cr>", { noremap = true })
 vim.keymap.set("n", "=is", "<cmd>LspStop<cr>", { noremap = true })
-vim.keymap.set("n", "=ia", "<cmd>LspStop<cr>", { noremap = true })
+vim.keymap.set("n", "=ia", "<cmd>LspStart<cr>", { noremap = true })
 
 -- vim.keymap.set("n", "-ct", require('crates').toggle, { noremap = true })
 -- vim.keymap.set("n", "-cr", require('crates').reload, { noremap = true })
