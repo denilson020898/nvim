@@ -3,11 +3,12 @@ T = {}
 vim.g.sonokai_style = 'default'
 
 vim.g.gruvbox_flat_style = "hard"
+-- vim.g.gruvbox_flat_style = "dark"
 -- vim.g.gruvbox_sidebars = { "qf", "vista_kind", "terminal", "packer" }
 -- vim.g.gruvbox_italic_functions = true
 vim.g.gruvbox_dark_sidebar = true
 vim.g.gruvbox_dark_float = true
-vim.g.gruvbox_transparent = true
+-- vim.g.gruvbox_transparent = true
 
 
 T.applied_theme = "gruvbox-flat"
