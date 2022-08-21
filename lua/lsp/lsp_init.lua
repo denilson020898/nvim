@@ -1,4 +1,4 @@
-require("nvim-lsp-installer").setup({})
+-- require("nvim-lsp-installer").setup({})
 local lspconfig = require("lspconfig")
 
 local on_attach = require("lsp.global").on_attach
@@ -44,14 +44,28 @@ lspconfig.tsserver.setup({
 lspconfig.jsonls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
+  -- settings = {
+  --   json = {
+  --     schemas = require('schemastore').json.schemas(),
+  --     validate = { enable = true },
+  --   },
+  -- },
+  -- init_options = {
+  --   provideFormatter = true
+  -- },
   -- commands = {
   --   Format = {
   --     function()
-  --       vim.lsp.buf.range_formatting({}, { 0, 0 }, { vim.fn.line("$"), 0 })
+  --       vim.lsp.buf.range_formatting({},{0,0},{vim.fn.line("$"),0})
   --     end
   --   }
   -- }
 })
+
+-- lspconfig.pylsp.setup({
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+-- })
 
 lspconfig.pylsp.setup({
   on_attach = on_attach,
@@ -60,12 +74,13 @@ lspconfig.pylsp.setup({
     pylsp = {
       plugins = {
         pylint = { enabled = true, executable = "pylint" },
-        pyflakes = { enabled = true },
-        pycodestyle = { enabled = false },
-        jedi_completion = { fuzzy = true },
-        pyls_isort = { enabled = true },
-        pylsp_mypy = { enabled = true },
-        autopep8 = { enabled = true }
+        yapf = { enabled = true }
+        -- pyflakes = { enabled = true },
+        -- pycodestyle = { enabled = false },
+        -- jedi_completion = { fuzzy = true },
+        -- pyls_isort = { enabled = true },
+        -- pylsp_mypy = { enabled = true },
+        -- autopep8 = { enabled = true }
       }
     }
   },

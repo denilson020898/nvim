@@ -66,10 +66,19 @@ return require("packer").startup(function(use)
     end,
   }
 
+  -- Installer
+  -- use 'williamboman/nvim-lsp-installer'
+  -- use { 'Pocco81/DAPInstall.nvim' }
+  use {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+  }
+  use { "jose-elias-alvarez/null-ls.nvim" }
+  use "b0o/schemastore.nvim"
+
   -- TREESITTER
 
   -- LSP
-  use 'williamboman/nvim-lsp-installer'
   use {
     "neovim/nvim-lspconfig",
   }
@@ -88,7 +97,6 @@ return require("packer").startup(function(use)
   use { 'nvim-telescope/telescope-dap.nvim' }
   use { 'theHamsta/nvim-dap-virtual-text' }
   use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
-  use { 'Pocco81/DAPInstall.nvim' }
 
   use {
     'Weissle/persistent-breakpoints.nvim',
@@ -184,14 +192,19 @@ return require("packer").startup(function(use)
       require('Comment').setup()
     end
   }
-  use { 'anuvyklack/pretty-fold.nvim',
-    requires = 'anuvyklack/nvim-keymap-amend', -- only for preview
-    config = function()
-      require('pretty-fold').setup()
-      require('pretty-fold.preview').setup()
-    end
+
+  use{ 'anuvyklack/pretty-fold.nvim',
+     config = function()
+        require('pretty-fold').setup()
+     end
   }
 
-  -- use 'tpope/vim-dadbod'
+  use { 'anuvyklack/fold-preview.nvim',
+     requires = 'anuvyklack/keymap-amend.nvim',
+     config = function()
+        require('fold-preview').setup()
+     end
+  }
+
 end
 )

@@ -8,3 +8,6 @@ require("variables")
 require("lsp")
 require("dbg")
 require("aucommands")
+require("masoninstaller")
+
+
