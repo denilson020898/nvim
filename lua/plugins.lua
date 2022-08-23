@@ -70,8 +70,8 @@ return require("packer").startup(function(use)
   -- use 'williamboman/nvim-lsp-installer'
   -- use { 'Pocco81/DAPInstall.nvim' }
   use {
-      "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
   }
   use { "jose-elias-alvarez/null-ls.nvim" }
   use "b0o/schemastore.nvim"
@@ -101,7 +101,7 @@ return require("packer").startup(function(use)
   use {
     'Weissle/persistent-breakpoints.nvim',
     requires = 'mfussenegger/nvim-dap',
-    config = function ()
+    config = function()
       require('persistent-breakpoints').setup({})
     end
   }
@@ -117,6 +117,12 @@ return require("packer").startup(function(use)
     requires = "nvim-treesitter/nvim-treesitter"
   }
   use 'f-person/git-blame.nvim'
+
+  use { 'akinsho/git-conflict.nvim', tag = "*", config = function()
+    require('git-conflict').setup()
+  end
+  }
+
   use 'stevearc/qf_helper.nvim'
   use { 'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons' }
 
@@ -193,17 +199,17 @@ return require("packer").startup(function(use)
     end
   }
 
-  use{ 'anuvyklack/pretty-fold.nvim',
-     config = function()
-        require('pretty-fold').setup()
-     end
+  use { 'anuvyklack/pretty-fold.nvim',
+    config = function()
+      require('pretty-fold').setup()
+    end
   }
 
   use { 'anuvyklack/fold-preview.nvim',
-     requires = 'anuvyklack/keymap-amend.nvim',
-     config = function()
-        require('fold-preview').setup()
-     end
+    requires = 'anuvyklack/keymap-amend.nvim',
+    config = function()
+      require('fold-preview').setup()
+    end
   }
 
 end
