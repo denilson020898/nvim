@@ -159,7 +159,7 @@ return require("packer").startup(function(use)
   use {
     "klen/nvim-test",
   }
-  use { "beauwilliams/focus.nvim", config = function() require("focus").setup() end }
+  use { "beauwilliams/focus.nvim", config = function() require("focus").setup({enable = false}) end }
   use "rafamadriz/friendly-snippets"
   use "lukas-reineke/indent-blankline.nvim"
   use 'rmagatti/auto-session'
