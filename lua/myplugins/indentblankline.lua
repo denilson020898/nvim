@@ -32,6 +32,7 @@
 -- }
 
 vim.cmd [[highlight IndentBlanklineContextChar guifg=#FF0000 gui=nocombine]]
+vim.cmd [[highlight WinSeparator guibg=None]]
 vim.opt.list = true
 -- vim.opt.listchars:append("space:⋅")
 -- vim.opt.listchars:append("eol:↴")

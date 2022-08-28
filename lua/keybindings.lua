@@ -201,40 +201,25 @@ vim.keymap.set('n', '<S-F10>', '<cmd>lua require"dap".set_breakpoint(nil, nil, v
 vim.keymap.set("n", "<F9>", "<cmd>lua require('dap').toggle_breakpoint(); require('persistent-breakpoints.api').store_breakpoints(false)<cr>", { noremap = true })
 vim.keymap.set("n", "<F8>", "<cmd>lua require('dap').set_breakpoint(vim.fn.input '[Condition] > '); require('persistent-breakpoints.api').store_breakpoints(false)<cr>", { noremap = true })
 vim.keymap.set("n", "<S-F9>", "<cmd>lua require('dap').clear_breakpoints(); require('persistent-breakpoints.api').store_breakpoints(true)<cr>", { noremap = true })
-
 vim.keymap.set("n", "<S-F2>", require "dap".run_to_cursor, { noremap = true })
--- vim.keymap.set('n', '<A-r>', require "dap".run_to_cursor, { noremap = true })
-
-vim.keymap.set('n', '<A-c>', '<cmd>lua require"dap".continue()<cr>', { noremap = true })
-vim.keymap.set('n', '<A-n>', '<cmd>lua require"dap".step_over()<cr>', { noremap = true })
-vim.keymap.set('n', '<A-s>', '<cmd>lua require"dap".step_into()<cr>', { noremap = true })
-vim.keymap.set('n', '<A-f>', '<cmd>lua require"dap".step_out()<cr>', { noremap = true })
-vim.keymap.set('n', '<A-b>', '<cmd>lua require"dap".toggle_breakpoint()<cr>', { noremap = true })
-vim.keymap.set('n', '<A-T>', '<cmd>lua require"dapui".toggle()<cr>', { noremap = true })
-vim.keymap.set('n', '<A-C>', '<Cmd>lua require"dap".run_last()<CR>', { noremap = true })
-vim.keymap.set('n', '<A-i>', '<Cmd>lua require("dapui").eval()<CR>', { noremap = true })
-vim.keymap.set('v', '<A-i>', '<Cmd>lua require("dapui").eval()<CR>', { noremap = true })
-vim.keymap.set('n', '=h', '<cmd>lua require"dap.ui.widgets".hover()<cr>', { noremap = true })
-vim.keymap.set('n', '=k', "<cmd>lua local widgets=require'dap.ui.widgets';widgets.centered_float(widgets.scopes)<cr>",
-  { noremap = true })
-vim.keymap.set('n', '=tx', require 'telescope'.extensions.dap.commands, { noremap = true })
-vim.keymap.set('n', '=tc', require 'telescope'.extensions.dap.configurations, { noremap = true })
-vim.keymap.set('n', '=tb', require 'telescope'.extensions.dap.list_breakpoints, { noremap = true })
-vim.keymap.set('n', '=tv', require 'telescope'.extensions.dap.variables, { noremap = true })
-vim.keymap.set('n', '=tf', require 'telescope'.extensions.dap.frames, { noremap = true })
--- vim.keymap.set('n', '=r', require"dap".repl.run_last, { noremap = true })
-vim.keymap.set('n', '<A-r>', require "dap".run_to_cursor, { noremap = true })
-vim.keymap.set('n', '<A-v>', '<cmd>lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<cr>',
-  { noremap = true })
-vim.keymap.set('n', '<A-x>', '<cmd>lua require"dap".set_breakpoint(nil, nil, vim.fn.input("Log point message: "))<cr>',
-  { noremap = true })
--- vim.keymap.set('n', '=T', '<cmd>lua require"dap".terminate()<cr>', { noremap = true })
-vim.keymap.set('n', '<A-t>', '<cmd>lua require"dap".disconnect()<cr>', { noremap = true })
-
--- vim.keymap.set('n', '<space>csc', '<cmd>lua require"dap.ui.variables".scopes()<cr>', { noremap = true })
--- vim.keymap.set('n', '<space>chh', '<cmd>lua require"dap.ui.variables".hover()<cr>', { noremap = true })
---   '<cmd>lua require"dap.ui.variables".visual_hover()<cr>', { noremap = true })
--- vim.keymap.set('n', '<space>cuh', '<cmd>lua require"dap.ui.widgets".hover()<cr>', { noremap = true })
 
 vim.keymap.set('n', '<leader>F', ':%!python -m json.tool<cr>', { noremap = true })
 
+vim.keymap.set('n', '<leader>cq', '<cmd>GitConflictListQf<cr>', { noremap = true })
+vim.keymap.set('n', '<leader>cr', '<cmd>GitConflictRefresh<cr>', { noremap = true })
+vim.keymap.set('n', '<leader>ca', '<cmd>GitConflictChooseBase<cr>', { noremap = true })
+vim.keymap.set('n', '<leader>co', '<cmd>GitConflictChooseBoth<cr>', { noremap = true })
+vim.keymap.set('n', '<leader>cn', '<cmd>GitConflictChooseNone<cr>', { noremap = true })
+vim.keymap.set('n', '<leader>co', '<cmd>GitConflictChooseOurs<cr>', { noremap = true })
+vim.keymap.set('n', '<leader>ct', '<cmd>GitConflictChooseTheirs<cr>', { noremap = true })
+vim.keymap.set('n', '<leader>cn', '<cmd>GitConflictNextConflict<cr>', { noremap = true })
+vim.keymap.set('n', '<leader>cp', '<cmd>GitConflictPrevConflict<cr>', { noremap = true })
+-- 'GitConflictListQf'
+-- 'GitConflictRefresh'
+-- 'GitConflictChooseBase'
+-- 'GitConflictChooseBoth'
+-- 'GitConflictChooseNone'
+-- 'GitConflictChooseOurs'
+-- 'GitConflictChooseTheirs'
+-- 'GitConflictNextConflict'
+-- 'GitConflictPrevConflict'
