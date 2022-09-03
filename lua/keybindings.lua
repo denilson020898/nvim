@@ -1,5 +1,3 @@
--- leader is ,
--- space , - , =
 vim.g.mapleader = ","
 
 -- OTHERS
@@ -73,7 +71,7 @@ vim.keymap.set("n", "<space>tg", require("telescope").extensions.live_grep_args.
 vim.keymap.set("n", "<space>tl", require('telescope.builtin').live_grep, { noremap = true })
 vim.keymap.set("n", "<space>i", require('telescope.builtin').buffers, { noremap = true })
 vim.keymap.set("n", "<space>th", require('telescope.builtin').help_tags, { noremap = true })
-vim.keymap.set("n", "<space>tz", require'telescope'.extensions.zoxide.list, { noremap = true })
+vim.keymap.set("n", "<space>tz", require 'telescope'.extensions.zoxide.list, { noremap = true })
 vim.keymap.set("n", "<space>tc", "<cmd>Telescope neoclip<cr>", { noremap = true })
 
 vim.keymap.set("n", "<space>ts", "<cmd>SearchSession<cr>", { noremap = true })
@@ -163,7 +161,6 @@ vim.keymap.set("n", "=re", "<cmd>RustExpandMacro<cr>", { noremap = true })
 vim.keymap.set("n", "=rd", "<cmd>RustDebuggables<cr>", { noremap = true })
 
 vim.keymap.set("n", "<leader>ii", "<cmd>LspInfo<cr>", { noremap = true })
--- vim.keymap.set("n", "=io", "<cmd>LspInstallInfo<cr>", { noremap = true })
 vim.keymap.set("n", "<leader>is", "<cmd>LspStop<cr>", { noremap = true })
 vim.keymap.set("n", "<leader>ia", "<cmd>LspStart<cr>", { noremap = true })
 
@@ -194,13 +191,20 @@ vim.keymap.set('n', '<F4>', '<Cmd>lua require("dapui").eval()<CR>', { noremap = 
 vim.keymap.set('v', '<F4>', '<Cmd>lua require("dapui").eval()<CR>', { noremap = true })
 -- vim.keymap.set('n', '<F9>', '<cmd>lua require"dap".toggle_breakpoint()<cr>', { noremap = true })
 -- vim.keymap.set('n', '<S-F9>', '<cmd>lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<cr>',
-  -- { noremap = true })
-vim.keymap.set('n', '<S-F10>', '<cmd>lua require"dap".set_breakpoint(nil, nil, vim.fn.input("Log point message: "))<cr>',
+-- { noremap = true })
+vim.keymap.set('n', '<S-F10>', '<cmd>lua require"dap".set_breakpoint(nil, nil, vim.fn.input("Log point message: "))<cr>'
+  ,
   { noremap = true })
 
-vim.keymap.set("n", "<F9>", "<cmd>lua require('dap').toggle_breakpoint(); require('persistent-breakpoints.api').store_breakpoints(false)<cr>", { noremap = true })
-vim.keymap.set("n", "<F8>", "<cmd>lua require('dap').set_breakpoint(vim.fn.input '[Condition] > '); require('persistent-breakpoints.api').store_breakpoints(false)<cr>", { noremap = true })
-vim.keymap.set("n", "<S-F9>", "<cmd>lua require('dap').clear_breakpoints(); require('persistent-breakpoints.api').store_breakpoints(true)<cr>", { noremap = true })
+vim.keymap.set("n", "<F9>",
+  "<cmd>lua require('dap').toggle_breakpoint(); require('persistent-breakpoints.api').store_breakpoints(false)<cr>",
+  { noremap = true })
+vim.keymap.set("n", "<F8>",
+  "<cmd>lua require('dap').set_breakpoint(vim.fn.input '[Condition] > '); require('persistent-breakpoints.api').store_breakpoints(false)<cr>"
+  , { noremap = true })
+vim.keymap.set("n", "<S-F9>",
+  "<cmd>lua require('dap').clear_breakpoints(); require('persistent-breakpoints.api').store_breakpoints(true)<cr>",
+  { noremap = true })
 vim.keymap.set("n", "<S-F2>", require "dap".run_to_cursor, { noremap = true })
 
 vim.keymap.set('n', '<leader>F', ':%!python -m json.tool<cr>', { noremap = true })

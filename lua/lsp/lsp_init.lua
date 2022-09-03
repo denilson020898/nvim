@@ -69,13 +69,8 @@ lspconfig.pylsp.setup({
     pylsp = {
       plugins = {
         pylint = { enabled = true, executable = "pylint" },
-        yapf = { enabled = true }
-        -- pyflakes = { enabled = true },
-        -- pycodestyle = { enabled = false },
-        -- jedi_completion = { fuzzy = true },
-        -- pyls_isort = { enabled = true },
-        -- pylsp_mypy = { enabled = true },
-        -- autopep8 = { enabled = true }
+        pycodestyle = { enabled = true, ignore = {'W391'}, maxLineLength = 100 },
+        pylsp_mypy = { enabled = true },
       }
     }
   },
