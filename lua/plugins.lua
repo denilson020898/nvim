@@ -123,7 +123,8 @@ return require("packer").startup(function(use)
   end
   }
 
-  use 'stevearc/qf_helper.nvim'
+  -- use 'stevearc/qf_helper.nvim'
+  use {'kevinhwang91/nvim-bqf'}
   use { 'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons' }
 
   -- COLORSCHEME
@@ -159,7 +160,7 @@ return require("packer").startup(function(use)
   use {
     "klen/nvim-test",
   }
-  use { "beauwilliams/focus.nvim", config = function() require("focus").setup({enable = false}) end }
+  use { "beauwilliams/focus.nvim", config = function() require("focus").setup() end }
   use "rafamadriz/friendly-snippets"
   use "lukas-reineke/indent-blankline.nvim"
   use 'rmagatti/auto-session'

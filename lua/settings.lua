@@ -72,6 +72,7 @@ vim.o.timeoutlen = 1000
 vim.o.updatetime = 200
 vim.o.writebackup = false
 vim.wo.cursorline = true
+vim.wo.cursorcolumn = true
 vim.wo.number = true
 vim.wo.scrolloff = 10
 vim.wo.signcolumn = "yes"

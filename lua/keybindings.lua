@@ -75,11 +75,13 @@ vim.keymap.set("n", "<space>tz", require 'telescope'.extensions.zoxide.list, { n
 vim.keymap.set("n", "<space>tc", "<cmd>Telescope neoclip<cr>", { noremap = true })
 
 vim.keymap.set("n", "<space>ts", "<cmd>SearchSession<cr>", { noremap = true })
+
 vim.keymap.set("n", "<space>ff", "<cmd>QFToggle!<cr>", { noremap = true })
 vim.keymap.set("n", "<space>fk", "<cmd>Keep<cr>", { noremap = true })
 vim.keymap.set("n", "<space>fr", "<cmd>Reject<cr>", { noremap = true })
 vim.keymap.set("n", "<space>fn", "<cmd>QFNext<cr>", { noremap = true })
 vim.keymap.set("n", "<space>fp", "<cmd>QFPrev<cr>", { noremap = true })
+
 vim.keymap.set("n", "<space>fc", "<cmd>cexpr []<cr>", { noremap = true })
 
 -- FN KEY
