@@ -52,8 +52,8 @@ vim.g.neovide_input_macos_alt_is_meta=true
 
 vim.g.gui_font_default_size = 12
 vim.g.gui_font_size = vim.g.gui_font_default_size
-vim.g.gui_font_face = "Hack Nerd Font"
--- vim.g.gui_font_face = "Iosevka Nerd Font"
+-- vim.g.gui_font_face = "Hack Nerd Font"
+vim.g.gui_font_face = "Iosevka Nerd Font"
 -- vim.g.gui_font_face = "FiraCode Nerd Font"
 
 RefreshGuiFont = function()

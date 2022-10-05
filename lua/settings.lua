@@ -39,6 +39,7 @@ vim.o.clipboard = "unnamedplus"
 -- vim.o.cmdheight = 2
 vim.o.conceallevel = 0
 vim.o.fileencoding = "utf-8"
+vim.o.guifont = "Iosevka Nerd Font:h12"
 -- vim.o.guifont = "JetBrains Mono:h12"
 -- vim.o.guifont = "FiraCode Nerd Font:h12"
 -- vim.o.hlsearch = false
@@ -49,7 +50,8 @@ vim.o.iskeyword = vim.o.iskeyword .. ",-" .. ",_"
 vim.o.mouse = "a"
 vim.o.pumheight = 30
 vim.o.shortmess = vim.o.shortmess .. "c"
-vim.o.laststatus = 3
+vim.o.laststatus = 0
+vim.o.ch = 0
 
 -- " Set completeopt to have a better completion experience
 -- " :help completeopt
@@ -74,6 +76,7 @@ vim.o.writebackup = false
 vim.wo.cursorline = true
 vim.wo.cursorcolumn = true
 vim.wo.number = true
+-- vim.wo.relativenumber = true
 vim.wo.scrolloff = 10
 vim.wo.signcolumn = "yes"
 vim.wo.wrap = false
