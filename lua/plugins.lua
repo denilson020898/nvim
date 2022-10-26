@@ -124,13 +124,19 @@ return require("packer").startup(function(use)
   }
 
   -- use 'stevearc/qf_helper.nvim'
-  use {'kevinhwang91/nvim-bqf'}
+  -- use {'kevinhwang91/nvim-bqf'}
   use { 'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons' }
 
   -- COLORSCHEME
   use 'norcalli/nvim-colorizer.lua'
   use 'sainnhe/sonokai'
+  -- use 'luisiacc/gruvbox-baby'
   use 'eddyekofo94/gruvbox-flat.nvim'
+  -- use {
+  --   "catppuccin/nvim",
+  --   as = "catppuccin",
+  -- }
+
   use { 'rktjmp/lush.nvim' }
   use { 'metalelf0/jellybeans-nvim' }
   use { "phha/zenburn.nvim" }

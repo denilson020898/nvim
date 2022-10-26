@@ -50,8 +50,8 @@ vim.o.iskeyword = vim.o.iskeyword .. ",-" .. ",_"
 vim.o.mouse = "a"
 vim.o.pumheight = 30
 vim.o.shortmess = vim.o.shortmess .. "c"
-vim.o.laststatus = 0
-vim.o.ch = 0
+-- vim.o.laststatus = 0
+-- vim.o.ch = 0
 
 -- " Set completeopt to have a better completion experience
 -- " :help completeopt

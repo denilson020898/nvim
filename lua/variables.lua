@@ -1,4 +1,5 @@
 vim.g.auto_session_post_restore_cmds = {
+  "silent! bd *NeogitStatus*",
   "silent! bd *spectre*",
   "resize 100"
 }

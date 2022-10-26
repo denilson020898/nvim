@@ -10,8 +10,13 @@ vim.g.gruvbox_dark_sidebar = true
 vim.g.gruvbox_dark_float = true
 -- vim.g.gruvbox_transparent = true
 
+-- vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
+-- require("catppuccin").setup()
+-- vim.api.nvim_command "colorscheme catppuccin"
 
+-- T.applied_theme = "gruvbox-baby"
 T.applied_theme = "gruvbox-flat"
+-- T.applied_theme = "catppuccin"
 -- T.applied_theme = "sonokai"
 -- T.applied_theme = "jellybeans-nvim"
 vim.cmd("colorscheme " .. T.applied_theme)
