@@ -148,8 +148,6 @@ vim.keymap.set({ "n", "v" }, "<leader>pp", "<cmd>HopPattern<cr>", { noremap = tr
 vim.keymap.set({ "n", "v" }, "<leader>pc", "<cmd>HopChar2<cr>", { noremap = true })
 vim.keymap.set({ "n", "v" }, "<leader>pC", "<cmd>HopChar1<cr>", { noremap = true })
 vim.keymap.set({ "n", "v" }, "<leader>pC", "<cmd>HopChar1<cr>", { noremap = true })
-vim.keymap.set('n', '=u', require("memento").toggle, { noremap = true })
-vim.keymap.set('n', '=U', require("memento").clear_history, { noremap = true })
 
 -- LSP KEYBINDINGS - key
 -- rust

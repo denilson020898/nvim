@@ -57,9 +57,7 @@ return require("packer").startup(function(use)
   use {
     "AckslD/nvim-neoclip.lua",
     requires = {
-      -- you'll need at least one of these
       { 'nvim-telescope/telescope.nvim' },
-      -- {'ibhagwan/fzf-lua'},
     },
     config = function()
       require('neoclip').setup()
@@ -67,8 +65,6 @@ return require("packer").startup(function(use)
   }
 
   -- Installer
-  -- use 'williamboman/nvim-lsp-installer'
-  -- use { 'Pocco81/DAPInstall.nvim' }
   use {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
@@ -123,19 +119,17 @@ return require("packer").startup(function(use)
   end
   }
 
-  -- use 'stevearc/qf_helper.nvim'
-  -- use {'kevinhwang91/nvim-bqf'}
-  use { 'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons' }
+  use { 'akinsho/nvim-bufferline.lua',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function()
+      require('bufferline').setup()
+    end,
+  }
 
   -- COLORSCHEME
-  use 'norcalli/nvim-colorizer.lua'
+  use { 'norcalli/nvim-colorizer.lua', config = function() require("colorizer").setup {} end }
   use 'sainnhe/sonokai'
-  -- use 'luisiacc/gruvbox-baby'
   use 'eddyekofo94/gruvbox-flat.nvim'
-  -- use {
-  --   "catppuccin/nvim",
-  --   as = "catppuccin",
-  -- }
 
   use { 'rktjmp/lush.nvim' }
   use { 'metalelf0/jellybeans-nvim' }
@@ -143,7 +137,10 @@ return require("packer").startup(function(use)
 
   use {
     'm-demare/hlargs.nvim',
-    requires = { 'nvim-treesitter/nvim-treesitter' }
+    requires = { 'nvim-treesitter/nvim-treesitter' },
+    config = function()
+      require('hlargs').setup()
+    end,
   }
 
   use {
@@ -155,14 +152,14 @@ return require("packer").startup(function(use)
     end,
   }
   use "TimUntersberger/neogit"
-  use 'sindrets/diffview.nvim'
+  use { 'sindrets/diffview.nvim', config = function() require("diffview").setup {} end }
   use { "nvim-treesitter/nvim-treesitter", run = "<cmd>TSUpdate" }
   use 'nvim-treesitter/nvim-treesitter-textobjects'
   use 'RRethy/nvim-treesitter-textsubjects'
   use "windwp/nvim-autopairs"
   use "windwp/nvim-ts-autotag"
-  use "ahmedkhalf/lsp-rooter.nvim"
-  use 'stevearc/aerial.nvim'
+  use { "ahmedkhalf/lsp-rooter.nvim", config = function() require("lsp-rooter").setup {} end }
+  use { 'stevearc/aerial.nvim', config = function() require("aerial").setup({}) end }
   use {
     "klen/nvim-test",
   }
@@ -178,7 +175,6 @@ return require("packer").startup(function(use)
   use 'kazhala/close-buffers.nvim'
   use "tversteeg/registers.nvim"
   use 'chentoast/marks.nvim'
-  use 'gaborvecsei/memento.nvim'
   use {
     'NTBBloodbath/rest.nvim',
     requires = { 'nvim-lua/plenary.nvim' }
@@ -193,8 +189,6 @@ return require("packer").startup(function(use)
     'phaazon/hop.nvim',
     as = 'hop',
     config = function()
-      -- you can configure Hop the way you like here; see :h hop-config
-      -- require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
       require 'hop'.setup {}
     end
   }

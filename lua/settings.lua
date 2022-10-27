@@ -12,17 +12,7 @@ vim.cmd("autocmd Filetype wat setlocal expandtab tabstop=2 shiftwidth=2 softtabs
 vim.cmd("autocmd Filetype lua setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
 vim.cmd("autocmd Filetype javascript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
 
--- vim.cmd("set autoread | au CursorHold * checktime | call feedkeys('lh')")
 vim.cmd("set autoread | au CursorHold * checktime")
--- Explanation:
--- - autoread: reads the file when changed from the outside (but it doesnt work on its own,
--- there is no internal timer or something like that. It will only read the file when vim
--- does an action, like a command in ex :!
--- - CursorHold * checktime: when the cursor isn't moved by the user for the time specified in
--- 'updatetime' (which is 4000 miliseconds by default) checktime is executed, which checks for
--- changes from outside the file
--- - call feedkeys("lh"): the cursor is moved once, right and back left. and then nothing happens
--- (... which means, that CursorHold is triggered, which means we have a loop)
 
 vim.o.expandtab = true
 vim.o.shiftwidth = 4
@@ -40,8 +30,6 @@ vim.o.clipboard = "unnamedplus"
 vim.o.conceallevel = 0
 vim.o.fileencoding = "utf-8"
 vim.o.guifont = "Iosevka Nerd Font:h12"
--- vim.o.guifont = "JetBrains Mono:h12"
--- vim.o.guifont = "FiraCode Nerd Font:h12"
 -- vim.o.hlsearch = false
 vim.o.ignorecase = true
 vim.o.inccommand = "split"
@@ -52,14 +40,6 @@ vim.o.pumheight = 30
 vim.o.shortmess = vim.o.shortmess .. "c"
 -- vim.o.laststatus = 0
 -- vim.o.ch = 0
-
--- " Set completeopt to have a better completion experience
--- " :help completeopt
--- " menuone: popup even when there's only one match
--- " noinsert: Do not insert text until a selection is made
--- " noselect: Do not select, force user to select one from the menu
--- set completeopt=menuone,noinsert,noselect
--- vim.o.completeopt = "menuone,noselect,noinsert"
 vim.opt.completeopt = { "menuone", "noselect", "noinsert" }
 vim.o.showmode = false
 vim.o.smartcase = true
