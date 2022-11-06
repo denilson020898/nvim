@@ -53,16 +53,6 @@ return require("packer").startup(function(use)
     }
   }
   use { 'nvim-telescope/telescope-ui-select.nvim' }
-  use { 'jvgrootveld/telescope-zoxide' }
-  use {
-    "AckslD/nvim-neoclip.lua",
-    requires = {
-      { 'nvim-telescope/telescope.nvim' },
-    },
-    config = function()
-      require('neoclip').setup()
-    end,
-  }
 
   -- Installer
   use {
@@ -77,9 +67,6 @@ return require("packer").startup(function(use)
     "ahmedkhalf/project.nvim",
     config = function()
       require("project_nvim").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
       }
     end
   }
@@ -140,15 +127,7 @@ return require("packer").startup(function(use)
 
   -- COLORSCHEME
   use { 'norcalli/nvim-colorizer.lua', config = function() require("colorizer").setup {} end }
-  -- use 'sainnhe/sonokai'
-  use 'eddyekofo94/gruvbox-flat.nvim'
-  -- use { 'rktjmp/lush.nvim' }
-  -- use { 'metalelf0/jellybeans-nvim' }
-  use { "phha/zenburn.nvim" }
-  -- use 'tjdevries/colorbuddy.vim'
-  -- use 'tjdevries/gruvbuddy.nvim'
-  -- " And then somewhere in your vimrc, to set the colorscheme
-  -- lua require('colorbuddy').colorscheme('gruvbuddy')
+  use 'luisiacc/gruvbox-baby'
 
   use {
     'm-demare/hlargs.nvim',
@@ -173,7 +152,6 @@ return require("packer").startup(function(use)
   use 'RRethy/nvim-treesitter-textsubjects'
   use "windwp/nvim-autopairs"
   use "windwp/nvim-ts-autotag"
-  -- use { "ahmedkhalf/lsp-rooter.nvim", config = function() require("lsp-rooter").setup {} end }
   use { 'stevearc/aerial.nvim', config = function() require("aerial").setup({}) end }
   use {
     "klen/nvim-test",

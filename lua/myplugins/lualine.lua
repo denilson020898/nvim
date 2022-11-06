@@ -30,8 +30,7 @@ require('lualine').setup {
     lualine_a = { 'mode', getfoldmethod },
     -- lualine_x = {'encoding', 'fileformat', 'filetype', getfoldmethod},
   },
-  -- options = {
-  --     -- theme = 'molokai'
-  --     theme = 'gruvbox-flat'
-  -- },
+  options = {
+      theme = 'gruvbox-baby'
+  },
 }

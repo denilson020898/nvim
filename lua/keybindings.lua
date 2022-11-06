@@ -17,13 +17,9 @@ vim.keymap.set("i", "jj", "<esc>", { noremap = true })
 vim.keymap.set("t", "<esc>", "<C-\\><C-n>", { noremap = true })
 
 -- CORE KEYBINDINGS
--- nnoremap q: <nop>
--- nnoremap Q <nop>
 vim.keymap.set("n", "q:", "<nop>", { noremap = true })
 vim.keymap.set("n", "-k", "<cmd>BufferLineCycleNext<cr>", { noremap = true })
 vim.keymap.set("n", "-j", "<cmd>BufferLineCyclePrev<cr>", { noremap = true })
--- vim.keymap.set("n", "<space>-", "<cmd>BufferLineCycleNext<cr>", { noremap = true })
--- vim.keymap.set("n", "-<space>", "<cmd>BufferLineCyclePrev<cr>", { noremap = true })
 vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>", { noremap = true })
 vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { noremap = true })
 vim.keymap.set("n", "<leader>,", "<cmd>BufferLinePick<cr>", { noremap = true })
@@ -62,7 +58,6 @@ vim.keymap.set("n", "<space>w", "<cmd>wa<cr>", { noremap = true })
 vim.keymap.set("n", "<space><space>", "<cmd>b#<cr>", { noremap = true })
 vim.keymap.set("n", "<space>t", "<cmd>Telescope<cr>", { noremap = true })
 vim.keymap.set("n", "<space>r", "<cmd>Telescope resume<cr>", { noremap = true })
-vim.keymap.set("n", "<space>tr", "<cmd>Telescope resume<cr>", { noremap = true })
 vim.keymap.set("n", "<space>tp", require('myplugins.telescope').search_dotfiles, { noremap = true })
 vim.keymap.set("n", "<space>tx", require('myplugins.telescope').search_with_extension, { noremap = true })
 vim.keymap.set("n", "<space>te", require('telescope.builtin').find_files, { noremap = true })
@@ -71,27 +66,19 @@ vim.keymap.set("n", "<space>tg", require("telescope").extensions.live_grep_args.
 vim.keymap.set("n", "<space>tl", require('telescope.builtin').live_grep, { noremap = true })
 vim.keymap.set("n", "<space>i", require('telescope.builtin').buffers, { noremap = true })
 vim.keymap.set("n", "<space>th", require('telescope.builtin').help_tags, { noremap = true })
-vim.keymap.set("n", "<space>tz", require 'telescope'.extensions.zoxide.list, { noremap = true })
-vim.keymap.set("n", "<space>tc", "<cmd>Telescope neoclip<cr>", { noremap = true })
-
 vim.keymap.set("n", "<space>ts", "<cmd>SearchSession<cr>", { noremap = true })
-
-vim.keymap.set("n", "<space>ff", "<cmd>QFToggle!<cr>", { noremap = true })
-vim.keymap.set("n", "<space>fk", "<cmd>Keep<cr>", { noremap = true })
-vim.keymap.set("n", "<space>fr", "<cmd>Reject<cr>", { noremap = true })
-vim.keymap.set("n", "<space>fn", "<cmd>QFNext<cr>", { noremap = true })
-vim.keymap.set("n", "<space>fp", "<cmd>QFPrev<cr>", { noremap = true })
-
 vim.keymap.set("n", "<space>fc", "<cmd>cexpr []<cr>", { noremap = true })
 
 -- FN KEY
 vim.keymap.set("n", "<F10>", "<cmd>AerialToggle!<cr>", { noremap = true })
 vim.keymap.set("n", "<F6>", "<cmd>resize 100<cr>", { noremap = true })
-vim.keymap.set("n", "<S-F6>", "<cmd>lua require'colorscheme'.toggle_theme()<cr>", { noremap = true })
+vim.keymap.set("n", "<F18>", "<cmd>lua require'colorscheme'.toggle_theme()<cr>", { noremap = true })
 vim.keymap.set("n", "<F7>", "<cmd>FocusToggle<cr>", { noremap = true })
-vim.keymap.set("n", "<S-F7>", "<cmd>FocusMaxOrEqual<cr>", { noremap = true })
-vim.keymap.set("n", "<S-F8>", "<cmd>lua require'settings'.switch_foldmethod()<cr>", { noremap = true })
+vim.keymap.set("n", "<F19>", "<cmd>FocusMaxOrEqual<cr>", { noremap = true })
+vim.keymap.set("n", "<F20>", "<cmd>lua require'settings'.switch_foldmethod()<cr>", { noremap = true })
+
 vim.keymap.set("n", "<C-F12>", "<cmd>PackerSync<cr>", { noremap = true })
+vim.keymap.set("n", "<F36>", "<cmd>PackerSync<cr>", { noremap = true })
 
 vim.keymap.set("n", "<space>h", "<C-w>h", { noremap = true })
 vim.keymap.set("n", "<space>j", "<C-w>j", { noremap = true })
@@ -113,7 +100,6 @@ vim.keymap.set("n", "<A-l>", "<C-w>10>", { noremap = true })
 vim.keymap.set("n", "<space>V", "<C-w>^<C-w>k<C-w>J", { noremap = true })
 vim.keymap.set("n", "<space>H", "<C-w>^<C-w>k<C-w>L", { noremap = true })
 
--- vim.keymap.set("n", "<space>gg", "<cmd>Neogit<cr>", { noremap = true })
 vim.keymap.set("n", "<space>gg", function()
   require('neogit').open()
 end, { noremap = true })
@@ -157,7 +143,7 @@ vim.keymap.set("n", "=rp", "<cmd>RustParentModule<cr>", { noremap = true })
 vim.keymap.set("n", "=rt", "<cmd>RustToggleInlayHints<cr>", { noremap = true })
 vim.keymap.set("n", "=rg", "<cmd>CargoReload<cr>", { noremap = true })
 -- vim.keymap.set("n", "=r.", "<cmd>RustHoverAction<cr>", { noremap = true })
-vim.keymap.set("n", "<S-F1>", "<cmd>RustHoverAction<cr>", { noremap = true })
+vim.keymap.set("n", "<F13>", "<cmd>RustHoverAction<cr>", { noremap = true })
 vim.keymap.set("n", "=re", "<cmd>RustExpandMacro<cr>", { noremap = true })
 vim.keymap.set("n", "=rd", "<cmd>RustDebuggables<cr>", { noremap = true })
 
@@ -180,23 +166,16 @@ vim.keymap.set("n", "=1", "<cmd>TestNearest<cr>", { noremap = true })
 vim.keymap.set("n", "=2", "<cmd>TestFile<cr>", { noremap = true })
 vim.keymap.set("n", "=3", "<cmd>TestSuite<cr>", { noremap = true })
 
-vim.keymap.set({ 'i', 'n', 'v' }, '<A-o>', '<esc>', { noremap = true })
-
 vim.keymap.set('n', '<F5>', '<cmd>lua require"dap".continue()<cr>', { noremap = true })
-vim.keymap.set('n', '<S-F5>', '<Cmd>lua require"dap".run_last()<CR>', { noremap = true })
+vim.keymap.set('n', '<F17>', '<Cmd>lua require"dap".run_last()<CR>', { noremap = true })
 vim.keymap.set('n', '<F1>', '<cmd>lua require"dap".step_over()<cr>', { noremap = true })
 vim.keymap.set('n', '<F2>', '<cmd>lua require"dap".step_into()<cr>', { noremap = true })
 vim.keymap.set('n', '<F3>', '<cmd>lua require"dap".step_out()<cr>', { noremap = true })
 vim.keymap.set('n', '<F11>', '<cmd>lua require"dapui".toggle()<cr>', { noremap = true })
 vim.keymap.set('n', '<F4>', '<Cmd>lua require("dapui").eval()<CR>', { noremap = true })
 vim.keymap.set('v', '<F4>', '<Cmd>lua require("dapui").eval()<CR>', { noremap = true })
--- vim.keymap.set('n', '<F9>', '<cmd>lua require"dap".toggle_breakpoint()<cr>', { noremap = true })
--- vim.keymap.set('n', '<S-F9>', '<cmd>lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<cr>',
--- { noremap = true })
 vim.keymap.set('n', '<S-F10>', '<cmd>lua require"dap".set_breakpoint(nil, nil, vim.fn.input("Log point message: "))<cr>'
-  ,
-  { noremap = true })
-
+  , { noremap = true })
 vim.keymap.set("n", "<F9>",
   "<cmd>lua require('dap').toggle_breakpoint(); require('persistent-breakpoints.api').store_breakpoints(false)<cr>",
   { noremap = true })
@@ -208,8 +187,6 @@ vim.keymap.set("n", "<S-F9>",
   { noremap = true })
 vim.keymap.set("n", "<S-F2>", require "dap".run_to_cursor, { noremap = true })
 
-vim.keymap.set('n', '<leader>F', ':%!python -m json.tool<cr>', { noremap = true })
-
 vim.keymap.set('n', '<leader>cq', '<cmd>GitConflictListQf<cr>', { noremap = true })
 vim.keymap.set('n', '<leader>cr', '<cmd>GitConflictRefresh<cr>', { noremap = true })
 vim.keymap.set('n', '<leader>ca', '<cmd>GitConflictChooseBase<cr>', { noremap = true })
@@ -219,12 +196,5 @@ vim.keymap.set('n', '<leader>co', '<cmd>GitConflictChooseOurs<cr>', { noremap = 
 vim.keymap.set('n', '<leader>ct', '<cmd>GitConflictChooseTheirs<cr>', { noremap = true })
 vim.keymap.set('n', '<leader>cn', '<cmd>GitConflictNextConflict<cr>', { noremap = true })
 vim.keymap.set('n', '<leader>cp', '<cmd>GitConflictPrevConflict<cr>', { noremap = true })
--- 'GitConflictListQf'
--- 'GitConflictRefresh'
--- 'GitConflictChooseBase'
--- 'GitConflictChooseBoth'
--- 'GitConflictChooseNone'
--- 'GitConflictChooseOurs'
--- 'GitConflictChooseTheirs'
--- 'GitConflictNextConflict'
--- 'GitConflictPrevConflict'
+
+vim.keymap.set('n', '<leader>F', ':%!python -m json.tool<cr>', { noremap = true })

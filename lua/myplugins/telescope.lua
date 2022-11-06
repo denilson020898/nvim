@@ -90,7 +90,5 @@ end
 require('telescope').load_extension('dap')
 require("telescope").load_extension("ui-select")
 require("telescope").load_extension("live_grep_args")
-require'telescope'.load_extension('zoxide')
-require('telescope').load_extension('neoclip')
 
 return M

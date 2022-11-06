@@ -1,19 +1,17 @@
 T = {}
+vim.g.gruvbox_baby_background_colora="dark"
+vim.g.gruvbox_baby_use_original_palette=false
 
--- vim.g.sonokai_style = 'default'
-vim.g.gruvbox_flat_style = "hard"
-vim.g.gruvbox_dark_sidebar = true
-vim.g.gruvbox_dark_float = true
-T.applied_theme = "gruvbox-flat"
+T.applied_theme = "gruvbox-baby"
 vim.cmd("colorscheme " .. T.applied_theme)
 
-T.toggle_theme = function()
-  if T.applied_theme == "gruvbox-flat" then
-    T.applied_theme = "jellybeans-nvim"
-  else
-    T.applied_theme = "gruvbox-flat"
-  end
-  vim.cmd("colorscheme " .. T.applied_theme)
-end
+-- T.toggle_theme = function()
+--   if T.applied_theme == "gruvbox-baby" then
+--     T.applied_theme = "jellybeans-nvim"
+--   else
+--     T.applied_theme = "gruvbox-baby"
+--   end
+--   vim.cmd("colorscheme " .. T.applied_theme)
+-- end
 
 return T
