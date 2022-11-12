@@ -16,6 +16,21 @@ lspconfig.sumneko_lua.setup({
   }
 })
 
+lspconfig.cssls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
+lspconfig.dockerls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
+lspconfig.yamlls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
 lspconfig.tsserver.setup({
   on_attach = on_attach,
   capabilities = capabilities,
@@ -31,6 +46,11 @@ lspconfig.html.setup({
   capabilities = capabilities,
 })
 
+-- lspconfig.sqls.setup({
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+-- })
+
 lspconfig.sqlls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
@@ -44,22 +64,6 @@ lspconfig.tsserver.setup({
 lspconfig.jsonls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
-  -- settings = {
-  --   json = {
-  --     schemas = require('schemastore').json.schemas(),
-  --     validate = { enable = true },
-  --   },
-  -- },
-  -- init_options = {
-  --   provideFormatter = true
-  -- },
-  -- commands = {
-  --   Format = {
-  --     function()
-  --       vim.lsp.buf.range_formatting({},{0,0},{vim.fn.line("$"),0})
-  --     end
-  --   }
-  -- }
 })
 
 lspconfig.pylsp.setup({

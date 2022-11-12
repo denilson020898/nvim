@@ -99,6 +99,11 @@ vim.keymap.set("n", "<A-l>", "<C-w>10>", { noremap = true })
 
 vim.keymap.set("n", "<space>V", "<C-w>^<C-w>k<C-w>J", { noremap = true })
 vim.keymap.set("n", "<space>H", "<C-w>^<C-w>k<C-w>L", { noremap = true })
+vim.keymap.set("n", "<space>Q", "<C-w>q", { noremap = true })
+
+vim.keymap.set("n", "<A-v>", "<C-w>^<C-w>k<C-w>J", { noremap = true })
+vim.keymap.set("n", "<A-s>", "<C-w>^<C-w>k<C-w>L", { noremap = true })
+vim.keymap.set("n", "<A-q>", "<C-w>q", { noremap = true })
 
 vim.keymap.set("n", "<space>gg", function()
   require('neogit').open()
