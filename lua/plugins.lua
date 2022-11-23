@@ -53,6 +53,19 @@ return require("packer").startup(function(use)
     }
   }
   use { 'nvim-telescope/telescope-ui-select.nvim' }
+  use "natecraddock/telescope-zf-native.nvim"
+  use { "nvim-telescope/telescope-file-browser.nvim" }
+  use({
+    "princejoogie/dir-telescope.nvim",
+    -- telescope.nvim is a required dependency
+    requires = {"nvim-telescope/telescope.nvim"},
+    config = function()
+      require("dir-telescope").setup({
+        hidden = true,
+        respect_gitignore = true,
+      })
+    end,
+  })
 
   -- Installer
   use {
