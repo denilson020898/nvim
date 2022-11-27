@@ -18,12 +18,13 @@ vim.keymap.set("t", "<esc>", "<C-\\><C-n>", { noremap = true })
 
 -- CORE KEYBINDINGS
 vim.keymap.set("n", "q:", "<nop>", { noremap = true })
-vim.keymap.set("n", "-k", "<cmd>BufferLineCycleNext<cr>", { noremap = true })
-vim.keymap.set("n", "-j", "<cmd>BufferLineCyclePrev<cr>", { noremap = true })
+vim.keymap.set("n", "<leader>k", "<cmd>BufferLineCycleNext<cr>", { noremap = true })
+vim.keymap.set("n", "<leader>j", "<cmd>BufferLineCyclePrev<cr>", { noremap = true })
 vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>", { noremap = true })
 vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { noremap = true })
 vim.keymap.set("n", "<leader>,", "<cmd>BufferLinePick<cr>", { noremap = true })
 vim.keymap.set("n", "<leader>o", "<cmd>BufferLinePickClose<cr>", { noremap = true })
+vim.keymap.set("n", "<leader>\\", "<cmd>BufferLineSortByRelativeDirectory<cr>", { noremap = true })
 vim.keymap.set('n', 'zx', require('fold-cycle').open, { noremap = true })
 vim.keymap.set('n', 'zc', require('fold-cycle').close, { noremap = true })
 vim.keymap.set('n', 'zX', require('fold-cycle').open_all, { noremap = false })
@@ -31,6 +32,7 @@ vim.keymap.set('n', 'zC', require('fold-cycle').close_all, { noremap = false })
 vim.keymap.set('n', 'zv', require('fold-cycle').toggle_all, { noremap = false })
 vim.keymap.set("n", "<space>/", "<cmd>set hlsearch!<cr>", { noremap = true })
 vim.keymap.set("n", "<space>n", "<cmd>NvimTreeToggle<cr>", { noremap = true })
+vim.keymap.set("n", "<leader>n", "<cmd>NvimTreeFindFile<cr>", { noremap = true })
 vim.keymap.set("n", "Y", "y$", { noremap = true })
 vim.keymap.set("n", "n", "nzzzv", { noremap = true })
 vim.keymap.set("n", "N", "Nzzzv", { noremap = true })
@@ -78,10 +80,13 @@ vim.keymap.set("n", "<space>td", require('telescope.builtin').diagnostics, { nor
 vim.keymap.set("n", "<space>ts", require('telescope.builtin').lsp_document_symbols, { noremap = true })
 vim.keymap.set("n", "<space>tw", require('telescope.builtin').lsp_workspace_symbols, { noremap = true })
 vim.keymap.set("n", "<space>e", "<cmd>Telescope file_browser<cr>", { noremap = true })
-vim.keymap.set("n", "<space>th", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", { noremap = true })
 
 vim.keymap.set("n", "<space>tS", "<cmd>SearchSession<cr>", { noremap = true })
+
+vim.keymap.set("n", "<space>ff", "<cmd>copen<cr>", { noremap = true })
 vim.keymap.set("n", "<space>fc", "<cmd>cexpr []<cr>", { noremap = true })
+vim.keymap.set("n", "<space>fn", "<cmd>cnext<cr>", { noremap = true })
+vim.keymap.set("n", "<space>fp", "<cmd>cprev<cr>", { noremap = true })
 
 -- FN KEY
 vim.keymap.set("n", "<F10>", "<cmd>AerialToggle!<cr>", { noremap = true })

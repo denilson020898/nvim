@@ -141,6 +141,9 @@ return require("packer").startup(function(use)
   -- COLORSCHEME
   use { 'norcalli/nvim-colorizer.lua', config = function() require("colorizer").setup {} end }
   use 'luisiacc/gruvbox-baby'
+  use { "catppuccin/nvim", as = "catppuccin" }
+  use 'tjdevries/colorbuddy.vim'
+  use 'tjdevries/gruvbuddy.nvim'
 
   use {
     'm-demare/hlargs.nvim',

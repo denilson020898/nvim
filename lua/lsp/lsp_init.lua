@@ -4,6 +4,11 @@ local lspconfig = require("lspconfig")
 local on_attach = require("lsp.global").on_attach
 local capabilities = require("lsp.global").capabilities
 
+local lsp_flags = {
+  -- This is the default in Nvim 0.7+
+  debounce_text_changes = 150,
+}
+
 lspconfig.sumneko_lua.setup({
   on_attach = on_attach,
   capabilities = capabilities,
@@ -64,7 +69,13 @@ lspconfig.tsserver.setup({
 lspconfig.jsonls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
+  root_dir = require'lspconfig'.util.root_pattern(".zshrc"),
 })
+
+-- lspconfig.pyright.setup({
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+-- })
 
 lspconfig.pylsp.setup({
   on_attach = on_attach,
@@ -72,9 +83,10 @@ lspconfig.pylsp.setup({
   settings = {
     pylsp = {
       plugins = {
-        pylint = { enabled = true, executable = "pylint" },
-        pycodestyle = { enabled = true, ignore = {'W391'}, maxLineLength = 100 },
-        pylsp_mypy = { enabled = true },
+        -- pylint = { enabled = true, executable = "pylint" },
+        autopep8 = { enabled = true },
+        -- pycodestyle = { enabled = true, ignore = {'W391'}, maxLineLength = 100 },
+        -- pylsp_mypy = { enabled = true },
       }
     }
   },
@@ -82,6 +94,7 @@ lspconfig.pylsp.setup({
     debounce_text_changes = 200,
   }
 })
+
 
 -- Update this path
 local extension_path = vim.env.HOME .. '/.vscode/extensions/vadimcn.vscode-lldb-1.7.0/'
