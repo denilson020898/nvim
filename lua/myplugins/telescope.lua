@@ -5,8 +5,8 @@ require('telescope').setup {
     mappings = {
       i = {
         -- ["<C-w>"] = actions.send_selected_to_qflist,
-        ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
-        ["<C-a>"] = actions.send_to_qflist,
+        ["<C-a>"] = actions.send_to_qflist + actions.open_qflist,
+        ["<C-q>"] = actions.send_to_qflist,
         ["<A-v>"] = actions.select_vertical,
         ["<A-s>"] = actions.select_horizontal,
         ["<C-o>"] = actions.select_tab,
@@ -14,8 +14,8 @@ require('telescope').setup {
       },
       n = {
         -- ["<C-w>"] = actions.send_selected_to_qflist,
-        ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
-        ["<C-a>"] = actions.send_to_qflist,
+        ["<C-a>"] = actions.send_to_qflist + actions.open_qflist,
+        ["<C-q>"] = actions.send_to_qflist,
         ["<A-v>"] = actions.select_vertical,
         ["<A-s>"] = actions.select_horizontal,
         ["<C-o>"] = actions.select_tab,
@@ -25,7 +25,7 @@ require('telescope').setup {
     sorting_strategy = "ascending",
     layout_strategy = "horizontal",
     layout_config = {
-      -- mirror=true,
+      mirror=true,
       prompt_position = 'top',
       horizontal = {
         width = 0.99,

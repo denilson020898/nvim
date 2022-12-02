@@ -69,17 +69,18 @@ vim.keymap.set("n", "<space>tk", "<cmd>Telescope dir find_files<CR>", { noremap 
 
 vim.keymap.set("n", "<space>tl", require('telescope.builtin').live_grep, { noremap = true })
 vim.keymap.set("n", "<space>tm", require('telescope.builtin').marks, { noremap = true })
-vim.keymap.set("n", "<space>i", require('telescope.builtin').buffers, { noremap = true })
+-- vim.keymap.set("n", "<space>i", require('telescope.builtin').buffers, { noremap = true })
+vim.keymap.set("n", "<space>i", "<cmd>lua require('telescope.builtin').buffers{cache_picker=false}<cr>", { noremap = true })
 vim.keymap.set("n", "<space>tH", require('telescope.builtin').help_tags, { noremap = true })
 vim.keymap.set("n", "<space>tq", require('telescope.builtin').quickfix, { noremap = true })
 vim.keymap.set("n", "<space>tQ", require('telescope.builtin').quickfixhistory, { noremap = true })
 vim.keymap.set("n", "<space>tc", require('telescope.builtin').current_buffer_fuzzy_find, { noremap = true })
 vim.keymap.set("n", "<space>tC", require('telescope.builtin').command_history, { noremap = true })
-vim.keymap.set("n", "<space>tt", require('telescope.builtin').oldfiles, { noremap = true })
 vim.keymap.set("n", "<space>td", require('telescope.builtin').diagnostics, { noremap = true })
 vim.keymap.set("n", "<space>ts", require('telescope.builtin').lsp_document_symbols, { noremap = true })
 vim.keymap.set("n", "<space>tw", require('telescope.builtin').lsp_workspace_symbols, { noremap = true })
-vim.keymap.set("n", "<space>e", "<cmd>Telescope file_browser<cr>", { noremap = true })
+vim.keymap.set("n", "<space>e", "<cmd>lua require('telescope').extensions.file_browser.file_browser{cache_picker=false}<cr>", { noremap = true })
+vim.keymap.set("n", "<space>tt", "<cmd>lua require('telescope.builtin').oldfiles{cache_picker=false}<cr>", { noremap = true })
 
 vim.keymap.set("n", "<space>tS", "<cmd>SearchSession<cr>", { noremap = true })
 

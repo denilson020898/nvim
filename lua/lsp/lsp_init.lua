@@ -85,7 +85,8 @@ lspconfig.pylsp.setup({
       plugins = {
         -- pylint = { enabled = true, executable = "pylint" },
         autopep8 = { enabled = true },
-        -- pycodestyle = { enabled = true, ignore = {'W391'}, maxLineLength = 100 },
+        rope = { enabled = true },
+        pycodestyle = { enabled = true, ignore = {'W391'}, maxLineLength = 100 },
         -- pylsp_mypy = { enabled = true },
       }
     }
