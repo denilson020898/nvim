@@ -10,7 +10,6 @@ local opts = {
   -- the configs below are lua only
   bypass_session_save_file_types = nil,
   pre_save_cmds = {
-    "lua require'nvim-tree'.setup()",
     "tabdo NvimTreeClose",
     "tabdo cclose",
     "tabdo AerialClose",

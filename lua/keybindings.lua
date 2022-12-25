@@ -75,6 +75,7 @@ vim.keymap.set("n", "<space>tl", require('telescope.builtin').live_grep, { norem
 vim.keymap.set("n", "<space>tm", require('telescope.builtin').marks, { noremap = true })
 -- vim.keymap.set("n", "<space>i", require('telescope.builtin').buffers, { noremap = true })
 vim.keymap.set("n", "<space>i", "<cmd>lua require('telescope.builtin').buffers{cache_picker=false}<cr>", { noremap = true })
+vim.keymap.set("n", "<space>u", "<cmd>lua require('telescope').extensions.undo.undo()<cr>", { noremap = true })
 vim.keymap.set("n", "<space>tH", require('telescope.builtin').help_tags, { noremap = true })
 vim.keymap.set("n", "<space>tq", require('telescope.builtin').quickfix, { noremap = true })
 vim.keymap.set("n", "<space>tQ", require('telescope.builtin').quickfixhistory, { noremap = true })
@@ -130,7 +131,7 @@ vim.keymap.set("n", "<A-s>", "<C-w>^<C-w>k<C-w>L", { noremap = true })
 vim.keymap.set("n", "<A-q>", "<C-w>q", { noremap = true })
 
 vim.keymap.set("n", "<space>gg", function()
-  require('neogit').open({ kind = "split" })
+  require('neogit').open()
 end, { noremap = true })
 
 vim.keymap.set("n", "<space>gh", "<cmd>DiffviewFileHistory %<cr>", { noremap = true })

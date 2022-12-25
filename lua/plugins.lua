@@ -58,7 +58,7 @@ return require("packer").startup(function(use)
   use({
     "princejoogie/dir-telescope.nvim",
     -- telescope.nvim is a required dependency
-    requires = {"nvim-telescope/telescope.nvim"},
+    requires = { "nvim-telescope/telescope.nvim" },
     config = function()
       require("dir-telescope").setup({
         hidden = true,
@@ -66,6 +66,14 @@ return require("packer").startup(function(use)
       })
     end,
   })
+  use {
+    'debugloop/telescope-undo.nvim',
+    requires = { 'nvim-telescope/telescope.nvim' },
+    config = function()
+      require("telescope").load_extension("undo")
+      -- optional: vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>")
+    end,
+  }
 
   -- Installer
   use {
@@ -98,6 +106,9 @@ return require("packer").startup(function(use)
       require "fidget".setup {}
     end
   }
+  -- use 'nanotee/sqls.nvim'
+  -- use 'tpope/vim-dadbod'
+  -- use 'kristijanhusak/vim-dadbod-ui'
 
   -- DAP
   use 'mfussenegger/nvim-dap'
