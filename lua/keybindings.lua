@@ -21,15 +21,16 @@ vim.keymap.set("n", "q:", "<nop>", { noremap = true })
 vim.keymap.set("n", "<leader>k", "<cmd>BufferLineCycleNext<cr>", { noremap = true })
 vim.keymap.set("n", "<leader>j", "<cmd>BufferLineCyclePrev<cr>", { noremap = true })
 vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>", { noremap = true })
+vim.keymap.set("n", "<leader><Tab>", "<cmd>BufferLineCyclePrev<cr>", { noremap = true })
 vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { noremap = true })
 vim.keymap.set("n", "<leader>,", "<cmd>BufferLinePick<cr>", { noremap = true })
 vim.keymap.set("n", "<leader>o", "<cmd>BufferLinePickClose<cr>", { noremap = true })
-vim.keymap.set("n", "<leader>\\", "<cmd>BufferLineSortByRelativeDirectory<cr>", { noremap = true })
+vim.keymap.set("n", "<leader>`", "<cmd>BufferLineSortByRelativeDirectory<cr>", { noremap = true })
 vim.keymap.set('n', 'zx', require('fold-cycle').open, { noremap = true })
 vim.keymap.set('n', 'zc', require('fold-cycle').close, { noremap = true })
 vim.keymap.set('n', 'zX', require('fold-cycle').open_all, { noremap = false })
 vim.keymap.set('n', 'zC', require('fold-cycle').close_all, { noremap = false })
-vim.keymap.set('n', 'zV', require('fold-cycle').toggle_all, { noremap = false })
+vim.keymap.set('n', 'zv', require('fold-cycle').toggle_all, { noremap = false })
 vim.keymap.set("n", "<space>/", "<cmd>set hlsearch!<cr>", { noremap = true })
 vim.keymap.set("n", "<space>n", "<cmd>NvimTreeToggle<cr>", { noremap = true })
 vim.keymap.set("n", "<leader>n", "<cmd>NvimTreeFindFile<cr>", { noremap = true })
@@ -53,7 +54,7 @@ vim.keymap.set("n", "<space>bw", function() require('close_buffers').wipe({ type
 vim.keymap.set("n", "<space>bo", function() require('close_buffers').wipe({ type = 'other' }) end, { noremap = true })
 vim.keymap.set("n", "<space>bh", function() require('close_buffers').delete({ type = 'hidden', force = true }) end,
   { noremap = true })
-vim.keymap.set("n", "<space>bn", function() require('close_buffers').delete({ type = 'nameless' }) end,
+vim.keymap.set("n", "<space>c", function() require('close_buffers').delete({ type = 'nameless' }) end,
   { noremap = true })
 vim.keymap.set("n", "<space>q", function() require('close_buffers').delete({ type = 'this' }) end, { noremap = true })
 vim.keymap.set("n", "<space>d", "<cmd>bd<cr>", { noremap = true })
@@ -93,6 +94,10 @@ vim.keymap.set("n", "<space>ff", "<cmd>copen<cr>", { noremap = true })
 vim.keymap.set("n", "<space>fc", "<cmd>cexpr []<cr>", { noremap = true })
 vim.keymap.set("n", "<space>fn", "<cmd>cnext<cr>", { noremap = true })
 vim.keymap.set("n", "<space>fp", "<cmd>cprev<cr>", { noremap = true })
+vim.keymap.set("n", "<leader>q", "<cmd>cnext<cr>", { noremap = true })
+vim.keymap.set("n", "<leader>e", "<cmd>cprev<cr>", { noremap = true })
+vim.keymap.set("n", "<leader>w", "<cmd>copen<cr>", { noremap = true })
+vim.keymap.set("n", "<leader>W", "<cmd>cclose<cr>", { noremap = true })
 
 -- FN KEY
 vim.keymap.set("n", "<F10>", "<cmd>AerialToggle!<cr>", { noremap = true })
@@ -228,3 +233,6 @@ vim.keymap.set('n', '<leader>cn', '<cmd>GitConflictNextConflict<cr>', { noremap 
 vim.keymap.set('n', '<leader>cp', '<cmd>GitConflictPrevConflict<cr>', { noremap = true })
 
 vim.keymap.set('n', '<leader>F', ':%!python -m json.tool<cr>', { noremap = true })
+
+vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")
+vim.keymap.set("n", "<leader>fmg", "<cmd>CellularAutomaton game_of_life<CR>")

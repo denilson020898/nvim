@@ -107,6 +107,7 @@ cmp.setup({
     { name = 'crates' },
     -- { name = 'rg' },
     -- { name = 'dap' },
+    { name = 'neorg' },
   }
   )
 })

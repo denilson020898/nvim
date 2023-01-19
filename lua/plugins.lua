@@ -155,6 +155,7 @@ return require("packer").startup(function(use)
   use { "catppuccin/nvim", as = "catppuccin" }
   use 'tjdevries/colorbuddy.vim'
   use 'tjdevries/gruvbuddy.nvim'
+  use 'kvrohit/mellow.nvim'
 
   use {
     'm-demare/hlargs.nvim',
@@ -232,6 +233,40 @@ return require("packer").startup(function(use)
       require('fold-preview').setup()
     end
   }
+
+  use {
+    "nvim-neorg/neorg",
+    -- tag = "*",
+    ft = "norg",
+    after = "nvim-treesitter", -- You may want to specify Telescope here as well
+    config = function()
+      require('neorg').setup {
+        load = {
+          ["core.defaults"] = {},
+          ["core.integrations.nvim-cmp"] = {
+            config = { -- Note that this table is optional and doesn't need to be provided
+              -- Configuration here
+            }
+          },
+          ["core.norg.concealer"] = {
+            config = { -- Note that this table is optional and doesn't need to be provided
+              -- Configuration here
+            }
+          },
+          ["core.norg.dirman"] = {
+            config = {
+              workspaces = {
+                work = "~/neorg/work",
+                home = "~/neorg/home",
+              }
+            }
+          }
+        }
+      }
+    end
+  }
+
+  use 'eandrju/cellular-automaton.nvim'
 
 end
 )
