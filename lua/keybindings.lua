@@ -236,3 +236,11 @@ vim.keymap.set('n', '<leader>F', ':%!python -m json.tool<cr>', { noremap = true 
 
 vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")
 vim.keymap.set("n", "<leader>fmg", "<cmd>CellularAutomaton game_of_life<CR>")
+
+vim.keymap.set("n", "<leader><F11>", "<cmd>Codeium Enable<CR>")
+vim.keymap.set("n", "<leader><F12>", "<cmd>Codeium Disable<CR>")
+
+vim.keymap.set('i', '<c-k>', function () return vim.fn['codeium#Accept']() end, { expr = true })
+vim.keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
+vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
+vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true })

@@ -9,7 +9,7 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
-lspconfig.sumneko_lua.setup({
+lspconfig.lua_ls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {

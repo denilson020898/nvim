@@ -44,6 +44,16 @@ return require("packer").startup(function(use)
       'rcarriga/cmp-dap',
     }
   }
+  -- use {
+  --   'Exafunction/codeium.vim',
+  --   config = function ()
+  --     -- Change '<C-g>' here to any keycode you like.
+  --     vim.keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true })
+  --     vim.keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
+  --     vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
+  --     vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true })
+  --   end
+  -- }
 
   -- TELESCOPE
   use {
@@ -88,6 +98,7 @@ return require("packer").startup(function(use)
     "ahmedkhalf/project.nvim",
     config = function()
       require("project_nvim").setup {
+        manual_mode = true,
       }
     end
   }
@@ -184,7 +195,12 @@ return require("packer").startup(function(use)
   use {
     "klen/nvim-test",
   }
-  use { "beauwilliams/focus.nvim", config = function() require("focus").setup() end }
+  -- use { "beauwilliams/focus.nvim", config = function() require("focus").setup() end }
+  -- use { "beauwilliams/focus.nvim", config = function() require("focus").setup({
+  --     enable = false,
+  --     autoresize = false
+  --   })
+  -- end }
   use "rafamadriz/friendly-snippets"
   use "lukas-reineke/indent-blankline.nvim"
   use 'rmagatti/auto-session'

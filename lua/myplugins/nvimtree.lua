@@ -13,7 +13,7 @@ require 'nvim-tree'.setup {
     relativenumber = false,
     signcolumn = "yes"
   },
-  ignore_ft_on_setup = { '.git', 'node_modules', '.cache' },
+  -- ignore_ft_on_setup = { '.git', 'node_modules', '.cache' },
   -- project nvim integration
   sync_root_with_cwd = true,
   respect_buf_cwd = true,
