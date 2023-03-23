@@ -44,16 +44,17 @@ return require("packer").startup(function(use)
       'rcarriga/cmp-dap',
     }
   }
-  -- use {
-  --   'Exafunction/codeium.vim',
-  --   config = function ()
-  --     -- Change '<C-g>' here to any keycode you like.
-  --     vim.keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true })
-  --     vim.keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
-  --     vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
-  --     vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true })
-  --   end
-  -- }
+
+  use {
+    'Exafunction/codeium.vim',
+    config = function ()
+      -- Change '<C-g>' here to any keycode you like.
+      vim.keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true })
+      vim.keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
+      vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
+      vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true })
+    end
+  }
 
   -- TELESCOPE
   use {
@@ -192,9 +193,19 @@ return require("packer").startup(function(use)
   use "windwp/nvim-autopairs"
   use "windwp/nvim-ts-autotag"
   use { 'stevearc/aerial.nvim', config = function() require("aerial").setup({}) end }
+  -- use {
+  --   "klen/nvim-test",
+  -- }
   use {
-    "klen/nvim-test",
+    "nvim-neotest/neotest",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim",
+      "rouge8/neotest-rust"
+    }
   }
+
   -- use { "beauwilliams/focus.nvim", config = function() require("focus").setup() end }
   -- use { "beauwilliams/focus.nvim", config = function() require("focus").setup({
   --     enable = false,

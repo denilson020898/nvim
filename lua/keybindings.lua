@@ -170,13 +170,35 @@ vim.keymap.set({ "n", "v" }, "<leader>pc", "<cmd>HopChar2<cr>", { noremap = true
 vim.keymap.set({ "n", "v" }, "<leader>pC", "<cmd>HopChar1<cr>", { noremap = true })
 vim.keymap.set({ "n", "v" }, "<leader>pC", "<cmd>HopChar1<cr>", { noremap = true })
 
+
+vim.keymap.set("n", "<leader>v", "<cmd>lua require('neotest').run.run()<cr>", { noremap = true })
+
+
+vim.keymap.set("n", "<leader>V", function()
+  require("neotest").run.run(vim.fn.expand("%"))
+  require('neotest').output_panel.open()
+end, { noremap = true })
+
+vim.keymap.set("n", "<leader>X", function()
+  require('neotest').run.run()
+  require('neotest').output_panel.open()
+  -- require('neotest').output_panel.open()
+end, { noremap = true })
+vim.keymap.set("n", "<leader>x", function()
+  require('neotest').run.run_last()
+  require('neotest').output_panel.open()
+  -- require('neotest').output_panel.open()
+end, { noremap = true })
+vim.keymap.set("n", "<leader>z", "<cmd>lua require('neotest').output.open({ enter = true, last_run = true, auto_close = true })<cr>", { noremap = true })
+vim.keymap.set("n", "<leader>Z", "<cmd>lua require('neotest').output.open({ enter = true })<cr>", { noremap = true })
+
 -- LSP KEYBINDINGS - key
 -- rust
-vim.keymap.set("n", "=rr", "<cmd>RustRunnables<cr>", { noremap = true })
-vim.keymap.set("n", "=rc", "<cmd>RustOpenCargo<cr>", { noremap = true })
-vim.keymap.set("n", "=rp", "<cmd>RustParentModule<cr>", { noremap = true })
-vim.keymap.set("n", "=rt", "<cmd>RustToggleInlayHints<cr>", { noremap = true })
-vim.keymap.set("n", "=rg", "<cmd>CargoReload<cr>", { noremap = true })
+vim.keymap.set("n", "<leader>b", "<cmd>RustRunnables<cr>", { noremap = true })
+vim.keymap.set("n", "<leader>zc", "<cmd>RustOpenCargo<cr>", { noremap = true })
+vim.keymap.set("n", "<leader>zp", "<cmd>RustParentModule<cr>", { noremap = true })
+vim.keymap.set("n", "<leader>zt", "<cmd>RustToggleInlayHints<cr>", { noremap = true })
+vim.keymap.set("n", "<leader>zg", "<cmd>CargoReload<cr>", { noremap = true })
 -- vim.keymap.set("n", "=r.", "<cmd>RustHoverAction<cr>", { noremap = true })
 vim.keymap.set("n", "<F13>", "<cmd>RustHoverAction<cr>", { noremap = true })
 vim.keymap.set("n", "=re", "<cmd>RustExpandMacro<cr>", { noremap = true })

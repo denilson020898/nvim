@@ -11,7 +11,8 @@ require('myplugins.nvimtree')
 require('myplugins.closebuffers')
 require('myplugins.indentblankline')
 require('myplugins.marks')
-require('myplugins.nvimtest')
+-- require('myplugins.nvimtest')
+require('myplugins.neotest')
 
 -- -- unix specific here
 -- if vim.loop.os_uname().sysname ~= 'Windows_NT' then
