@@ -45,16 +45,16 @@ return require("packer").startup(function(use)
     }
   }
 
-  use {
-    'Exafunction/codeium.vim',
-    config = function ()
-      -- Change '<C-g>' here to any keycode you like.
-      vim.keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true })
-      vim.keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
-      vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
-      vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true })
-    end
-  }
+  -- use {
+  --   'Exafunction/codeium.vim',
+  --   config = function ()
+  --     -- Change '<C-g>' here to any keycode you like.
+  --     vim.keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true })
+  --     vim.keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
+  --     vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
+  --     vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true })
+  --   end
+  -- }
 
   -- TELESCOPE
   use {
@@ -141,11 +141,7 @@ return require("packer").startup(function(use)
   use "kyazdani42/nvim-tree.lua"
   use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
-  use {
-    "SmiteshP/nvim-gps",
-    requires = "nvim-treesitter/nvim-treesitter"
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
   use 'f-person/git-blame.nvim'
 
@@ -190,12 +186,28 @@ return require("packer").startup(function(use)
   use { "nvim-treesitter/nvim-treesitter", run = "<cmd>TSUpdate" }
   use 'nvim-treesitter/nvim-treesitter-textobjects'
   use 'RRethy/nvim-treesitter-textsubjects'
+
+  use 'nvim-treesitter/nvim-treesitter-context'
+
   use "windwp/nvim-autopairs"
   use "windwp/nvim-ts-autotag"
-  use { 'stevearc/aerial.nvim', config = function() require("aerial").setup({}) end }
-  -- use {
-  --   "klen/nvim-test",
-  -- }
+  use {
+    'stevearc/aerial.nvim',
+    config = function() require('aerial').setup({
+        filter_kind = {
+          "Class",
+          "Constructor",
+          "Enum",
+          "Function",
+          "Interface",
+          "Module",
+          "Method",
+          "Struct",
+        },
+      }
+      )
+    end
+  }
   use {
     "nvim-neotest/neotest",
     requires = {
@@ -206,12 +218,6 @@ return require("packer").startup(function(use)
     }
   }
 
-  -- use { "beauwilliams/focus.nvim", config = function() require("focus").setup() end }
-  -- use { "beauwilliams/focus.nvim", config = function() require("focus").setup({
-  --     enable = false,
-  --     autoresize = false
-  --   })
-  -- end }
   use "rafamadriz/friendly-snippets"
   use "lukas-reineke/indent-blankline.nvim"
   use 'rmagatti/auto-session'
