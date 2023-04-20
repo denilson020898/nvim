@@ -1,4 +1,24 @@
 T = {}
+
+require("catppuccin").setup {
+    flavour = "mocha",
+    color_overrides = {
+        mocha = {
+            base = "#000000",
+        },
+    },
+    integrations = {
+        nvimtree = true,
+    },
+    highlight_overrides = {
+        mocha = function(mocha)
+            return {
+                NvimTreeNormal = { bg = mocha.none },
+            }
+        end,
+    },
+}
+
 vim.g.gruvbox_baby_background_colora="dark"
 -- vim.g.gruvbox_baby_use_original_palette=false
 -- vim.g.gruvbox_baby_highlights = {Normal = {fg = "#123123", bg = "NONE", style="underline"}}
