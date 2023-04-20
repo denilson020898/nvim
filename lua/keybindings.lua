@@ -63,6 +63,7 @@ vim.keymap.set("n", "<space><space>", "<cmd>b#<cr>", { noremap = true })
 
 vim.keymap.set("n", "<space>t", "<cmd>Telescope<cr>", { noremap = true })
 vim.keymap.set("n", "<space>r", "<cmd>Telescope resume<cr>", { noremap = true })
+vim.keymap.set("n", "<space>tw", "<cmd>Telescope grep_string<cr>", { noremap = true })
 vim.keymap.set("n", "<space>tp", require('myplugins.telescope').search_dotfiles, { noremap = true })
 vim.keymap.set("n", "<space>tx", require('myplugins.telescope').search_with_extension, { noremap = true })
 vim.keymap.set("n", "<space>te", require('telescope.builtin').find_files, { noremap = true })
@@ -84,11 +85,11 @@ vim.keymap.set("n", "<space>tc", require('telescope.builtin').current_buffer_fuz
 vim.keymap.set("n", "<space>tC", require('telescope.builtin').command_history, { noremap = true })
 vim.keymap.set("n", "<space>td", require('telescope.builtin').diagnostics, { noremap = true })
 vim.keymap.set("n", "<space>ts", require('telescope.builtin').lsp_document_symbols, { noremap = true })
-vim.keymap.set("n", "<space>tw", require('telescope.builtin').lsp_workspace_symbols, { noremap = true })
+vim.keymap.set("n", "<space>tS", require('telescope.builtin').lsp_workspace_symbols, { noremap = true })
 vim.keymap.set("n", "<space>e", "<cmd>lua require('telescope').extensions.file_browser.file_browser{cache_picker=false}<cr>", { noremap = true })
 vim.keymap.set("n", "<space>tt", "<cmd>lua require('telescope.builtin').oldfiles{cache_picker=false}<cr>", { noremap = true })
 
-vim.keymap.set("n", "<space>tS", "<cmd>SearchSession<cr>", { noremap = true })
+vim.keymap.set("n", "<space>ta", "<cmd>SearchSession<cr>", { noremap = true })
 
 vim.keymap.set("n", "<space>ff", "<cmd>copen<cr>", { noremap = true })
 vim.keymap.set("n", "<space>fc", "<cmd>cexpr []<cr>", { noremap = true })
@@ -245,10 +246,10 @@ vim.keymap.set("n", "<S-F9>",
 vim.keymap.set("n", "<S-F2>", require "dap".run_to_cursor, { noremap = true })
 
 vim.keymap.set('n', '<leader>cq', '<cmd>GitConflictListQf<cr>', { noremap = true })
-vim.keymap.set('n', '<leader>cr', '<cmd>GitConflictRefresh<cr>', { noremap = true })
+-- vim.keymap.set('n', '<leader>cr', '<cmd>GitConflictRefresh<cr>', { noremap = true })
 vim.keymap.set('n', '<leader>ca', '<cmd>GitConflictChooseBase<cr>', { noremap = true })
-vim.keymap.set('n', '<leader>co', '<cmd>GitConflictChooseBoth<cr>', { noremap = true })
-vim.keymap.set('n', '<leader>cn', '<cmd>GitConflictChooseNone<cr>', { noremap = true })
+vim.keymap.set('n', '<leader>cb', '<cmd>GitConflictChooseBoth<cr>', { noremap = true })
+vim.keymap.set('n', '<leader>cc', '<cmd>GitConflictChooseNone<cr>', { noremap = true })
 vim.keymap.set('n', '<leader>co', '<cmd>GitConflictChooseOurs<cr>', { noremap = true })
 vim.keymap.set('n', '<leader>ct', '<cmd>GitConflictChooseTheirs<cr>', { noremap = true })
 vim.keymap.set('n', '<leader>cn', '<cmd>GitConflictNextConflict<cr>', { noremap = true })
@@ -261,6 +262,8 @@ vim.keymap.set("n", "<leader>fmg", "<cmd>CellularAutomaton game_of_life<CR>")
 
 vim.keymap.set("n", "<leader><F11>", "<cmd>Codeium Enable<CR>")
 vim.keymap.set("n", "<leader><F12>", "<cmd>Codeium Disable<CR>")
+
+vim.keymap.set("n", "<F12>", "<cmd>set rnu!<CR>")
 
 vim.keymap.set('i', '<c-k>', function () return vim.fn['codeium#Accept']() end, { expr = true })
 vim.keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })

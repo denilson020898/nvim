@@ -61,6 +61,17 @@ vim.wo.scrolloff = 10
 vim.wo.signcolumn = "yes"
 vim.wo.wrap = false
 
+vim.opt.fillchars = {
+  vert = "▕", -- alternatives │
+  fold = " ",
+  eob = " ", -- suppress ~ at EndOfBuffer
+  diff = "╱", -- alternatives = ⣿ ░ ─
+  msgsep = "‾",
+  foldopen = "▾",
+  foldsep = "│",
+  foldclose = "▸",
+}
+
 T.foldmethod_pointer = 4
 T.foldmethods = { "manual", "indent", "syntax", "expr", "marker", "diff" }
 T.switch_foldmethod = function()

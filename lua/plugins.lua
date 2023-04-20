@@ -85,6 +85,7 @@ return require("packer").startup(function(use)
       -- optional: vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>")
     end,
   }
+  use 'nvim-telescope/telescope-media-files.nvim'
 
   -- Installer
   use {
@@ -182,7 +183,8 @@ return require("packer").startup(function(use)
     end,
   }
   use "TimUntersberger/neogit"
-  use { 'sindrets/diffview.nvim', config = function() require("diffview").setup {} end }
+  -- use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' config = function() require("diffview").setup {} end }
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use { "nvim-treesitter/nvim-treesitter", run = "<cmd>TSUpdate" }
   use 'nvim-treesitter/nvim-treesitter-textobjects'
   use 'RRethy/nvim-treesitter-textsubjects'
