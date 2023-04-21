@@ -65,7 +65,7 @@ vim.opt.fillchars = {
   vert = "▕", -- alternatives │
   fold = " ",
   eob = " ", -- suppress ~ at EndOfBuffer
-  diff = "╱", -- alternatives = ⣿ ░ ─
+  diff = " ", -- alternatives = ⣿ ░ ─
   msgsep = "‾",
   foldopen = "▾",
   foldsep = "│",
