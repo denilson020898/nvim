@@ -5,7 +5,8 @@ require('telescope').setup {
     mappings = {
       i = {
         -- ["<C-w>"] = actions.send_selected_to_qflist,
-        ["<C-a>"] = actions.send_to_qflist + actions.open_qflist,
+        -- ["<C-a>"] = actions.send_to_qflist + actions.open_qflist,
+        ["<C-a>"] = actions.send_to_qflist,
         ["<C-q>"] = actions.send_to_qflist,
         ["<A-v>"] = actions.select_vertical,
         ["<A-s>"] = actions.select_horizontal,
@@ -85,7 +86,7 @@ M.search_with_extension = function()
       "rg",
       "--files",
       "--type",
-      vim.fn.input "> Ext > ",
+      vim.fn.input "File Extensions = ",
     },
   })
 end
