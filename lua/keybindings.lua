@@ -18,19 +18,6 @@ vim.keymap.set("t", "<esc>", "<C-\\><C-n>", { noremap = true })
 
 -- CORE KEYBINDINGS
 vim.keymap.set("n", "q:", "<nop>", { noremap = true })
-vim.keymap.set("n", "<leader>k", "<cmd>BufferLineCycleNext<cr>", { noremap = true })
-vim.keymap.set("n", "<leader>j", "<cmd>BufferLineCyclePrev<cr>", { noremap = true })
-vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>", { noremap = true })
-vim.keymap.set("n", "<leader><Tab>", "<cmd>BufferLineCyclePrev<cr>", { noremap = true })
-vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { noremap = true })
-vim.keymap.set("n", "<leader>,", "<cmd>BufferLinePick<cr>", { noremap = true })
-vim.keymap.set("n", "<leader>o", "<cmd>BufferLinePickClose<cr>", { noremap = true })
-vim.keymap.set("n", "<leader>`", "<cmd>BufferLineSortByRelativeDirectory<cr>", { noremap = true })
-vim.keymap.set('n', 'zx', require('fold-cycle').open, { noremap = true })
-vim.keymap.set('n', 'zc', require('fold-cycle').close, { noremap = true })
-vim.keymap.set('n', 'zX', require('fold-cycle').open_all, { noremap = false })
-vim.keymap.set('n', 'zC', require('fold-cycle').close_all, { noremap = false })
-vim.keymap.set('n', 'zv', require('fold-cycle').toggle_all, { noremap = false })
 vim.keymap.set("n", "<space>/", "<cmd>set hlsearch!<cr>", { noremap = true })
 vim.keymap.set("n", "<space>n", "<cmd>NvimTreeToggle<cr>", { noremap = true })
 vim.keymap.set("n", "<leader>n", "<cmd>NvimTreeFindFile<cr>", { noremap = true })
@@ -49,14 +36,6 @@ vim.keymap.set("v", "<", "<gv", { noremap = true })
 vim.keymap.set("v", "m", ">gv", { noremap = true })
 vim.keymap.set("v", "n", "<gv", { noremap = true })
 vim.keymap.set("n", "<space>a", "ggVG", { noremap = true })
-vim.keymap.set("n", "<space>bw", function() require('close_buffers').wipe({ type = 'all', force = true }) end,
-  { noremap = true })
-vim.keymap.set("n", "<space>bo", function() require('close_buffers').wipe({ type = 'other' }) end, { noremap = true })
-vim.keymap.set("n", "<space>bh", function() require('close_buffers').delete({ type = 'hidden', force = true }) end,
-  { noremap = true })
-vim.keymap.set("n", "<space>c", function() require('close_buffers').delete({ type = 'nameless' }) end,
-  { noremap = true })
-vim.keymap.set("n", "<space>q", function() require('close_buffers').delete({ type = 'this' }) end, { noremap = true })
 vim.keymap.set("n", "<space>d", "<cmd>bd<cr>", { noremap = true })
 vim.keymap.set("n", "<space>w", "<cmd>wa<cr>", { noremap = true })
 vim.keymap.set("n", "<space><space>", "<cmd>b#<cr>", { noremap = true })
@@ -66,21 +45,20 @@ vim.keymap.set("n", "<space>r", "<cmd>Telescope resume<cr>", { noremap = true })
 vim.keymap.set("n", "<space>tw", "<cmd>Telescope grep_string<cr>", { noremap = true })
 vim.keymap.set("n", "<space>tp", require('myplugins.telescope').search_dotfiles, { noremap = true })
 vim.keymap.set("n", "<space>tx", require('myplugins.telescope').search_with_extension, { noremap = true })
-vim.keymap.set("n", "<space>te", require('telescope.builtin').find_files, { noremap = true })
-vim.keymap.set("n", "<space>tf", require('telescope.builtin').git_files, { noremap = true })
-vim.keymap.set("n", "<space>tg", require("telescope").extensions.live_grep_args.live_grep_args, { noremap = true })
+vim.keymap.set("n", "<space>tf", require('telescope.builtin').find_files, { noremap = true })
+vim.keymap.set("n", "<space>tg", require('telescope.builtin').live_grep, { noremap = true })
 
 vim.keymap.set("n", "<space>tj", "<cmd>Telescope dir live_grep<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<space>tk", "<cmd>Telescope dir find_files<CR>", { noremap = true, silent = true })
 
 vim.keymap.set("n", "<space>tl", require('telescope.builtin').live_grep, { noremap = true })
 vim.keymap.set("n", "<space>tm", require('telescope.builtin').marks, { noremap = true })
--- vim.keymap.set("n", "<space>i", require('telescope.builtin').buffers, { noremap = true })
 vim.keymap.set("n", "<space>i", "<cmd>lua require('telescope.builtin').buffers{cache_picker=false}<cr>", { noremap = true })
 vim.keymap.set("n", "<space>u", "<cmd>lua require('telescope').extensions.undo.undo()<cr>", { noremap = true })
 vim.keymap.set("n", "<space>tH", require('telescope.builtin').help_tags, { noremap = true })
 vim.keymap.set("n", "<space>tq", require('telescope.builtin').quickfix, { noremap = true })
 vim.keymap.set("n", "<space>tQ", require('telescope.builtin').quickfixhistory, { noremap = true })
+vim.keymap.set("n", "<space>tz", require('telescope.builtin').quickfixhistory, { noremap = true })
 vim.keymap.set("n", "<space>tc", require('telescope.builtin').current_buffer_fuzzy_find, { noremap = true })
 vim.keymap.set("n", "<space>tC", require('telescope.builtin').command_history, { noremap = true })
 vim.keymap.set("n", "<space>td", require('telescope.builtin').diagnostics, { noremap = true })
@@ -104,8 +82,6 @@ vim.keymap.set("n", "<leader>W", "<cmd>cclose<cr>", { noremap = true })
 vim.keymap.set("n", "<F10>", "<cmd>AerialToggle!<cr>", { noremap = true })
 vim.keymap.set("n", "<F6>", "<cmd>resize 100<cr>", { noremap = true })
 vim.keymap.set("n", "<F18>", "<cmd>lua require'colorscheme'.toggle_theme()<cr>", { noremap = true })
-vim.keymap.set("n", "<F7>", "<cmd>FocusToggle<cr>", { noremap = true })
-vim.keymap.set("n", "<F19>", "<cmd>FocusMaxOrEqual<cr>", { noremap = true })
 vim.keymap.set("n", "<F20>", "<cmd>lua require'settings'.switch_foldmethod()<cr>", { noremap = true })
 
 vim.keymap.set("n", "<C-F12>", "<cmd>PackerSync<cr>", { noremap = true })
@@ -171,28 +147,6 @@ vim.keymap.set({ "n", "v" }, "<leader>pc", "<cmd>HopChar2<cr>", { noremap = true
 vim.keymap.set({ "n", "v" }, "<leader>pC", "<cmd>HopChar1<cr>", { noremap = true })
 vim.keymap.set({ "n", "v" }, "<leader>pC", "<cmd>HopChar1<cr>", { noremap = true })
 
-
-vim.keymap.set("n", "<leader>v", "<cmd>lua require('neotest').run.run()<cr>", { noremap = true })
-
-
-vim.keymap.set("n", "<leader>V", function()
-  require("neotest").run.run(vim.fn.expand("%"))
-  require('neotest').output_panel.open()
-end, { noremap = true })
-
-vim.keymap.set("n", "<leader>X", function()
-  require('neotest').run.run()
-  require('neotest').output_panel.open()
-  -- require('neotest').output_panel.open()
-end, { noremap = true })
-vim.keymap.set("n", "<leader>x", function()
-  require('neotest').run.run_last()
-  require('neotest').output_panel.open()
-  -- require('neotest').output_panel.open()
-end, { noremap = true })
-vim.keymap.set("n", "<leader>z", "<cmd>lua require('neotest').output.open({ enter = true, last_run = true, auto_close = true })<cr>", { noremap = true })
-vim.keymap.set("n", "<leader>Z", "<cmd>lua require('neotest').output.open({ enter = true })<cr>", { noremap = true })
-
 -- LSP KEYBINDINGS - key
 -- rust
 vim.keymap.set("n", "<leader>b", "<cmd>RustRunnables<cr>", { noremap = true })
@@ -208,6 +162,7 @@ vim.keymap.set("n", "=rd", "<cmd>RustDebuggables<cr>", { noremap = true })
 vim.keymap.set("n", "<leader>ii", "<cmd>LspInfo<cr>", { noremap = true })
 vim.keymap.set("n", "<leader>is", "<cmd>LspStop<cr>", { noremap = true })
 vim.keymap.set("n", "<leader>ia", "<cmd>LspStart<cr>", { noremap = true })
+vim.keymap.set("n", "<leader>ir", "<cmd>LspRestart<cr>", { noremap = true })
 
 -- vim.keymap.set("n", "-ct", require('crates').toggle, { noremap = true })
 -- vim.keymap.set("n", "-cr", require('crates').reload, { noremap = true })
@@ -218,12 +173,7 @@ vim.keymap.set("n", "<leader>ia", "<cmd>LspStart<cr>", { noremap = true })
 -- vim.keymap.set("n", "-cU", require('crates').upgrade_crates, { noremap = true })
 -- vim.keymap.set("n", "-cA", require('crates').upgrade_all_crates, { noremap = true })
 
--- DAP + TEST KEYBINDINGS
-vim.keymap.set("n", "=`", "<cmd>TestLast<cr>", { noremap = true })
-vim.keymap.set("n", "=1", "<cmd>TestNearest<cr>", { noremap = true })
-vim.keymap.set("n", "=2", "<cmd>TestFile<cr>", { noremap = true })
-vim.keymap.set("n", "=3", "<cmd>TestSuite<cr>", { noremap = true })
-
+-- DAP 
 vim.keymap.set('n', '<F5>', '<cmd>lua require"dap".continue()<cr>', { noremap = true })
 vim.keymap.set('n', '<F17>', '<Cmd>lua require"dap".run_last()<CR>', { noremap = true })
 vim.keymap.set('n', '<F1>', '<cmd>lua require"dap".step_over()<cr>', { noremap = true })
@@ -246,7 +196,7 @@ vim.keymap.set("n", "<S-F9>",
 vim.keymap.set("n", "<S-F2>", require "dap".run_to_cursor, { noremap = true })
 
 vim.keymap.set('n', '<leader>cq', '<cmd>GitConflictListQf<cr>', { noremap = true })
--- vim.keymap.set('n', '<leader>cr', '<cmd>GitConflictRefresh<cr>', { noremap = true })
+vim.keymap.set('n', '<leader>cr', '<cmd>GitConflictRefresh<cr>', { noremap = true })
 vim.keymap.set('n', '<leader>ca', '<cmd>GitConflictChooseBase<cr>', { noremap = true })
 vim.keymap.set('n', '<leader>cb', '<cmd>GitConflictChooseBoth<cr>', { noremap = true })
 vim.keymap.set('n', '<leader>cc', '<cmd>GitConflictChooseNone<cr>', { noremap = true })
@@ -257,15 +207,5 @@ vim.keymap.set('n', '<leader>cp', '<cmd>GitConflictPrevConflict<cr>', { noremap 
 
 vim.keymap.set('n', '<leader>F', ':%!python -m json.tool<cr>', { noremap = true })
 
-vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")
-vim.keymap.set("n", "<leader>fmg", "<cmd>CellularAutomaton game_of_life<CR>")
-
-vim.keymap.set("n", "<leader><F11>", "<cmd>Codeium Enable<CR>")
-vim.keymap.set("n", "<leader><F12>", "<cmd>Codeium Disable<CR>")
-
 vim.keymap.set("n", "<F12>", "<cmd>set rnu!<CR>")
 
-vim.keymap.set('i', '<c-k>', function () return vim.fn['codeium#Accept']() end, { expr = true })
-vim.keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
-vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
-vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true })

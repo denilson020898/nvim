@@ -27,14 +27,14 @@ require('telescope').setup {
     layout_config = {
       -- mirror=true,
       prompt_position = 'top',
-      horizontal = {
-        width = 0.99,
-        height = 0.99,
-      },
-      vertical = {
-        width = 0.99,
-        height = 0.99,
-      },
+      -- horizontal = {
+      --   width = 0.99,
+      --   height = 0.99,
+      -- },
+      -- vertical = {
+      --   width = 0.99,
+      --   height = 0.99,
+      -- },
     },
     file_ignore_patterns = {
       "**/*.po",
@@ -90,12 +90,11 @@ M.search_with_extension = function()
   })
 end
 
-require("telescope").load_extension("zf-native")
-require('telescope').load_extension('dap')
-require("telescope").load_extension("ui-select")
-require("telescope").load_extension("live_grep_args")
-require("telescope").load_extension("file_browser")
-require("telescope").load_extension("dir")
-require('telescope').load_extension('media_files')
+-- require('telescope').load_extension('dap')
+-- require("telescope").load_extension("ui-select")
+-- require("telescope").load_extension("live_grep_args")
+-- require("telescope").load_extension("file_browser")
+-- require("telescope").load_extension("dir")
+-- require('telescope').load_extension('media_files')
 
 return M

@@ -16,6 +16,7 @@ else
   require("myplugins")
   if vim.g.neovide then
     -- Put anything you want to happen only in Neovide here
+    vim.g.neovide_input_macos_alt_is_meta = true
     -- vim.opt.linespace = 0
     -- vim.g.neovide_scale_factor = 1.0
     -- vim.g.neovide_padding_top = 0
@@ -24,13 +25,13 @@ else
     -- vim.g.neovide_padding_left = 0
     -- vim.g.neovide_cursor_animation_length = 0.13
     -- vim.g.neovide_cursor_trail_size = 0.8
-    -- vim.g.neovide_cursor_vfx_mode = "sonicboom"
+    vim.g.neovide_cursor_vfx_mode = "sonicboom"
     -- vim.g.neovide_cursor_vfx_mode = "ripple"
-    vim.g.neovide_cursor_vfx_mode = "railgun"
-    vim.g.neovide_cursor_vfx_particle_phase = 10.5
+    -- vim.g.neovide_cursor_vfx_mode = "railgun"
+    -- vim.g.neovide_cursor_vfx_particle_phase = 10.5
     -- vim.g.neovide_cursor_vfx_mode = "torpedo"
     --
-    -- vim.g.neovide_scroll_animation_length = 0.3
+    vim.g.neovide_scroll_animation_length = 0.25
     vim.g.neovide_underline_automatic_scaling = true
     -- vim.g.neovide_floating_blur_amount_x = 2.0
     -- vim.g.neovide_floating_blur_amount_y = 2.0
@@ -59,7 +60,8 @@ else
     end
     -- Set transparency and background color (title bar color)
     vim.g.neovide_transparency = 0.0
-    vim.g.neovide_transparency_point = 0.9
+    -- vim.g.neovide_transparency_point = 0.925
+    vim.g.neovide_transparency_point = 1.0
     vim.g.neovide_background_color = "#0f1117" .. alpha()
     -- Add keybinds to change transparency
     local change_transparency = function(delta)

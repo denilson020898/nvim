@@ -45,16 +45,6 @@ return require("packer").startup(function(use)
     }
   }
 
-  -- use {
-  --   'Exafunction/codeium.vim',
-  --   config = function ()
-  --     -- Change '<C-g>' here to any keycode you like.
-  --     vim.keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true })
-  --     vim.keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
-  --     vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
-  --     vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true })
-  --   end
-  -- }
 
   -- TELESCOPE
   use {
@@ -64,36 +54,13 @@ return require("packer").startup(function(use)
     }
   }
   use { 'nvim-telescope/telescope-ui-select.nvim' }
-  use "natecraddock/telescope-zf-native.nvim"
-  use { "nvim-telescope/telescope-file-browser.nvim" }
-  use({
-    "princejoogie/dir-telescope.nvim",
-    -- telescope.nvim is a required dependency
-    requires = { "nvim-telescope/telescope.nvim" },
-    config = function()
-      require("dir-telescope").setup({
-        hidden = true,
-        respect_gitignore = true,
-      })
-    end,
-  })
-  use {
-    'debugloop/telescope-undo.nvim',
-    requires = { 'nvim-telescope/telescope.nvim' },
-    config = function()
-      require("telescope").load_extension("undo")
-      -- optional: vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>")
-    end,
-  }
-  use 'nvim-telescope/telescope-media-files.nvim'
 
   -- Installer
   use {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
   }
-  use { "jose-elias-alvarez/null-ls.nvim" }
-  use "b0o/schemastore.nvim"
+  -- use { "jose-elias-alvarez/null-ls.nvim" }
 
   -- Lua
   use {
@@ -119,9 +86,6 @@ return require("packer").startup(function(use)
       require "fidget".setup {}
     end
   }
-  -- use 'nanotee/sqls.nvim'
-  -- use 'tpope/vim-dadbod'
-  -- use 'kristijanhusak/vim-dadbod-ui'
 
   -- DAP
   use 'mfussenegger/nvim-dap'
@@ -140,22 +104,11 @@ return require("packer").startup(function(use)
 
   -- CORE EXTENSION
   use "kyazdani42/nvim-tree.lua"
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-  }
   use 'f-person/git-blame.nvim'
 
   use { 'akinsho/git-conflict.nvim', tag = "*", config = function()
     require('git-conflict').setup()
   end
-  }
-
-  use { 'akinsho/nvim-bufferline.lua',
-    requires = 'kyazdani42/nvim-web-devicons',
-    config = function()
-      require('bufferline').setup()
-    end,
   }
 
   -- COLORSCHEME
@@ -183,7 +136,6 @@ return require("packer").startup(function(use)
     end,
   }
   use "TimUntersberger/neogit"
-  -- use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' config = function() require("diffview").setup {} end }
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use { "nvim-treesitter/nvim-treesitter", run = "<cmd>TSUpdate" }
   use 'nvim-treesitter/nvim-treesitter-textobjects'
@@ -210,37 +162,20 @@ return require("packer").startup(function(use)
       )
     end
   }
-  use {
-    "nvim-neotest/neotest",
-    requires = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-      "antoinemadec/FixCursorHold.nvim",
-      "rouge8/neotest-rust"
-    }
-  }
 
   use "rafamadriz/friendly-snippets"
   use "lukas-reineke/indent-blankline.nvim"
   use 'rmagatti/auto-session'
-  use {
-    'rmagatti/session-lens',
-    requires = { 'rmagatti/auto-session', 'nvim-telescope/telescope.nvim' },
-  }
+  -- use {
+  --   'rmagatti/session-lens',
+  --   requires = { 'rmagatti/auto-session', 'nvim-telescope/telescope.nvim' },
+  --   config = function()
+  --     require('session-lens').setup({ --[[your custom config--]] })
+  --   end
+  -- }
   use 'windwp/nvim-spectre'
-  use 'kazhala/close-buffers.nvim'
   use "tversteeg/registers.nvim"
   use 'chentoast/marks.nvim'
-  use {
-    'NTBBloodbath/rest.nvim',
-    requires = { 'nvim-lua/plenary.nvim' }
-  }
-  use {
-    'jghauser/fold-cycle.nvim',
-    config = function()
-      require('fold-cycle').setup()
-    end
-  }
   use {
     'phaazon/hop.nvim',
     as = 'hop',
@@ -255,53 +190,6 @@ return require("packer").startup(function(use)
       require('Comment').setup()
     end
   }
-
-  use { 'anuvyklack/pretty-fold.nvim',
-    config = function()
-      require('pretty-fold').setup()
-    end
-  }
-
-  use { 'anuvyklack/fold-preview.nvim',
-    requires = 'anuvyklack/keymap-amend.nvim',
-    config = function()
-      require('fold-preview').setup()
-    end
-  }
-
-  use {
-    "nvim-neorg/neorg",
-    -- tag = "*",
-    ft = "norg",
-    after = "nvim-treesitter", -- You may want to specify Telescope here as well
-    config = function()
-      require('neorg').setup {
-        load = {
-          ["core.defaults"] = {},
-          ["core.integrations.nvim-cmp"] = {
-            config = { -- Note that this table is optional and doesn't need to be provided
-              -- Configuration here
-            }
-          },
-          ["core.norg.concealer"] = {
-            config = { -- Note that this table is optional and doesn't need to be provided
-              -- Configuration here
-            }
-          },
-          ["core.norg.dirman"] = {
-            config = {
-              workspaces = {
-                work = "~/neorg/work",
-                home = "~/neorg/home",
-              }
-            }
-          }
-        }
-      }
-    end
-  }
-
-  use 'eandrju/cellular-automaton.nvim'
 
 end
 )
