@@ -1,6 +1,6 @@
 require("myplugins.telescope")
 require('myplugins.autosession')
--- require('myplugins.sessionlense')
+require('myplugins.sessionlense')
 
 require("myplugins.cmp")
 require("myplugins.treesitter")
@@ -10,6 +10,9 @@ require("myplugins.spectre")
 require('myplugins.nvimtree')
 require('myplugins.indentblankline')
 require('myplugins.marks')
+require('myplugins.nvimufo')
+require('myplugins.bufferline')
+require('myplugins.neotest')
 
 -- -- unix specific here
 -- if vim.loop.os_uname().sysname ~= 'Windows_NT' then

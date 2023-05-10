@@ -69,7 +69,7 @@ lspconfig.tsserver.setup({
 lspconfig.jsonls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
-  root_dir = require'lspconfig'.util.root_pattern(".zshrc"),
+  root_dir = require 'lspconfig'.util.root_pattern(".zshrc"),
 })
 
 -- lspconfig.pyright.setup({
@@ -80,27 +80,38 @@ lspconfig.jsonls.setup({
 lspconfig.pylsp.setup({
   on_attach = on_attach,
   capabilities = capabilities,
-  settings = {
-    pylsp = {
-      plugins = {
-        -- pylint = { enabled = true, executable = "pylint" },
-        autopep8 = { enabled = true },
-        rope = { enabled = true },
-        pycodestyle = { enabled = true, ignore = {'W391', 'E501', 'E231'}, maxLineLength = 100 },
-        -- pylsp_mypy = { enabled = true },
-      }
-    }
-  },
-  flags = {
-    debounce_text_changes = 200,
-  }
+  -- settings = {
+  --   pylsp = {
+  --     plugins = {
+  --       -- pylint = { enabled = true, executable = "pylint" },
+  --       -- autopep8 = { enabled = true },
+  --       -- rope = { enabled = true },
+  --       -- pycodestyle = { enabled = true, ignore = {'W391', 'E501', 'E231'}, maxLineLength = 100 },
+  --       -- pylsp_mypy = { enabled = true },
+  --     }
+  --   }
+  -- },
+  -- flags = {
+  --   debounce_text_changes = 200,
+  -- }
 })
 
+lspconfig.ruff_lsp.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  init_options = {
+    settings = {
+      -- Any extra CLI arguments for `ruff` go here.
+      args = {},
+    }
+  }
+}
 
 -- Update this path
-local extension_path = vim.env.HOME .. '/.vscode/extensions/vadimcn.vscode-lldb-1.7.0/'
+local extension_path = vim.env.HOME .. '/.vscode/extensions/vadimcn.vscode-lldb-1.9.0/'
 local codelldb_path = extension_path .. 'adapter/codelldb'
-local liblldb_path = extension_path .. 'lldb/lib/liblldb.so'
+-- local liblldb_path = extension_path .. 'lldb/lib/liblldb.so'
+local liblldb_path = extension_path .. 'lldb/lib/liblldb.dylib'
 local opts = {
   server = {
     on_attach = on_attach,
@@ -109,7 +120,36 @@ local opts = {
   dap = {
     adapter = require('rust-tools.dap').get_codelldb_adapter(
       codelldb_path, liblldb_path)
+  },
+  tools = {
+    executor = require("rust-tools.executors").termopen,
+    hover_actions = {
+
+      -- the border that is used for the hover window
+      -- see vim.api.nvim_open_win()
+      border = {
+        { "╭", "FloatBorder" },
+        { "─", "FloatBorder" },
+        { "╮", "FloatBorder" },
+        { "│", "FloatBorder" },
+        { "╯", "FloatBorder" },
+        { "─", "FloatBorder" },
+        { "╰", "FloatBorder" },
+        { "│", "FloatBorder" },
+      },
+
+      -- Maximal width of the hover window. Nil means no max.
+      max_width = nil,
+
+      -- Maximal height of the hover window. Nil means no max.
+      max_height = nil,
+
+      -- whether the hover action window gets automatically focused
+      -- default: false
+      auto_focus = false,
+    },
   }
+
 }
 -- Normal setup
 require('rust-tools').setup(opts)

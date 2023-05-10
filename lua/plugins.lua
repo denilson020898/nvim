@@ -118,6 +118,12 @@ return require("packer").startup(function(use)
   use 'tjdevries/colorbuddy.vim'
   use 'tjdevries/gruvbuddy.nvim'
   use 'kvrohit/mellow.nvim'
+  use 'tiagovla/tokyodark.nvim'
+  -- use {
+  --   "phha/zenburn.nvim",
+  --   config = function() require("zenburn").setup() end
+  -- }
+  use 'sainnhe/sonokai'
 
   use {
     'm-demare/hlargs.nvim',
@@ -163,16 +169,14 @@ return require("packer").startup(function(use)
     end
   }
 
+  use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
+
   use "rafamadriz/friendly-snippets"
   use "lukas-reineke/indent-blankline.nvim"
   use 'rmagatti/auto-session'
-  -- use {
-  --   'rmagatti/session-lens',
-  --   requires = { 'rmagatti/auto-session', 'nvim-telescope/telescope.nvim' },
-  --   config = function()
-  --     require('session-lens').setup({ --[[your custom config--]] })
-  --   end
-  -- }
+  use { 'rmagatti/session-lens',
+    requires = { 'rmagatti/auto-session', 'nvim-telescope/telescope.nvim' },
+  }
   use 'windwp/nvim-spectre'
   use "tversteeg/registers.nvim"
   use 'chentoast/marks.nvim'
@@ -190,6 +194,26 @@ return require("packer").startup(function(use)
       require('Comment').setup()
     end
   }
+  use 'kazhala/close-buffers.nvim'
+
+  -- use { 'anuvyklack/pretty-fold.nvim',
+  --   config = function()
+  --     require('pretty-fold').setup()
+  --   end
+  -- }
+  use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
+
+  use {
+    "nvim-neotest/neotest",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim"
+    }
+  }
+  use "rouge8/neotest-rust"
+
+  use {'stevearc/dressing.nvim'}
 
 end
 )

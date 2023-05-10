@@ -28,7 +28,8 @@ vim.o.clipboard = "unnamedplus"
 vim.o.conceallevel = 0
 vim.o.fileencoding = "utf-8"
 -- vim.o.guifont = "Iosevka Nerd Font:h12"
-vim.o.guifont = "JetBrainsMono Nerd Font:h12"
+-- vim.o.guifont = "JetBrainsMono Nerd Font:h12"
+vim.o.guifont = "LiterationMono Nerd Font:h12"
 vim.o.ignorecase = true
 vim.o.inccommand = "split"
 vim.o.incsearch = true
@@ -66,19 +67,18 @@ vim.opt.fillchars = {
   foldclose = "▸",
 }
 
-T.foldmethod_pointer = 4
-T.foldmethods = { "manual", "indent", "syntax", "expr", "marker", "diff" }
-T.switch_foldmethod = function()
-  T.foldmethod_pointer = T.foldmethod_pointer + 1
-  if T.foldmethod_pointer > #T.foldmethods then
-    T.foldmethod_pointer = 1
-  end
-  vim.cmd("set foldmethod=" .. T.foldmethods[T.foldmethod_pointer])
-end
-
-vim.wo.foldmethod = T.foldmethods[T.foldmethod_pointer]
-vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
-vim.wo.foldenable = false
-vim.wo.foldlevel = 99
+-- T.foldmethod_pointer = 4
+-- T.foldmethods = { "manual", "indent", "syntax", "expr", "marker", "diff" }
+-- T.switch_foldmethod = function()
+--   T.foldmethod_pointer = T.foldmethod_pointer + 1
+--   if T.foldmethod_pointer > #T.foldmethods then
+--     T.foldmethod_pointer = 1
+--   end
+--   vim.cmd("set foldmethod=" .. T.foldmethods[T.foldmethod_pointer])
+-- end
+-- vim.wo.foldmethod = T.foldmethods[T.foldmethod_pointer]
+-- vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.wo.foldenable = false
+-- vim.wo.foldlevel = 99
 
 return T

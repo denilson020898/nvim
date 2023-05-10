@@ -91,7 +91,7 @@ M.search_with_extension = function()
   })
 end
 
--- require('telescope').load_extension('dap')
+require('telescope').load_extension('dap')
 -- require("telescope").load_extension("ui-select")
 -- require("telescope").load_extension("live_grep_args")
 -- require("telescope").load_extension("file_browser")
