@@ -86,8 +86,7 @@ vim.keymap.set("n", "<space>tb", require('telescope.builtin').current_buffer_fuz
 vim.keymap.set("n", "<space>tC", require('telescope.builtin').command_history, { noremap = true })
 vim.keymap.set("n", "<space>td", require('telescope.builtin').diagnostics, { noremap = true })
 
--- vim.keymap.set("n", "<space>ts", require('telescope.builtin').lsp_document_symbols, { noremap = true })
--- vim.keymap.set("n", "<space>tS", require('telescope.builtin').lsp_workspace_symbols, { noremap = true })
+vim.keymap.set("n", "<space>y", require('telescope.builtin').lsp_references, { noremap = true })
 vim.keymap.set("n", "<space>e", require('telescope.builtin').lsp_document_symbols, { noremap = true })
 vim.keymap.set("n", "<space>E", require('telescope.builtin').lsp_workspace_symbols, { noremap = true })
 

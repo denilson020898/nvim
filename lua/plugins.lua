@@ -81,7 +81,7 @@ return require("packer").startup(function(use)
   use "ray-x/lsp_signature.nvim"
   use 'simrat39/rust-tools.nvim'
   use 'onsails/lspkind.nvim'
-  use { 'j-hui/fidget.nvim',
+  use { 'j-hui/fidget.nvim', tag = 'legacy',
     config = function()
       require "fidget".setup {}
     end
@@ -144,6 +144,7 @@ return require("packer").startup(function(use)
   use "TimUntersberger/neogit"
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use { "nvim-treesitter/nvim-treesitter", run = "<cmd>TSUpdate" }
+  use { 'JoosepAlviste/nvim-ts-context-commentstring' }
   use 'nvim-treesitter/nvim-treesitter-textobjects'
   use 'RRethy/nvim-treesitter-textsubjects'
 
@@ -169,6 +170,7 @@ return require("packer").startup(function(use)
     end
   }
 
+
   use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
 
   use "rafamadriz/friendly-snippets"
@@ -188,12 +190,7 @@ return require("packer").startup(function(use)
     end
   }
 
-  use {
-    'numToStr/Comment.nvim',
-    config = function()
-      require('Comment').setup()
-    end
-  }
+  use { 'numToStr/Comment.nvim' }
   use 'kazhala/close-buffers.nvim'
 
   -- use { 'anuvyklack/pretty-fold.nvim',
@@ -213,7 +210,7 @@ return require("packer").startup(function(use)
   }
   use "rouge8/neotest-rust"
 
-  use {'stevearc/dressing.nvim'}
+  use { 'stevearc/dressing.nvim' }
 
 end
 )

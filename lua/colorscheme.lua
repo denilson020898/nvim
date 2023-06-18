@@ -29,10 +29,10 @@ vim.g.sonokai_style = "espresso"
 
 -- colorscheme catppuccin " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 -- T.applied_theme = "zenburn"
-T.applied_theme = "sonokai"
--- T.applied_theme = "gruvbox-baby"
+-- T.applied_theme = "sonokai"
+T.applied_theme = "gruvbox-baby"
 -- T.applied_theme = "mellow"
--- T.applied_theme = "catppuccin-mocha"
+-- T.applied_theme = "catppuccin-macchiato"
 vim.cmd("colorscheme " .. T.applied_theme)
 
 T.toggle_theme = function()

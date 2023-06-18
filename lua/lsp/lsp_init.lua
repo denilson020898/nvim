@@ -66,6 +66,11 @@ lspconfig.tsserver.setup({
   capabilities = capabilities,
 })
 
+lspconfig.wgsl_analyzer.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
 lspconfig.jsonls.setup({
   on_attach = on_attach,
   capabilities = capabilities,

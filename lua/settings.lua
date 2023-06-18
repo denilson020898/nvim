@@ -48,7 +48,7 @@ vim.o.title = true
 vim.wo.colorcolumn = "100"
 -- vim.o.titlestring="%<%F%=%l/%L - nvim"
 vim.o.timeoutlen = 1000
-vim.o.updatetime = 200
+vim.o.updatetime = 100
 vim.o.writebackup = false
 vim.wo.cursorline = true
 vim.wo.number = true
@@ -66,6 +66,10 @@ vim.opt.fillchars = {
   foldsep = "│",
   foldclose = "▸",
 }
+
+vim.wo.foldmethod = "expr"
+
+vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- T.foldmethod_pointer = 4
 -- T.foldmethods = { "manual", "indent", "syntax", "expr", "marker", "diff" }
