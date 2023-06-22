@@ -82,24 +82,24 @@ lspconfig.jsonls.setup({
 --   capabilities = capabilities,
 -- })
 
-lspconfig.pylsp.setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-  -- settings = {
-  --   pylsp = {
-  --     plugins = {
-  --       -- pylint = { enabled = true, executable = "pylint" },
-  --       -- autopep8 = { enabled = true },
-  --       -- rope = { enabled = true },
-  --       -- pycodestyle = { enabled = true, ignore = {'W391', 'E501', 'E231'}, maxLineLength = 100 },
-  --       -- pylsp_mypy = { enabled = true },
-  --     }
-  --   }
-  -- },
-  -- flags = {
-  --   debounce_text_changes = 200,
-  -- }
-})
+-- lspconfig.pylsp.setup({
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+--   -- settings = {
+--   --   pylsp = {
+--   --     plugins = {
+--   --       -- pylint = { enabled = true, executable = "pylint" },
+--   --       -- autopep8 = { enabled = true },
+--   --       -- rope = { enabled = true },
+--   --       -- pycodestyle = { enabled = true, ignore = {'W391', 'E501', 'E231'}, maxLineLength = 100 },
+--   --       -- pylsp_mypy = { enabled = true },
+--   --     }
+--   --   }
+--   -- },
+--   -- flags = {
+--   --   debounce_text_changes = 200,
+--   -- }
+-- })
 
 lspconfig.ruff_lsp.setup {
   on_attach = on_attach,

@@ -114,16 +114,16 @@ return require("packer").startup(function(use)
   -- COLORSCHEME
   use { 'norcalli/nvim-colorizer.lua', config = function() require("colorizer").setup {} end }
   use 'luisiacc/gruvbox-baby'
-  use { "catppuccin/nvim", as = "catppuccin" }
+  -- use { "catppuccin/nvim", as = "catppuccin" }
   use 'tjdevries/colorbuddy.vim'
   use 'tjdevries/gruvbuddy.nvim'
-  use 'kvrohit/mellow.nvim'
-  use 'tiagovla/tokyodark.nvim'
+  -- use 'kvrohit/mellow.nvim'
+  -- use 'tiagovla/tokyodark.nvim'
   -- use {
   --   "phha/zenburn.nvim",
   --   config = function() require("zenburn").setup() end
-  -- }
-  use 'sainnhe/sonokai'
+  -- } use 'sainnhe/sonokai'
+  -- use ({ 'projekt0n/github-nvim-theme' })
 
   use {
     'm-demare/hlargs.nvim',
@@ -179,7 +179,8 @@ return require("packer").startup(function(use)
   use { 'rmagatti/session-lens',
     requires = { 'rmagatti/auto-session', 'nvim-telescope/telescope.nvim' },
   }
-  use 'windwp/nvim-spectre'
+  -- use 'windwp/nvim-spectre'
+  use 'nvim-pack/nvim-spectre'
   use "tversteeg/registers.nvim"
   use 'chentoast/marks.nvim'
   use {
