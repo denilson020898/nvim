@@ -7,11 +7,11 @@ else
   require("global")
   require("keybindings")
   require("settings")
-  require("colorscheme")
   require("variables")
   require("lsp")
   require("dbg")
   require("aucommands")
   require("masoninstaller")
   require("myplugins")
+  require("colorscheme")
 end

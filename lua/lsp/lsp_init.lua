@@ -82,35 +82,40 @@ lspconfig.jsonls.setup({
 --   capabilities = capabilities,
 -- })
 
--- lspconfig.pylsp.setup({
---   on_attach = on_attach,
---   capabilities = capabilities,
---   -- settings = {
---   --   pylsp = {
---   --     plugins = {
---   --       -- pylint = { enabled = true, executable = "pylint" },
---   --       -- autopep8 = { enabled = true },
---   --       -- rope = { enabled = true },
---   --       -- pycodestyle = { enabled = true, ignore = {'W391', 'E501', 'E231'}, maxLineLength = 100 },
---   --       -- pylsp_mypy = { enabled = true },
---   --     }
---   --   }
---   -- },
---   -- flags = {
---   --   debounce_text_changes = 200,
---   -- }
--- })
-
-lspconfig.ruff_lsp.setup {
+lspconfig.pylsp.setup({
   on_attach = on_attach,
   capabilities = capabilities,
-  init_options = {
-    settings = {
-      -- Any extra CLI arguments for `ruff` go here.
-      args = {},
+  settings = {
+    pylsp = {
+      plugins = {
+				ruff = {
+					enabled = true,
+					extendSelect = { "I" },
+				},
+
+        -- pylint = { enabled = true, executable = "pylint" },
+        -- autopep8 = { enabled = true },
+        -- rope = { enabled = true },
+        -- pycodestyle = { enabled = true, ignore = {'W391', 'E501', 'E231'}, maxLineLength = 100 },
+        -- pylsp_mypy = { enabled = true },
+      }
     }
-  }
-}
+  },
+  -- flags = {
+  --   debounce_text_changes = 200,
+  -- }
+})
+
+-- lspconfig.ruff_lsp.setup {
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+--   init_options = {
+--     settings = {
+--       -- Any extra CLI arguments for `ruff` go here.
+--       args = {},
+--     }
+--   }
+-- }
 
 -- Update this path
 local extension_path = vim.env.HOME .. '/.vscode/extensions/vadimcn.vscode-lldb-1.9.0/'

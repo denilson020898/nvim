@@ -1,5 +1,5 @@
+vim.g.mapleader = ","
 vim.o.clipboard = "unnamedplus"
-
 
 vim.cmd("noremap <expr> k (v:count > 5 ? \"m'\" . v:count : \"\") . 'k'")
 vim.cmd("noremap <expr> j (v:count > 5 ? \"m'\" . v:count : \"\") . 'j'")
@@ -15,12 +15,9 @@ vim.keymap.set("i", "<c-c>", "<esc>", { noremap = true })
 vim.keymap.set("i", "jk", "<esc>", { noremap = true })
 vim.keymap.set("i", "jj", "<esc>", { noremap = true })
 vim.keymap.set("t", "<esc>", "<C-\\><C-n>", { noremap = true })
-
--- CORE KEYBINDINGS
+--
+-- -- CORE KEYBINDINGS
 vim.keymap.set("n", "q:", "<nop>", { noremap = true })
-vim.keymap.set("n", "<space>/", "<cmd>set hlsearch!<cr>", { noremap = true })
-vim.keymap.set("n", "<space>n", "<cmd>NvimTreeToggle<cr>", { noremap = true })
-vim.keymap.set("n", "<leader>n", "<cmd>NvimTreeFindFile<cr>", { noremap = true })
 vim.keymap.set("n", "Y", "y$", { noremap = true })
 vim.keymap.set("n", "#", "#zz", { noremap = true })
 vim.keymap.set("n", "*", "*zz", { noremap = true })
@@ -35,9 +32,15 @@ vim.keymap.set("v", ">", ">gv", { noremap = true })
 vim.keymap.set("v", "<", "<gv", { noremap = true })
 vim.keymap.set("v", "m", ">gv", { noremap = true })
 vim.keymap.set("v", "n", "<gv", { noremap = true })
-vim.keymap.set("n", "<space>a", "ggVG", { noremap = true })
-vim.keymap.set("n", "<space>d", "<cmd>bd<cr>", { noremap = true })
-vim.keymap.set("n", "<space>D", "<cmd>%bd|e#|bd#<cr>", { noremap = true })
-vim.keymap.set("n", "<space>w", "<cmd>wa<cr>", { noremap = true })
-vim.keymap.set("n", "<space><space>", "<cmd>b#<cr>", { noremap = true })
 
+vim.keymap.set('x', 'K', ':move \'<-2<cr>gv-gv', { noremap = true })
+vim.keymap.set('x', 'J', ':move \'>+1<cr>gv-gv', { noremap = true })
+
+vim.keymap.set("n", "<space>a", "ggVG", { noremap = true })
+vim.keymap.set("n", "<space>d", "<cmd>call VSCodeCall('workbench.action.closeActiveEditor')<cr>", { noremap = true })
+vim.keymap.set("n", "<space>bo", "<cmd>call VSCodeCall('workbench.action.closeOtherEditors')<cr>", { noremap = true })
+vim.keymap.set("n", "<space>w", "<cmd>call VSCodeCall('workbench.action.save')<cr>", { noremap = true })
+
+vim.keymap.set("n", "<space>ss", "<cmd>call VSCodeCall('search.action.openEditor')<cr>", { noremap = true })
+vim.keymap.set("n", "<space>si", "<cmd>call VSCodeCall('search.action.focusFilesToInclude')<cr>", { noremap = true })
+vim.keymap.set("n", "<space>so", "<cmd>call VSCodeCall('search.action.focusFilesToExclude')<cr>", { noremap = true })
