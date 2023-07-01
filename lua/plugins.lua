@@ -155,7 +155,8 @@ return require("packer").startup(function(use)
   use "windwp/nvim-ts-autotag"
   use {
     'stevearc/aerial.nvim',
-    config = function() require('aerial').setup({
+    config = function()
+      require('aerial').setup({
         filter_kind = {
           "Class",
           "Constructor",
@@ -213,6 +214,5 @@ return require("packer").startup(function(use)
   use "rouge8/neotest-rust"
 
   use { 'stevearc/dressing.nvim' }
-
 end
 )
