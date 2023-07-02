@@ -1,3 +1,7 @@
+require('Comment').setup()
+
+vim.filetype.add({ extension = { wgsl = "wgsl" } })
+
 vim.g.mapleader = ","
 vim.o.clipboard = "unnamedplus"
 
