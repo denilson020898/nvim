@@ -7,10 +7,19 @@ vim.filetype.add({ extension = { wgsl = "wgsl" } })
 --     files = { "src/parser.c" }
 --   },
 -- }
+require("nvim-treesitter.parsers").list.xml = {
+	install_info = {
+		url = "https://github.com/Trivernis/tree-sitter-xml",
+		files = { "src/parser.c" },
+		generate_requires_npm = true,
+		branch = "main",
+	},
+	filetype = "xml",
+}
 
 require 'nvim-treesitter.configs'.setup {
   ensure_installed = {
-    'wgsl', 'astro', 'css', 'glimmer', 'graphql', 'html', 'javascript',
+    'wgsl', 'xml', 'astro', 'css', 'glimmer', 'graphql', 'html', 'javascript',
     'lua', 'php', 'python', 'scss', 'svelte', 'tsx', 'twig',
     'typescript', 'vim', 'vue',
   },
@@ -31,6 +40,10 @@ require 'nvim-treesitter.configs'.setup {
   },
   autotag = {
     enable = true,
+    enable_rename = true,
+    enable_close = true,
+    enable_close_on_slash = true,
+    -- filetypes = { "html" , "xml" },
   },
   textsubjects = {
     enable = true,

@@ -1,10 +1,18 @@
 local O = {}
 
+
+local rt = require("rust-tools")
+
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 O.on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+  -- Hover actions
+  vim.keymap.set("n", "<c-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
+  -- Code action groups
+  vim.keymap.set("n", "<Leader>1", rt.code_action_group.code_action_group, { buffer = bufnr })
 
   local opts = { noremap = true, silent = true }
   vim.keymap.set('n', '=e', vim.diagnostic.open_float, opts)
