@@ -12,7 +12,7 @@ O.on_attach = function(client, bufnr)
   -- Hover actions
   vim.keymap.set("n", "<c-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
   -- Code action groups
-  vim.keymap.set("n", "<Leader>1", rt.code_action_group.code_action_group, { buffer = bufnr })
+  vim.keymap.set("n", "<c-m>", rt.code_action_group.code_action_group, { buffer = bufnr })
 
   local opts = { noremap = true, silent = true }
   vim.keymap.set('n', '=e', vim.diagnostic.open_float, opts)

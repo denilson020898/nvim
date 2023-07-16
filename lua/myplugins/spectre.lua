@@ -12,8 +12,6 @@ require('spectre').setup({
   },
 })
 
--- require('spectre').setup({})
-
 -- {
 --   spectre_state = {
 --     options = {

@@ -115,7 +115,7 @@ return require("packer").startup(function(use)
   -- use { 'norcalli/nvim-colorizer.lua', config = function() require("colorizer").setup {} end }
   -- use 'luisiacc/gruvbox-baby'
   use 'sainnhe/gruvbox-material'
-  -- use { "catppuccin/nvim", as = "catppuccin" }
+  use { "catppuccin/nvim", as = "catppuccin" }
   -- use 'tjdevries/colorbuddy.vim'
   -- use 'tjdevries/gruvbuddy.nvim'
   -- use 'kvrohit/mellow.nvim'
@@ -125,6 +125,13 @@ return require("packer").startup(function(use)
   --   config = function() require("zenburn").setup() end
   -- } use 'sainnhe/sonokai'
   -- use ({ 'projekt0n/github-nvim-theme' })
+  use {
+      "mcchrish/zenbones.nvim",
+      -- Optionally install Lush. Allows for more configuration or extending the colorscheme
+      -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
+      -- In Vim, compat mode is turned on as Lush only works in Neovim.
+      requires = "rktjmp/lush.nvim"
+  }
 
   use {
     'm-demare/hlargs.nvim',
@@ -142,7 +149,7 @@ return require("packer").startup(function(use)
       require('crates').setup()
     end,
   }
-  use "TimUntersberger/neogit"
+  use "NeogitOrg/neogit"
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use { "nvim-treesitter/nvim-treesitter", run = "<cmd>TSUpdate" }
   use { 'JoosepAlviste/nvim-ts-context-commentstring' }
@@ -173,7 +180,7 @@ return require("packer").startup(function(use)
   }
 
 
-  use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
+  -- use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
 
   use "rafamadriz/friendly-snippets"
   use "lukas-reineke/indent-blankline.nvim"
@@ -194,7 +201,7 @@ return require("packer").startup(function(use)
   }
 
   use { 'numToStr/Comment.nvim' }
-  use 'kazhala/close-buffers.nvim'
+  -- use 'kazhala/close-buffers.nvim'
 
   -- use { 'anuvyklack/pretty-fold.nvim',
   --   config = function()

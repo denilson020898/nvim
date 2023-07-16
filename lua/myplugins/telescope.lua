@@ -24,22 +24,23 @@ require('telescope').setup {
       },
     },
     sorting_strategy = "ascending",
-    layout_strategy = "horizontal",
+    -- layout_strategy = "horizontal",
+    layout_strategy = "vertical",
     layout_config = {
       -- mirror=true,
       prompt_position = 'top',
-      -- horizontal = {
-      --   width = 0.99,
-      --   height = 0.99,
-      -- },
-      -- vertical = {
-      --   width = 0.99,
-      --   height = 0.99,
-      -- },
+      horizontal = {
+        width = 0.975,
+        height = 0.975,
+      },
+      vertical = {
+        width = 0.975,
+        height = 0.975,
+      },
     },
-    file_ignore_patterns = {
-      "**/*.po",
-    },
+    -- file_ignore_patterns = {
+    --   "**/*.po",
+    -- },
   },
   pickers = {
     buffers = {

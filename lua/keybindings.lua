@@ -47,7 +47,9 @@ vim.keymap.set("n", "<space>tw", "<cmd>Telescope grep_string<cr>", { noremap = t
 vim.keymap.set("n", "<space>tp", require('myplugins.telescope').search_dotfiles, { noremap = true })
 vim.keymap.set("n", "<space>tx", require('myplugins.telescope').search_with_extension, { noremap = true })
 vim.keymap.set("n", "<space>tf", require('telescope.builtin').find_files, { noremap = true })
+vim.keymap.set("n", "<space>f", require('telescope.builtin').find_files, { noremap = true })
 vim.keymap.set("n", "<space>tg", require('telescope.builtin').live_grep, { noremap = true })
+vim.keymap.set("n", "<space>g", require('telescope.builtin').live_grep, { noremap = true })
 
 vim.keymap.set("n", "<space>tj", require('telescope.builtin').jumplist, { noremap = true, silent = true })
 vim.keymap.set("n", "<space>tk", "<cmd>Telescope dir find_files<CR>", { noremap = true, silent = true })
@@ -65,15 +67,15 @@ vim.keymap.set("n", "<space>3", require'telescope'.extensions.dap.list_breakpoin
 vim.keymap.set("n", "<space>4", require'telescope'.extensions.dap.variables, { noremap = true })
 vim.keymap.set("n", "<space>5", require'telescope'.extensions.dap.frames, { noremap = true })
 
-vim.keymap.set("n", "<space>q", function() require('close_buffers').delete({ type = 'this' }) end, { noremap = true })
-vim.keymap.set("n", "<leader>k", "<cmd>BufferLineCycleNext<cr>", { noremap = true })
-vim.keymap.set("n", "<leader>j", "<cmd>BufferLineCyclePrev<cr>", { noremap = true })
-vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>", { noremap = true })
-vim.keymap.set("n", "<leader><Tab>", "<cmd>BufferLineCyclePrev<cr>", { noremap = true })
-vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { noremap = true })
-vim.keymap.set("n", "<leader>,", "<cmd>BufferLinePick<cr>", { noremap = true })
-vim.keymap.set("n", "<leader>o", "<cmd>BufferLinePickClose<cr>", { noremap = true })
-vim.keymap.set("n", "<leader>`", "<cmd>BufferLineSortByRelativeDirectory<cr>", { noremap = true })
+-- vim.keymap.set("n", "<space>q", function() require('close_buffers').delete({ type = 'this' }) end, { noremap = true })
+-- vim.keymap.set("n", "<leader>k", "<cmd>BufferLineCycleNext<cr>", { noremap = true })
+-- vim.keymap.set("n", "<leader>j", "<cmd>BufferLineCyclePrev<cr>", { noremap = true })
+-- vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>", { noremap = true })
+-- vim.keymap.set("n", "<leader><Tab>", "<cmd>BufferLineCyclePrev<cr>", { noremap = true })
+-- vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { noremap = true })
+-- vim.keymap.set("n", "<leader>,", "<cmd>BufferLinePick<cr>", { noremap = true })
+-- vim.keymap.set("n", "<leader>o", "<cmd>BufferLinePickClose<cr>", { noremap = true })
+-- vim.keymap.set("n", "<leader>`", "<cmd>BufferLineSortByRelativeDirectory<cr>", { noremap = true })
 
 vim.keymap.set("n", "<space>tq", "<cmd>lua require('telescope.builtin').quickfix({cache_picker=false})<cr>",
   { noremap = true })
@@ -90,15 +92,16 @@ vim.keymap.set("n", "<space>y", require('telescope.builtin').lsp_references, { n
 vim.keymap.set("n", "<space>e", require('telescope.builtin').lsp_document_symbols, { noremap = true })
 vim.keymap.set("n", "<space>E", require('telescope.builtin').lsp_workspace_symbols, { noremap = true })
 
-vim.keymap.set("n", "<space>tt", "<cmd>lua require('telescope.builtin').oldfiles{cache_picker=false}<cr>",
+vim.keymap.set("n", "<space>o", "<cmd>lua require('telescope.builtin').oldfiles{cache_picker=false}<cr>",
   { noremap = true })
 
-vim.keymap.set("n", "<space>ta", "<cmd>SearchSession<cr>", { noremap = true })
+vim.keymap.set("n", "<space>ta", "<cmd>Autosession search<cr>", { noremap = true })
+vim.keymap.set("n", "<space>tA", "<cmd>Autosession delete<cr>", { noremap = true })
 
-vim.keymap.set("n", "<space>ff", "<cmd>copen<cr>", { noremap = true })
-vim.keymap.set("n", "<space>fc", "<cmd>cexpr []<cr>", { noremap = true })
-vim.keymap.set("n", "<space>fn", "<cmd>cnext<cr>", { noremap = true })
-vim.keymap.set("n", "<space>fp", "<cmd>cprev<cr>", { noremap = true })
+vim.keymap.set("n", "<space>vv", "<cmd>copen<cr>", { noremap = true })
+vim.keymap.set("n", "<space>vc", "<cmd>cexpr []<cr>", { noremap = true })
+vim.keymap.set("n", "<space>vn", "<cmd>cnext<cr>", { noremap = true })
+vim.keymap.set("n", "<space>vp", "<cmd>cprev<cr>", { noremap = true })
 vim.keymap.set("n", "<leader>q", "<cmd>cnext<cr>", { noremap = true })
 vim.keymap.set("n", "<leader>e", "<cmd>cprev<cr>", { noremap = true })
 vim.keymap.set("n", "<leader>w", "<cmd>copen<cr>", { noremap = true })
@@ -138,16 +141,16 @@ vim.keymap.set("n", "<A-v>", "<C-w>^<C-w>k<C-w>J", { noremap = true })
 vim.keymap.set("n", "<A-s>", "<C-w>^<C-w>k<C-w>L", { noremap = true })
 vim.keymap.set("n", "<A-q>", "<C-w>q", { noremap = true })
 
-vim.keymap.set("n", "<space>gg", function()
+vim.keymap.set("n", "<space>cg", function()
   require('neogit').open()
 end, { noremap = true })
 
-vim.keymap.set("n", "<space>gh", "<cmd>DiffviewFileHistory %<cr>", { noremap = true })
-vim.keymap.set("n", "<space>gd", "<cmd>DiffviewOpen<cr>", { noremap = true })
-vim.keymap.set("n", "<space>gc", "<cmd>DiffviewClose<cr>", { noremap = true })
-vim.keymap.set("n", "<space>gr", "<cmd>DiffviewRefresh<cr>", { noremap = true })
-vim.keymap.set("n", "<space>gb", "<cmd>GitBlameToggle<cr>", { noremap = true })
-vim.keymap.set("n", "<space>go", "<cmd>GitBlameOpenCommitURL<cr>", { noremap = true })
+vim.keymap.set("n", "<space>ch", "<cmd>DiffviewFileHistory %<cr>", { noremap = true })
+vim.keymap.set("n", "<space>cd", "<cmd>DiffviewOpen<cr>", { noremap = true })
+vim.keymap.set("n", "<space>cc", "<cmd>DiffviewClose<cr>", { noremap = true })
+vim.keymap.set("n", "<space>cr", "<cmd>DiffviewRefresh<cr>", { noremap = true })
+vim.keymap.set("n", "<space>cb", "<cmd>GitBlameToggle<cr>", { noremap = true })
+vim.keymap.set("n", "<space>co", "<cmd>GitBlameOpenCommitURL<cr>", { noremap = true })
 
 vim.keymap.set('x', 'K', ':move \'<-2<cr>gv-gv', { noremap = true })
 vim.keymap.set('x', 'J', ':move \'>+1<cr>gv-gv', { noremap = true })
@@ -233,15 +236,18 @@ vim.keymap.set('n', '<leader>F', ':%!python -m json.tool<cr>', { noremap = true 
 
 vim.keymap.set("n", "<F12>", "<cmd>set rnu!<CR>")
 
-vim.keymap.set("n", "<space>bw", function() require('close_buffers').wipe({ type = 'all', force = true }) end,
-  { noremap = true })
-vim.keymap.set("n", "<space>bo", function() require('close_buffers').wipe({ type = 'other' }) end, { noremap = true })
-vim.keymap.set("n", "<space>bh", function() require('close_buffers').delete({ type = 'hidden', force = true }) end,
-  { noremap = true })
-vim.keymap.set("n", "<space>C", function() require('close_buffers').delete({ type = 'nameless' }) end,
-  { noremap = true })
-vim.keymap.set("n", "<space>q", function() require('close_buffers').delete({ type = 'this' }) end, { noremap = true })
+vim.keymap.set("n", "<space>bo", '<cmd>bufdo bwipeout<CR>', { noremap = true })
+vim.keymap.set("n", "<space>q", '<cmd>bd<CR>', { noremap = true })
 
-vim.keymap.set('n', '<space>z', function() require("neotest").output.open({ enter = true, auto_close = true }) end, { noremap = true })
-vim.keymap.set('n', '<space>x', function() require("neotest").run.run() end, { noremap = true })
-vim.keymap.set('n', '<space>c', function() require("neotest").run.run(vim.fn.expand("%")) end, { noremap = true })
+-- vim.keymap.set("n", "<space>bw", function() require('close_buffers').wipe({ type = 'all', force = true }) end,
+--   { noremap = true })
+-- vim.keymap.set("n", "<space>bo", function() require('close_buffers').wipe({ type = 'other' }) end, { noremap = true })
+-- vim.keymap.set("n", "<space>bh", function() require('close_buffers').delete({ type = 'hidden', force = true }) end,
+--   { noremap = true })
+-- vim.keymap.set("n", "<space>C", function() require('close_buffers').delete({ type = 'nameless' }) end,
+--   { noremap = true })
+-- vim.keymap.set("n", "<space>q", function() require('close_buffers').delete({ type = 'this' }) end, { noremap = true })
+
+-- vim.keymap.set('n', '<space>z', function() require("neotest").output.open({ enter = true, auto_close = true }) end, { noremap = true })
+-- vim.keymap.set('n', '<space>x', function() require("neotest").run.run() end, { noremap = true })
+-- vim.keymap.set('n', '<space>c', function() require("neotest").run.run(vim.fn.expand("%")) end, { noremap = true })

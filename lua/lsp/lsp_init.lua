@@ -97,6 +97,7 @@ lspconfig.pylsp.setup({
         -- autopep8 = { enabled = true },
         -- rope = { enabled = true },
         -- pycodestyle = { enabled = true, ignore = {'W391', 'E501', 'E231'}, maxLineLength = 100 },
+        pycodestyle = { enabled = true, maxLineLength = 180 },
         -- pylsp_mypy = { enabled = true },
       }
     }
