@@ -181,6 +181,7 @@ return require("packer").startup(function(use)
 
 
   -- use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
+  use 'nvim-tree/nvim-web-devicons'
 
   use "rafamadriz/friendly-snippets"
   use "lukas-reineke/indent-blankline.nvim"
