@@ -69,5 +69,7 @@ vim.opt.fillchars = {
 
 vim.wo.foldmethod = "expr"
 vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
+-- disable fold on startup
+vim.wo.foldenable = false
 
 return T
