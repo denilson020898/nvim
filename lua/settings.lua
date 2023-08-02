@@ -68,21 +68,6 @@ vim.opt.fillchars = {
 }
 
 vim.wo.foldmethod = "expr"
-
 vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
-
--- T.foldmethod_pointer = 4
--- T.foldmethods = { "manual", "indent", "syntax", "expr", "marker", "diff" }
--- T.switch_foldmethod = function()
---   T.foldmethod_pointer = T.foldmethod_pointer + 1
---   if T.foldmethod_pointer > #T.foldmethods then
---     T.foldmethod_pointer = 1
---   end
---   vim.cmd("set foldmethod=" .. T.foldmethods[T.foldmethod_pointer])
--- end
--- vim.wo.foldmethod = T.foldmethods[T.foldmethod_pointer]
--- vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
--- vim.wo.foldenable = false
--- vim.wo.foldlevel = 99
 
 return T

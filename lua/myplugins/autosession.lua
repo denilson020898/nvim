@@ -12,7 +12,6 @@ local opts = {
   pre_save_cmds = {
     "tabdo NvimTreeClose",
     "tabdo cclose",
-    "tabdo AerialClose",
   },
   post_restore_cmds = {
     "silent! bd *NeogitStatus*",

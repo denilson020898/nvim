@@ -33,9 +33,7 @@ return require("packer").startup(function(use)
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-cmdline",
       "hrsh7th/cmp-calc",
-      -- "hrsh7th/cmp-vsnip",
       "ray-x/cmp-treesitter",
       "lukas-reineke/cmp-rg",
       "dmitmel/cmp-cmdline-history",
@@ -80,7 +78,6 @@ return require("packer").startup(function(use)
   }
   use "ray-x/lsp_signature.nvim"
   use 'simrat39/rust-tools.nvim'
-  use 'onsails/lspkind.nvim'
   use { 'j-hui/fidget.nvim', tag = 'legacy',
     config = function()
       require "fidget".setup {}
@@ -112,26 +109,7 @@ return require("packer").startup(function(use)
   }
 
   -- COLORSCHEME
-  -- use { 'norcalli/nvim-colorizer.lua', config = function() require("colorizer").setup {} end }
-  -- use 'luisiacc/gruvbox-baby'
   use 'sainnhe/gruvbox-material'
-  use { "catppuccin/nvim", as = "catppuccin" }
-  -- use 'tjdevries/colorbuddy.vim'
-  -- use 'tjdevries/gruvbuddy.nvim'
-  -- use 'kvrohit/mellow.nvim'
-  -- use 'tiagovla/tokyodark.nvim'
-  -- use {
-  --   "phha/zenburn.nvim",
-  --   config = function() require("zenburn").setup() end
-  -- } use 'sainnhe/sonokai'
-  -- use ({ 'projekt0n/github-nvim-theme' })
-  use {
-      "mcchrish/zenbones.nvim",
-      -- Optionally install Lush. Allows for more configuration or extending the colorscheme
-      -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
-      -- In Vim, compat mode is turned on as Lush only works in Neovim.
-      requires = "rktjmp/lush.nvim"
-  }
 
   use {
     'm-demare/hlargs.nvim',
@@ -160,27 +138,6 @@ return require("packer").startup(function(use)
 
   use "windwp/nvim-autopairs"
   use "windwp/nvim-ts-autotag"
-  use {
-    'stevearc/aerial.nvim',
-    config = function()
-      require('aerial').setup({
-        filter_kind = {
-          "Class",
-          "Constructor",
-          "Enum",
-          "Function",
-          "Interface",
-          "Module",
-          "Method",
-          "Struct",
-        },
-      }
-      )
-    end
-  }
-
-
-  -- use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
   use 'nvim-tree/nvim-web-devicons'
 
   use "rafamadriz/friendly-snippets"
@@ -189,9 +146,7 @@ return require("packer").startup(function(use)
   use { 'rmagatti/session-lens',
     requires = { 'rmagatti/auto-session', 'nvim-telescope/telescope.nvim' },
   }
-  -- use 'windwp/nvim-spectre'
   use 'nvim-pack/nvim-spectre'
-  use "tversteeg/registers.nvim"
   use 'chentoast/marks.nvim'
   use {
     'phaazon/hop.nvim',
@@ -202,14 +157,6 @@ return require("packer").startup(function(use)
   }
 
   use { 'numToStr/Comment.nvim' }
-  -- use 'kazhala/close-buffers.nvim'
-
-  -- use { 'anuvyklack/pretty-fold.nvim',
-  --   config = function()
-  --     require('pretty-fold').setup()
-  --   end
-  -- }
-  use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 
   use {
     "nvim-neotest/neotest",
@@ -221,6 +168,8 @@ return require("packer").startup(function(use)
   }
   use "rouge8/neotest-rust"
 
-  use { 'stevearc/dressing.nvim' }
+  use { 'stevearc/dressing.nvim', config = function()
+    require('dressing').setup()
+  end }
 end
 )

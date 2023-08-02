@@ -14,6 +14,14 @@ O.on_attach = function(client, bufnr)
   -- Code action groups
   vim.keymap.set("n", "<c-m>", rt.code_action_group.code_action_group, { buffer = bufnr })
 
+  require "lsp_signature".on_attach({
+    bind = true, -- This is mandatory, otherwise border config won't get registered.
+    handler_opts = {
+      border = "rounded"
+    },
+    timer_interval = 200,
+  }, bufnr)
+
   local opts = { noremap = true, silent = true }
   vim.keymap.set('n', '=e', vim.diagnostic.open_float, opts)
   vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
@@ -47,8 +55,8 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
   }
 }
 capabilities.textDocument.foldingRange = {
-    dynamicRegistration = false,
-    lineFoldingOnly = true
+  dynamicRegistration = false,
+  lineFoldingOnly = true
 }
 
 O.capabilities = capabilities

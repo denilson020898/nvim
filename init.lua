@@ -1,18 +1,12 @@
-if vim.g.vscode then
-  -- VSCode extension
-  require("vscode_nvim")
-  require("aucommands")
-else
-  -- normal nvim
-  require("plugins")
-  require("global")
-  require("keybindings")
-  require("settings")
-  require("variables")
-  require("lsp")
-  require("dbg")
-  require("aucommands")
-  require("masoninstaller")
-  require("myplugins")
-  require("colorscheme")
-end
+-- normal nvim
+require("plugins")
+require("global")
+require("keybindings")
+require("settings")
+require("variables")
+require("lsp")
+require("dbg")
+require("aucommands")
+require("masoninstaller")
+require("myplugins")
+require("colorscheme")

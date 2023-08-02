@@ -12,9 +12,3 @@ autocmd('TextYankPost', {
     })
   end,
 })
-
-vim.api.nvim_create_autocmd({"BufReadPost"},{ callback = require('persistent-breakpoints.api').load_breakpoints })
-
-vim.cmd "autocmd User TelescopePreviewerLoaded setlocal number"
-
-

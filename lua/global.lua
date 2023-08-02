@@ -12,4 +12,3 @@ R = function(name)
   return require(name)
 end
 
-require('dressing').setup()

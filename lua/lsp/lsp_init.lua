@@ -51,10 +51,6 @@ lspconfig.html.setup({
   capabilities = capabilities,
 })
 
--- lspconfig.sqls.setup({
---   on_attach = on_attach,
---   capabilities = capabilities,
--- })
 
 lspconfig.sqlls.setup({
   on_attach = on_attach,
@@ -77,35 +73,55 @@ lspconfig.jsonls.setup({
   root_dir = require 'lspconfig'.util.root_pattern(".zshrc"),
 })
 
--- lspconfig.pyright.setup({
+-- lspconfig.pylyzer.setup({
 --   on_attach = on_attach,
 --   capabilities = capabilities,
 -- })
 
-lspconfig.pylsp.setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-  settings = {
-    pylsp = {
-      plugins = {
-				ruff = {
-					enabled = true,
-					extendSelect = { "I" },
-				},
 
-        -- pylint = { enabled = true, executable = "pylint" },
-        -- autopep8 = { enabled = true },
-        -- rope = { enabled = true },
-        -- pycodestyle = { enabled = true, ignore = {'W391', 'E501', 'E231'}, maxLineLength = 100 },
-        pycodestyle = { enabled = true, maxLineLength = 180 },
-        -- pylsp_mypy = { enabled = true },
-      }
+lspconfig.pyright.setup { on_attach = on_attach, settings = {
+  pyright = { autoImportCompletion = true, },
+  python = {
+    analysis = {
+      autoSearchPaths = true,
+      diagnosticMode = 'openFilesOnly',
+      useLibraryCodeForTypes = true,
+      typeCheckingMode = 'off'
     }
-  },
-  -- flags = {
-  --   debounce_text_changes = 200,
-  -- }
-})
+  }
+}
+}
+
+
+-- lspconfig.pylsp.setup({
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+-- })
+
+-- lspconfig.pylsp.setup({
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+--   settings = {
+--     pylsp = {
+--       plugins = {
+-- 				ruff = {
+-- 					enabled = true,
+-- 					extendSelect = { "I" },
+-- 				},
+--
+--         -- pylint = { enabled = true, executable = "pylint" },
+--         -- autopep8 = { enabled = true },
+--         -- rope = { enabled = true },
+--         -- pycodestyle = { enabled = true, ignore = {'W391', 'E501', 'E231'}, maxLineLength = 100 },
+--         pycodestyle = { enabled = true, maxLineLength = 180 },
+--         -- pylsp_mypy = { enabled = true },
+--       }
+--     }
+--   },
+--   -- flags = {
+--   --   debounce_text_changes = 200,
+--   -- }
+-- })
 
 -- lspconfig.ruff_lsp.setup {
 --   on_attach = on_attach,
@@ -168,10 +184,16 @@ local opts = {
 
       -- whether the hover action window gets automatically focused
       -- default: false
-      auto_focus = false,
+      auto_focus = true,
     },
   }
 
 }
 -- Normal setup
 require('rust-tools').setup(opts)
+
+-- lspconfig.rust_analyzer.setup({
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+--   root_dir = require 'lspconfig'.util.root_pattern(".zshrc"),
+-- })

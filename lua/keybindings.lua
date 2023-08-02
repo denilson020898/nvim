@@ -89,9 +89,13 @@ vim.keymap.set("n", "<space>tb", require('telescope.builtin').current_buffer_fuz
 vim.keymap.set("n", "<space>tC", require('telescope.builtin').command_history, { noremap = true })
 vim.keymap.set("n", "<space>td", require('telescope.builtin').diagnostics, { noremap = true })
 
-vim.keymap.set("n", "<space>y", require('telescope.builtin').lsp_references, { noremap = true })
-vim.keymap.set("n", "<space>e", require('telescope.builtin').lsp_document_symbols, { noremap = true })
-vim.keymap.set("n", "<space>E", require('telescope.builtin').lsp_workspace_symbols, { noremap = true })
+vim.keymap.set("n", "<space>I", "<cmd>lua require('telescope.builtin').lsp_implementations({show_line=false})<cr>", { noremap = true })
+vim.keymap.set("n", "<space>F", "<cmd>lua require('telescope.builtin').lsp_type_definitions({show_line=false})<cr>", { noremap = true })
+vim.keymap.set("n", "<space>D", "<cmd>lua require('telescope.builtin').lsp_definitions({show_line=false})<cr>", { noremap = true })
+vim.keymap.set("n", "<space>y", "<cmd>lua require('telescope.builtin').lsp_references({show_line=false})<cr>", { noremap = true })
+vim.keymap.set("n", "<space>e", require('telescope.builtin').lsp_dynamic_workspace_symbols, { noremap = true })
+vim.keymap.set("n", "<space>E", require('telescope.builtin').lsp_document_symbols, { noremap = true })
+vim.keymap.set("n", "<space>S", require('telescope.builtin').lsp_workspace_symbols, { noremap = true })
 
 vim.keymap.set("n", "<space>o", "<cmd>lua require('telescope.builtin').oldfiles{cache_picker=false}<cr>",
   { noremap = true })
@@ -109,7 +113,6 @@ vim.keymap.set("n", "<leader>w", "<cmd>copen<cr>", { noremap = true })
 vim.keymap.set("n", "<leader>W", "<cmd>cclose<cr>", { noremap = true })
 
 -- FN KEY
-vim.keymap.set("n", "<F10>", "<cmd>AerialToggle!<cr>", { noremap = true })
 vim.keymap.set("n", "<F6>", "<cmd>resize 100<cr>", { noremap = true })
 vim.keymap.set("n", "<F18>", "<cmd>lua require'colorscheme'.toggle_theme()<cr>", { noremap = true })
 vim.keymap.set("n", "<F7>", "<cmd>lua require'settings'.switch_foldmethod()<cr>", { noremap = true })
