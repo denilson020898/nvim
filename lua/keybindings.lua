@@ -79,10 +79,10 @@ vim.keymap.set("n", "<space>td", require('telescope.builtin').diagnostics, { nor
 vim.keymap.set("n", "<space>I", "<cmd>lua require('telescope.builtin').lsp_implementations({show_line=false})<cr>", { noremap = true })
 vim.keymap.set("n", "<space>F", "<cmd>lua require('telescope.builtin').lsp_type_definitions({show_line=false})<cr>", { noremap = true })
 vim.keymap.set("n", "<space>D", "<cmd>lua require('telescope.builtin').lsp_definitions({show_line=false})<cr>", { noremap = true })
-vim.keymap.set("n", "<space>y", "<cmd>lua require('telescope.builtin').lsp_references({show_line=false})<cr>", { noremap = true })
-vim.keymap.set("n", "<space>e", require('telescope.builtin').lsp_dynamic_workspace_symbols, { noremap = true })
-vim.keymap.set("n", "<space>E", require('telescope.builtin').lsp_document_symbols, { noremap = true })
-vim.keymap.set("n", "<space>S", require('telescope.builtin').lsp_workspace_symbols, { noremap = true })
+vim.keymap.set("n", "<space>y", "<cmd>lua require('telescope.builtin').lsp_references({fname_width=100})<cr>", { noremap = true })
+vim.keymap.set("n", "<space>e", "<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols({fname_width=100})<cr>", { noremap = true })
+vim.keymap.set("n", "<space>E", "<cmd>lua require('telescope.builtin').lsp_document_symbols({fname_width=100})<cr>", { noremap = true })
+vim.keymap.set("n", "<space>S", "<cmd>lua require('telescope.builtin').lsp_workspace_symbols({fname_width=100})<cr>", { noremap = true })
 
 vim.keymap.set("n", "<space>o", "<cmd>lua require('telescope.builtin').oldfiles{cache_picker=false}<cr>",
   { noremap = true })
@@ -215,3 +215,8 @@ vim.keymap.set('n', '<leader>F', ':%!python -m json.tool<cr>', { noremap = true 
 vim.keymap.set("n", "<F12>", "<cmd>set rnu!<CR>")
 
 vim.keymap.set("n", "<space>bo", '<cmd>bufdo bwipeout<CR>', { noremap = true })
+
+vim.keymap.set("n", "<A-h>", "<C-w>10<", { noremap = true })
+vim.keymap.set("n", "<A-j>", "<C-w>10-", { noremap = true })
+vim.keymap.set("n", "<A-k>", "<C-w>10+", { noremap = true })
+vim.keymap.set("n", "<A-l>", "<C-w>10>", { noremap = true })
