@@ -56,20 +56,43 @@ vim.wo.scrolloff = 10
 vim.wo.signcolumn = "yes"
 vim.wo.wrap = false
 
-vim.opt.fillchars = {
-  vert = "▕", -- alternatives │
-  fold = " ",
-  eob = " ", -- suppress ~ at EndOfBuffer
-  diff = " ", -- alternatives = ⣿ ░ ─
-  msgsep = "‾",
-  foldopen = "▾",
-  foldsep = "│",
-  foldclose = "▸",
-}
+function custom_fold_text()
+  local line = vim.fn.getline(vim.v.foldstart)
+  local line_count = vim.v.foldend - vim.v.foldstart + 1
+  return line .. "    ⏫ " .. line_count .. " lines"
+end
+
+-- vim.opt.foldtext = custom_fold_text()
+vim.opt.foldtext = 'v:lua.custom_fold_text()'
+vim.opt.fillchars = { eob = "-", fold = " " }
+vim.opt.viewoptions:remove("options")
+
+
+-- vim.opt.fillchars = {
+--   vert = "▕", -- alternatives │
+--   fold = " ",
+--   eob = " ", -- suppress ~ at EndOfBuffer
+--   diff = " ", -- alternatives = ⣿ ░ ─
+--   msgsep = "‾",
+--   foldopen = "▾",
+--   foldsep = "│",
+--   foldclose = "▸",
+-- }
 
 vim.wo.foldmethod = "expr"
 vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
 -- disable fold on startup
 vim.wo.foldenable = false
+
+
+-- vim.g.netrw_banner = 0
+vim.g.netrw_liststyle = 3
+-- vim.g.netrw_browse_split = 4
+-- vim.g.netrw_altv = 1
+-- vim.g.netrw_winsize = 25
+
+-- vim.g.gitblame_enabled = 0
+-- Available options: <author>, <committer>, <date>, <committer-date>, <summary>, <sha>
+vim.g.gitblame_message_template = '<summary> • <author> • <date> • <sha>'
 
 return T

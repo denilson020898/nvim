@@ -19,8 +19,6 @@ vim.keymap.set("t", "<esc>", "<C-\\><C-n>", { noremap = true })
 -- CORE KEYBINDINGS
 vim.keymap.set("n", "q:", "<nop>", { noremap = true })
 vim.keymap.set("n", "<space>/", "<cmd>set hlsearch!<cr>", { noremap = true })
-vim.keymap.set("n", "<space>n", "<cmd>NvimTreeToggle<cr>", { noremap = true })
-vim.keymap.set("n", "<leader>n", "<cmd>NvimTreeFindFile<cr>", { noremap = true })
 vim.keymap.set("n", "Y", "y$", { noremap = true })
 vim.keymap.set("n", "#", "#zz", { noremap = true })
 vim.keymap.set("n", "*", "*zz", { noremap = true })
@@ -39,11 +37,13 @@ vim.keymap.set("n", "<space>a", "ggVG", { noremap = true })
 vim.keymap.set("n", "<space>w", "<cmd>wa<cr>", { noremap = true })
 vim.keymap.set("n", "<space><space>", "<cmd>b#<cr>", { noremap = true })
 
+-- vim.keymap.set("n", "<space>n", "<cmd>NvimTreeToggle<cr>", { noremap = true })
+-- vim.keymap.set("n", "<leader>n", "<cmd>NvimTreeFindFile<cr>", { noremap = true })
+vim.keymap.set("n", "<space>n", "<cmd>Rex<cr>", { noremap = true })
+
 vim.keymap.set("n", "<space>t", "<cmd>Telescope<cr>", { noremap = true })
 vim.keymap.set("n", "<space>r", "<cmd>Telescope resume<cr>", { noremap = true })
 vim.keymap.set("n", "<space>tw", "<cmd>Telescope grep_string<cr>", { noremap = true })
-vim.keymap.set("n", "<space>tp", require('myplugins.telescope').search_dotfiles, { noremap = true })
-vim.keymap.set("n", "<space>tx", require('myplugins.telescope').search_with_extension, { noremap = true })
 vim.keymap.set("n", "<space>tf", require('telescope.builtin').find_files, { noremap = true })
 vim.keymap.set("n", "<space>tg", require('telescope.builtin').live_grep, { noremap = true })
 vim.keymap.set("n", "<space>q", '<cmd>bd<CR>', { noremap = true })
@@ -87,14 +87,20 @@ vim.keymap.set("n", "<space>S", "<cmd>lua require('telescope.builtin').lsp_works
 vim.keymap.set("n", "<space>o", "<cmd>lua require('telescope.builtin').oldfiles{cache_picker=false}<cr>",
   { noremap = true })
 
-vim.keymap.set("n", "<space>vv", "<cmd>copen<cr>", { noremap = true })
-vim.keymap.set("n", "<space>vc", "<cmd>cexpr []<cr>", { noremap = true })
-vim.keymap.set("n", "<space>vn", "<cmd>cnext<cr>", { noremap = true })
-vim.keymap.set("n", "<space>vp", "<cmd>cprev<cr>", { noremap = true })
-vim.keymap.set("n", "<leader>q", "<cmd>cnext<cr>", { noremap = true })
-vim.keymap.set("n", "<leader>e", "<cmd>cprev<cr>", { noremap = true })
-vim.keymap.set("n", "<leader>w", "<cmd>copen<cr>", { noremap = true })
-vim.keymap.set("n", "<leader>W", "<cmd>cclose<cr>", { noremap = true })
+-- vim.keymap.set("n", "<space>vv", "<cmd>copen<cr>", { noremap = true })
+-- vim.keymap.set("n", "<space>vc", "<cmd>cexpr []<cr>", { noremap = true })
+-- vim.keymap.set("n", "<space>vn", "<cmd>cnext<cr>", { noremap = true })
+-- vim.keymap.set("n", "<space>vp", "<cmd>cprev<cr>", { noremap = true })
+-- vim.keymap.set("n", "<leader>q", "<cmd>cnext<cr>", { noremap = true })
+-- vim.keymap.set("n", "<leader>e", "<cmd>cprev<cr>", { noremap = true })
+-- vim.keymap.set("n", "<leader>w", "<cmd>copen<cr>", { noremap = true })
+-- vim.keymap.set("n", "<leader>W", "<cmd>cclose<cr>", { noremap = true })
+
+vim.keymap.set("n", "<A-n>", "<cmd>cn<cr>", { noremap = true })
+vim.keymap.set("n", "<A-p>", "<cmd>cp<cr>", { noremap = true })
+
+vim.keymap.set("n", "<A-f>", "<cmd>cnewer<cr>", { noremap = true })
+vim.keymap.set("n", "<A-b>", "<cmd>colder<cr>", { noremap = true })
 
 -- FN KEY
 vim.keymap.set("n", "<C-F12>", "<cmd>PackerSync<cr>", { noremap = true })
@@ -213,6 +219,7 @@ vim.keymap.set('n', '<leader>cp', '<cmd>GitConflictPrevConflict<cr>', { noremap 
 vim.keymap.set('n', '<leader>F', ':%!python -m json.tool<cr>', { noremap = true })
 
 vim.keymap.set("n", "<F12>", "<cmd>set rnu!<CR>")
+vim.keymap.set("n", "<F10>", "<cmd>set foldenable!<CR>")
 
 vim.keymap.set("n", "<space>bo", '<cmd>bufdo bwipeout<CR>', { noremap = true })
 

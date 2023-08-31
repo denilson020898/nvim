@@ -52,6 +52,10 @@ return require("packer").startup(function(use)
     }
   }
   use { 'nvim-telescope/telescope-ui-select.nvim' }
+  use {
+    "nvim-telescope/telescope-file-browser.nvim",
+    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+  }
 
   -- Installer
   use {
@@ -100,7 +104,7 @@ return require("packer").startup(function(use)
   }
 
   -- CORE EXTENSION
-  use "kyazdani42/nvim-tree.lua"
+  -- use "kyazdani42/nvim-tree.lua"
   use 'f-person/git-blame.nvim'
 
   use { 'akinsho/git-conflict.nvim', tag = "*", config = function()
@@ -110,6 +114,7 @@ return require("packer").startup(function(use)
 
   -- COLORSCHEME
   use 'sainnhe/gruvbox-material'
+  use { "catppuccin/nvim", as = "catppuccin" }
 
   use {
     'm-demare/hlargs.nvim',
@@ -127,7 +132,16 @@ return require("packer").startup(function(use)
       require('crates').setup()
     end,
   }
-  use "NeogitOrg/neogit"
+  use {
+    "NeogitOrg/neogit",
+    config = function()
+      require("neogit").setup({
+        integrations = {
+          diffview = true
+        },
+      })
+    end,
+  }
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use { "nvim-treesitter/nvim-treesitter", run = "<cmd>TSUpdate" }
   use { 'JoosepAlviste/nvim-ts-context-commentstring' }
@@ -145,9 +159,19 @@ return require("packer").startup(function(use)
   use 'rmagatti/auto-session'
   use { 'rmagatti/session-lens',
     requires = { 'rmagatti/auto-session', 'nvim-telescope/telescope.nvim' },
+    config = function()
+      require('session-lens').setup {
+        path_display = { 'absolute' },
+      }
+    end
   }
   use 'nvim-pack/nvim-spectre'
-  use 'chentoast/marks.nvim'
+  use {
+    'chentoast/marks.nvim',
+    config = function()
+      require('marks').setup({})
+    end
+  }
   use {
     'phaazon/hop.nvim',
     as = 'hop',

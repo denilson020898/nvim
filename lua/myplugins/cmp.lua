@@ -63,25 +63,3 @@ cmp.setup({
   )
 })
 
--- -- Use buffer source for `/`.
--- cmp.setup.cmdline('/', {
---   sources = {
---     { name = 'buffer' }
---   },
--- })
---
--- -- Use cmdline & path source for ':'.
--- cmp.setup.cmdline(':', {
---   sources = cmp.config.sources({
---     { name = 'path' }
---   }, {
---     { name = 'cmdline' },
---     { name = 'cmdline_history' },
---   })
--- })
---
--- require("cmp").setup.filetype({ "dap-repl", "dapui_watches" }, {
---   sources = {
---     { name = "dap" },
---   },
--- })

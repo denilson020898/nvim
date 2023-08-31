@@ -1,6 +1,7 @@
 T = {}
 
 T.applied_theme = "gruvbox-material"
+-- T.applied_theme = "catppuccin"
 vim.cmd("colorscheme " .. T.applied_theme)
 T.toggle_theme = function()
   if T.applied_theme == "catppuccin-mocha" then

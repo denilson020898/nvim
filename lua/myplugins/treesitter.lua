@@ -1,21 +1,7 @@
 vim.filetype.add({ extension = { wgsl = "wgsl" } })
 
-require("nvim-treesitter.parsers").list.xml = {
-	install_info = {
-		url = "https://github.com/Trivernis/tree-sitter-xml",
-		files = { "src/parser.c" },
-		generate_requires_npm = true,
-		branch = "main",
-	},
-	filetype = "xml",
-}
-
 require 'nvim-treesitter.configs'.setup {
-  ensure_installed = {
-    'wgsl', 'xml', 'astro', 'css', 'glimmer', 'graphql', 'html', 'javascript',
-    'lua', 'php', 'python', 'scss', 'svelte', 'tsx', 'twig',
-    'typescript', 'vim', 'vue',
-  },
+  ensure_installed = { 'wgsl' },
   context_commentstring = {
     enable = true,
   },
@@ -110,14 +96,6 @@ require 'nvim-treesitter.configs'.setup {
         ["[]"] = "@class.outer",
       },
     },
-    -- lsp_interop = {
-    --   enable = true,
-    --   border = 'none',
-    --   peek_definition_code = {
-    --     ["<space>of"] = "@function.outer",
-    --     ["<space>oF"] = "@class.outer",
-    --   },
-    -- },
   }
 }
 
@@ -125,13 +103,13 @@ require 'nvim-treesitter.install'.compilers = { "gcc", "clang", "cl" }
 
 
 require 'treesitter-context'.setup {
-  enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
-  max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
-  min_window_height = 0, -- Minimum editor window height to enable context. Values <= 0 mean no limit.
+  enable = true,            -- Enable this plugin (Can be enabled/disabled later via commands)
+  max_lines = 0,            -- How many lines the window should span. Values <= 0 mean no limit.
+  min_window_height = 0,    -- Minimum editor window height to enable context. Values <= 0 mean no limit.
   line_numbers = true,
   multiline_threshold = 20, -- Maximum number of lines to collapse for a single context line
-  trim_scope = 'outer', -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
-  mode = 'cursor', -- Line used to calculate context. Choices: 'cursor', 'topline'
+  trim_scope = 'outer',     -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
+  mode = 'cursor',          -- Line used to calculate context. Choices: 'cursor', 'topline'
   -- Separator between context and content. Should be a single character string, like '-'.
   -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
   separator = nil,
