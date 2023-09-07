@@ -39,6 +39,7 @@ vim.keymap.set("n", "<space><space>", "<cmd>b#<cr>", { noremap = true })
 
 -- vim.keymap.set("n", "<space>n", "<cmd>NvimTreeToggle<cr>", { noremap = true })
 -- vim.keymap.set("n", "<leader>n", "<cmd>NvimTreeFindFile<cr>", { noremap = true })
+vim.keymap.set("n", "<leader>n", "<cmd>Ex<cr>", { noremap = true })
 vim.keymap.set("n", "<space>n", "<cmd>Rex<cr>", { noremap = true })
 
 vim.keymap.set("n", "<space>t", "<cmd>Telescope<cr>", { noremap = true })
@@ -64,13 +65,6 @@ vim.keymap.set("n", "<space>2", require'telescope'.extensions.dap.configurations
 vim.keymap.set("n", "<space>3", require'telescope'.extensions.dap.list_breakpoints, { noremap = true })
 vim.keymap.set("n", "<space>4", require'telescope'.extensions.dap.variables, { noremap = true })
 vim.keymap.set("n", "<space>5", require'telescope'.extensions.dap.frames, { noremap = true })
-
-vim.keymap.set("n", "<space>tq", "<cmd>lua require('telescope.builtin').quickfix({cache_picker=false})<cr>",
-  { noremap = true })
-vim.keymap.set("n", "<space>tQ", "<cmd>lua require('telescope.builtin').quickfixhistory({cache_picker=false})<cr>",
-  { noremap = true })
-vim.keymap.set("n", "<space>tz", "<cmd>lua require('telescope.builtin').quickfixhistory({cache_picker=false})<cr>",
-  { noremap = true })
 
 vim.keymap.set("n", "<space>tb", require('telescope.builtin').current_buffer_fuzzy_find, { noremap = true })
 vim.keymap.set("n", "<space>tC", require('telescope.builtin').command_history, { noremap = true })
@@ -102,7 +96,6 @@ vim.keymap.set("n", "<A-p>", "<cmd>cp<cr>", { noremap = true })
 vim.keymap.set("n", "<A-f>", "<cmd>cnewer<cr>", { noremap = true })
 vim.keymap.set("n", "<A-b>", "<cmd>colder<cr>", { noremap = true })
 
--- FN KEY
 vim.keymap.set("n", "<C-F12>", "<cmd>PackerSync<cr>", { noremap = true })
 vim.keymap.set("n", "<F36>", "<cmd>PackerSync<cr>", { noremap = true })
 
@@ -111,20 +104,6 @@ vim.keymap.set("n", "<space>j", "<C-w>j", { noremap = true })
 vim.keymap.set("n", "<space>k", "<C-w>k", { noremap = true })
 vim.keymap.set("n", "<space>l", "<C-w>l", { noremap = true })
 vim.keymap.set("n", "<space>p", "<C-w>p", { noremap = true })
-
-vim.keymap.set("n", "<space>=", "<C-w>=", { noremap = true })
-vim.keymap.set("n", "<space>-", "<C-w>_", { noremap = true })
-vim.keymap.set("n", "<space>\\", "<C-w>|", { noremap = true })
-vim.keymap.set("n", "<space>,", "<C-w>|<C-w>_", { noremap = true })
-vim.keymap.set("n", "<space>0", "<C-w>|<C-w>_", { noremap = true })
-
-vim.keymap.set("n", "<space>V", "<C-w>^<C-w>k<C-w>J", { noremap = true })
-vim.keymap.set("n", "<space>H", "<C-w>^<C-w>k<C-w>L", { noremap = true })
-vim.keymap.set("n", "<space>Q", "<C-w>q", { noremap = true })
-
-vim.keymap.set("n", "<A-v>", "<C-w>^<C-w>k<C-w>J", { noremap = true })
-vim.keymap.set("n", "<A-s>", "<C-w>^<C-w>k<C-w>L", { noremap = true })
-vim.keymap.set("n", "<A-q>", "<C-w>q", { noremap = true })
 
 vim.keymap.set("n", "<space>gg", function()
   require('neogit').open()
@@ -145,21 +124,9 @@ vim.keymap.set("n", "<space>sw", function() require('spectre').open_visual({ sel
   { noremap = true })
 vim.keymap.set("v", "<space>s", "<cmd>lua require('spectre').open_visual()<cr>", { noremap = true })
 vim.keymap.set("n", "<space>sc", "viw:lua require('spectre').open_file_search()<cr>", { noremap = true })
-vim.keymap.set("n", "<space>sp", "<cmd>lua require('spectre').open({path='*py'})<cr>", { noremap = true })
-vim.keymap.set("n", "<space>sx", "<cmd>lua require('spectre').open({path='*xml'})<cr>", { noremap = true })
-vim.keymap.set("n", "<space>sj", "<cmd>lua require('spectre').open({path='*js'})<cr>", { noremap = true })
-vim.keymap.set("n", "<space>sb", "<cmd>lua require('spectre').open({path='*py *xml'})<cr>", { noremap = true })
-vim.keymap.set({ "n", "v" }, "<space>sa", "<cmd>lua require('spectre').open({path='*py *xml *js'})<cr>",
-  { noremap = true })
+
 vim.keymap.set({ "n", "v" }, "<leader>.", "<cmd>HopAnywhere<cr>", { noremap = true })
 vim.keymap.set({ "n", "v" }, "<leader>m", "<cmd>HopWord<cr>", { noremap = true })
-vim.keymap.set({ "n", "v" }, "<leader>pw", "<cmd>HopWord<cr>", { noremap = true })
-vim.keymap.set({ "n", "v" }, "<leader>ps", "<cmd>HopLineStart<cr>", { noremap = true })
-vim.keymap.set({ "n", "v" }, "<leader>pl", "<cmd>HopLine<cr>", { noremap = true })
-vim.keymap.set({ "n", "v" }, "<leader>pp", "<cmd>HopPattern<cr>", { noremap = true })
-vim.keymap.set({ "n", "v" }, "<leader>pc", "<cmd>HopChar2<cr>", { noremap = true })
-vim.keymap.set({ "n", "v" }, "<leader>pC", "<cmd>HopChar1<cr>", { noremap = true })
-vim.keymap.set({ "n", "v" }, "<leader>pC", "<cmd>HopChar1<cr>", { noremap = true })
 
 -- LSP KEYBINDINGS - key
 vim.keymap.set("n", "<leader>b", "<cmd>RustRunnables<cr>", { noremap = true })
@@ -169,20 +136,6 @@ vim.keymap.set("n", "<leader>zp", "<cmd>RustParentModule<cr>", { noremap = true 
 vim.keymap.set("n", "<leader>zt", "<cmd>RustToggleInlayHints<cr>", { noremap = true })
 vim.keymap.set("n", "<leader>zg", "<cmd>CargoReload<cr>", { noremap = true })
 vim.keymap.set("n", "<leader>zh", "<cmd>RustHoverAction<cr>", { noremap = true })
-
-vim.keymap.set("n", "<leader>ii", "<cmd>LspInfo<cr>", { noremap = true })
-vim.keymap.set("n", "<leader>is", "<cmd>LspStop<cr>", { noremap = true })
-vim.keymap.set("n", "<leader>ia", "<cmd>LspStart<cr>", { noremap = true })
-vim.keymap.set("n", "<leader>ir", "<cmd>LspRestart<cr>", { noremap = true })
-
--- vim.keymap.set("n", "-ct", require('crates').toggle, { noremap = true })
--- vim.keymap.set("n", "-cr", require('crates').reload, { noremap = true })
--- vim.keymap.set("n", "-cu", require('crates').update_crate, { noremap = true })
--- vim.keymap.set("n", "-cu", require('crates').update_crates, { noremap = true })
--- vim.keymap.set("n", "-ca", require('crates').update_all_crates, { noremap = true })
--- vim.keymap.set("n", "-cU", require('crates').upgrade_crate, { noremap = true })
--- vim.keymap.set("n", "-cU", require('crates').upgrade_crates, { noremap = true })
--- vim.keymap.set("n", "-cA", require('crates').upgrade_all_crates, { noremap = true })
 
 -- DAP
 vim.keymap.set('n', '<F5>', '<cmd>lua require"dap".continue()<cr>', { noremap = true })

@@ -62,19 +62,6 @@ return require("packer").startup(function(use)
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
   }
-  -- use { "jose-elias-alvarez/null-ls.nvim" }
-
-  -- Lua
-  use {
-    "ahmedkhalf/project.nvim",
-    config = function()
-      require("project_nvim").setup {
-        manual_mode = true,
-      }
-    end
-  }
-
-  -- TREESITTER
 
   -- LSP
   use {
@@ -147,7 +134,6 @@ return require("packer").startup(function(use)
   use { 'JoosepAlviste/nvim-ts-context-commentstring' }
   use 'nvim-treesitter/nvim-treesitter-textobjects'
   use 'RRethy/nvim-treesitter-textsubjects'
-
   use 'nvim-treesitter/nvim-treesitter-context'
 
   use "windwp/nvim-autopairs"

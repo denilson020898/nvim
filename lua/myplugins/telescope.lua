@@ -33,6 +33,9 @@ require('telescope').setup {
         height = 0.975,
       },
     },
+    file_ignore_patterns = {
+      "%.po"
+    },
   },
   pickers = {
     buffers = {
