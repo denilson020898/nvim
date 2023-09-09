@@ -27,9 +27,7 @@ vim.o.backup = false
 vim.o.clipboard = "unnamedplus"
 vim.o.conceallevel = 0
 vim.o.fileencoding = "utf-8"
--- vim.o.guifont = "Iosevka Nerd Font:h12"
 vim.o.guifont = "JetBrainsMono Nerd Font:h12"
--- vim.o.guifont = "LiterationMono Nerd Font:h12"
 vim.o.ignorecase = true
 vim.o.inccommand = "split"
 vim.o.incsearch = true
@@ -46,7 +44,6 @@ vim.o.swapfile = false
 vim.o.termguicolors = true
 vim.o.title = true
 vim.wo.colorcolumn = "100"
--- vim.o.titlestring="%<%F%=%l/%L - nvim"
 vim.o.timeoutlen = 1000
 vim.o.updatetime = 100
 vim.o.writebackup = false
@@ -62,37 +59,30 @@ function custom_fold_text()
   return line .. "    ⏫ " .. line_count .. " lines"
 end
 
--- vim.opt.foldtext = custom_fold_text()
 vim.opt.foldtext = 'v:lua.custom_fold_text()'
 vim.opt.fillchars = { eob = "-", fold = " " }
 vim.opt.viewoptions:remove("options")
-
-
--- vim.opt.fillchars = {
---   vert = "▕", -- alternatives │
---   fold = " ",
---   eob = " ", -- suppress ~ at EndOfBuffer
---   diff = " ", -- alternatives = ⣿ ░ ─
---   msgsep = "‾",
---   foldopen = "▾",
---   foldsep = "│",
---   foldclose = "▸",
--- }
 
 vim.wo.foldmethod = "expr"
 vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
 -- disable fold on startup
 vim.wo.foldenable = false
 
-
--- vim.g.netrw_banner = 0
--- vim.g.netrw_liststyle = 3
--- vim.g.netrw_browse_split = 4
--- vim.g.netrw_altv = 1
--- vim.g.netrw_winsize = 25
+vim.opt.list = true
 
 -- vim.g.gitblame_enabled = 0
 -- Available options: <author>, <committer>, <date>, <committer-date>, <summary>, <sha>
 vim.g.gitblame_message_template = '<summary> • <author> • <date> • <sha>'
 
+T.applied_theme = "gruvbox-material"
+-- T.applied_theme = "catppuccin"
+vim.cmd("colorscheme " .. T.applied_theme)
+T.toggle_theme = function()
+  if T.applied_theme == "catppuccin-mocha" then
+    T.applied_theme = "gruvbox-baby"
+  else
+    T.applied_theme = "gruvbox-baby"
+  end
+  vim.cmd("colorscheme " .. T.applied_theme)
+end
 return T

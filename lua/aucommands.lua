@@ -5,10 +5,12 @@ local yank_group = augroup('HighlightYank', {})
 autocmd('TextYankPost', {
   group = yank_group,
   pattern = "*",
-  callback = function ()
+  callback = function()
     vim.highlight.on_yank({
       higroup = 'IncSearch',
       timeout = 350,
     })
   end,
 })
+
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]

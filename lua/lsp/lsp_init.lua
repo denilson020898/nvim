@@ -73,30 +73,35 @@ lspconfig.jsonls.setup({
   root_dir = require 'lspconfig'.util.root_pattern(".zshrc"),
 })
 
+lspconfig.gopls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
 -- lspconfig.pylyzer.setup({
 --   on_attach = on_attach,
 --   capabilities = capabilities,
 -- })
 
 
-lspconfig.pyright.setup { on_attach = on_attach, settings = {
-  pyright = { autoImportCompletion = true, },
-  python = {
-    analysis = {
-      autoSearchPaths = true,
-      diagnosticMode = 'openFilesOnly',
-      useLibraryCodeForTypes = true,
-      typeCheckingMode = 'off'
-    }
-  }
-}
-}
+-- lspconfig.pyright.setup { on_attach = on_attach, settings = {
+--   pyright = { autoImportCompletion = true, },
+--   python = {
+--     analysis = {
+--       autoSearchPaths = true,
+--       diagnosticMode = 'openFilesOnly',
+--       useLibraryCodeForTypes = true,
+--       -- typeCheckingMode = 'strict'
+--     }
+--   }
+-- }
+-- }
 
 
--- lspconfig.pylsp.setup({
---   on_attach = on_attach,
---   capabilities = capabilities,
--- })
+lspconfig.pylsp.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
 
 -- lspconfig.pylsp.setup({
 --   on_attach = on_attach,

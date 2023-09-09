@@ -141,7 +141,18 @@ return require("packer").startup(function(use)
   use 'nvim-tree/nvim-web-devicons'
 
   use "rafamadriz/friendly-snippets"
-  use "lukas-reineke/indent-blankline.nvim"
+
+  use {
+    "lukas-reineke/indent-blankline.nvim",
+    config = function()
+      require("indent_blankline").setup {
+        space_char_blankline = " ",
+        show_current_context = true,
+        show_end_of_line = true,
+      }
+    end
+  }
+
   use 'rmagatti/auto-session'
   use { 'rmagatti/session-lens',
     requires = { 'rmagatti/auto-session', 'nvim-telescope/telescope.nvim' },

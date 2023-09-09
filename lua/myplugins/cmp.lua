@@ -49,17 +49,17 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = 'luasnip' }, -- For luasnip users.
     { name = 'nvim_lsp' },
-    -- { name = 'vsnip' }, -- For vsnip users.
-    -- { name = 'ultisnips' }, -- For ultisnips users.
-    -- { name = 'snippy' }, -- For snippy users.
     { name = 'calc' },
-    -- { name = 'treesitter' },
     { name = 'buffer' },
-    -- { name = 'crates' },
-    -- { name = 'rg' },
-    -- { name = 'dap' },
-    -- { name = 'neorg' },
   }
   )
 })
 
+require("nvim-autopairs").setup {}
+-- If you want insert `(` after select function or method item
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+local cmp = require('cmp')
+cmp.event:on(
+  'confirm_done',
+  cmp_autopairs.on_confirm_done()
+)
