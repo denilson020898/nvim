@@ -73,10 +73,10 @@ lspconfig.jsonls.setup({
   root_dir = require 'lspconfig'.util.root_pattern(".zshrc"),
 })
 
-lspconfig.gopls.setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
+-- lspconfig.gopls.setup({
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+-- })
 
 -- lspconfig.pylyzer.setup({
 --   on_attach = on_attach,
@@ -196,6 +196,16 @@ local opts = {
 }
 -- Normal setup
 require('rust-tools').setup(opts)
+
+require('go').setup {
+  lsp_cfg = {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  }
+}
+local cfg = require 'go.lsp'.config() -- config() return the go.nvim gopls setup
+lspconfig.gopls.setup(cfg)
+-- require('lspconfig').gopls.setup(cfg)
 
 -- lspconfig.rust_analyzer.setup({
 --   on_attach = on_attach,

@@ -74,6 +74,8 @@ return require("packer").startup(function(use)
       require "fidget".setup {}
     end
   }
+  use 'ray-x/go.nvim'
+  use 'ray-x/guihua.lua' -- recommended if need floating window support
 
   -- DAP
   use 'mfussenegger/nvim-dap'

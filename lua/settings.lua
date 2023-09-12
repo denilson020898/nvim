@@ -5,13 +5,6 @@ vim.cmd("filetype on");
 vim.cmd("filetype indent on");
 vim.cmd("filetype plugin on");
 
-vim.cmd("autocmd Filetype cpp setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
-vim.cmd("autocmd Filetype c setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
-vim.cmd("autocmd Filetype wast setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
-vim.cmd("autocmd Filetype wat setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
-vim.cmd("autocmd Filetype lua setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
-vim.cmd("autocmd Filetype javascript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
-
 vim.cmd("set autoread | au CursorHold * checktime")
 
 vim.o.expandtab = true
@@ -74,15 +67,6 @@ vim.opt.list = true
 -- Available options: <author>, <committer>, <date>, <committer-date>, <summary>, <sha>
 vim.g.gitblame_message_template = '<summary> • <author> • <date> • <sha>'
 
-T.applied_theme = "gruvbox-material"
--- T.applied_theme = "catppuccin"
-vim.cmd("colorscheme " .. T.applied_theme)
-T.toggle_theme = function()
-  if T.applied_theme == "catppuccin-mocha" then
-    T.applied_theme = "gruvbox-baby"
-  else
-    T.applied_theme = "gruvbox-baby"
-  end
-  vim.cmd("colorscheme " .. T.applied_theme)
-end
+vim.cmd("colorscheme " .. "gruvbox-material")
+
 return T

@@ -3,6 +3,7 @@ vim.g.mapleader = ","
 -- OTHERS
 vim.cmd("noremap <expr> k (v:count > 5 ? \"m'\" . v:count : \"\") . 'k'")
 vim.cmd("noremap <expr> j (v:count > 5 ? \"m'\" . v:count : \"\") . 'j'")
+
 vim.keymap.set("i", ".", ".<c-g>u", { noremap = true })
 vim.keymap.set("i", ",", ",<c-g>u", { noremap = true })
 vim.keymap.set("i", "(", "(<c-g>u", { noremap = true })
@@ -33,50 +34,33 @@ vim.keymap.set("v", ">", ">gv", { noremap = true })
 vim.keymap.set("v", "<", "<gv", { noremap = true })
 vim.keymap.set("v", "m", ">gv", { noremap = true })
 vim.keymap.set("v", "n", "<gv", { noremap = true })
-vim.keymap.set("n", "<space>a", "ggVG", { noremap = true })
-vim.keymap.set("n", "<space>w", "<cmd>wa<cr>", { noremap = true })
 vim.keymap.set("n", "<space><space>", "<cmd>b#<cr>", { noremap = true })
 
--- vim.keymap.set("n", "<space>n", "<cmd>NvimTreeToggle<cr>", { noremap = true })
--- vim.keymap.set("n", "<leader>n", "<cmd>NvimTreeFindFile<cr>", { noremap = true })
-vim.keymap.set("n", "<leader>n", "<cmd>Ex<cr>", { noremap = true })
 vim.keymap.set("n", "<space>n", "<cmd>Rex<cr>", { noremap = true })
 
-vim.keymap.set("n", "<space>t", "<cmd>Telescope<cr>", { noremap = true })
+vim.keymap.set("n", "<space>tt", "<cmd>Telescope<cr>", { noremap = true })
 vim.keymap.set("n", "<space>r", "<cmd>Telescope resume<cr>", { noremap = true })
-vim.keymap.set("n", "<space>tw", "<cmd>Telescope grep_string<cr>", { noremap = true })
-vim.keymap.set("n", "<space>tf", require('telescope.builtin').find_files, { noremap = true })
-vim.keymap.set("n", "<space>tg", require('telescope.builtin').live_grep, { noremap = true })
-vim.keymap.set("n", "<space>q", '<cmd>bd<CR>', { noremap = true })
 vim.keymap.set("n", "<space>f", require('telescope.builtin').find_files, { noremap = true })
 vim.keymap.set("n", "<space>d", require('telescope.builtin').live_grep, { noremap = true })
-vim.keymap.set("n", "H", '<cmd>bprevious<CR>', { noremap = true })
-vim.keymap.set("n", "L", '<cmd>bnext<CR>', { noremap = true })
 
-vim.keymap.set("n", "<space>tl", require('telescope.builtin').live_grep, { noremap = true })
-vim.keymap.set("n", "<space>tm", require('telescope.builtin').marks, { noremap = true })
 vim.keymap.set("n", "<space>i", "<cmd>lua require('telescope.builtin').buffers{cache_picker=false}<cr>",
   { noremap = true })
-vim.keymap.set("n", "<space>u", "<cmd>lua require('telescope').extensions.undo.undo()<cr>", { noremap = true })
-vim.keymap.set("n", "<space>tH", require('telescope.builtin').help_tags, { noremap = true })
+vim.keymap.set("n", "<space>d", require('telescope.builtin').diagnostics, { noremap = true })
 
-vim.keymap.set("n", "<space>1", require'telescope'.extensions.dap.commands, { noremap = true })
-vim.keymap.set("n", "<space>2", require'telescope'.extensions.dap.configurations, { noremap = true })
-vim.keymap.set("n", "<space>3", require'telescope'.extensions.dap.list_breakpoints, { noremap = true })
-vim.keymap.set("n", "<space>4", require'telescope'.extensions.dap.variables, { noremap = true })
-vim.keymap.set("n", "<space>5", require'telescope'.extensions.dap.frames, { noremap = true })
-
-vim.keymap.set("n", "<space>tb", require('telescope.builtin').current_buffer_fuzzy_find, { noremap = true })
-vim.keymap.set("n", "<space>tC", require('telescope.builtin').command_history, { noremap = true })
-vim.keymap.set("n", "<space>td", require('telescope.builtin').diagnostics, { noremap = true })
-
-vim.keymap.set("n", "<space>I", "<cmd>lua require('telescope.builtin').lsp_implementations({show_line=false})<cr>", { noremap = true })
-vim.keymap.set("n", "<space>F", "<cmd>lua require('telescope.builtin').lsp_type_definitions({show_line=false})<cr>", { noremap = true })
-vim.keymap.set("n", "<space>D", "<cmd>lua require('telescope.builtin').lsp_definitions({show_line=false})<cr>", { noremap = true })
-vim.keymap.set("n", "<space>y", "<cmd>lua require('telescope.builtin').lsp_references({fname_width=100})<cr>", { noremap = true })
-vim.keymap.set("n", "<space>e", "<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols({fname_width=100})<cr>", { noremap = true })
-vim.keymap.set("n", "<space>E", "<cmd>lua require('telescope.builtin').lsp_document_symbols({fname_width=100})<cr>", { noremap = true })
-vim.keymap.set("n", "<space>S", "<cmd>lua require('telescope.builtin').lsp_workspace_symbols({fname_width=100})<cr>", { noremap = true })
+vim.keymap.set("n", "<space>I", "<cmd>lua require('telescope.builtin').lsp_implementations({show_line=false})<cr>",
+  { noremap = true })
+vim.keymap.set("n", "<space>F", "<cmd>lua require('telescope.builtin').lsp_type_definitions({show_line=false})<cr>",
+  { noremap = true })
+vim.keymap.set("n", "<space>D", "<cmd>lua require('telescope.builtin').lsp_definitions({show_line=false})<cr>",
+  { noremap = true })
+vim.keymap.set("n", "<space>y", "<cmd>lua require('telescope.builtin').lsp_references({fname_width=100})<cr>",
+  { noremap = true })
+vim.keymap.set("n", "<space>e",
+  "<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols({fname_width=100})<cr>", { noremap = true })
+vim.keymap.set("n", "<space>E", "<cmd>lua require('telescope.builtin').lsp_document_symbols({fname_width=100})<cr>",
+  { noremap = true })
+vim.keymap.set("n", "<space>S", "<cmd>lua require('telescope.builtin').lsp_workspace_symbols({fname_width=100})<cr>",
+  { noremap = true })
 
 vim.keymap.set("n", "<space>o", "<cmd>lua require('telescope.builtin').oldfiles{cache_picker=false}<cr>",
   { noremap = true })
@@ -99,11 +83,6 @@ vim.keymap.set("n", "<A-b>", "<cmd>colder<cr>", { noremap = true })
 vim.keymap.set("n", "<C-F12>", "<cmd>PackerSync<cr>", { noremap = true })
 vim.keymap.set("n", "<F36>", "<cmd>PackerSync<cr>", { noremap = true })
 
-vim.keymap.set("n", "<space>h", "<C-w>h", { noremap = true })
-vim.keymap.set("n", "<space>j", "<C-w>j", { noremap = true })
-vim.keymap.set("n", "<space>k", "<C-w>k", { noremap = true })
-vim.keymap.set("n", "<space>l", "<C-w>l", { noremap = true })
-vim.keymap.set("n", "<space>p", "<C-w>p", { noremap = true })
 
 vim.keymap.set("n", "<space>gg", function()
   require('neogit').open()
@@ -128,55 +107,4 @@ vim.keymap.set("n", "<space>sc", "viw:lua require('spectre').open_file_search()<
 vim.keymap.set({ "n", "v" }, "<leader>.", "<cmd>HopAnywhere<cr>", { noremap = true })
 vim.keymap.set({ "n", "v" }, "<leader>m", "<cmd>HopWord<cr>", { noremap = true })
 
--- LSP KEYBINDINGS - key
-vim.keymap.set("n", "<leader>b", "<cmd>RustRunnables<cr>", { noremap = true })
-vim.keymap.set("n", "<leader>v", "<cmd>RustDebuggables<cr>", { noremap = true })
-vim.keymap.set("n", "<leader>zc", "<cmd>RustOpenCargo<cr>", { noremap = true })
-vim.keymap.set("n", "<leader>zp", "<cmd>RustParentModule<cr>", { noremap = true })
-vim.keymap.set("n", "<leader>zt", "<cmd>RustToggleInlayHints<cr>", { noremap = true })
-vim.keymap.set("n", "<leader>zg", "<cmd>CargoReload<cr>", { noremap = true })
-vim.keymap.set("n", "<leader>zh", "<cmd>RustHoverAction<cr>", { noremap = true })
-
--- DAP
-vim.keymap.set('n', '<F5>', '<cmd>lua require"dap".continue()<cr>', { noremap = true })
-vim.keymap.set('n', '<F17>', '<Cmd>lua require"dap".run_last()<CR>', { noremap = true })
-vim.keymap.set('n', '<F1>', '<cmd>lua require"dap".step_over()<cr>', { noremap = true })
-vim.keymap.set('n', '<F2>', '<cmd>lua require"dap".step_into()<cr>', { noremap = true })
-vim.keymap.set('n', '<F3>', '<cmd>lua require"dap".step_out()<cr>', { noremap = true })
-vim.keymap.set('n', '<F11>', '<cmd>lua require"dapui".toggle()<cr>', { noremap = true })
-vim.keymap.set('n', '<F4>', '<Cmd>lua require("dapui").eval()<CR>', { noremap = true })
-vim.keymap.set('v', '<F4>', '<Cmd>lua require("dapui").eval()<CR>', { noremap = true })
-vim.keymap.set('n', '<S-F10>', '<cmd>lua require"dap".set_breakpoint(nil, nil, vim.fn.input("Log point message: "))<cr>'
-  , { noremap = true })
-vim.keymap.set("n", "<F9>",
-  "<cmd>lua require('dap').toggle_breakpoint(); require('persistent-breakpoints.api').store_breakpoints(false)<cr>",
-  { noremap = true })
-vim.keymap.set("n", "<F8>",
-  "<cmd>lua require('dap').set_breakpoint(vim.fn.input '[Condition] > '); require('persistent-breakpoints.api').store_breakpoints(false)<cr>"
-  , { noremap = true })
-vim.keymap.set("n", "<F21>",
-  "<cmd>lua require('dap').clear_breakpoints(); require('persistent-breakpoints.api').store_breakpoints(true)<cr>",
-  { noremap = true })
-vim.keymap.set("n", "<F14>", require "dap".run_to_cursor, { noremap = true })
-
-vim.keymap.set('n', '<leader>cq', '<cmd>GitConflictListQf<cr>', { noremap = true })
-vim.keymap.set('n', '<leader>cr', '<cmd>GitConflictRefresh<cr>', { noremap = true })
-vim.keymap.set('n', '<leader>ca', '<cmd>GitConflictChooseBase<cr>', { noremap = true })
-vim.keymap.set('n', '<leader>cb', '<cmd>GitConflictChooseBoth<cr>', { noremap = true })
-vim.keymap.set('n', '<leader>cc', '<cmd>GitConflictChooseNone<cr>', { noremap = true })
-vim.keymap.set('n', '<leader>co', '<cmd>GitConflictChooseOurs<cr>', { noremap = true })
-vim.keymap.set('n', '<leader>ct', '<cmd>GitConflictChooseTheirs<cr>', { noremap = true })
-vim.keymap.set('n', '<leader>cn', '<cmd>GitConflictNextConflict<cr>', { noremap = true })
-vim.keymap.set('n', '<leader>cp', '<cmd>GitConflictPrevConflict<cr>', { noremap = true })
-
 vim.keymap.set('n', '<leader>F', ':%!python -m json.tool<cr>', { noremap = true })
-
-vim.keymap.set("n", "<F12>", "<cmd>set rnu!<CR>")
-vim.keymap.set("n", "<F10>", "<cmd>set foldenable!<CR>")
-
-vim.keymap.set("n", "<space>bo", '<cmd>bufdo bwipeout<CR>', { noremap = true })
-
-vim.keymap.set("n", "<A-h>", "<C-w>10<", { noremap = true })
-vim.keymap.set("n", "<A-j>", "<C-w>10-", { noremap = true })
-vim.keymap.set("n", "<A-k>", "<C-w>10+", { noremap = true })
-vim.keymap.set("n", "<A-l>", "<C-w>10>", { noremap = true })
