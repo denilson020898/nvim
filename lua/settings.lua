@@ -45,6 +45,7 @@ vim.wo.number = true
 vim.wo.scrolloff = 10
 vim.wo.signcolumn = "yes"
 vim.wo.wrap = false
+vim.wo.relativenumber = true
 
 function custom_fold_text()
   local line = vim.fn.getline(vim.v.foldstart)

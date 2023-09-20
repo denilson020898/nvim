@@ -45,7 +45,7 @@ vim.keymap.set("n", "<space>d", require('telescope.builtin').live_grep, { norema
 
 vim.keymap.set("n", "<space>i", "<cmd>lua require('telescope.builtin').buffers{cache_picker=false}<cr>",
   { noremap = true })
-vim.keymap.set("n", "<space>d", require('telescope.builtin').diagnostics, { noremap = true })
+vim.keymap.set("n", "<space>td", require('telescope.builtin').diagnostics, { noremap = true })
 
 vim.keymap.set("n", "<space>I", "<cmd>lua require('telescope.builtin').lsp_implementations({show_line=false})<cr>",
   { noremap = true })
